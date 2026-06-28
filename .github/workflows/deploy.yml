@@ -33,3 +33,9 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: public_html/
           local-dir: ./out/
+          # Wipes public_html before each upload. Avoids incremental-sync
+          # state corruption (stale state pointing at already-deleted
+          # hashed _next/ build folders, which otherwise hard-fails the
+          # deploy with a 550 error). Safe because public_html is
+          # dedicated to this site only.
+          dangerous-clean-slate: true
