@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaArrowRight, FaStar, FaWhatsapp, FaRegFileAlt, FaMapMarkerAlt, FaChartLine, FaBullseye, FaCheckCircle } from "react-icons/fa";
 import { IoMdCall } from "react-icons/io";
 import Footer from "@/components/Footer";
+import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 
 /* ════════════════════════════════════════════════════════════════
    METADATA
@@ -112,47 +113,10 @@ const FAQS = [
 ];
 
 /* ════════════════════════════════════════════════════════════════
-   SCHEMA
+   SCHEMA — FAQPage / Service / BreadcrumbList / Speakable
+   (Organization/LocalBusiness is defined once, sitewide, in the
+   root layout — see src/lib/schema.js — and referenced here by @id.)
    ════════════════════════════════════════════════════════════════ */
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://ivoniz.com/#organization",
-  name: "Ivoniz Pvt Ltd",
-  alternateName: ["Ivoniz", "Ivoniz Technologies", "Ivoniz Digital Marketing Agency"],
-  description:
-    "Ivoniz Pvt Ltd is a results-driven digital marketing agency in Kochi and a digital marketing agency in Kerala, offering SEO, Google Ads, social media marketing, website development, and mobile app development.",
-  url: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
-  telephone: "+919645760023",
-  email: "info@ivoniz.com",
-  priceRange: "₹₹",
-  image: "https://ivoniz.com/web-app-manifest-512x512.png",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "7th Floor, Phase 1, HiLITE Business Park",
-    addressLocality: "Kozhikode",
-    addressRegion: "Kerala",
-    postalCode: "673001",
-    addressCountry: "IN",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 11.247798588931074,
-    longitude: 75.83147697481216,
-  },
-  areaServed: [
-    { "@type": "City", name: "Kochi" },
-    { "@type": "City", name: "Ernakulam" },
-    { "@type": "State", name: "Kerala" },
-  ],
-  sameAs: ["https://maps.app.goo.gl/q6C1CnZSwnbcX2R47"],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "7",
-  },
-};
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -215,6 +179,9 @@ const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   url: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
+  name: "Best Digital Marketing Company in Kochi",
+  isPartOf: { "@id": WEBSITE_ID },
+  about: { "@id": ORG_ID },
   speakable: {
     "@type": "SpeakableSpecification",
     cssSelector: ["#quick-answer"],
@@ -266,7 +233,6 @@ export default function BestDigitalMarketingCompanyInKochi() {
   return (
     <main className="bg-white text-black">
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

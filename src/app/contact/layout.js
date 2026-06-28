@@ -1,3 +1,20 @@
+import { webPageSchema, breadcrumbSchema, ORG_ID } from "@/lib/schema";
+
+const pageSchema = {
+  ...webPageSchema({
+    url: "https://ivoniz.com/contact",
+    name: "Contact Ivoniz Pvt Ltd",
+    description:
+      "Get in touch with Ivoniz Pvt Ltd for web development, mobile app development, digital marketing, and AI solutions. Call, WhatsApp, or send us your project details for a free consultation.",
+    type: "ContactPage",
+  }),
+  mainEntity: { "@id": ORG_ID },
+};
+
+const pageBreadcrumb = breadcrumbSchema([
+  { name: "Contact", url: "https://ivoniz.com/contact" },
+]);
+
 export const metadata = {
   title: "Contact Us",
   description:
@@ -34,5 +51,11 @@ export const metadata = {
 };
 
 export default function ContactLayout({ children }) {
-  return children;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumb) }} />
+      {children}
+    </>
+  );
 }

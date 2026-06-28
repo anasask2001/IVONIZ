@@ -1,3 +1,16 @@
+import { webPageSchema, breadcrumbSchema } from "@/lib/schema";
+
+const pageSchema = webPageSchema({
+  url: "https://ivoniz.com/about",
+  name: "About Ivoniz | Design. Build. Market.",
+  description:
+    "Ivoniz Pvt Ltd is a technology and digital growth company helping businesses launch, grow, and scale through design, web & mobile development, AI automation, and digital marketing.",
+});
+
+const pageBreadcrumb = breadcrumbSchema([
+  { name: "About", url: "https://ivoniz.com/about" },
+]);
+
 export const metadata = {
   title: "About Us | Design. Build. Market.",
   description:
@@ -34,5 +47,11 @@ export const metadata = {
 };
 
 export default function AboutLayout({ children }) {
-  return children;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumb) }} />
+      {children}
+    </>
+  );
 }

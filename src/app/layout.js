@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import RightQuickActions from "@/components/RightQuickActions";
 import ChatWidget from "@/components/ChatWidget";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -102,6 +103,10 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${openSans.variable} antialiased`}
         suppressHydrationWarning
       >
+        {/* ── Sitewide JSON-LD — Organization/LocalBusiness + WebSite ── */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+
         <Navbar/>
         {children}
         <RightQuickActions/>

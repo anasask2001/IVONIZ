@@ -1,3 +1,25 @@
+import { webPageSchema, breadcrumbSchema, ORG_ID } from "@/lib/schema";
+
+const pageSchema = webPageSchema({
+  url: "https://ivoniz.com/founder",
+  name: "Our Founder | Ivoniz Pvt Ltd",
+  description:
+    "Meet Muhammed Anas, founder of Ivoniz Pvt Ltd, a technology and digital growth company based in Kozhikode, Kerala.",
+});
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Muhammed Anas",
+  jobTitle: "Founder",
+  worksFor: { "@id": ORG_ID },
+  url: "https://ivoniz.com/founder",
+};
+
+const pageBreadcrumb = breadcrumbSchema([
+  { name: "Founder", url: "https://ivoniz.com/founder" },
+]);
+
 export const metadata = {
   title: "Our Founder",
   description:
@@ -34,5 +56,12 @@ export const metadata = {
 };
 
 export default function FounderLayout({ children }) {
-  return children;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumb) }} />
+      {children}
+    </>
+  );
 }

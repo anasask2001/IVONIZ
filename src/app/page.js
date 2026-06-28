@@ -10,6 +10,66 @@ import ServicesSection from "@/components/ServicesSection";
 import ShowcaseSections from "@/components/ShowcaseSections";
 import GoogleReviews from "@/components/GoogleReviews";
 import SelectedWorks from "@/components/SelectedWorks";
+import { webPageSchema, ORG_ID } from "@/lib/schema";
+
+/* ── JSON-LD — WebPage, Service catalog, and the real testimonials
+   shown below via GoogleReviews. ──────────────────────────────── */
+const homePageSchema = webPageSchema({
+  url: "https://ivoniz.com/",
+  name: "Ivoniz Pvt Ltd — Mobile App & Web Development",
+  description: "Leading mobile app and web development company. We build scalable apps, websites, and AI tools to grow your business.",
+});
+
+const homeServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Digital Solutions Provider",
+  provider: { "@id": ORG_ID },
+  areaServed: [
+    { "@type": "State", name: "Kerala" },
+    { "@type": "Country", name: "India" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Ivoniz Services",
+    itemListElement: [
+      "App Development",
+      "Website Design",
+      "Web Development",
+      "Custom Software Development",
+      "AI Solutions & Automation",
+      "Digital Marketing",
+      "Branding",
+      "UI/UX Design",
+    ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
+  },
+};
+
+const homeReviewSchema = [
+  {
+    author: "Rahul Mehta",
+    company: "TechCorp India",
+    quote: "Ivoniz delivered an outstanding mobile app for our business. The team was professional, creative, and delivered exactly what we envisioned — on time and within budget.",
+    rating: 5,
+  },
+  {
+    author: "Sarah Johnson",
+    company: "Arlocks Fashion",
+    quote: "Working with Ivoniz was a game changer for us. They built a stunning e-commerce website that increased our online sales by 300%. Highly recommended!",
+    rating: 5,
+  },
+].map((r) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  itemReviewed: { "@id": ORG_ID },
+  author: {
+    "@type": "Person",
+    name: r.author,
+    worksFor: { "@type": "Organization", name: r.company },
+  },
+  reviewBody: r.quote,
+  reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
+}));
 
 /* ── Data ───────────────────────────────────────────────────── */
 
@@ -82,6 +142,11 @@ export default function Home() {
 
   return (
     <main className="bg-white text-black overflow-x-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeServiceSchema) }} />
+      {homeReviewSchema.map((r, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(r) }} />
+      ))}
 
       {/* ══════════════════════════════════════════════════════════
           HERO

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaArrowRight, FaStar, FaWhatsapp, FaRegFileAlt, FaMapMarkerAlt, FaBolt, FaMobileAlt, FaCheckCircle } from "react-icons/fa";
 import { IoMdCall } from "react-icons/io";
 import Footer from "@/components/Footer";
+import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 
 /* ════════════════════════════════════════════════════════════════
    METADATA — SEO Title / Meta Description / Canonical
@@ -108,45 +109,10 @@ const FAQS = [
 ];
 
 /* ════════════════════════════════════════════════════════════════
-   SCHEMA — LocalBusiness / FAQPage / Service / BreadcrumbList
+   SCHEMA — FAQPage / Service / BreadcrumbList / Speakable
+   (Organization/LocalBusiness is defined once, sitewide, in the
+   root layout — see src/lib/schema.js — and referenced here by @id.)
    ════════════════════════════════════════════════════════════════ */
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://ivoniz.com/#organization",
-  name: "Ivoniz Pvt Ltd",
-  alternateName: ["Ivoniz", "Ivoniz Technologies", "Ivoniz Website Development Company"],
-  description:
-    "Ivoniz Pvt Ltd is the best website development company in Calicut and the best website company in Calicut, offering custom websites, e-commerce development, web applications, and digital marketing.",
-  url: "https://ivoniz.com/best-website-development-company-in-calicut",
-  telephone: "+919645760023",
-  email: "info@ivoniz.com",
-  priceRange: "₹₹",
-  image: "https://ivoniz.com/web-app-manifest-512x512.png",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "7th Floor, Phase 1, HiLITE Business Park",
-    addressLocality: "Kozhikode",
-    addressRegion: "Kerala",
-    postalCode: "673001",
-    addressCountry: "IN",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 11.247798588931074,
-    longitude: 75.83147697481216,
-  },
-  areaServed: [
-    { "@type": "City", name: "Calicut" },
-    { "@type": "State", name: "Kerala" },
-  ],
-  sameAs: ["https://maps.app.goo.gl/q6C1CnZSwnbcX2R47"],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "7",
-  },
-};
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -207,6 +173,9 @@ const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   url: "https://ivoniz.com/best-website-development-company-in-calicut",
+  name: "Best Website Development Company in Calicut",
+  isPartOf: { "@id": WEBSITE_ID },
+  about: { "@id": ORG_ID },
   speakable: {
     "@type": "SpeakableSpecification",
     cssSelector: ["#quick-answer"],
@@ -259,7 +228,6 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
     <main className="bg-white text-black">
 
       {/* ── JSON-LD Schema ── */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

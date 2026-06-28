@@ -2,6 +2,18 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import WorksGrid from "@/components/WorksGrid";
+import { webPageSchema, breadcrumbSchema } from "@/lib/schema";
+
+const pageSchema = webPageSchema({
+  url: "https://ivoniz.com/works",
+  name: "Our Works | Ivoniz Pvt Ltd",
+  description:
+    "A selection of live websites Ivoniz has designed and built for clients across fashion, jewellery, healthcare, trading, and consulting.",
+});
+
+const pageBreadcrumb = breadcrumbSchema([
+  { name: "Works", url: "https://ivoniz.com/works" },
+]);
 
 export const metadata = {
   title: "Our Works",
@@ -108,6 +120,8 @@ export const WORKS = [
 export default function WorksPage() {
   return (
     <main className="bg-white text-black">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumb) }} />
       <section className="pt-32 sm:pt-40 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-350">
           <h1 className="font-semibold text-3xl sm:text-4xl text-black">
