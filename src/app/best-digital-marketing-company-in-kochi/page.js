@@ -7,11 +7,15 @@ import Footer from "@/components/Footer";
    METADATA
    ════════════════════════════════════════════════════════════════ */
 export const metadata = {
-  title: "Best Digital Marketing Company in Kochi | Ivoniz Pvt Ltd",
+  title: "Best Digital Marketing Company in Kochi",
   description:
     "Looking for the best digital marketing agency in Kochi? Ivoniz is a results-driven digital marketing agency offering SEO, ads, social media, and web development. Trusted digital marketing agency in Kerala. Free audit available.",
   alternates: {
     canonical: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
+    languages: {
+      "en-IN": "https://ivoniz.com/best-digital-marketing-company-in-kochi",
+      "x-default": "https://ivoniz.com/best-digital-marketing-company-in-kochi",
+    },
   },
   openGraph: {
     title: "Best Digital Marketing Company in Kochi | Ivoniz Pvt Ltd",
@@ -19,7 +23,22 @@ export const metadata = {
       "Ivoniz — a results-driven digital marketing agency in Kochi serving Ernakulam and all of Kerala.",
     url: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
     type: "website",
+    images: [
+      {
+        url: "/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Ivoniz Pvt Ltd — Best Digital Marketing Company in Kochi",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Digital Marketing Company in Kochi | Ivoniz Pvt Ltd",
+    description: "Ivoniz — a results-driven digital marketing agency in Kochi serving Ernakulam and all of Kerala.",
+    images: ["/web-app-manifest-512x512.png"],
+  },
+  robots: { index: true, follow: true },
 };
 
 /* ════════════════════════════════════════════════════════════════

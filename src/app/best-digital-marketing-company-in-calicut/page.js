@@ -7,11 +7,15 @@ import Footer from "@/components/Footer";
    METADATA — SEO Title / Meta Description / Canonical
    ════════════════════════════════════════════════════════════════ */
 export const metadata = {
-  title: "Best Digital Marketing Company in Calicut | Ivoniz Pvt Ltd",
+  title: "Best Digital Marketing Company in Calicut",
   description:
     "Ivoniz is the best digital marketing agency in Calicut — offering SEO, Google Ads, social media marketing, website & app development. Trusted digital marketing agency in Kerala. Free audit & consultation. Call or WhatsApp now.",
   alternates: {
     canonical: "https://ivoniz.com/best-digital-marketing-company-in-calicut",
+    languages: {
+      "en-IN": "https://ivoniz.com/best-digital-marketing-company-in-calicut",
+      "x-default": "https://ivoniz.com/best-digital-marketing-company-in-calicut",
+    },
   },
   openGraph: {
     title: "Best Digital Marketing Company in Calicut | Ivoniz Pvt Ltd",
@@ -19,7 +23,22 @@ export const metadata = {
       "Ivoniz — the best digital marketing agency in Calicut. SEO, Google Ads, Social Media, Web & App Development. Serving Calicut and all of Kerala.",
     url: "https://ivoniz.com/best-digital-marketing-company-in-calicut",
     type: "website",
+    images: [
+      {
+        url: "/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Ivoniz Pvt Ltd — Best Digital Marketing Company in Calicut",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Digital Marketing Company in Calicut | Ivoniz Pvt Ltd",
+    description: "Ivoniz — the best digital marketing agency in Calicut. SEO, Google Ads, Social Media, Web & App Development.",
+    images: ["/web-app-manifest-512x512.png"],
+  },
+  robots: { index: true, follow: true },
 };
 
 /* ════════════════════════════════════════════════════════════════

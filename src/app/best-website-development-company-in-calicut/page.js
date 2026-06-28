@@ -7,11 +7,15 @@ import Footer from "@/components/Footer";
    METADATA — SEO Title / Meta Description / Canonical
    ════════════════════════════════════════════════════════════════ */
 export const metadata = {
-  title: "Best Website Development Company in Calicut | Ivoniz Pvt Ltd",
+  title: "Best Website Development Company in Calicut",
   description:
     "Ivoniz is the best website development company in Calicut and the best website company in Calicut for businesses that want fast, mobile-first, conversion-focused websites. Free website audit & consultation. Call or WhatsApp now.",
   alternates: {
     canonical: "https://ivoniz.com/best-website-development-company-in-calicut",
+    languages: {
+      "en-IN": "https://ivoniz.com/best-website-development-company-in-calicut",
+      "x-default": "https://ivoniz.com/best-website-development-company-in-calicut",
+    },
   },
   openGraph: {
     title: "Best Website Development Company in Calicut | Ivoniz Pvt Ltd",
@@ -19,7 +23,22 @@ export const metadata = {
       "Ivoniz — the best website development company in Calicut and the best website company in Calicut. Custom websites, e-commerce, and web apps built to convert.",
     url: "https://ivoniz.com/best-website-development-company-in-calicut",
     type: "website",
+    images: [
+      {
+        url: "/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Ivoniz Pvt Ltd — Best Website Development Company in Calicut",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Website Development Company in Calicut | Ivoniz Pvt Ltd",
+    description: "Ivoniz — the best website development company in Calicut and the best website company in Calicut.",
+    images: ["/web-app-manifest-512x512.png"],
+  },
+  robots: { index: true, follow: true },
 };
 
 /* ════════════════════════════════════════════════════════════════

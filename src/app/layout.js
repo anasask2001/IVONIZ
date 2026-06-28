@@ -38,6 +38,14 @@ export const metadata = {
   publisher: "Ivoniz Technologies Pvt Ltd",
   applicationName: "Ivoniz Pvt Ltd",
 
+  alternates: {
+    canonical: "https://ivoniz.com",
+    languages: {
+      "en-IN": "https://ivoniz.com",
+      "x-default": "https://ivoniz.com",
+    },
+  },
+
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -56,7 +64,7 @@ export const metadata = {
   },
 
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Ivoniz Pvt Ltd",
     description: "Leading mobile app and web development company.",
     images: ["/web-app-manifest-512x512.png"],
@@ -65,7 +73,12 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 
   appleWebApp: {
@@ -76,6 +89,9 @@ export const metadata = {
 };
 
 export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
   themeColor: "#000000",
 };
 

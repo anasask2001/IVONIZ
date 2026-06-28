@@ -4,10 +4,38 @@ import Footer from "@/components/Footer";
 import WorksGrid from "@/components/WorksGrid";
 
 export const metadata = {
-  title: "Our Works | Ivoniz Pvt Ltd",
+  title: "Our Works",
   description:
     "A selection of live websites Ivoniz has designed and built for clients across fashion, jewellery, healthcare, trading, and consulting.",
-  alternates: { canonical: "https://ivoniz.com/works" },
+  alternates: {
+    canonical: "https://ivoniz.com/works",
+    languages: {
+      "en-IN": "https://ivoniz.com/works",
+      "x-default": "https://ivoniz.com/works",
+    },
+  },
+  openGraph: {
+    title: "Our Works | Ivoniz Pvt Ltd",
+    description:
+      "A selection of live websites Ivoniz has designed and built for clients across fashion, jewellery, healthcare, trading, and consulting.",
+    url: "https://ivoniz.com/works",
+    type: "website",
+    images: [
+      {
+        url: "/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Ivoniz Pvt Ltd",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Works | Ivoniz Pvt Ltd",
+    description: "Live websites Ivoniz has designed and built for clients across Kerala.",
+    images: ["/web-app-manifest-512x512.png"],
+  },
+  robots: { index: true, follow: true },
 };
 
 /* Real client projects — linking directly to the live sites */
