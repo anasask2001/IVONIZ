@@ -48,7 +48,12 @@ export const organizationSchema = {
     { "@type": "State", name: "Kerala" },
     { "@type": "Country", name: "India" },
   ],
-  sameAs: ["https://maps.app.goo.gl/q6C1CnZSwnbcX2R47"],
+  sameAs: [
+    "https://maps.app.goo.gl/q6C1CnZSwnbcX2R47",
+    "https://www.instagram.com/ivoniz.pvt/",
+    "https://www.facebook.com/profile.php?id=61579264607681",
+    "https://www.linkedin.com/company/ivoniz-pvt-ltd/",
+  ],
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",

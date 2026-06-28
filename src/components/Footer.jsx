@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+
+const SOCIAL = [
+  { label: "Instagram", href: "https://www.instagram.com/ivoniz.pvt/", Icon: FaInstagram },
+  { label: "Facebook",  href: "https://www.facebook.com/profile.php?id=61579264607681", Icon: FaFacebook },
+  { label: "LinkedIn",  href: "https://www.linkedin.com/company/ivoniz-pvt-ltd/", Icon: FaLinkedin },
+];
 
 /* Each link points to a real, relevant page or in-page anchor —
    there are no standalone /services/* pages on this site. */
@@ -139,6 +145,21 @@ export default function Footer() {
                 <a href="https://wa.me/919645760023" target="_blank" rel="noreferrer" className="text-[13px] text-black/55 hover:text-black transition-colors">+91 96457 60023</a>
               </li>
             </ul>
+
+            <div className="flex items-center gap-3 mt-5">
+              {SOCIAL.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="h-8 w-8 grid place-items-center rounded-full border border-black/10 text-black/45 hover:text-black hover:border-black/25 transition-colors"
+                >
+                  <Icon className="text-[14px]" />
+                </a>
+              ))}
+            </div>
           </div>
 
         </div>
