@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { Geist, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -101,6 +102,17 @@ export default function RootLayout({ children }) {
         {/* ── Sitewide JSON-LD — Organization/LocalBusiness + WebSite ── */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+
+        {/* ── Google Analytics (gtag.js) — deferred until after hydration ── */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZJKMLK68Z3" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZJKMLK68Z3');
+          `}
+        </Script>
 
         <Navbar/>
         {children}
