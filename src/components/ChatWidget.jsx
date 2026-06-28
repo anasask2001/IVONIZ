@@ -513,12 +513,10 @@ export default function ChatWidget() {
         aria-label={open ? "Close chat" : "Open chat"}
         className="relative h-14 w-14 grid place-items-center rounded-full overflow-hidden hover:scale-105 transition-transform"
       >
-        <video
-          src="/chatbot-asset/chatbot_btn.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/chatbot-asset/chatbot.gif"
+          alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
         <GeminiIcon className="relative h-5.5 w-5.5 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.95)]" />
