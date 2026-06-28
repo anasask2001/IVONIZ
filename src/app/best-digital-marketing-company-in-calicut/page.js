@@ -188,6 +188,18 @@ const breadcrumbSchema = {
   ],
 };
 
+/* AEO — Speakable schema flags the quick-answer text for voice assistants
+   (Google Assistant, Siri) to read aloud as a direct spoken answer. */
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: "https://ivoniz.com/best-digital-marketing-company-in-calicut",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["#quick-answer"],
+  },
+};
+
 /* ════════════════════════════════════════════════════════════════
    SHARED UI BITS
    ════════════════════════════════════════════════════════════════ */
@@ -238,6 +250,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
 
       {/* ── HERO ── */}
       <section className="bg-black text-white pt-32 sm:pt-40 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 xl:px-16">
@@ -248,6 +261,18 @@ export default function BestDigitalMarketingCompanyInCalicut() {
           <h1 className="font-bold leading-[1.08] mb-6" style={{ fontSize: "clamp(32px,5vw,58px)" }}>
             Best Digital Marketing Company in Calicut
           </h1>
+
+          {/* AEO/GEO quick-answer — direct, self-contained, citable by
+              featured snippets, voice assistants, and AI answer engines. */}
+          <p
+            id="quick-answer"
+            className="text-white/80 text-base leading-relaxed max-w-2xl mb-6 border-l-2 border-white/25 pl-4"
+          >
+            Ivoniz Pvt Ltd is the best digital marketing company in Calicut, Kerala — a 4.9-star rated agency
+            offering SEO, Google Ads, social media marketing, and website development, headquartered at HiLITE
+            Business Park, Kozhikode.
+          </p>
+
           <p className="text-white/65 text-lg leading-relaxed max-w-2xl mb-4">
             Ivoniz is the <strong className="text-white">best digital marketing agency in Calicut</strong>, helping
             local and national brands grow with SEO, Google Ads, social media marketing, and conversion-focused
