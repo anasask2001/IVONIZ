@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaArrowRight, FaStar, FaWhatsapp, FaRegFileAlt, FaMapMarkerAlt, FaChartLine, FaBullseye, FaCheckCircle } from "react-icons/fa";
 import { IoMdCall } from "react-icons/io";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 
 /* ════════════════════════════════════════════════════════════════
@@ -241,7 +242,8 @@ export default function BestDigitalMarketingCompanyInKochi() {
       {/* ── HERO ── */}
       <section className="bg-black text-white pt-32 sm:pt-40 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-5xl">
-          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/40 mb-5">
+          <Breadcrumbs dark items={[{ label: "Best Digital Marketing Company in Kochi", href: "/best-digital-marketing-company-in-kochi" }]} />
+          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/40 mt-4 mb-5">
             Ivoniz Pvt Ltd · Serving Kochi &amp; Ernakulam
           </p>
           <h1 className="font-bold leading-[1.08] mb-6" style={{ fontSize: "clamp(32px,5vw,58px)" }}>

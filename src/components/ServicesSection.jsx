@@ -155,7 +155,7 @@ export default function ServicesSection({ services }) {
                   </h2>
                 </div>
                 <Link
-                  href="/services"
+                  href="/about"
                   className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/25 text-white text-[13px] font-medium whitespace-nowrap hover:bg-white hover:text-black transition-all duration-300 shrink-0"
                 >
                   View all Services <FaArrowRight className="text-[12px]" />

@@ -16,8 +16,8 @@ import { webPageSchema, ORG_ID } from "@/lib/schema";
    shown below via GoogleReviews. ──────────────────────────────── */
 const homePageSchema = webPageSchema({
   url: "https://ivoniz.com/",
-  name: "Ivoniz Pvt Ltd — Mobile App & Web Development",
-  description: "Leading mobile app and web development company. We build scalable apps, websites, and AI tools to grow your business.",
+  name: "Ivoniz Pvt Ltd | Web & App Development Company in Kerala",
+  description: "Ivoniz Pvt Ltd is a leading web development, mobile app development, and digital marketing company in Kozhikode, Kerala. We build scalable apps, websites, and AI tools to grow your business.",
 });
 
 const homeServiceSchema = {
@@ -86,7 +86,7 @@ const SERVICES = [
       "Native App Development (iOS / Android)",
       "AI-Powered App Features",
     ],
-    href: "/services/app-development",
+    href: "/#our-services",
   },
   {
     number: "02",
@@ -97,7 +97,7 @@ const SERVICES = [
       "Responsive Web Design",
       "Landing Page & Portfolio Design",
     ],
-    href: "/services/website-design",
+    href: "/best-website-development-company-in-calicut",
   },
   {
     number: "03",
@@ -108,15 +108,15 @@ const SERVICES = [
       "Web Application & Portal Development",
       "API & Backend Development",
     ],
-    href: "/services/web-development",
+    href: "/best-website-development-company-in-calicut",
   },
 ];
 
 const WORKS = [
-  { id: 1, title: "Arlocks Gents Wear", category: "E-Commerce", year: "2024", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/portfolio" },
-  { id: 2, title: "TechFlow Dashboard",  category: "Web App",    year: "2024", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/portfolio" },
-  { id: 3, title: "FoodieSpot",          category: "Mobile App", year: "2024", image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/portfolio" },
-  { id: 4, title: "Luxe Interiors",      category: "Website",    year: "2023", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/portfolio" },
+  { id: 1, title: "Arlocks Gents Wear", category: "E-Commerce", year: "2024", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/works" },
+  { id: 2, title: "TechFlow Dashboard",  category: "Web App",    year: "2024", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/works" },
+  { id: 3, title: "FoodieSpot",          category: "Mobile App", year: "2024", image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/works" },
+  { id: 4, title: "Luxe Interiors",      category: "Website",    year: "2023", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/works" },
 ];
 
 const PARTNERS = ["React","Next.js","Flutter","Node.js","MongoDB","AWS","Firebase","WordPress","Figma","PostgreSQL","Shopify","Tailwind CSS"];
@@ -191,23 +191,23 @@ export default function Home() {
           className="relative flex flex-col justify-end px-6 sm:px-10 lg:px-14 xl:px-20 pb-12 lg:pb-16"
           style={{ zIndex: 3, minHeight: "100vh" }}
         >
-          {/* Text block */}
-          <div className="mb-8 lg:mb-10">
-            <motion.p
+          {/* Text block — the page's single H1 */}
+          <h1 className="mb-8 lg:mb-10 m-0">
+            <motion.span
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="font-light select-none"
+              className="font-light select-none block"
               style={{ fontSize: "clamp(72px, 11.5vw, 175px)", lineHeight: 0.87, letterSpacing: "-0.025em", color: "#D9D9D9" }}
             >
               We
-            </motion.p>
+            </motion.span>
 
-            <motion.p
+            <motion.span
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-              className="font-light select-none"
+              className="font-light select-none block"
               style={{
                 fontSize: "clamp(72px, 11.5vw, 175px)",
                 lineHeight: 0.87,
@@ -218,13 +218,13 @@ export default function Home() {
               }}
             >
               develop
-            </motion.p>
+            </motion.span>
 
-            <div className="select-none" style={{ overflow: "hidden", lineHeight: 0.87 }}>
+            <span className="select-none block" style={{ overflow: "hidden", lineHeight: 0.87 }}>
               <AnimatePresence mode="wait">
-                <motion.p
+                <motion.span
                   key={wordIndex}
-                  className="font-light"
+                  className="font-light block"
                   style={{
                     fontSize: "clamp(72px, 11.5vw, 175px)",
                     lineHeight: 0.87,
@@ -237,10 +237,10 @@ export default function Home() {
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {HERO_WORDS[wordIndex]}
-                </motion.p>
+                </motion.span>
               </AnimatePresence>
-            </div>
-          </div>
+            </span>
+          </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -405,7 +405,7 @@ export default function Home() {
       </section>
 
       {/* ── CLIENTS ──────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#060606] overflow-hidden">
+      <section id="clients" className="py-20 bg-[#060606] overflow-hidden">
         <p className="text-center text-[11px] font-semibold tracking-[0.22em] uppercase text-white/22 mb-12">
           Trusted by businesses across Kerala &amp; beyond
         </p>

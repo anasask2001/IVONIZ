@@ -6,6 +6,7 @@ import { FaArrowRight, FaStar } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import AboutHero from "@/components/AboutHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -74,6 +75,12 @@ export default function AboutPage() {
 
       {/* ── HERO ── */}
       <AboutHero />
+
+      <div className="px-4 sm:px-6 lg:px-10 xl:px-16 pt-6 bg-white">
+        <div className="mx-auto max-w-350">
+          <Breadcrumbs items={[{ label: "About", href: "/about" }]} />
+        </div>
+      </div>
 
       {/* ── DESIGN / BUILD / MARKET PILLARS ── */}
       {PILLARS.map((p, i) => (

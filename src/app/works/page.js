@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import WorksGrid from "@/components/WorksGrid";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { webPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 const pageSchema = webPageSchema({
@@ -124,7 +125,8 @@ export default function WorksPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumb) }} />
       <section className="pt-32 sm:pt-40 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-350">
-          <h1 className="font-semibold text-3xl sm:text-4xl text-black">
+          <Breadcrumbs items={[{ label: "Works", href: "/works" }]} />
+          <h1 className="font-semibold text-3xl sm:text-4xl text-black mt-4">
             Our works
           </h1>
           <p className="text-black/50 text-lg max-w-xl mt-6">

@@ -13,12 +13,10 @@ export default function Navbar() {
   const nav = useMemo(
     () => [
       { label: "Home",      href: "/" },
-      { label: "Solutions", href: "/solutions" },
-      { label: "Services",  href: "/services", mega: "services" },
+      { label: "Services",  href: "/#our-services", mega: "services" },
       { label: "Works",     href: "/works" },
-      { label: "Clients",   href: "/clients" },
+      { label: "Clients",   href: "/#clients" },
       { label: "About",     href: "/about" },
-      { label: "Careers",   href: "/careers" },
       { label: "Contact",   href: "/contact" },
     ],
     []
@@ -78,54 +76,56 @@ export default function Navbar() {
   const delayClose = ()    => { megaTimer.current = setTimeout(() => setActiveMega(null), 160); };
   const closeNow   = ()    => { clearTimeout(megaTimer.current); setActiveMega(null); };
 
+  /* Each link points to a real, relevant page or in-page anchor —
+     there are no standalone /services/* pages on this site. */
   const servicesCols = useMemo(() => [
     {
       title: "Mobile App",
       links: [
-        { label: "Flutter Development", href: "/services/flutter-development" },
-        { label: "iOS Development",      href: "/services/ios-development" },
-        { label: "Android Development",  href: "/services/android-development" },
-        { label: "Native Development",   href: "/services/native-development" },
+        { label: "Flutter Development", href: "/#our-services" },
+        { label: "iOS Development",      href: "/#our-services" },
+        { label: "Android Development",  href: "/#our-services" },
+        { label: "Native Development",   href: "/#our-services" },
       ],
     },
     {
       title: "Web Development",
       links: [
-        { label: "E-Commerce Website",  href: "/services/ecommerce-website" },
-        { label: "WooCommerce Website", href: "/services/woocommerce-website" },
-        { label: "Catalogue Website",   href: "/services/catalogue-website" },
-        { label: "Portal Website",      href: "/services/portal-website" },
-        { label: "WordPress Website",   href: "/services/wordpress-website" },
-        { label: "Static Website",      href: "/services/static-website" },
+        { label: "E-Commerce Website",  href: "/best-website-development-company-in-calicut" },
+        { label: "WooCommerce Website", href: "/best-website-development-company-in-calicut" },
+        { label: "Catalogue Website",   href: "/best-website-development-company-in-calicut" },
+        { label: "Portal Website",      href: "/best-website-development-company-in-calicut" },
+        { label: "WordPress Website",   href: "/best-website-development-company-in-calicut" },
+        { label: "Static Website",      href: "/best-website-development-company-in-calicut" },
       ],
     },
     {
       title: "Software",
       links: [
-        { label: "ERP Software",     href: "/services/erp-software" },
-        { label: "CRM Software",     href: "/services/crm-software" },
-        { label: "Billing Software", href: "/services/billing-software" },
+        { label: "ERP Software",     href: "/#our-services" },
+        { label: "CRM Software",     href: "/#our-services" },
+        { label: "Billing Software", href: "/#our-services" },
       ],
     },
     {
       title: "Digital Marketing",
       links: [
-        { label: "SEO", href: "/services/seo" },
-        { label: "SMM", href: "/services/smm" },
-        { label: "SEM", href: "/services/sem" },
+        { label: "SEO", href: "/best-digital-marketing-company-in-calicut" },
+        { label: "SMM", href: "/best-digital-marketing-company-in-calicut" },
+        { label: "SEM", href: "/best-digital-marketing-company-in-calicut" },
       ],
     },
     {
       title: "Branding",
       links: [
-        { label: "Logo Designing",     href: "/services/logo-designing" },
-        { label: "Brochure Designing", href: "/services/brochure-designing" },
+        { label: "Logo Designing",     href: "/#our-services" },
+        { label: "Brochure Designing", href: "/#our-services" },
       ],
     },
     {
       title: "UI / UX",
       links: [
-        { label: "UI/UX Design", href: "/services/ui-ux-design" },
+        { label: "UI/UX Design", href: "/best-website-development-company-in-calicut" },
       ],
     },
   ], []);

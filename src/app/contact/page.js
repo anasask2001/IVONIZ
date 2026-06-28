@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const FIELD_BASE =
   "w-full bg-[#161616] border border-white/10 rounded-lg px-4 py-3.5 sm:py-3 text-[15px] sm:text-[14px] text-white placeholder:text-white/30 focus:outline-none focus:border-white/30 focus:bg-[#1c1c1c] transition-colors";
@@ -69,9 +70,10 @@ export default function ContactPage() {
 
           {/* ── LEFT: heading + description + quick actions ── */}
           <div>
+            <Breadcrumbs dark items={[{ label: "Contact", href: "/contact" }]} />
             <motion.h1
               {...fadeUp(0)}
-              className="font-bold leading-[1.08] mb-5 sm:mb-6"
+              className="font-bold leading-[1.08] mb-5 sm:mb-6 mt-4"
               style={{ fontSize: "clamp(34px, 6vw, 64px)" }}
             >
               Have a Project<br />in Mind?

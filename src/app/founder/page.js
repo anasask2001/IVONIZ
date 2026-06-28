@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -69,7 +70,8 @@ export default function FounderPage() {
           </motion.div>
 
           <div>
-            <motion.p {...fadeUp(0.05)} className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/40 mb-5">
+            <Breadcrumbs dark items={[{ label: "Founder", href: "/founder" }]} />
+            <motion.p {...fadeUp(0.05)} className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/40 mt-4 mb-5">
               About the Founder
             </motion.p>
             <motion.h1
