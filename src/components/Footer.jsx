@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaArrowRight, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 
 const SOCIAL = [
@@ -79,8 +80,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-1 mb-5">
-              <img src="/icons/ivoniz-logo1.png" alt="Ivoniz"
-                style={{ width: "44px", height: "44px", objectFit: "contain" }} />
+              <Image src="/icons/ivoniz-logo1.png" alt="Ivoniz"
+                width={44} height={44} style={{ objectFit: "contain" }} />
               <span style={{ fontSize: "19px", fontWeight: 700, letterSpacing: "0.08em", color: "#000", lineHeight: 1 }}>
                 IVONIZ
               </span>

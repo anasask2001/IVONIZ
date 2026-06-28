@@ -89,7 +89,7 @@ export default function AboutHero() {
           ref={videoRef}
           className="w-full h-full"
           style={{
-            backgroundImage: "url('/about-assets/about-hero.gif')",
+            backgroundImage: "url('/about-assets/about-hero.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

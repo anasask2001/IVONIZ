@@ -166,10 +166,12 @@ export default function Navbar() {
             {searchOpen ? (
               <div className="flex items-center gap-3 sm:gap-4 w-full">
                 <Link href="/" className="inline-flex items-center gap-2 shrink-0 select-none">
-                  <img
+                  <Image
                     src="/icons/ivoniz-logo1.png"
                     alt=""
-                    style={{ width: "38px", height: "38px", objectFit: "contain", filter: "invert(1)" }}
+                    width={38}
+                    height={38}
+                    style={{ objectFit: "contain", filter: "invert(1)" }}
                   />
                   <span
                     className="hidden sm:inline"
@@ -203,12 +205,13 @@ export default function Navbar() {
 
             {/* ── LOGO ── */}
             <Link href="/" className="inline-flex items-center gap-2 shrink-0 select-none">
-              <img
+              <Image
                 src="/icons/ivoniz-logo1.png"
                 alt=""
+                width={48}
+                height={48}
+                priority
                 style={{
-                  width    : "48px",
-                  height   : "48px",
                   objectFit: "contain",
                   filter   : dark ? "invert(1)" : "none",
                   transition: "filter 0.4s ease",

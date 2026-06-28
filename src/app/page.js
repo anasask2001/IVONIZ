@@ -2,15 +2,22 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import Footer from "@/components/Footer";
-import ServicesSection from "@/components/ServicesSection";
-import ShowcaseSections from "@/components/ShowcaseSections";
-import GoogleReviews from "@/components/GoogleReviews";
-import SelectedWorks from "@/components/SelectedWorks";
+import LazyVideo from "@/components/LazyVideo";
 import { webPageSchema, ORG_ID } from "@/lib/schema";
+
+/* Code-split below-the-fold sections — still statically prerendered
+   (no ssr:false) so content stays in the static HTML for SEO/no-JS,
+   but each ships as its own chunk instead of bloating the page's
+   main bundle with GSAP/ScrollTrigger logic nobody needs at first paint. */
+const ServicesSection  = dynamic(() => import("@/components/ServicesSection"));
+const ShowcaseSections = dynamic(() => import("@/components/ShowcaseSections"));
+const GoogleReviews    = dynamic(() => import("@/components/GoogleReviews"));
+const SelectedWorks    = dynamic(() => import("@/components/SelectedWorks"));
 
 /* ── JSON-LD — WebPage, Service catalog, and the real testimonials
    shown below via GoogleReviews. ──────────────────────────────── */
@@ -157,7 +164,7 @@ export default function Home() {
       >
         {/* Background video */}
         <video
-          autoPlay muted loop playsInline
+          autoPlay muted loop playsInline preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ zIndex: 0 }}
         >
@@ -441,13 +448,11 @@ export default function Home() {
       {/* ── CTA BANNER ───────────────────────────────────────────── */}
       <section className="relative overflow-hidden py-16 sm:py-24 lg:py-36 px-4 sm:px-6 lg:px-10 xl:px-16">
         {/* Background video */}
-        <video
-          autoPlay muted loop playsInline
+        <LazyVideo
+          src="/video/all/next-gen/ivoniz-pvt-ltd-Next-Gen.mp4"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ zIndex: 0 }}
-        >
-          <source src="/video/all/next-gen/ivoniz-pvt-ltd-Next-Gen.mp4" type="video/mp4" />
-        </video>
+        />
         {/* Dark overlay so text stays readable */}
         <div className="absolute inset-0" style={{ zIndex: 1, background: "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.70) 100%)" }} />
 

@@ -515,7 +515,7 @@ export default function ChatWidget() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/chatbot-asset/chatbot.gif"
+          src="/chatbot-asset/chatbot.webp"
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />

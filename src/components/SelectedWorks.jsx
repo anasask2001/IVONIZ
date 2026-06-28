@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 
 /*
@@ -62,11 +63,13 @@ export default function SelectedWorks({ works }) {
           onMouseEnter={handleEnter(i)}
           onMouseLeave={handleLeave(i)}
         >
-          <img
+          <Image
             ref={(el) => (imgRefs.current[i] = el)}
             src={work.image}
             alt={work.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            sizes="(max-width: 640px) 100vw, 33vw"
+            className="object-cover"
             style={{ willChange: "transform" }}
           />
 

@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+import LazyVideo from "./LazyVideo";
 
 const SLIDES = [
   {
@@ -123,11 +124,10 @@ export default function ShowcaseSections() {
             style={{ ...slide.vPos, width: "clamp(120px,20vw,280px)", zIndex: 1 }}
           >
             <div ref={el => (vidRef.current[i] = el)}>
-              <video autoPlay muted loop playsInline
+              <LazyVideo
+                src={slide.video}
                 style={{ width: "100%", height: "auto", display: "block", mixBlendMode: "screen" }}
-              >
-                <source src={slide.video} type="video/mp4" />
-              </video>
+              />
             </div>
           </div>
         ))}

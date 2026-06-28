@@ -2,11 +2,15 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 import Footer from "@/components/Footer";
-import FloatingOrbs from "@/components/FloatingOrbs";
 import AboutHero from "@/components/AboutHero";
 import Breadcrumbs from "@/components/Breadcrumbs";
+
+/* Purely decorative background animation — no content, safe to skip
+   prerendering entirely and load only client-side. */
+const FloatingOrbs = dynamic(() => import("@/components/FloatingOrbs"), { ssr: false });
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -235,7 +239,7 @@ export default function AboutPage() {
               className="hidden lg:block rounded-2xl overflow-hidden"
               style={{
                 minHeight: "100%",
-                backgroundImage: "url('/about-assets/graphic.gif')",
+                backgroundImage: "url('/about-assets/graphic.webp')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -323,7 +327,7 @@ export default function AboutPage() {
       <section
         className="relative py-14 sm:py-16 px-4 sm:px-6 lg:px-10 xl:px-16 bg-black text-white overflow-hidden"
         style={{
-          backgroundImage: "url('/about-assets/delirium lab.gif')",
+          backgroundImage: "url('/about-assets/delirium lab.webp')",
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

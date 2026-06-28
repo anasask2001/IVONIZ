@@ -1,17 +1,12 @@
-import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
+import { Geist, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import RightQuickActions from "@/components/RightQuickActions";
-import ChatWidget from "@/components/ChatWidget";
+import ChatWidgetLoader from "@/components/ChatWidgetLoader";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -100,7 +95,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${openSans.variable} antialiased`}
+        className={`${geistSans.variable} ${openSans.variable} antialiased`}
         suppressHydrationWarning
       >
         {/* ── Sitewide JSON-LD — Organization/LocalBusiness + WebSite ── */}
@@ -110,7 +105,7 @@ export default function RootLayout({ children }) {
         <Navbar/>
         {children}
         <RightQuickActions/>
-        <ChatWidget/>
+        <ChatWidgetLoader/>
       </body>
     </html>
   );

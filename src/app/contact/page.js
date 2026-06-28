@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -122,7 +123,7 @@ export default function ContactPage() {
                 className="shrink-0 w-14 h-14 rounded-lg flex items-center justify-center overflow-hidden"
                 style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03))" }}
               >
-                <img src="/pdf/pdf.png" alt="" className="w-9 h-9 object-contain" />
+                <Image src="/pdf/pdf-icon.webp" alt="" width={36} height={36} className="w-9 h-9 object-contain" />
               </div>
               <div>
                 <p className="font-semibold text-white text-[14px] leading-tight">Download Our Brochure</p>
