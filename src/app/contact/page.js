@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const FIELD_BASE =
-  "w-full bg-[#161616] border border-white/10 rounded-lg px-4 py-3.5 sm:py-3 text-[15px] sm:text-[14px] text-white placeholder:text-white/30 focus:outline-none focus:border-white/30 focus:bg-[#1c1c1c] transition-colors";
+  "w-full bg-[#161616] border border-white/10 rounded-lg px-4 py-3.5 sm:py-3 text-[15px] sm:text-[14px] text-white placeholder:text-white/55 focus:outline-none focus:border-white/30 focus:bg-[#1c1c1c] transition-colors";
 
 const SERVICES = [
   "App Development",
@@ -47,7 +47,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-black text-white relative overflow-hidden">
+    <main id="main-content" className="bg-black text-white relative overflow-hidden">
 
       {/* ── decorative background glow + grid ── */}
       <div
@@ -82,7 +82,7 @@ export default function ContactPage() {
 
             <motion.p
               {...fadeUp(0.08)}
-              className="text-white/45 text-[15px] sm:text-[16px] leading-relaxed max-w-md mb-7 sm:mb-9"
+              className="text-white/60 text-[15px] sm:text-[16px] leading-relaxed max-w-md mb-7 sm:mb-9"
             >
               Tell us about your requirements. We&apos;ll review your needs and provide the right
               solution, timeline, and pricing for your business.
@@ -127,7 +127,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-semibold text-white text-[14px] leading-tight">Download Our Brochure</p>
-                <p className="text-white/40 text-[12px] mt-1 flex items-center gap-1.5">
+                <p className="text-white/60 text-[12px] mt-1 flex items-center gap-1.5">
                   PDF · 2.8 MB
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="group-hover:translate-y-0.5 transition-transform">
                     <path d="M12 3v13m0 0-5-5m5 5 5-5M5 21h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -191,7 +191,7 @@ export default function ContactPage() {
               <select
                 value={form.service}
                 onChange={update("service")}
-                className={`${FIELD_BASE} appearance-none cursor-pointer ${form.service ? "" : "text-white/30"}`}
+                className={`${FIELD_BASE} appearance-none cursor-pointer ${form.service ? "" : "text-white/55"}`}
                 style={{
                   backgroundImage:
                     "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23ffffff80' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
@@ -223,11 +223,11 @@ export default function ContactPage() {
               type="submit"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-13 sm:h-12 px-7 bg-white text-black text-[14px] font-bold rounded-full hover:bg-white/90 active:scale-[0.98] transition-all"
             >
-              Send Enquiry <FaArrowRight className="text-[13px]" />
+              Send Enquiry <FaArrowRight aria-hidden="true" className="text-[13px]" />
             </button>
 
             {sent && (
-              <p className="text-white/40 text-[13px] mt-4">
+              <p className="text-white/60 text-[13px] mt-4">
                 Opening your email client to send this enquiry to info@ivoniz.com…
               </p>
             )}

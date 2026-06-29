@@ -140,7 +140,7 @@ export default function ServicesSection({ services }) {
                 <div>
                   <div className="flex items-center gap-2.5 mb-3">
                     <span className="text-[10px] text-white" style={{ lineHeight: 1 }}>▶</span>
-                    <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/40">Our Services</span>
+                    <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/60">Our Services</span>
                   </div>
                   <h2
                     className="text-white leading-tight"
@@ -158,7 +158,7 @@ export default function ServicesSection({ services }) {
                   href="/about"
                   className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/25 text-white text-[13px] font-medium whitespace-nowrap hover:bg-white hover:text-black transition-all duration-300 shrink-0"
                 >
-                  View all Services <FaArrowRight className="text-[12px]" />
+                  View all Services <FaArrowRight aria-hidden="true" className="text-[12px]" />
                 </Link>
               </div>
             )}
@@ -193,12 +193,12 @@ export default function ServicesSection({ services }) {
                   <h3 className="font-bold text-white leading-none tracking-[-0.02em]" style={{ fontSize: "clamp(30px, 7vw, 80px)" }}>
                     {svc.title}
                   </h3>
-                  <Link href={svc.href} className="hidden sm:flex items-center gap-1.5 text-white/40 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors shrink-0 mt-3 group">
+                  <Link href={svc.href} className="hidden sm:flex items-center gap-1.5 text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors shrink-0 mt-3 group">
                     <span className="group-hover:text-white transition-colors">+</span>&nbsp;KNOW MORE
                   </Link>
                 </div>
 
-                <p ref={(el) => (descRefs.current[i] = el)} className="text-white/45 text-[14px] sm:text-[15px] lg:text-[16px] leading-relaxed max-w-xl mb-4 sm:mb-6 lg:mb-10">
+                <p ref={(el) => (descRefs.current[i] = el)} className="text-white/60 text-[14px] sm:text-[15px] lg:text-[16px] leading-relaxed max-w-xl mb-4 sm:mb-6 lg:mb-10">
                   {svc.description}
                 </p>
 
@@ -206,12 +206,12 @@ export default function ServicesSection({ services }) {
 
                 {svc.items.map((item, j) => (
                   <div key={j} ref={setItem(i, j)} className="flex items-center gap-4 py-3 sm:py-4 lg:py-5 border-b border-white/8 cursor-default group/item">
-                    <span className="text-white/20 text-[13px] font-medium w-5 shrink-0">{j + 1}.</span>
+                    <span className="text-white/55 text-[13px] font-medium w-5 shrink-0">{j + 1}.</span>
                     <span className="text-white/75 text-[14px] sm:text-[16px] lg:text-[17px] font-medium group-hover/item:text-white transition-colors duration-200">{item}</span>
                   </div>
                 ))}
 
-                <Link href={svc.href} className="sm:hidden inline-flex items-center gap-1.5 mt-8 text-white/40 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors">
+                <Link href={svc.href} className="sm:hidden inline-flex items-center gap-1.5 mt-8 text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors">
                   + KNOW MORE
                 </Link>
               </div>

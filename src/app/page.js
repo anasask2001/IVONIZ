@@ -148,7 +148,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-white text-black overflow-x-hidden">
+    <main id="main-content" className="bg-white text-black overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeServiceSchema) }} />
       {homeReviewSchema.map((r, i) => (
@@ -253,7 +253,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="text-white/45 text-[14px] sm:text-[15px] tracking-[0.04em]"
+            className="text-white/60 text-[14px] sm:text-[15px] tracking-[0.04em]"
           >
             Ivoniz — the complete solution for business
           </motion.p>
@@ -271,7 +271,7 @@ export default function Home() {
               {/* Label */}
               <div className="flex items-center gap-2.5 mb-6 sm:mb-8 lg:mb-12">
                 <span className="text-[10px] text-white" style={{ lineHeight: 1 }}>▶</span>
-                <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/45">
+                <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/60">
                   About Company
                 </span>
               </div>
@@ -316,7 +316,7 @@ export default function Home() {
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-white/25 text-[15px] font-medium text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 group"
                 >
                   About us
-                  <FiArrowUpRight className="text-[15px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                  <FiArrowUpRight aria-hidden="true" className="text-[15px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                 </Link>
               </motion.div>
             </div>
@@ -371,7 +371,7 @@ export default function Home() {
                 >
                   {value}
                 </span>
-                <span className="text-[13px] sm:text-[14px] text-white/40 font-normal leading-snug max-w-32">
+                <span className="text-[13px] sm:text-[14px] text-white/60 font-normal leading-snug max-w-32">
                   {label}
                 </span>
               </motion.div>
@@ -390,10 +390,10 @@ export default function Home() {
         <div className="mx-auto max-w-[1400px]">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 lg:mb-16 gap-6">
             <div>
-              <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/35 mb-5">Our Work</p>
+              <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-5">Our Work</p>
               <h2 className="text-4xl sm:text-5xl font-bold leading-tight">Selected works</h2>
             </div>
-            <Link href="/works" className="inline-flex items-center gap-2 text-[14px] font-medium text-black/50 hover:text-black transition-colors">View All <FaArrowRight className="text-[12px]" /></Link>
+            <Link href="/works" className="inline-flex items-center gap-2 text-[14px] font-medium text-black/50 hover:text-black transition-colors">View All <FaArrowRight aria-hidden="true" className="text-[12px]" /></Link>
           </div>
           <SelectedWorks works={WORKS} />
         </div>
@@ -401,11 +401,11 @@ export default function Home() {
 
       {/* ── PARTNERS ─────────────────────────────────────────────── */}
       <section className="py-16 bg-white border-y border-black/7 overflow-hidden">
-        <p className="text-center text-[11px] font-semibold tracking-[0.22em] uppercase text-black/25 mb-10">Technologies We Work With</p>
+        <p className="text-center text-[11px] font-semibold tracking-[0.22em] uppercase text-black/55 mb-10">Technologies We Work With</p>
         <div className="overflow-hidden">
           <div className="flex animate-marquee gap-20 whitespace-nowrap">
             {[...PARTNERS, ...PARTNERS].map((name, i) => (
-              <span key={i} className="text-[14px] font-semibold text-black/25 tracking-wide flex-shrink-0">{name}</span>
+              <span key={i} className="text-[14px] font-semibold text-black/55 tracking-wide flex-shrink-0">{name}</span>
             ))}
           </div>
         </div>
@@ -413,13 +413,13 @@ export default function Home() {
 
       {/* ── CLIENTS ──────────────────────────────────────────────── */}
       <section id="clients" className="py-20 bg-[#060606] overflow-hidden">
-        <p className="text-center text-[11px] font-semibold tracking-[0.22em] uppercase text-white/22 mb-12">
+        <p className="text-center text-[11px] font-semibold tracking-[0.22em] uppercase text-white/55 mb-12">
           Trusted by businesses across Kerala &amp; beyond
         </p>
         <div className="overflow-hidden">
           <div className="flex animate-marquee gap-24 whitespace-nowrap">
             {[...CLIENTS, ...CLIENTS].map((name, i) => (
-              <span key={i} className="text-[15px] font-semibold text-white/30 tracking-wide flex-shrink-0 hover:text-white/60 transition-colors cursor-default">
+              <span key={i} className="text-[15px] font-semibold text-white/55 tracking-wide flex-shrink-0 hover:text-white/60 transition-colors cursor-default">
                 {name}
               </span>
             ))}
@@ -428,7 +428,7 @@ export default function Home() {
         <div className="overflow-hidden mt-8">
           <div className="flex animate-marquee-reverse gap-24 whitespace-nowrap">
             {[...CLIENTS].reverse().concat([...CLIENTS].reverse()).map((name, i) => (
-              <span key={i} className="text-[13px] font-medium text-white/18 tracking-wider flex-shrink-0">
+              <span key={i} className="text-[13px] font-medium text-white/55 tracking-wider flex-shrink-0">
                 {name}
               </span>
             ))}
@@ -439,7 +439,7 @@ export default function Home() {
       {/* ── TESTIMONIALS ─────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-10 xl:px-16 bg-[#f8f8f8]">
         <div className="mx-auto max-w-350">
-          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/35 mb-5">Testimonials</p>
+          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-5">Testimonials</p>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 sm:mb-10">What clients say.</h2>
           <GoogleReviews />
         </div>
@@ -464,7 +464,7 @@ export default function Home() {
             Let&apos;s build something great together. Reach out and tell us about your idea.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 h-[54px] px-10 bg-white text-black text-[14px] font-bold tracking-[0.04em] rounded-full hover:bg-white/90 transition-colors">
-            Get in Touch <FaArrowRight className="text-[13px]" />
+            Get in Touch <FaArrowRight aria-hidden="true" className="text-[13px]" />
           </Link>
         </div>
       </section>

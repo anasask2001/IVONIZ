@@ -6,7 +6,7 @@ import Link from "next/link";
  * Pairs with the BreadcrumbList JSON-LD already on each page (src/lib/schema.js).
  */
 export default function Breadcrumbs({ items, dark = false }) {
-  const textColor = dark ? "text-white/40" : "text-black/40";
+  const textColor = dark ? "text-white/60" : "text-black/60";
   const hoverColor = dark ? "hover:text-white" : "hover:text-black";
   const currentColor = dark ? "text-white/80" : "text-black/70";
 

@@ -52,7 +52,7 @@ function Section({ className = "", children }) {
 
 export default function FounderPage() {
   return (
-    <main className="bg-white text-black">
+    <main id="main-content" className="bg-white text-black">
 
       {/* ── HERO ── */}
       <section className="bg-black text-white pt-32 sm:pt-40 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-10 xl:px-16">
@@ -71,7 +71,7 @@ export default function FounderPage() {
 
           <div>
             <Breadcrumbs dark items={[{ label: "Founder", href: "/founder" }]} />
-            <motion.p {...fadeUp(0.05)} className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/40 mt-4 mb-5">
+            <motion.p {...fadeUp(0.05)} className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
               About the Founder
             </motion.p>
             <motion.h1
@@ -82,7 +82,7 @@ export default function FounderPage() {
               Building a Vision<br />Beyond Boundaries
             </motion.h1>
             <motion.p {...fadeUp(0.15)} className="font-bold text-2xl mb-1">Muhammed Anas</motion.p>
-            <motion.p {...fadeUp(0.18)} className="text-white/45 text-[15px]">
+            <motion.p {...fadeUp(0.18)} className="text-white/60 text-[15px]">
               Founder &amp; Managing Director, Ivoniz Pvt Ltd
             </motion.p>
           </div>
@@ -231,7 +231,7 @@ export default function FounderPage() {
                 </li>
               ))}
             </ul>
-            <p className="text-black/45 text-[14px] leading-relaxed mt-6">
+            <p className="text-black/60 text-[14px] leading-relaxed mt-6">
               This philosophy continues to guide every project delivered by Ivoniz.
             </p>
           </motion.div>
@@ -259,7 +259,7 @@ export default function FounderPage() {
       {/* ── MESSAGE FROM THE FOUNDER ── */}
       <Section className="bg-black text-white">
         <motion.div {...fadeUp(0)} className="max-w-3xl">
-          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/40 mb-6">
+          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mb-6">
             A Message from the Founder
           </p>
           <p
@@ -279,7 +279,7 @@ export default function FounderPage() {
             build something impactful.&rdquo;
           </p>
           <p className="font-bold text-lg">— Muhammed Anas</p>
-          <p className="text-white/45 text-[14px] mt-1">Founder &amp; Managing Director, Ivoniz Pvt Ltd</p>
+          <p className="text-white/60 text-[14px] mt-1">Founder &amp; Managing Director, Ivoniz Pvt Ltd</p>
         </motion.div>
       </Section>
 
@@ -293,7 +293,7 @@ export default function FounderPage() {
           href="/contact"
           className="inline-flex items-center gap-2 h-13 px-8 bg-black text-white text-sm font-bold tracking-wide rounded-full hover:bg-black/85 transition-colors"
         >
-          Get in Touch <FaArrowRight className="text-[13px]" />
+          Get in Touch <FaArrowRight aria-hidden="true" className="text-[13px]" />
         </Link>
       </Section>
 

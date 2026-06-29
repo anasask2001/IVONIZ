@@ -207,7 +207,7 @@ function CTAButtons() {
         href="/contact"
         className="inline-flex items-center gap-2 h-13 px-8 bg-black text-white text-sm font-bold tracking-wide rounded-full hover:bg-black/85 transition-colors"
       >
-        Book a Free Strategy Session <FaArrowRight className="text-[13px]" />
+        Book a Free Strategy Session <FaArrowRight aria-hidden="true" className="text-[13px]" />
       </Link>
       <a
         href="https://wa.me/919645760023?text=Hi%20Ivoniz%2C%20I%20want%20a%20free%20audit%20from%20your%20digital%20marketing%20agency%20in%20Kochi."
@@ -215,7 +215,7 @@ function CTAButtons() {
         rel="noreferrer"
         className="inline-flex items-center gap-2 h-13 px-8 border border-black/15 text-black text-sm font-bold tracking-wide rounded-full hover:bg-black hover:text-white transition-colors"
       >
-        WhatsApp Us <FaArrowRight className="text-[13px]" />
+        WhatsApp Us <FaArrowRight aria-hidden="true" className="text-[13px]" />
       </a>
       <a
         href="tel:+919645760023"
@@ -232,7 +232,7 @@ function CTAButtons() {
    ════════════════════════════════════════════════════════════════ */
 export default function BestDigitalMarketingCompanyInKochi() {
   return (
-    <main className="bg-white text-black">
+    <main id="main-content" className="bg-white text-black">
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
@@ -243,7 +243,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
       <section className="bg-black text-white pt-32 sm:pt-40 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-5xl">
           <Breadcrumbs dark items={[{ label: "Best Digital Marketing Company in Kochi", href: "/best-digital-marketing-company-in-kochi" }]} />
-          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/40 mt-4 mb-5">
+          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
             Ivoniz Pvt Ltd · Serving Kochi &amp; Ernakulam
           </p>
           <h1 className="font-bold leading-[1.08] mb-6" style={{ fontSize: "clamp(32px,5vw,58px)" }}>
@@ -276,7 +276,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
 
       {/* ── INTRODUCTION ── */}
       <Section className="bg-white">
-        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/35 mb-5">Introduction</p>
+        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-5">Introduction</p>
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">
           What Makes a Digital Marketing Agency in Kochi Worth Hiring
         </h2>
@@ -333,10 +333,10 @@ export default function BestDigitalMarketingCompanyInKochi() {
           business isn&apos;t visible at that exact moment, the sale happens with whoever shows up first.
         </p>
         <ul className="space-y-3 text-black/65 leading-relaxed mb-6">
-          <li className="flex gap-2.5"><FaMapMarkerAlt className="shrink-0 mt-1 text-black/40" /> <span><strong>Search-first discovery</strong> — Google and Maps have replaced word-of-mouth as the first stop for most buyers in Kochi.</span></li>
-          <li className="flex gap-2.5"><FaChartLine className="shrink-0 mt-1 text-black/40" /> <span><strong>Crowded competition</strong> — as Kerala&apos;s commercial capital, Kochi has more businesses fighting for page-one rankings than almost anywhere else in the state.</span></li>
-          <li className="flex gap-2.5"><FaWhatsapp className="shrink-0 mt-1 text-black/40" /> <span><strong>WhatsApp over email</strong> — Kerala customers respond to WhatsApp far faster than contact forms; funnels need to be built around that habit.</span></li>
-          <li className="flex gap-2.5"><FaBullseye className="shrink-0 mt-1 text-black/40" /> <span><strong>Unmanaged ad spend disappears fast</strong> — Google Ads or Meta Ads without clear targeting burns budget quickly in a saturated market.</span></li>
+          <li className="flex gap-2.5"><FaMapMarkerAlt className="shrink-0 mt-1 text-black/60" /> <span><strong>Search-first discovery</strong> — Google and Maps have replaced word-of-mouth as the first stop for most buyers in Kochi.</span></li>
+          <li className="flex gap-2.5"><FaChartLine className="shrink-0 mt-1 text-black/60" /> <span><strong>Crowded competition</strong> — as Kerala&apos;s commercial capital, Kochi has more businesses fighting for page-one rankings than almost anywhere else in the state.</span></li>
+          <li className="flex gap-2.5"><FaWhatsapp className="shrink-0 mt-1 text-black/60" /> <span><strong>WhatsApp over email</strong> — Kerala customers respond to WhatsApp far faster than contact forms; funnels need to be built around that habit.</span></li>
+          <li className="flex gap-2.5"><FaBullseye className="shrink-0 mt-1 text-black/60" /> <span><strong>Unmanaged ad spend disappears fast</strong> — Google Ads or Meta Ads without clear targeting burns budget quickly in a saturated market.</span></li>
         </ul>
         <p className="text-black/65 leading-relaxed">
           This is the exact gap a capable <strong>digital marketing agency in Kochi</strong> closes — turning
@@ -672,7 +672,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
                 {s.v}
                 {s.star && <FaStar className="text-[13px] text-amber-400" />}
               </p>
-              <p className="text-white/45 text-xs">{s.l}</p>
+              <p className="text-white/60 text-xs">{s.l}</p>
             </div>
           ))}
         </div>
@@ -681,20 +681,20 @@ export default function BestDigitalMarketingCompanyInKochi() {
             &ldquo;Working with Ivoniz was a game changer for us. They built a stunning e-commerce website that
             increased our online sales by 300%.&rdquo;
           </p>
-          <p className="text-white/40 text-xs mt-2">— Sarah Johnson, Arlocks Fashion</p>
+          <p className="text-white/60 text-xs mt-2">— Sarah Johnson, Arlocks Fashion</p>
         </div>
       </Section>
 
       {/* ── FAQ ── */}
       <Section id="faq" className="bg-[#f8f8f8]">
-        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/35 mb-5">FAQ</p>
+        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-5">FAQ</p>
         <h2 className="text-3xl sm:text-4xl font-bold mb-8">Frequently Asked Questions</h2>
         <div className="space-y-3">
           {FAQS.map((f) => (
             <details key={f.q} className="group bg-white border border-black/8 rounded-xl px-5 py-4">
               <summary className="font-semibold cursor-pointer list-none flex items-center justify-between gap-4">
                 {f.q}
-                <span className="text-black/30 group-open:rotate-45 transition-transform shrink-0">+</span>
+                <span className="text-black/55 group-open:rotate-45 transition-transform shrink-0">+</span>
               </summary>
               <p className="text-black/60 text-sm leading-relaxed mt-3">{f.a}</p>
             </details>
@@ -722,13 +722,13 @@ export default function BestDigitalMarketingCompanyInKochi() {
         </p>
         <div className="flex flex-wrap gap-4 mt-6">
           <Link href="/contact" className="inline-flex items-center gap-2 h-13 px-8 bg-white text-black text-sm font-bold tracking-wide rounded-full hover:bg-white/90 transition-colors">
-            Free SEO Audit <FaArrowRight className="text-[13px]" />
+            Free SEO Audit <FaArrowRight aria-hidden="true" className="text-[13px]" />
           </Link>
           <Link href="/contact" className="inline-flex items-center gap-2 h-13 px-8 border border-white/25 text-white text-sm font-bold tracking-wide rounded-full hover:bg-white hover:text-black transition-colors">
-            Free Website Audit <FaArrowRight className="text-[13px]" />
+            Free Website Audit <FaArrowRight aria-hidden="true" className="text-[13px]" />
           </Link>
           <Link href="/contact" className="inline-flex items-center gap-2 h-13 px-8 border border-white/25 text-white text-sm font-bold tracking-wide rounded-full hover:bg-white hover:text-black transition-colors">
-            Book a Strategy Session <FaArrowRight className="text-[13px]" />
+            Book a Strategy Session <FaArrowRight aria-hidden="true" className="text-[13px]" />
           </Link>
         </div>
       </Section>

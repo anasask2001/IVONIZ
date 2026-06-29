@@ -132,7 +132,7 @@ export default function AboutHero() {
       >
         <p
           ref={labelRef}
-          className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/40 mb-6"
+          className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/60 mb-6"
           style={{ opacity: 0 }}
         >
           About Ivoniz

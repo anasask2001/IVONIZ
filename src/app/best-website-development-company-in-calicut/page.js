@@ -201,7 +201,7 @@ function CTAButtons() {
         href="/contact"
         className="inline-flex items-center gap-2 h-13 px-8 bg-black text-white text-sm font-bold tracking-wide rounded-full hover:bg-black/85 transition-colors"
       >
-        Get a Free Website Audit <FaArrowRight className="text-[13px]" />
+        Get a Free Website Audit <FaArrowRight aria-hidden="true" className="text-[13px]" />
       </Link>
       <a
         href="https://wa.me/919645760023?text=Hi%20Ivoniz%2C%20I%20found%20you%20as%20the%20best%20website%20development%20company%20in%20Calicut%20and%20want%20a%20free%20website%20audit."
@@ -209,7 +209,7 @@ function CTAButtons() {
         rel="noreferrer"
         className="inline-flex items-center gap-2 h-13 px-8 border border-black/15 text-black text-sm font-bold tracking-wide rounded-full hover:bg-black hover:text-white transition-colors"
       >
-        WhatsApp Us <FaArrowRight className="text-[13px]" />
+        WhatsApp Us <FaArrowRight aria-hidden="true" className="text-[13px]" />
       </a>
       <a
         href="tel:+919645760023"
@@ -226,7 +226,7 @@ function CTAButtons() {
    ════════════════════════════════════════════════════════════════ */
 export default function BestWebsiteDevelopmentCompanyInCalicut() {
   return (
-    <main className="bg-white text-black">
+    <main id="main-content" className="bg-white text-black">
 
       {/* ── JSON-LD Schema ── */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -238,7 +238,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
       <section className="bg-black text-white pt-32 sm:pt-40 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-5xl">
           <Breadcrumbs dark items={[{ label: "Best Website Development Company in Calicut", href: "/best-website-development-company-in-calicut" }]} />
-          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/40 mt-4 mb-5">
+          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
             Ivoniz Pvt Ltd · Kozhikode, Kerala
           </p>
           <h1 className="font-bold leading-[1.08] mb-6" style={{ fontSize: "clamp(32px,5vw,58px)" }}>
@@ -271,7 +271,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
 
       {/* ── INTRODUCTION ── */}
       <Section className="bg-white">
-        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/35 mb-5">Introduction</p>
+        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-5">Introduction</p>
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">
           Ivoniz – The Best Website Company in Calicut
         </h2>
@@ -333,10 +333,10 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
           to competitors who simply load faster and look more credible.
         </p>
         <ul className="space-y-3 text-black/65 leading-relaxed mb-6">
-          <li className="flex gap-2.5"><FaBolt className="shrink-0 mt-1 text-black/40" /> <span><strong>Speed matters</strong> — slow-loading websites lose visitors within seconds, especially on mobile networks across Calicut.</span></li>
-          <li className="flex gap-2.5"><FaMobileAlt className="shrink-0 mt-1 text-black/40" /> <span><strong>Mobile-first browsing</strong> — most local visitors browse on smartphones, so a non-responsive site loses business immediately.</span></li>
-          <li className="flex gap-2.5"><FaWhatsapp className="shrink-0 mt-1 text-black/40" /> <span><strong>WhatsApp-first enquiries</strong> — without click-to-WhatsApp buttons built in, you lose Kerala&apos;s preferred contact channel.</span></li>
-          <li className="flex gap-2.5"><FaMapMarkerAlt className="shrink-0 mt-1 text-black/40" /> <span><strong>SEO foundations</strong> — a site built without SEO in mind makes every future marketing rupee work harder than it should.</span></li>
+          <li className="flex gap-2.5"><FaBolt className="shrink-0 mt-1 text-black/60" /> <span><strong>Speed matters</strong> — slow-loading websites lose visitors within seconds, especially on mobile networks across Calicut.</span></li>
+          <li className="flex gap-2.5"><FaMobileAlt className="shrink-0 mt-1 text-black/60" /> <span><strong>Mobile-first browsing</strong> — most local visitors browse on smartphones, so a non-responsive site loses business immediately.</span></li>
+          <li className="flex gap-2.5"><FaWhatsapp className="shrink-0 mt-1 text-black/60" /> <span><strong>WhatsApp-first enquiries</strong> — without click-to-WhatsApp buttons built in, you lose Kerala&apos;s preferred contact channel.</span></li>
+          <li className="flex gap-2.5"><FaMapMarkerAlt className="shrink-0 mt-1 text-black/60" /> <span><strong>SEO foundations</strong> — a site built without SEO in mind makes every future marketing rupee work harder than it should.</span></li>
         </ul>
         <p className="text-black/65 leading-relaxed">
           This is precisely why partnering with an experienced <strong>website development company in Calicut</strong>{" "}
@@ -619,14 +619,14 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
 
       {/* ── FAQ ── */}
       <Section id="faq" className="bg-[#f8f8f8]">
-        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/35 mb-5">FAQ</p>
+        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-5">FAQ</p>
         <h2 className="text-3xl sm:text-4xl font-bold mb-8">Frequently Asked Questions</h2>
         <div className="space-y-3">
           {FAQS.map((f) => (
             <details key={f.q} className="group bg-white border border-black/8 rounded-xl px-5 py-4">
               <summary className="font-semibold cursor-pointer list-none flex items-center justify-between gap-4">
                 {f.q}
-                <span className="text-black/30 group-open:rotate-45 transition-transform shrink-0">+</span>
+                <span className="text-black/55 group-open:rotate-45 transition-transform shrink-0">+</span>
               </summary>
               <p className="text-black/60 text-sm leading-relaxed mt-3">{f.a}</p>
             </details>
@@ -650,13 +650,13 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
         </p>
         <div className="flex flex-wrap gap-4 mt-6">
           <Link href="/contact" className="inline-flex items-center gap-2 h-13 px-8 bg-white text-black text-sm font-bold tracking-wide rounded-full hover:bg-white/90 transition-colors">
-            Free Website Audit <FaArrowRight className="text-[13px]" />
+            Free Website Audit <FaArrowRight aria-hidden="true" className="text-[13px]" />
           </Link>
           <Link href="/works" className="inline-flex items-center gap-2 h-13 px-8 border border-white/25 text-white text-sm font-bold tracking-wide rounded-full hover:bg-white hover:text-black transition-colors">
-            See Our Work <FaArrowRight className="text-[13px]" />
+            See Our Work <FaArrowRight aria-hidden="true" className="text-[13px]" />
           </Link>
           <Link href="/contact" className="inline-flex items-center gap-2 h-13 px-8 border border-white/25 text-white text-sm font-bold tracking-wide rounded-full hover:bg-white hover:text-black transition-colors">
-            Book a Consultation <FaArrowRight className="text-[13px]" />
+            Book a Consultation <FaArrowRight aria-hidden="true" className="text-[13px]" />
           </Link>
         </div>
       </Section>

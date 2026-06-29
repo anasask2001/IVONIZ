@@ -292,6 +292,17 @@ export default function ChatWidget() {
   }, [messages, open]);
 
   useEffect(() => {
+    if (!open) return;
+    const fn = (e) => {
+      if (e.key !== "Escape") return;
+      if (menuOpen) setMenuOpen(false);
+      else setOpen(false);
+    };
+    window.addEventListener("keydown", fn);
+    return () => window.removeEventListener("keydown", fn);
+  }, [open, menuOpen]);
+
+  useEffect(() => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) return;
 
@@ -406,7 +417,12 @@ export default function ChatWidget() {
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
       {open && (
-        <div className="w-[90vw] max-w-90 h-[70vh] max-h-110 flex flex-col rounded-3xl overflow-hidden bg-white shadow-2xl">
+        <div
+          role="dialog"
+          aria-modal="false"
+          aria-label="Ivoniz AI chat assistant"
+          className="w-[90vw] max-w-90 h-[70vh] max-h-110 flex flex-col rounded-3xl overflow-hidden bg-white shadow-2xl"
+        >
           <div className="flex items-center justify-between px-4 pt-4">
             <div className="relative">
               {hasConversation && (
@@ -414,6 +430,8 @@ export default function ChatWidget() {
                   <button
                     onClick={() => setMenuOpen((v) => !v)}
                     aria-label="Chat options"
+                    aria-expanded={menuOpen}
+                    aria-haspopup="true"
                     className="h-8 w-8 grid place-items-center rounded-full border border-black/10 text-black/60 hover:bg-black/5 transition-colors"
                   >
                     <ChevronUpIcon className={`h-3.5 w-3.5 transition-transform ${menuOpen ? "" : "rotate-180"}`} />
@@ -446,7 +464,13 @@ export default function ChatWidget() {
             </button>
           </div>
 
-          <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 py-4">
+          <div
+            ref={scrollRef}
+            role="log"
+            aria-live="polite"
+            aria-label="Chat messages"
+            className="flex-1 overflow-y-auto px-5 py-4"
+          >
             {!hasConversation ? (
               <div className="h-full grid place-items-center text-center px-4">
                 <p className="text-black text-lg font-semibold">How can I help you?</p>
@@ -462,11 +486,12 @@ export default function ChatWidget() {
                         : "bg-black/5 text-black/80"
                     }`}
                   >
+                    <span className="sr-only">{m.role === "user" ? "You: " : "Assistant: "}</span>
                     {m.content}
                   </div>
                 ))}
                 {loading && (
-                  <div className="bg-black/5 text-black/40 max-w-[60%] px-3.5 py-2.5 rounded-xl text-[13px]">
+                  <div className="bg-black/5 text-black/60 max-w-[60%] px-3.5 py-2.5 rounded-xl text-[13px]" role="status">
                     AI is thinking...
                   </div>
                 )}
@@ -476,13 +501,15 @@ export default function ChatWidget() {
 
           <div className="p-3">
             <div className="flex items-center gap-2 bg-black/5 rounded-full pl-4 pr-1.5 py-1.5">
+              <label htmlFor="chat-message-input" className="sr-only">Type your message</label>
               <input
+                id="chat-message-input"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && send()}
                 placeholder={ended ? "Conversation ended" : "Type a message..."}
                 disabled={ended}
-                className="flex-1 h-9 text-black text-[13px] placeholder:text-black/40 outline-none bg-transparent disabled:cursor-not-allowed"
+                className="flex-1 h-9 text-black text-[13px] placeholder:text-black/60 outline-none bg-transparent disabled:cursor-not-allowed"
               />
               <button
                 onClick={toggleVoice}
@@ -511,15 +538,17 @@ export default function ChatWidget() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close chat" : "Open chat"}
+        aria-expanded={open}
         className="relative h-14 w-14 grid place-items-center rounded-full overflow-hidden hover:scale-105 transition-transform"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/chatbot-asset/chatbot.webp"
           alt=""
+          aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <GeminiIcon className="relative h-5.5 w-5.5 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.95)]" />
+        <GeminiIcon aria-hidden="true" className="relative h-5.5 w-5.5 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.95)]" />
       </button>
     </div>
   );

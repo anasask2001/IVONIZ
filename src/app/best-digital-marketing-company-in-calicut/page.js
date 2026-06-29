@@ -207,7 +207,7 @@ function CTAButtons({ context = "" }) {
         href="/contact"
         className="inline-flex items-center gap-2 h-13 px-8 bg-black text-white text-sm font-bold tracking-wide rounded-full hover:bg-black/85 transition-colors"
       >
-        Book a Free Strategy Session <FaArrowRight className="text-[13px]" />
+        Book a Free Strategy Session <FaArrowRight aria-hidden="true" className="text-[13px]" />
       </Link>
       <a
         href="https://wa.me/919645760023?text=Hi%20Ivoniz%2C%20I%20found%20you%20as%20the%20best%20digital%20marketing%20agency%20in%20Calicut%20and%20want%20a%20free%20SEO%20audit."
@@ -215,7 +215,7 @@ function CTAButtons({ context = "" }) {
         rel="noreferrer"
         className="inline-flex items-center gap-2 h-13 px-8 border border-black/15 text-black text-sm font-bold tracking-wide rounded-full hover:bg-black hover:text-white transition-colors"
       >
-        WhatsApp Us <FaArrowRight className="text-[13px]" />
+        WhatsApp Us <FaArrowRight aria-hidden="true" className="text-[13px]" />
       </a>
       <a
         href="tel:+919645760023"
@@ -232,7 +232,7 @@ function CTAButtons({ context = "" }) {
    ════════════════════════════════════════════════════════════════ */
 export default function BestDigitalMarketingCompanyInCalicut() {
   return (
-    <main className="bg-white text-black">
+    <main id="main-content" className="bg-white text-black">
 
       {/* ── JSON-LD Schema ── */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -244,7 +244,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
       <section className="bg-black text-white pt-32 sm:pt-40 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-5xl">
           <Breadcrumbs dark items={[{ label: "Best Digital Marketing Company in Calicut", href: "/best-digital-marketing-company-in-calicut" }]} />
-          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/40 mt-4 mb-5">
+          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
             Ivoniz Pvt Ltd · Kozhikode, Kerala
           </p>
           <h1 className="font-bold leading-[1.08] mb-6" style={{ fontSize: "clamp(32px,5vw,58px)" }}>
@@ -278,7 +278,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
 
       {/* ── INTRODUCTION ── */}
       <Section className="bg-white">
-        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/35 mb-5">Introduction</p>
+        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-5">Introduction</p>
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">
           Ivoniz – The Best Digital Marketing Agency in Calicut
         </h2>
@@ -338,10 +338,10 @@ export default function BestDigitalMarketingCompanyInCalicut() {
           presence, even well-established businesses lose customers to competitors who show up first on Google.
         </p>
         <ul className="space-y-3 text-black/65 leading-relaxed mb-6">
-          <li className="flex gap-2.5"><FaMapMarkerAlt className="shrink-0 mt-1 text-black/40" /> <span><strong>Local discovery</strong> — most customers in Calicut now find businesses via Google Maps and local search, not word-of-mouth alone.</span></li>
-          <li className="flex gap-2.5"><FaChartLine className="shrink-0 mt-1 text-black/40" /> <span><strong>Rising competition</strong> — as more businesses go digital, ranking on page one of Google requires expert SEO, not guesswork.</span></li>
-          <li className="flex gap-2.5"><FaWhatsapp className="shrink-0 mt-1 text-black/40" /> <span><strong>WhatsApp-first enquiries</strong> — Kerala customers prefer messaging over forms; your funnel must be built around that behaviour.</span></li>
-          <li className="flex gap-2.5"><FaBullseye className="shrink-0 mt-1 text-black/40" /> <span><strong>Paid ads waste money without strategy</strong> — running Google Ads or Meta Ads without proper targeting burns budget fast.</span></li>
+          <li className="flex gap-2.5"><FaMapMarkerAlt className="shrink-0 mt-1 text-black/60" /> <span><strong>Local discovery</strong> — most customers in Calicut now find businesses via Google Maps and local search, not word-of-mouth alone.</span></li>
+          <li className="flex gap-2.5"><FaChartLine className="shrink-0 mt-1 text-black/60" /> <span><strong>Rising competition</strong> — as more businesses go digital, ranking on page one of Google requires expert SEO, not guesswork.</span></li>
+          <li className="flex gap-2.5"><FaWhatsapp className="shrink-0 mt-1 text-black/60" /> <span><strong>WhatsApp-first enquiries</strong> — Kerala customers prefer messaging over forms; your funnel must be built around that behaviour.</span></li>
+          <li className="flex gap-2.5"><FaBullseye className="shrink-0 mt-1 text-black/60" /> <span><strong>Paid ads waste money without strategy</strong> — running Google Ads or Meta Ads without proper targeting burns budget fast.</span></li>
         </ul>
         <p className="text-black/65 leading-relaxed">
           This is precisely why partnering with an experienced <strong>digital marketing company in Calicut</strong>{" "}
@@ -730,14 +730,14 @@ export default function BestDigitalMarketingCompanyInCalicut() {
 
       {/* ── FAQ ── */}
       <Section id="faq" className="bg-[#f8f8f8]">
-        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/35 mb-5">FAQ</p>
+        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-5">FAQ</p>
         <h2 className="text-3xl sm:text-4xl font-bold mb-8">Frequently Asked Questions</h2>
         <div className="space-y-3">
           {FAQS.map((f) => (
             <details key={f.q} className="group bg-white border border-black/8 rounded-xl px-5 py-4">
               <summary className="font-semibold cursor-pointer list-none flex items-center justify-between gap-4">
                 {f.q}
-                <span className="text-black/30 group-open:rotate-45 transition-transform shrink-0">+</span>
+                <span className="text-black/55 group-open:rotate-45 transition-transform shrink-0">+</span>
               </summary>
               <p className="text-black/60 text-sm leading-relaxed mt-3">{f.a}</p>
             </details>
@@ -766,13 +766,13 @@ export default function BestDigitalMarketingCompanyInCalicut() {
         </p>
         <div className="flex flex-wrap gap-4 mt-6">
           <Link href="/contact" className="inline-flex items-center gap-2 h-13 px-8 bg-white text-black text-sm font-bold tracking-wide rounded-full hover:bg-white/90 transition-colors">
-            Free SEO Audit <FaArrowRight className="text-[13px]" />
+            Free SEO Audit <FaArrowRight aria-hidden="true" className="text-[13px]" />
           </Link>
           <Link href="/contact" className="inline-flex items-center gap-2 h-13 px-8 border border-white/25 text-white text-sm font-bold tracking-wide rounded-full hover:bg-white hover:text-black transition-colors">
-            Free Website Audit <FaArrowRight className="text-[13px]" />
+            Free Website Audit <FaArrowRight aria-hidden="true" className="text-[13px]" />
           </Link>
           <Link href="/contact" className="inline-flex items-center gap-2 h-13 px-8 border border-white/25 text-white text-sm font-bold tracking-wide rounded-full hover:bg-white hover:text-black transition-colors">
-            Book a Strategy Session <FaArrowRight className="text-[13px]" />
+            Book a Strategy Session <FaArrowRight aria-hidden="true" className="text-[13px]" />
           </Link>
         </div>
       </Section>

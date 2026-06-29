@@ -183,7 +183,7 @@ export default function ShowcaseSections() {
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.70)")}
             >
               Learn more
-              <FaArrowRight className="inline-block group-hover:translate-x-1 transition-transform duration-200 text-[12px]" />
+              <FaArrowRight aria-hidden="true" className="inline-block group-hover:translate-x-1 transition-transform duration-200 text-[12px]" />
             </Link>
           </div>
           </div>

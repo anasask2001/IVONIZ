@@ -64,7 +64,12 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
   useEffect(() => {
-    const fn = (e) => e.key === "Escape" && setOpen(false);
+    const fn = (e) => {
+      if (e.key !== "Escape") return;
+      setOpen(false);
+      setSearchOpen(false);
+      setCallOpen(false);
+    };
     window.addEventListener("keydown", fn);
     return () => window.removeEventListener("keydown", fn);
   }, []);
@@ -188,7 +193,7 @@ export default function Navbar() {
                   autoFocus
                   type="text"
                   placeholder="Type to search.."
-                  className="flex-1 h-10 bg-transparent outline-none text-[14px] text-white placeholder:text-white/40"
+                  className="flex-1 h-10 bg-transparent outline-none text-[14px] text-white placeholder:text-white/60"
                 />
 
                 <button
@@ -232,7 +237,7 @@ export default function Navbar() {
             </Link>
 
             {/* ── DESKTOP NAV ── */}
-            <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2">
+            <nav aria-label="Main navigation" className="hidden lg:flex absolute left-1/2 -translate-x-1/2">
               <ul className="flex items-center">
                 {nav.map((item) => {
                   const active = isActive(item.href);
@@ -246,6 +251,10 @@ export default function Navbar() {
                     >
                       <Link
                         href={item.href}
+                        onFocus={() => isMega ? openMega(item.mega) : closeNow()}
+                        onKeyDown={(e) => e.key === "Escape" && closeNow()}
+                        aria-expanded={isMega ? activeMega === item.mega : undefined}
+                        aria-haspopup={isMega ? "true" : undefined}
                         className={[
                           "relative flex items-center gap-1.5 px-4 py-6 text-[11.5px] font-semibold tracking-[0.12em] uppercase transition-colors duration-200",
                           active ? "text-white" : "text-white/65 hover:text-white",
@@ -298,6 +307,8 @@ export default function Navbar() {
                   type="button"
                   onClick={() => setCallOpen((v) => !v)}
                   aria-label="Call us"
+                  aria-expanded={callOpen}
+                  aria-haspopup="true"
                   className={[
                     "inline-flex h-9.5 w-9.5 items-center justify-center rounded-full transition-colors duration-200",
                     dark ? "text-white hover:text-white/70" : "text-black hover:text-black/60",
@@ -324,7 +335,7 @@ export default function Navbar() {
                       >
                         <HeadsetIcon className="h-4 w-4 text-black shrink-0" />
                         <span className="flex-1 text-black text-[12.5px] font-bold">Request a call back</span>
-                        <FaArrowRight className="text-black text-[13px] shrink-0" />
+                        <FaArrowRight aria-hidden="true" className="text-black text-[13px] shrink-0" />
                       </a>
                     </div>
                   </>
@@ -404,13 +415,17 @@ export default function Navbar() {
           }}
           onMouseEnter={() => openMega("services")}
           onMouseLeave={delayClose}
+          onKeyDown={(e) => e.key === "Escape" && closeNow()}
+          onBlur={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget)) closeNow();
+          }}
         >
           <div className="mx-auto max-w-375 px-14">
             <div className="py-9 border-t border-white/6 grid grid-cols-[1fr_160px] gap-10 items-start">
               <div className="grid grid-cols-6 gap-8">
                 {servicesCols.map((col) => (
                   <div key={col.title}>
-                    <p className="mb-3.5 text-[9.5px] font-bold tracking-[0.22em] text-white/22 uppercase">
+                    <p className="mb-3.5 text-[9.5px] font-bold tracking-[0.22em] text-white/55 uppercase">
                       {col.title}
                     </p>
                     <ul className="space-y-2.5">
@@ -419,7 +434,7 @@ export default function Navbar() {
                           <Link
                             href={l.href}
                             onClick={closeNow}
-                            className="group/ml flex items-center gap-1.5 text-[13px] font-medium text-white/45 hover:text-white transition-colors duration-150"
+                            className="group/ml flex items-center gap-1.5 text-[13px] font-medium text-white/60 hover:text-white transition-colors duration-150"
                           >
                             <span className="w-0 h-px bg-white/60 group-hover/ml:w-3 transition-all duration-200 inline-block shrink-0" />
                             {l.label}
@@ -431,7 +446,7 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="flex flex-col gap-4 pl-8 border-l border-white/6">
-                <p className="text-[12px] text-white/22 leading-relaxed">
+                <p className="text-[12px] text-white/55 leading-relaxed">
                   Not sure which service fits?
                 </p>
                 <Link
@@ -439,7 +454,7 @@ export default function Navbar() {
                   onClick={closeNow}
                   className="inline-flex items-center justify-center h-9 px-4 bg-white text-black text-[11.5px] font-bold rounded-full hover:bg-white/90 transition-colors"
                 >
-                  Talk to us <FiArrowUpRight className="inline text-[12px]" />
+                  Talk to us <FiArrowUpRight aria-hidden="true" className="inline text-[12px]" />
                 </Link>
               </div>
             </div>
@@ -470,6 +485,7 @@ export default function Navbar() {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation"
+        inert={!open}
       >
         {/* Watermark */}
         <div className="absolute inset-0 flex items-end justify-end pointer-events-none select-none overflow-hidden">
@@ -522,11 +538,11 @@ export default function Navbar() {
                     >
                       <span className={[
                         "text-[13px] font-bold tracking-widest uppercase",
-                        active ? "text-black" : "text-white/38 group-hover/ml:text-white transition-colors",
+                        active ? "text-black" : "text-white/60 group-hover/ml:text-white transition-colors",
                       ].join(" ")}>
                         {item.label}
                       </span>
-                      <FiArrowUpRight className={active ? "text-black/25 text-[13px]" : "text-white/15 text-[13px]"} />
+                      <FiArrowUpRight aria-hidden="true" className={active ? "text-black/55 text-[13px]" : "text-white/55 text-[13px]"} />
                     </Link>
                   </li>
                 );
@@ -543,7 +559,7 @@ export default function Navbar() {
             >
               Get in Touch
             </Link>
-            <div className="flex items-center gap-4 text-[11.5px] text-white/20">
+            <div className="flex items-center gap-4 text-[11.5px] text-white/55">
               <a href="tel:+919645760023" className="hover:text-white/50 transition-colors">+91 96457 60023</a>
               <span className="w-px h-3 bg-white/10 inline-block" />
               <a href="mailto:info@ivoniz.com" className="hover:text-white/50 transition-colors">info@ivoniz.com</a>

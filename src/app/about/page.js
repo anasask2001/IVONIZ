@@ -74,7 +74,7 @@ const aboutSchema = {
 
 export default function AboutPage() {
   return (
-    <main className="bg-white text-black">
+    <main id="main-content" className="bg-white text-black">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
 
       {/* ── HERO ── */}
@@ -109,7 +109,7 @@ export default function AboutPage() {
               <div>
                 <motion.p
                   {...fadeUp(0)}
-                  className="text-[11px] font-semibold tracking-[0.3em] uppercase text-black/35 mb-4"
+                  className="text-[11px] font-semibold tracking-[0.3em] uppercase text-black/60 mb-4"
                 >
                   Step 0{i + 1}
                 </motion.p>
@@ -147,7 +147,7 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-350" style={{ zIndex: 1 }}>
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
             <div className="max-w-3xl">
-              <motion.p {...fadeUp(0)} className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/40 mb-5">
+              <motion.p {...fadeUp(0)} className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/60 mb-5">
                 Who We Are
               </motion.p>
               <motion.h2 {...fadeUp(0.04)} className="text-3xl sm:text-4xl font-bold mb-6">
@@ -182,7 +182,7 @@ export default function AboutPage() {
                     {s.v}
                     {s.star && <FaStar className="text-[18px] sm:text-[20px] text-amber-400" />}
                   </p>
-                  <p className="text-white/40 text-[12px]">{s.l}</p>
+                  <p className="text-white/60 text-[12px]">{s.l}</p>
                 </motion.div>
               ))}
             </div>
@@ -193,7 +193,7 @@ export default function AboutPage() {
       {/* ── OUR JOURNEY (timeline) ── */}
       <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-10 xl:px-16 bg-[#EEEEEE]">
         <div className="mx-auto max-w-350">
-          <motion.p {...fadeUp(0)} className="text-[11px] font-semibold tracking-[0.3em] uppercase text-black/35 mb-5">
+          <motion.p {...fadeUp(0)} className="text-[11px] font-semibold tracking-[0.3em] uppercase text-black/60 mb-5">
             Our Journey
           </motion.p>
           <motion.h2 {...fadeUp(0.05)} className="text-3xl sm:text-4xl font-bold mb-16 max-w-xl">
@@ -313,7 +313,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.25 }}
                 className="bg-white border border-black/8 rounded-xl px-5 py-5 flex items-start gap-4"
               >
-                <span className="text-black/25 font-bold text-sm shrink-0 mt-0.5">
+                <span className="text-black/55 font-bold text-sm shrink-0 mt-0.5">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="font-medium text-[15px] leading-snug">{w}</span>
@@ -417,7 +417,7 @@ export default function AboutPage() {
         <div className="relative" style={{ zIndex: 1 }}>
           <motion.p
             {...fadeUp(0)}
-            className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/40 mb-6"
+            className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/60 mb-6"
           >
             Let&apos;s Talk
           </motion.p>
@@ -436,7 +436,7 @@ export default function AboutPage() {
               href="/contact"
               className="inline-flex items-center gap-2 h-14 px-9 bg-white text-black text-sm font-bold tracking-wide rounded-full hover:bg-white/90 transition-colors"
             >
-              Get in Touch <FaArrowRight className="text-[13px]" />
+              Get in Touch <FaArrowRight aria-hidden="true" className="text-[13px]" />
             </Link>
           </motion.div>
         </div>

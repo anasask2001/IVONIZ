@@ -120,7 +120,7 @@ export const WORKS = [
 
 export default function WorksPage() {
   return (
-    <main className="bg-white text-black">
+    <main id="main-content" className="bg-white text-black">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumb) }} />
       <section className="pt-32 sm:pt-40 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-10 xl:px-16">
@@ -152,7 +152,7 @@ export default function WorksPage() {
           href="/contact"
           className="inline-flex items-center gap-2 h-13 px-8 bg-white text-black text-sm font-bold tracking-wide rounded-full hover:bg-white/90 transition-colors"
         >
-          Get in Touch <FaArrowRight className="text-[13px]" />
+          Get in Touch <FaArrowRight aria-hidden="true" className="text-[13px]" />
         </Link>
       </section>
 

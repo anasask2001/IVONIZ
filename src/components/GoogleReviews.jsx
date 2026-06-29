@@ -98,7 +98,7 @@ export default function GoogleReviews() {
                   onError={() => setBroken((p) => ({ ...p, [r.author]: true }))} />
                 <div>
                   <p className="font-semibold text-black text-[13px] leading-tight">{r.author}</p>
-                  <p className="text-[11px] text-black/40">{r.company || r.time || "Google review"}</p>
+                  <p className="text-[11px] text-black/60">{r.company || r.time || "Google review"}</p>
                 </div>
               </div>
             </motion.div>

@@ -99,6 +99,14 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${openSans.variable} antialiased`}
         suppressHydrationWarning
       >
+        {/* ── Skip navigation — first focusable element for keyboard/screen-reader users ── */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-200 focus:px-5 focus:py-3 focus:rounded-full focus:bg-black focus:text-white focus:text-sm focus:font-semibold focus:shadow-2xl"
+        >
+          Skip to main content
+        </a>
+
         {/* ── Google Tag Manager (noscript) ── */}
         <noscript>
           <iframe

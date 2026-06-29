@@ -104,7 +104,7 @@ export default function SelectedWorks({ works }) {
             <span
               className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-white bg-white/10 border border-white/20 group-hover:bg-white group-hover:text-black transition-colors"
             >
-              <FiArrowUpRight className="text-[16px]" />
+              <FiArrowUpRight aria-hidden="true" className="text-[16px]" />
             </span>
           </div>
         </Link>
