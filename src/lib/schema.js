@@ -24,6 +24,24 @@ export const organizationSchema = {
   telephone: "+919645760023",
   email: "info@ivoniz.com",
   priceRange: "₹₹",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+919645760023",
+      contactType: "customer service",
+      email: "info@ivoniz.com",
+      areaServed: "IN",
+      availableLanguage: ["en", "ml"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+918113847950",
+      contactType: "sales",
+      email: "sales@ivoniz.com",
+      areaServed: "IN",
+      availableLanguage: ["en", "ml"],
+    },
+  ],
   founder: {
     "@type": "Person",
     name: "Muhammed Anas",
