@@ -421,7 +421,7 @@ export default function ChatWidget() {
           role="dialog"
           aria-modal="false"
           aria-label="Ivoniz AI chat assistant"
-          className="w-[90vw] max-w-90 h-[70vh] max-h-110 flex flex-col rounded-3xl overflow-hidden bg-white shadow-2xl"
+          className="w-[90vw] max-w-90 h-[70dvh] max-h-110 flex flex-col rounded-3xl overflow-hidden bg-white shadow-2xl"
         >
           <div className="flex items-center justify-between px-4 pt-4">
             <div className="relative">
@@ -499,19 +499,23 @@ export default function ChatWidget() {
             )}
           </div>
 
-          <div className="p-3">
+          <form
+            className="p-3"
+            onSubmit={(e) => { e.preventDefault(); send(); }}
+          >
             <div className="flex items-center gap-2 bg-black/5 rounded-full pl-4 pr-1.5 py-1.5">
               <label htmlFor="chat-message-input" className="sr-only">Type your message</label>
               <input
                 id="chat-message-input"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && send()}
                 placeholder={ended ? "Conversation ended" : "Type a message..."}
                 disabled={ended}
+                enterKeyHint="send"
                 className="flex-1 h-9 text-black text-[13px] placeholder:text-black/60 outline-none bg-transparent disabled:cursor-not-allowed"
               />
               <button
+                type="button"
                 onClick={toggleVoice}
                 disabled={ended}
                 aria-label={listening ? "Stop voice input" : "Start voice input"}
@@ -523,7 +527,7 @@ export default function ChatWidget() {
                 <MicIcon className="h-4 w-4" />
               </button>
               <button
-                onClick={send}
+                type="submit"
                 disabled={loading || !input.trim() || ended}
                 aria-label="Send message"
                 className="h-11 w-11 sm:h-9 sm:w-9 grid place-items-center rounded-full bg-black text-white disabled:opacity-30 transition-opacity shrink-0"
@@ -531,7 +535,7 @@ export default function ChatWidget() {
                 <WaveformIcon className="h-4 w-4" />
               </button>
             </div>
-          </div>
+          </form>
         </div>
       )}
 
