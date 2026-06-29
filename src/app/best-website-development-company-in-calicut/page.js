@@ -27,9 +27,9 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/web-app-manifest-512x512.png",
-        width: 512,
-        height: 512,
+        url: "/ivoniz-og-image.webp",
+        width: 1734,
+        height: 907,
         alt: "Ivoniz Pvt Ltd — Best Website Development Company in Calicut",
       },
     ],
@@ -38,7 +38,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Best Website Development Company in Calicut | Ivoniz Pvt Ltd",
     description: "Ivoniz — the best website development company in Calicut and the best website company in Calicut.",
-    images: ["/web-app-manifest-512x512.png"],
+    images: ["/ivoniz-og-image.webp"],
   },
   robots: { index: true, follow: true },
 };

@@ -52,9 +52,9 @@ export const metadata = {
     description: "Ivoniz Pvt Ltd is a leading web development, mobile app development, and digital marketing company in Kozhikode, Kerala. We build scalable apps, websites, and AI tools to grow your business.",
     images: [
       {
-        url: "/web-app-manifest-512x512.png",
-        width: 512,
-        height: 512,
+        url: "/ivoniz-og-image.webp",
+        width: 1734,
+        height: 907,
         alt: "Ivoniz Pvt Ltd — Web & App Development Company in Kerala",
       },
     ],
@@ -64,7 +64,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Ivoniz Pvt Ltd | Web & App Development Company in Kerala",
     description: "Leading web development, mobile app development, and digital marketing company in Kozhikode, Kerala.",
-    images: ["/web-app-manifest-512x512.png"],
+    images: ["/ivoniz-og-image.webp"],
   },
 
   robots: {

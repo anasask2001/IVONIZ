@@ -27,9 +27,9 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/web-app-manifest-512x512.png",
-        width: 512,
-        height: 512,
+        url: "/ivoniz-og-image.webp",
+        width: 1734,
+        height: 907,
         alt: "Ivoniz Pvt Ltd — Best Digital Marketing Company in Calicut",
       },
     ],
@@ -38,7 +38,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Best Digital Marketing Company in Calicut | Ivoniz Pvt Ltd",
     description: "Ivoniz — the best digital marketing agency in Calicut. SEO, Google Ads, Social Media, Web & App Development.",
-    images: ["/web-app-manifest-512x512.png"],
+    images: ["/ivoniz-og-image.webp"],
   },
   robots: { index: true, follow: true },
 };
