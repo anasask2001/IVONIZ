@@ -195,7 +195,7 @@ export default function Home() {
 
         {/* Content — anchored to bottom */}
         <div
-          className="relative flex flex-col justify-end px-6 sm:px-10 lg:px-14 xl:px-20 pb-28 sm:pb-12 lg:pb-16"
+          className="relative flex flex-col justify-end px-6 sm:px-10 lg:px-14 xl:px-20 pb-44 sm:pb-12 lg:pb-16"
           style={{ zIndex: 3, minHeight: "100vh" }}
         >
           {/* Text block — the page's single H1 */}
