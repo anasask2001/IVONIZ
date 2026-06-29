@@ -195,7 +195,7 @@ export default function Home() {
 
         {/* Content — anchored to bottom */}
         <div
-          className="relative flex flex-col justify-end px-6 sm:px-10 lg:px-14 xl:px-20 pb-12 lg:pb-16"
+          className="relative flex flex-col justify-end px-6 sm:px-10 lg:px-14 xl:px-20 pb-28 sm:pb-12 lg:pb-16"
           style={{ zIndex: 3, minHeight: "100vh" }}
         >
           {/* Text block — the page's single H1 */}
@@ -205,7 +205,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="font-light select-none block"
-              style={{ fontSize: "clamp(44px, 11.5vw, 175px)", lineHeight: 0.87, letterSpacing: "-0.025em", color: "#D9D9D9" }}
+              style={{ fontSize: "clamp(58px, 11.5vw, 175px)", lineHeight: 0.87, letterSpacing: "-0.025em", color: "#D9D9D9" }}
             >
               We
             </motion.span>
@@ -216,7 +216,7 @@ export default function Home() {
               transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
               className="font-light select-none block"
               style={{
-                fontSize: "clamp(44px, 11.5vw, 175px)",
+                fontSize: "clamp(58px, 11.5vw, 175px)",
                 lineHeight: 0.87,
                 letterSpacing: "-0.025em",
                 WebkitTextStroke: "1.5px rgba(217,217,217,0.38)",
@@ -233,7 +233,7 @@ export default function Home() {
                   key={wordIndex}
                   className="font-light block"
                   style={{
-                    fontSize: "clamp(44px, 11.5vw, 175px)",
+                    fontSize: "clamp(58px, 11.5vw, 175px)",
                     lineHeight: 0.87,
                     letterSpacing: "-0.025em",
                     color: "#D9D9D9",
