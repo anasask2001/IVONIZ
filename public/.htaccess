@@ -1,0 +1,38 @@
+# ── HTTPS + canonical host enforcement ──
+# Canonical domain is the non-www form (matches every <link rel="canonical">
+# and JSON-LD url on the site). Force HTTPS first, then collapse www to
+# non-www, so every variant 301s to exactly one URL.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTP_HOST} ^www\.ivoniz\.com$ [NC]
+  RewriteRule ^(.*)$ https://ivoniz.com/$1 [L,R=301]
+</IfModule>
+
+# ── Proper 404 handling ──
+# Without this, Hostinger/Apache may serve a soft-404 (200 status on an
+# error page), which search engines treat as duplicate/low-value content
+# instead of a real 404.
+ErrorDocument 404 /404.html
+
+# ── Security headers ──
+<IfModule mod_headers.c>
+  # Force HTTPS on every future visit, including subdomains.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Stop browsers guessing content-types (mitigates MIME-sniffing attacks).
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Block this site from being framed by other origins (clickjacking).
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Don't leak full referrer URLs to third parties.
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Disable browser features this site never uses. Microphone stays
+  # available to same-origin (the chat widget's voice input uses it).
+  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=(self), payment=()"
+</IfModule>
