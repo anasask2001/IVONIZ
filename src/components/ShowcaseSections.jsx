@@ -141,7 +141,7 @@ export default function ShowcaseSections() {
             <h2 className="leading-none"
               style={{
                 fontFamily   : "var(--font-open-sans), 'Open Sans', sans-serif",
-                fontSize     : "clamp(80px,15vw,210px)",
+                fontSize     : "clamp(64px,15vw,210px)",
                 fontWeight   : 300,
                 letterSpacing: "-0.03em",
                 color                : "rgba(255,255,255,0.90)",

@@ -155,7 +155,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="h-8 w-8 grid place-items-center rounded-full border border-black/10 text-black/60 hover:text-black hover:border-black/25 transition-colors"
+                  className="h-11 w-11 sm:h-8 sm:w-8 grid place-items-center rounded-full border border-black/10 text-black/60 hover:text-black hover:border-black/25 transition-colors"
                 >
                   <Icon className="text-[14px]" />
                 </a>

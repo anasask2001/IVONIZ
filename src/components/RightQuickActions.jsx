@@ -18,7 +18,7 @@ export default function RightQuickActions() {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Hide quick contact actions" : "Show quick contact actions"}
         aria-expanded={open}
-        className="size-9 grid place-items-center bg-black text-white border-b border-white/10"
+        className="size-11 sm:size-9 grid place-items-center bg-black text-white border-b border-white/10"
       >
         <FaChevronRight aria-hidden="true" className={`transition-transform text-[11px] ${open || "rotate-180"}`} />
       </button>
@@ -31,7 +31,7 @@ export default function RightQuickActions() {
           <a
             key={label}
             href={href}
-            className="group relative grid size-9 place-items-center bg-black text-white border-b border-white/10"
+            className="group relative grid size-11 sm:size-9 place-items-center bg-black text-white border-b border-white/10"
             {...(href.startsWith("http") && { target: "_blank", rel: "noreferrer" })}
           >
             <Icon aria-hidden="true" className="size-4" />

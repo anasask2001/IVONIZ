@@ -432,7 +432,7 @@ export default function ChatWidget() {
                     aria-label="Chat options"
                     aria-expanded={menuOpen}
                     aria-haspopup="true"
-                    className="h-8 w-8 grid place-items-center rounded-full border border-black/10 text-black/60 hover:bg-black/5 transition-colors"
+                    className="h-11 w-11 sm:h-8 sm:w-8 grid place-items-center rounded-full border border-black/10 text-black/60 hover:bg-black/5 transition-colors"
                   >
                     <ChevronUpIcon className={`h-3.5 w-3.5 transition-transform ${menuOpen ? "" : "rotate-180"}`} />
                   </button>
@@ -458,7 +458,7 @@ export default function ChatWidget() {
             <button
               onClick={() => setOpen(false)}
               aria-label="Minimize chat"
-              className="h-7 w-7 grid place-items-center rounded-full bg-black/5 text-black/60 hover:bg-black/10 transition-colors"
+              className="h-11 w-11 sm:h-7 sm:w-7 grid place-items-center rounded-full bg-black/5 text-black/60 hover:bg-black/10 transition-colors"
             >
               <span className="block w-2.5 h-0.5 bg-current rounded-full" />
             </button>
@@ -516,7 +516,7 @@ export default function ChatWidget() {
                 disabled={ended}
                 aria-label={listening ? "Stop voice input" : "Start voice input"}
                 className={[
-                  "h-9 w-9 grid place-items-center rounded-full transition-colors shrink-0 disabled:opacity-30",
+                  "h-11 w-11 sm:h-9 sm:w-9 grid place-items-center rounded-full transition-colors shrink-0 disabled:opacity-30",
                   listening ? "bg-red-500 text-white animate-pulse" : "text-black/50 hover:bg-black/5",
                 ].join(" ")}
               >
@@ -526,7 +526,7 @@ export default function ChatWidget() {
                 onClick={send}
                 disabled={loading || !input.trim() || ended}
                 aria-label="Send message"
-                className="h-9 w-9 grid place-items-center rounded-full bg-black text-white disabled:opacity-30 transition-opacity shrink-0"
+                className="h-11 w-11 sm:h-9 sm:w-9 grid place-items-center rounded-full bg-black text-white disabled:opacity-30 transition-opacity shrink-0"
               >
                 <WaveformIcon className="h-4 w-4" />
               </button>

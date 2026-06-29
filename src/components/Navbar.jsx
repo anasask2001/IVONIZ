@@ -200,7 +200,7 @@ export default function Navbar() {
                   type="button"
                   onClick={() => setSearchOpen(false)}
                   aria-label="Close search"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full shrink-0 text-white hover:bg-white/10 transition-colors duration-200"
+                  className="inline-flex h-11 w-11 sm:h-9 sm:w-9 items-center justify-center rounded-full shrink-0 text-white hover:bg-white/10 transition-colors duration-200"
                 >
                   <CloseIcon className="h-3.5 w-3.5" />
                 </button>
@@ -223,6 +223,7 @@ export default function Navbar() {
                 }}
               />
               <span
+                className="hidden sm:inline"
                 style={{
                   fontSize     : "20px",
                   fontWeight   : 800,
@@ -287,14 +288,14 @@ export default function Navbar() {
             </nav>
 
             {/* ── RIGHT ── */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1.5 sm:gap-3">
               {/* Search */}
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
                 aria-label="Search"
                 className={[
-                  "inline-flex h-9.5 w-9.5 items-center justify-center rounded-full transition-colors duration-200",
+                  "inline-flex h-11 w-11 sm:h-9.5 sm:w-9.5 items-center justify-center rounded-full transition-colors duration-200",
                   dark ? "text-white hover:text-white/70" : "text-black hover:text-black/60",
                 ].join(" ")}
               >
@@ -310,7 +311,7 @@ export default function Navbar() {
                   aria-expanded={callOpen}
                   aria-haspopup="true"
                   className={[
-                    "inline-flex h-9.5 w-9.5 items-center justify-center rounded-full transition-colors duration-200",
+                    "inline-flex h-11 w-11 sm:h-9.5 sm:w-9.5 items-center justify-center rounded-full transition-colors duration-200",
                     dark ? "text-white hover:text-white/70" : "text-black hover:text-black/60",
                   ].join(" ")}
                 >
@@ -382,7 +383,7 @@ export default function Navbar() {
                 onClick={() => setOpen(true)}
                 aria-label="Open menu"
                 className={[
-                  "lg:hidden inline-flex h-9.5 w-9.5 items-center justify-center rounded-full transition-all duration-200",
+                  "lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full transition-all duration-200",
                   dark
                     ? "border border-white/18 text-white hover:bg-white/10 hover:border-white/30"
                     : "border border-black/12 text-black hover:bg-black/5",
@@ -515,7 +516,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/12 text-white/50 hover:text-white hover:border-white/25 transition-colors"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/50 hover:text-white hover:border-white/25 transition-colors"
             >
               <CloseIcon className="h-3.5 w-3.5" />
             </button>
