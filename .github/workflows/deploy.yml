@@ -26,15 +26,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Test raw TCP connectivity to FTP port
-        continue-on-error: true
-        run: |
-          echo "Resolving and probing ${{ secrets.FTP_SERVER }}:21 from the runner..."
-          getent hosts "${{ secrets.FTP_SERVER }}" || nslookup "${{ secrets.FTP_SERVER }}" || true
-          timeout 10 bash -c "echo > /dev/tcp/${{ secrets.FTP_SERVER }}/21" \
-            && echo "✅ TCP connect to port 21 succeeded" \
-            || echo "❌ TCP connect to port 21 failed/timed out -- this points to a firewall blocking GitHub's runner IP, not an app/code issue"
-
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -43,11 +34,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           protocol: ftp
-          timeout: 60000
-          log-level: verbose
           local-dir: ./out/
           server-dir: /public_html/
-          dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/.git*/**
