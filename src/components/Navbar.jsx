@@ -368,15 +368,6 @@ export default function Navbar() {
                 <LineMenuIcon className="h-5 w-5" />
               </button>
 
-              {/* Mobile CTA */}
-              <Link
-                href="/contact"
-                className="lg:hidden inline-flex items-center h-9 px-4 bg-white text-black text-[12px] font-semibold rounded-full"
-                style={{ boxShadow: dark ? "0 2px 12px rgba(255,255,255,0.1)" : "none" }}
-              >
-                Talk
-              </Link>
-
               {/* Hamburger */}
               <button
                 type="button"
