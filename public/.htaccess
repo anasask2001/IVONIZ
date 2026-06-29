@@ -10,6 +10,31 @@
 
   RewriteCond %{HTTP_HOST} ^www\.ivoniz\.com$ [NC]
   RewriteRule ^(.*)$ https://ivoniz.com/$1 [L,R=301]
+
+  # ── Clean-URL routing for the static export ──
+  # Next.js writes each page as a sibling "<route>.html" file (e.g.
+  # about.html), but it ALSO creates a same-named "<route>/" directory
+  # holding only internal React Server Component data fragments, with
+  # no index.html inside. Apache sees that directory, finds no index,
+  # and 404s -- which is exactly what happens on a hard refresh or a
+  # direct visit to /about instead of navigating there via a link.
+
+  # Real files (assets, _next/static chunks, etc.) are served as-is.
+  # Deliberately NOT bypassing on "is a real directory" here -- every
+  # page route (about/, contact/, works/, ...) is also a real
+  # directory (it holds Next's RSC data fragments), and that's
+  # exactly the case that needs to fall through to the .html rewrite
+  # below instead of hitting Apache's directory/index handling.
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # /about/  ->  /about  (canonical, no trailing slash)
+  RewriteCond %{REQUEST_URI} !^/$
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # /about  ->  serve about.html (URL bar still shows the clean path)
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 
 # ── Proper 404 handling ──
