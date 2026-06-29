@@ -179,8 +179,7 @@ export default function Navbar() {
                     style={{ objectFit: "contain", filter: "invert(1)" }}
                   />
                   <span
-                    className="hidden sm:inline"
-                    style={{ fontSize: "19px", fontWeight: 800, letterSpacing: "0.08em", lineHeight: 1, color: "#ffffff" }}
+                    style={{ fontSize: "clamp(15px, 4vw, 19px)", fontWeight: 800, letterSpacing: "0.08em", lineHeight: 1, color: "#ffffff" }}
                   >
                     IVONIZ
                   </span>
@@ -223,9 +222,8 @@ export default function Navbar() {
                 }}
               />
               <span
-                className="hidden sm:inline"
                 style={{
-                  fontSize     : "20px",
+                  fontSize     : "clamp(16px, 4vw, 20px)",
                   fontWeight   : 800,
                   letterSpacing: "0.08em",
                   lineHeight   : 1,
