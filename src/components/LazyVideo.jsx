@@ -27,6 +27,17 @@ export default function LazyVideo({ src, className, style, ...rest }) {
     return () => observer.disconnect();
   }, []);
 
+  /* iOS Safari (and the spec, strictly) won't pick up a <source>
+     added after the <video> has already mounted unless load() is
+     called explicitly -- without this the element just sits empty,
+     so autoplay silently never starts on iPhone. */
+  useEffect(() => {
+    if (!shouldLoad || !ref.current) return;
+    ref.current.load();
+    const playPromise = ref.current.play();
+    if (playPromise) playPromise.catch(() => {});
+  }, [shouldLoad]);
+
   return (
     <video
       ref={ref}
