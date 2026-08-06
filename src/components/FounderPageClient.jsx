@@ -50,7 +50,7 @@ function Section({ className = "", children }) {
   );
 }
 
-export default function FounderPageClient() {
+export default function FounderPageClient({ faqs = [] }) {
   return (
     <main id="main-content" className="bg-white text-black">
 
@@ -282,6 +282,26 @@ export default function FounderPageClient() {
           <p className="text-white/60 text-[14px] mt-1">Founder &amp; Managing Director, Ivoniz Pvt Ltd</p>
         </motion.div>
       </Section>
+
+      {/* ── FAQ ── */}
+      {faqs.length > 0 && (
+        <Section className="bg-[#f8f8f8]">
+          <motion.h2 {...fadeUp(0)} className="text-3xl sm:text-4xl font-bold mb-10">
+            Frequently Asked Questions
+          </motion.h2>
+          <div className="space-y-3">
+            {faqs.map((f) => (
+              <details key={f.q} className="group bg-white border border-black/8 rounded-xl px-5 py-4">
+                <summary className="font-semibold cursor-pointer list-none flex items-center justify-between gap-4">
+                  {f.q}
+                  <span className="text-black/55 group-open:rotate-45 transition-transform shrink-0">+</span>
+                </summary>
+                <p className="text-black/60 text-sm leading-relaxed mt-3">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </Section>
+      )}
 
       {/* ── CTA ── */}
       <Section className="bg-white text-center">

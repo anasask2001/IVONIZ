@@ -66,7 +66,7 @@ export default function ContactPageClient() {
         }}
       />
 
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-16 pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-20 flex items-center" style={{ minHeight: "100vh" }}>
+      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-16 pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-20 flex items-center min-h-dvh">
         <div className="mx-auto max-w-350 w-full grid lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 items-center">
 
           {/* ── LEFT: heading + description + quick actions ── */}
@@ -163,12 +163,15 @@ export default function ContactPageClient() {
             className="w-full bg-white/2 border border-white/8 rounded-2xl p-5 sm:p-7 lg:p-0 lg:bg-transparent lg:border-0"
           >
             <div className="mb-5">
-              <label className="block text-[13px] font-semibold mb-2">
+              <label htmlFor="contact-name" className="block text-[13px] font-semibold mb-2">
                 Full Name <span className="text-red-500">*</span>
               </label>
               <input
+                id="contact-name"
+                name="name"
                 required
                 type="text"
+                autoComplete="name"
                 placeholder="Enter full name"
                 value={form.name}
                 onChange={update("name")}
@@ -178,12 +181,16 @@ export default function ContactPageClient() {
 
             <div className="grid sm:grid-cols-2 gap-5 mb-5">
               <div>
-                <label className="block text-[13px] font-semibold mb-2">
+                <label htmlFor="contact-phone" className="block text-[13px] font-semibold mb-2">
                   Phone Number <span className="text-red-500">*</span>
                 </label>
                 <input
+                  id="contact-phone"
+                  name="phone"
                   required
                   type="tel"
+                  autoComplete="tel"
+                  inputMode="tel"
                   placeholder="Enter phone number"
                   value={form.phone}
                   onChange={update("phone")}
@@ -191,12 +198,16 @@ export default function ContactPageClient() {
                 />
               </div>
               <div>
-                <label className="block text-[13px] font-semibold mb-2">
+                <label htmlFor="contact-email" className="block text-[13px] font-semibold mb-2">
                   Email Address <span className="text-red-500">*</span>
                 </label>
                 <input
+                  id="contact-email"
+                  name="email"
                   required
                   type="email"
+                  autoComplete="email"
+                  inputMode="email"
                   placeholder="Enter e-mail address"
                   value={form.email}
                   onChange={update("email")}
@@ -206,8 +217,10 @@ export default function ContactPageClient() {
             </div>
 
             <div className="mb-5">
-              <label className="block text-[13px] font-semibold mb-2">Service Interested In</label>
+              <label htmlFor="contact-service" className="block text-[13px] font-semibold mb-2">Service Interested In</label>
               <select
+                id="contact-service"
+                name="service"
                 value={form.service}
                 onChange={update("service")}
                 className={`${FIELD_BASE} appearance-none cursor-pointer ${form.service ? "" : "text-white/55"}`}
@@ -228,8 +241,10 @@ export default function ContactPageClient() {
             </div>
 
             <div className="mb-7">
-              <label className="block text-[13px] font-semibold mb-2">Message</label>
+              <label htmlFor="contact-message" className="block text-[13px] font-semibold mb-2">Message</label>
               <textarea
+                id="contact-message"
+                name="message"
                 rows={4}
                 placeholder="Tell us about project"
                 value={form.message}

@@ -11,7 +11,7 @@ export const WEBSITE_ID = "https://ivoniz.com/#website";
    references this entity by @id rather than redefining it. */
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness"],
+  "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
   "@id": ORG_ID,
   name: "Ivoniz Pvt Ltd",
   legalName: "Ivoniz Technologies Pvt. Ltd.",
@@ -44,8 +44,16 @@ export const organizationSchema = {
   ],
   founder: {
     "@type": "Person",
+    "@id": "https://ivoniz.com/founder#person",
     name: "Muhammed Anas",
-    jobTitle: "Founder",
+    jobTitle: "Founder & Managing Director",
+    url: "https://ivoniz.com/founder",
+    image: {
+      "@type": "ImageObject",
+      url: "https://ivoniz.com/founder/founder-of-ivoniz.jpg",
+      width: 800,
+      height: 1000,
+    },
   },
   address: {
     "@type": "PostalAddress",
@@ -66,6 +74,7 @@ export const organizationSchema = {
     { "@type": "State", name: "Kerala" },
     { "@type": "Country", name: "India" },
   ],
+  hasMap: "https://maps.app.goo.gl/q6C1CnZSwnbcX2R47",
   sameAs: [
     "https://maps.app.goo.gl/q6C1CnZSwnbcX2R47",
     "https://www.instagram.com/ivoniz.pvt/",

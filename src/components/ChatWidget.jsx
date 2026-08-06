@@ -9,8 +9,19 @@ const FALLBACK_MESSAGE = `I'm sorry, I couldn't quite understand that. Please co
 
 /* ── Identity — highest priority, never break character ──────────
    Never reveal an underlying AI provider (Google, OpenAI, Anthropic,
-   Claude, Gemini, ChatGPT, etc.) — always answer as Ivoniz AI Assistant. */
-const IDENTITY_WHO = /who('?s| is| are) (your|ur|the) (owner|creator|maker|founder|developer|boss)|who (made|built|created|trained|owns|developed) (you|this)|who are you\b|what('?s| is) your name/i;
+   Claude, Gemini, ChatGPT, etc.) — always answer as Ivoniz AI Assistant.
+   Scoped to "your/ur" (the assistant itself) so it never swallows
+   company questions like "who is the founder/owner" — see FOUNDER_OWNER. */
+const IDENTITY_WHO = /who('?s| is| are) (your|ur) (owner|creator|maker|founder|developer|boss)|who (made|built|created|trained|owns|developed) (you|this)|who are you\b|what('?s| is) your name/i;
+
+/* Company founder/owner/leadership — checked as its own topic, not identity. */
+const FOUNDER_OWNER = /who (founded|started)|who is the (founder|owner|ceo|managing director)|who owns (ivoniz|the company)|who runs (ivoniz|the company)/i;
+const FOUNDER_REPLY =
+  "I'm Ivoniz AI Assistant. Ivoniz Pvt Ltd (legally Ivoniz Technologies Pvt. Ltd.) was founded by Muhammed Anas, who serves as Founder & Managing Director. He leads our web development, mobile app development, digital marketing, and AI solutions teams from our HiLITE Business Park office in Kozhikode (Calicut), Kerala.";
+const FOUNDER_IMAGE = {
+  src: "/founder/founder-of-ivoniz.jpg",
+  alt: "Muhammed Anas — Founder & Managing Director, Ivoniz Pvt Ltd",
+};
 const IDENTITY_MODEL = /are you (chatgpt|gpt|gemini|claude|bard|copilot|an? ai|a bot|a robot)|what (model|ai|llm) are you|are you (a )?(human|real|a large language model)/i;
 const IDENTITY_TECH = /what (technology|tech) (do you use|are you (built|made) (on|with))|how (were|are) you (built|made|trained|created)/i;
 
@@ -75,8 +86,9 @@ const CANNED_REPLIES = [
     reply: "Our vision is to become a globally recognized technology company known for innovative, reliable, and impactful digital solutions.",
   },
   {
-    match: /who (founded|started)|who is the founder/,
-    reply: "Ivoniz Technologies Pvt. Ltd. was founded by Muhammed Anas.",
+    match: FOUNDER_OWNER,
+    reply: FOUNDER_REPLY,
+    image: FOUNDER_IMAGE,
   },
   {
     match: /how (long|many years)|years? of experience|how experienced/,
@@ -244,12 +256,12 @@ function extractName(text) {
   return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
-function cannedReply(text) {
+function matchHook(text) {
   const t = text.trim().toLowerCase().replace(/[!?.]+$/, "");
-  const hook = CANNED_REPLIES.find((h) =>
-    typeof h.match === "function" ? h.match(t) : h.match.test(t)
+  return (
+    CANNED_REPLIES.find((h) => (typeof h.match === "function" ? h.match(t) : h.match.test(t))) ||
+    null
   );
-  return hook ? hook.reply : null;
 }
 
 /* ── Abusive language handling ──────────────────────────────────
@@ -392,9 +404,12 @@ export default function ChatWidget() {
       return;
     }
 
-    const canned = cannedReply(text);
+    const hook = matchHook(text);
     await minDelay;
-    setMessages((m) => [...m, { role: "assistant", content: canned || FALLBACK_MESSAGE }]);
+    setMessages((m) => [
+      ...m,
+      { role: "assistant", content: hook ? hook.reply : FALLBACK_MESSAGE, image: hook?.image },
+    ]);
     setLoading(false);
   };
 
@@ -432,7 +447,7 @@ export default function ChatWidget() {
                     aria-label="Chat options"
                     aria-expanded={menuOpen}
                     aria-haspopup="true"
-                    className="h-11 w-11 sm:h-8 sm:w-8 grid place-items-center rounded-full border border-black/10 text-black/60 hover:bg-black/5 transition-colors"
+                    className="h-11 w-11 lg:h-8 lg:w-8 grid place-items-center rounded-full border border-black/10 text-black/60 hover:bg-black/5 transition-colors shrink-0"
                   >
                     <ChevronUpIcon className={`h-3.5 w-3.5 transition-transform ${menuOpen ? "" : "rotate-180"}`} />
                   </button>
@@ -457,10 +472,10 @@ export default function ChatWidget() {
 
             <button
               onClick={() => setOpen(false)}
-              aria-label="Minimize chat"
-              className="h-11 w-11 sm:h-7 sm:w-7 grid place-items-center rounded-full bg-black/5 text-black/60 hover:bg-black/10 transition-colors"
+              aria-label="Close chat"
+              className="h-11 w-11 lg:h-7 lg:w-7 grid place-items-center rounded-full bg-black/5 text-black/60 hover:bg-black/10 transition-colors shrink-0"
             >
-              <span className="block w-2.5 h-0.5 bg-current rounded-full" />
+              <CloseIcon className="h-4 w-4 lg:h-3.5 lg:w-3.5" />
             </button>
           </div>
 
@@ -487,12 +502,26 @@ export default function ChatWidget() {
                     }`}
                   >
                     <span className="sr-only">{m.role === "user" ? "You: " : "Assistant: "}</span>
+                    {m.image && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={m.image.src}
+                        alt={m.image.alt}
+                        className="w-full max-w-40 aspect-4/5 object-cover rounded-lg mb-2"
+                      />
+                    )}
                     {m.content}
                   </div>
                 ))}
                 {loading && (
-                  <div className="bg-black/5 text-black/60 max-w-[60%] px-3.5 py-2.5 rounded-xl text-[13px]" role="status">
-                    AI is thinking...
+                  <div
+                    className="bg-black/5 max-w-[50%] sm:max-w-30 px-3.5 py-3 rounded-xl flex items-center gap-1"
+                    role="status"
+                  >
+                    <span className="sr-only">Assistant is typing…</span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-black/40 animate-bounce" style={{ animationDelay: "0ms" }} />
+                    <span className="h-1.5 w-1.5 rounded-full bg-black/40 animate-bounce" style={{ animationDelay: "150ms" }} />
+                    <span className="h-1.5 w-1.5 rounded-full bg-black/40 animate-bounce" style={{ animationDelay: "300ms" }} />
                   </div>
                 )}
               </div>
@@ -520,7 +549,7 @@ export default function ChatWidget() {
                 disabled={ended}
                 aria-label={listening ? "Stop voice input" : "Start voice input"}
                 className={[
-                  "h-11 w-11 sm:h-9 sm:w-9 grid place-items-center rounded-full transition-colors shrink-0 disabled:opacity-30",
+                  "h-11 w-11 lg:h-9 lg:w-9 grid place-items-center rounded-full transition-colors shrink-0 disabled:opacity-30",
                   listening ? "bg-red-500 text-white animate-pulse" : "text-black/50 hover:bg-black/5",
                 ].join(" ")}
               >
@@ -530,7 +559,7 @@ export default function ChatWidget() {
                 type="submit"
                 disabled={loading || !input.trim() || ended}
                 aria-label="Send message"
-                className="h-11 w-11 sm:h-9 sm:w-9 grid place-items-center rounded-full bg-black text-white disabled:opacity-30 transition-opacity shrink-0"
+                className="h-11 w-11 lg:h-9 lg:w-9 grid place-items-center rounded-full bg-black text-white disabled:opacity-30 transition-opacity shrink-0"
               >
                 <WaveformIcon className="h-4 w-4" />
               </button>
@@ -562,6 +591,14 @@ function ChevronUpIcon({ className }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <path d="M6 15l6-6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function CloseIcon({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }

@@ -116,6 +116,27 @@ export const WORKS = [
     url: "https://arlocksgentswear.com/",
     gradient: "linear-gradient(135deg, #1e40af 0%, #1e1b4b 100%)",
   },
+  {
+    title: "Danthika Dental Zone",
+    category: "Healthcare",
+    location: "Kondotty, Malappuram, Kerala",
+    url: "https://danthikadentalzone.com/",
+    gradient: "linear-gradient(135deg, #0891b2 0%, #164e63 100%)",
+  },
+  {
+    title: "Docview Business Services",
+    category: "Business Consulting",
+    location: "UAE",
+    url: "https://docviewbs.com/",
+    gradient: "linear-gradient(135deg, #4338ca 0%, #1e1b4b 100%)",
+  },
+  {
+    title: "Elnyca Solutions General Trading LLC",
+    category: "General Trading",
+    location: "UAE",
+    url: "https://elnyca.ae/",
+    gradient: "linear-gradient(135deg, #b91c1c 0%, #450a0a 100%)",
+  },
 ];
 
 export default function WorksPage() {

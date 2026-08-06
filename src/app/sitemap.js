@@ -10,7 +10,12 @@ export default function sitemap() {
     { path: "/about", priority: 0.8, changeFrequency: "monthly" },
     { path: "/works", priority: 0.8, changeFrequency: "weekly" },
     { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/founder", priority: 0.5, changeFrequency: "monthly" },
+    {
+      path: "/founder",
+      priority: 0.5,
+      changeFrequency: "monthly",
+      images: [`${BASE_URL}/founder/founder-of-ivoniz.jpg`],
+    },
     { path: "/best-digital-marketing-company-in-calicut", priority: 0.95, changeFrequency: "weekly" },
     { path: "/best-website-development-company-in-calicut", priority: 0.95, changeFrequency: "weekly" },
     { path: "/best-digital-marketing-company-in-kochi", priority: 0.9, changeFrequency: "weekly" },
@@ -21,5 +26,6 @@ export default function sitemap() {
     lastModified: now,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
+    ...(route.images ? { images: route.images } : {}),
   }));
 }

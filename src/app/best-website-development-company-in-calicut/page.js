@@ -666,7 +666,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">Contact Ivoniz in Calicut</h2>
         <div className="grid sm:grid-cols-2 gap-8">
           <div className="space-y-3 text-black/65 leading-relaxed">
-            <p><strong>Address:</strong> 7th Floor, Phase 1, HiLITE Business Park, Ivoniz Technologies Private Limited, Kozhikode, Kerala 673001</p>
+            <p><strong>Address:</strong> Ivoniz Technologies Private Limited, 7th Floor, Phase 1, HiLITE Business Park, Kozhikode, Kerala 673001</p>
             <p><strong>Phone:</strong> <a href="tel:+919645760023" className="underline">+91 96457 60023</a></p>
             <p><strong>WhatsApp (Sales):</strong> <a href="https://wa.me/919645760023" target="_blank" rel="noreferrer" className="underline">+91 96457 60023</a></p>
             <p><strong>Email:</strong> <a href="mailto:info@ivoniz.com" className="underline">info@ivoniz.com</a></p>
