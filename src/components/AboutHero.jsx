@@ -13,7 +13,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
  */
 
 const TITLE_WORDS = ["Design.", "Build.", "Market."];
-
 export default function AboutHero() {
   const sectionRef = useRef(null);
   const videoRef    = useRef(null);
