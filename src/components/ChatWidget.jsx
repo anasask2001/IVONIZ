@@ -293,6 +293,8 @@ export default function ChatWidget() {
   const [abuseCount, setAbuseCount] = useState(0);
   const [ended, setEnded] = useState(false);
   const [romanticCount, setRomanticCount] = useState(0);
+  const [keyboardInset, setKeyboardInset] = useState(0);
+  const [panelHeight, setPanelHeight] = useState(null);
   const scrollRef = useRef(null);
   const recognitionRef = useRef(null);
   const idleTimerRef = useRef(null);
@@ -313,6 +315,58 @@ export default function ChatWidget() {
     window.addEventListener("keydown", fn);
     return () => window.removeEventListener("keydown", fn);
   }, [open, menuOpen]);
+
+  /* ── Lock background scroll while the chat is open ──────────────
+     Plain overflow:hidden doesn't stop iOS Safari's rubber-band
+     scroll, so pin the body in place and restore the scroll
+     position on close. */
+  useEffect(() => {
+    if (!open) return;
+    const scrollY = window.scrollY;
+    const { style } = document.body;
+    const prev = { position: style.position, top: style.top, width: style.width, overscrollBehavior: style.overscrollBehavior };
+
+    style.position = "fixed";
+    style.top = `-${scrollY}px`;
+    style.width = "100%";
+    style.overscrollBehavior = "none";
+
+    return () => {
+      style.position = prev.position;
+      style.top = prev.top;
+      style.width = prev.width;
+      style.overscrollBehavior = prev.overscrollBehavior;
+      window.scrollTo(0, scrollY);
+    };
+  }, [open]);
+
+  /* ── Keyboard-aware resize via the Visual Viewport API ───────────
+     iOS Safari and modern Android Chrome shrink the *visual*
+     viewport (not the layout viewport) when the keyboard opens, so
+     `100dvh`/`resize` alone won't move fixed elements out from
+     under it. Track the live visual viewport and lift + shrink the
+     panel so the input always stays above the keyboard, restoring
+     automatically when it closes. */
+  useEffect(() => {
+    const viewport = window.visualViewport;
+    if (!open || !viewport) return;
+
+    const handleViewportChange = () => {
+      const inset = Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop);
+      setKeyboardInset(inset);
+      setPanelHeight(inset > 0 ? Math.max(240, viewport.height - 16) : null);
+    };
+
+    handleViewportChange();
+    viewport.addEventListener("resize", handleViewportChange);
+    viewport.addEventListener("scroll", handleViewportChange);
+    return () => {
+      viewport.removeEventListener("resize", handleViewportChange);
+      viewport.removeEventListener("scroll", handleViewportChange);
+      setKeyboardInset(0);
+      setPanelHeight(null);
+    };
+  }, [open]);
 
   useEffect(() => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -430,13 +484,17 @@ export default function ChatWidget() {
   const hasConversation = messages.length > 0;
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+    <div
+      className="fixed right-5 z-50 flex flex-col items-end gap-3"
+      style={{ bottom: `calc(1.25rem + ${keyboardInset}px)` }}
+    >
       {open && (
         <div
           role="dialog"
           aria-modal="false"
           aria-label="Ivoniz AI chat assistant"
           className="w-[90vw] max-w-90 h-[70dvh] max-h-110 flex flex-col rounded-3xl overflow-hidden bg-white shadow-2xl"
+          style={panelHeight ? { height: `${panelHeight}px`, maxHeight: `${panelHeight}px` } : undefined}
         >
           <div className="flex items-center justify-between px-4 pt-4">
             <div className="relative">
@@ -484,7 +542,7 @@ export default function ChatWidget() {
             role="log"
             aria-live="polite"
             aria-label="Chat messages"
-            className="flex-1 overflow-y-auto px-5 py-4"
+            className="flex-1 overflow-y-auto overscroll-contain px-5 py-4"
           >
             {!hasConversation ? (
               <div className="h-full grid place-items-center text-center px-4">
@@ -541,7 +599,7 @@ export default function ChatWidget() {
                 placeholder={ended ? "Conversation ended" : "Type a message..."}
                 disabled={ended}
                 enterKeyHint="send"
-                className="flex-1 h-9 text-black text-[13px] placeholder:text-black/60 outline-none bg-transparent disabled:cursor-not-allowed"
+                className="flex-1 h-9 text-black text-[16px] lg:text-[13px] placeholder:text-black/60 outline-none bg-transparent disabled:cursor-not-allowed"
               />
               <button
                 type="button"
