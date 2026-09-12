@@ -71,6 +71,9 @@ export const organizationSchema = {
   areaServed: [
     { "@type": "City", name: "Kozhikode" },
     { "@type": "City", name: "Kochi" },
+    { "@type": "City", name: "Thrissur" },
+    { "@type": "City", name: "Malappuram" },
+    { "@type": "City", name: "Kannur" },
     { "@type": "State", name: "Kerala" },
     { "@type": "Country", name: "India" },
   ],

@@ -84,6 +84,13 @@ export const metadata = {
     title: "Ivoniz Pvt Ltd",
     statusBarStyle: "black-translucent",
   },
+
+  other: {
+    "geo.region": "IN-KL",
+    "geo.placename": "Kozhikode, Kerala",
+    "geo.position": "11.247798588931074;75.83147697481216",
+    ICBM: "11.247798588931074, 75.83147697481216",
+  },
 };
 
 export const viewport = {

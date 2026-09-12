@@ -11,6 +11,10 @@ Google weighs consistency between your website and your GBP listing heavily. Use
 - **Phone:** `+91 96457 60023` (primary) — list `+91 81138 47950` (sales) only as an additional phone number, not primary
 - **Website:** `https://ivoniz.com`
 
+## 1a. Service areas
+
+GBP has a separate "Service areas" field (distinct from your address) — set it to match the `areaServed` list now in `src/lib/schema.js`: **Kozhikode, Kochi, Thrissur, Malappuram, Kannur** (plus Kerala/India as the broader fallback). This was previously only Kozhikode + Kochi in the schema even though the location landing pages and footer copy already talk about serving Thrissur/Malappuram/Kannur — keeping GBP's service area aligned with the schema and the on-page copy is what makes the "areas we serve" signal consistent across all three.
+
 ## 2. Categories
 
 - **Primary category:** `Website Designer` or `Internet Marketing Service` — pick whichever better reflects your #1 revenue line today (web dev vs. digital marketing). Only one primary category is allowed.
