@@ -5,7 +5,7 @@ import { FaArrowRight, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/f
 const SOCIAL = [
   { label: "Instagram", href: "https://www.instagram.com/ivoniz.pvt/", Icon: FaInstagram },
   { label: "Facebook",  href: "https://www.facebook.com/profile.php?id=61579264607681", Icon: FaFacebook },
-  { label: "LinkedIn",  href: "https://www.linkedin.com/company/ivoniz-pvt-ltd/", Icon: FaLinkedin },
+  { label: "LinkedIn",  href: "https://www.linkedin.com/company/ivoniz-llp/", Icon: FaLinkedin },
 ];
 
 /* Each link points to a real, relevant page or in-page anchor —
@@ -91,7 +91,7 @@ export default function Footer() {
             </p>
             <address className="not-italic text-[13px] text-black/60 leading-relaxed">
               7th Floor, Phase 1, HiLITE Business Park,<br />
-              Ivoniz Technologies Private Limited,<br />
+              Ivoniz Technologies LLP,<br />
               Kozhikode, Kerala 673001
             </address>
           </div>
@@ -116,7 +116,7 @@ export default function Footer() {
             <address className="not-italic text-[13px] text-black/50 leading-relaxed">
               7th Floor, Phase 1,<br />
               HiLITE Business Park,<br />
-              Ivoniz Technologies Private Limited,<br />
+              Ivoniz Technologies LLP,<br />
               Kozhikode, Kerala 673001
             </address>
             <a href="https://maps.app.goo.gl/q6C1CnZSwnbcX2R47" target="_blank" rel="noreferrer"
@@ -195,7 +195,7 @@ export default function Footer() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.1849838091516!2d75.83147697481216!3d11.247798588931074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b57e1fbe7ef%3A0x6fbdbc4ed078a88!2sIvoniz%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1780247990377!5m2!1sen!2sin"
               width="100%" height="100%" style={{ border: 0 }}
               allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              title="Ivoniz Technologies Pvt Ltd location"
+              title="Ivoniz Technologies LLP location"
             />
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function Footer() {
         {/* ── Bottom bar ── */}
         <div className="border-t border-black/[0.07] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[13px] text-black/60">
-            © {new Date().getFullYear()} Ivoniz Pvt Ltd. All rights reserved.
+            © {new Date().getFullYear()} Ivoniz LLP All rights reserved.
           </p>
           <div className="flex gap-6 text-[13px] text-black/60">
             <Link href="/privacy" className="hover:text-black transition-colors">Privacy Policy</Link>

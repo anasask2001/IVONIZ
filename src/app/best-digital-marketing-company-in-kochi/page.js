@@ -20,7 +20,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Best Digital Marketing Company in Kochi | Ivoniz Pvt Ltd",
+    title: "Best Digital Marketing Company in Kochi | Ivoniz LLP",
     description:
       "Ivoniz — a results-driven digital marketing agency in Kochi serving Ernakulam and all of Kerala.",
     url: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
@@ -30,13 +30,13 @@ export const metadata = {
         url: "/ivoniz-og-image.webp",
         width: 1734,
         height: 907,
-        alt: "Ivoniz Pvt Ltd — Best Digital Marketing Company in Kochi",
+        alt: "Ivoniz LLP — Best Digital Marketing Company in Kochi",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Digital Marketing Company in Kochi | Ivoniz Pvt Ltd",
+    title: "Best Digital Marketing Company in Kochi | Ivoniz LLP",
     description: "Ivoniz — a results-driven digital marketing agency in Kochi serving Ernakulam and all of Kerala.",
     images: ["/ivoniz-og-image.webp"],
   },
@@ -244,7 +244,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
         <div className="mx-auto max-w-5xl">
           <Breadcrumbs dark items={[{ label: "Best Digital Marketing Company in Kochi", href: "/best-digital-marketing-company-in-kochi" }]} />
           <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
-            Ivoniz Pvt Ltd · Serving Kochi &amp; Ernakulam
+            Ivoniz LLP · Serving Kochi &amp; Ernakulam
           </p>
           <h1 className="font-bold leading-[1.08] mb-6" style={{ fontSize: "clamp(32px,5vw,58px)" }}>
             Best Digital Marketing Company in Kochi
@@ -256,7 +256,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
             id="quick-answer"
             className="text-white/80 text-base leading-relaxed max-w-2xl mb-6 border-l-2 border-white/25 pl-4"
           >
-            Ivoniz Pvt Ltd is a leading digital marketing company serving Kochi and Ernakulam — a 4.9-star rated
+            Ivoniz LLP is a leading digital marketing company serving Kochi and Ernakulam — a 4.9-star rated
             agency offering SEO, Google Ads, social media marketing, and website development across Kerala.
           </p>
 
@@ -302,9 +302,9 @@ export default function BestDigitalMarketingCompanyInKochi() {
 
       {/* ── ABOUT IVONIZ ── */}
       <Section className="bg-[#f8f8f8]">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Ivoniz Pvt Ltd</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Ivoniz LLP</h2>
         <p className="text-black/65 leading-relaxed mb-4">
-          Ivoniz Pvt Ltd is a Kerala-based digital marketing, SEO, web, and app development company headquartered
+          Ivoniz LLP is a Kerala-based digital marketing, SEO, web, and app development company headquartered
           at HiLITE Business Park, Kozhikode. We started with a simple aim — give Kerala businesses the same
           calibre of digital marketing usually reserved for metro cities, delivered by a team that actually
           understands the local market.
@@ -738,7 +738,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">Talk to Our Team</h2>
         <div className="grid sm:grid-cols-2 gap-8">
           <div className="space-y-3 text-black/65 leading-relaxed">
-            <p><strong>Head Office:</strong> Ivoniz Technologies Private Limited, 7th Floor, Phase 1, HiLITE Business Park, Kozhikode, Kerala 673001</p>
+            <p><strong>Head Office:</strong> Ivoniz Technologies LLP, 7th Floor, Phase 1, HiLITE Business Park, Kozhikode, Kerala 673001</p>
             <p><strong>Phone:</strong> <a href="tel:+919645760023" className="underline">+91 96457 60023</a></p>
             <p><strong>WhatsApp (Sales):</strong> <a href="https://wa.me/919645760023" target="_blank" rel="noreferrer" className="underline">+91 96457 60023</a></p>
             <p><strong>Email:</strong> <a href="mailto:info@ivoniz.com" className="underline">info@ivoniz.com</a></p>

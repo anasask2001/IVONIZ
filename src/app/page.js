@@ -23,8 +23,8 @@ const SelectedWorks    = dynamic(() => import("@/components/SelectedWorks"));
    shown below via GoogleReviews. ──────────────────────────────── */
 const homePageSchema = webPageSchema({
   url: "https://ivoniz.com/",
-  name: "Ivoniz Pvt Ltd | Web & App Development Company in Kerala",
-  description: "Ivoniz Pvt Ltd is a leading web development, mobile app development, and digital marketing company in Kozhikode, Kerala. We build scalable apps, websites, and AI tools to grow your business.",
+  name: "Ivoniz LLP | Web & App Development Company in Kerala",
+  description: "Ivoniz LLP is a leading web development, mobile app development, and digital marketing company in Kozhikode, Kerala. We build scalable apps, websites, and AI tools to grow your business.",
 });
 
 const homeServiceSchema = {
@@ -159,12 +159,15 @@ export default function Home() {
           HERO
       ══════════════════════════════════════════════════════════ */}
       <section
-        className="relative overflow-hidden"
-        style={{ minHeight: "100vh", background: "#060606" }}
+        className="relative overflow-hidden min-h-dvh"
+        style={{ background: "#060606" }}
       >
-        {/* Background video */}
+        {/* Background video — preload="metadata" instead of "auto" so this
+            ~800KB file doesn't compete with critical CSS/JS/fonts for
+            bandwidth on a slow connection; the dark section background
+            above covers the gap until it's ready to play. */}
         <video
-          autoPlay muted loop playsInline preload="auto"
+          autoPlay muted loop playsInline preload="metadata"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ zIndex: 0 }}
         >
@@ -195,8 +198,8 @@ export default function Home() {
 
         {/* Content — anchored to bottom */}
         <div
-          className="relative flex flex-col justify-end px-6 sm:px-10 lg:px-14 xl:px-20 pb-44 sm:pb-12 lg:pb-16"
-          style={{ zIndex: 3, minHeight: "100vh" }}
+          className="relative flex flex-col justify-end px-6 sm:px-10 lg:px-14 xl:px-20 pb-44 sm:pb-12 lg:pb-16 min-h-dvh"
+          style={{ zIndex: 3 }}
         >
           {/* Text block — the page's single H1 */}
           <h1 className="mb-8 lg:mb-10 m-0">
@@ -449,7 +452,7 @@ export default function Home() {
       <section className="relative overflow-hidden py-16 sm:py-24 lg:py-36 px-4 sm:px-6 lg:px-10 xl:px-16">
         {/* Background video */}
         <LazyVideo
-          src="/video/all/next-gen/ivoniz-pvt-ltd-Next-Gen.mp4"
+          src="/video/all/next-gen/ivoniz-llp-Next-Gen.mp4"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ zIndex: 0 }}
         />

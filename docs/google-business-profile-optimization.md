@@ -1,4 +1,4 @@
-# Google Business Profile Optimization — Ivoniz Pvt Ltd
+# Google Business Profile Optimization — Ivoniz LLP
 
 Recommendations only — none of this can be applied from the codebase. Everything below is meant to be entered directly into the Google Business Profile dashboard (business.google.com).
 
@@ -6,7 +6,7 @@ Recommendations only — none of this can be applied from the codebase. Everythi
 
 Google weighs consistency between your website and your GBP listing heavily. Use these exact strings, matching what's now in `src/lib/schema.js` and the site footer:
 
-- **Business name:** `Ivoniz Pvt Ltd` (don't add keywords like "| Web Development Calicut" into the GBP name field — this violates Google's guidelines and risks suspension)
+- **Business name:** `Ivoniz LLP` (don't add keywords like "| Web Development Calicut" into the GBP name field — this violates Google's guidelines and risks suspension)
 - **Address:** `7th Floor, Phase 1, HiLITE Business Park, Kozhikode, Kerala 673001, India`
 - **Phone:** `+91 96457 60023` (primary) — list `+91 81138 47950` (sales) only as an additional phone number, not primary
 - **Website:** `https://ivoniz.com`
@@ -63,7 +63,7 @@ List services as individual line items (GBP supports this natively, separate fro
 
 Use the full 750-character limit. Lead with the two things people actually search: location + service. e.g.:
 
-> Ivoniz Pvt Ltd is a web development, mobile app development, and digital marketing company based in Kozhikode (Calicut), Kerala. We've delivered 1000+ websites and 100+ apps for clients across India, backed by a 4.9-star client rating. Services include custom website development, iOS/Android app development, SEO, Google Ads, social media marketing, and AI-powered business tools. Based at HiLITE Business Park — serving Kozhikode, Kochi, and businesses across Kerala and beyond.
+> Ivoniz LLP is a web development, mobile app development, and digital marketing company based in Kozhikode (Calicut), Kerala. We've delivered 1000+ websites and 100+ apps for clients across India, backed by a 4.9-star client rating. Services include custom website development, iOS/Android app development, SEO, Google Ads, social media marketing, and AI-powered business tools. Based at HiLITE Business Park — serving Kozhikode, Kochi, and businesses across Kerala and beyond.
 
 ## 10. Website link UTM tracking
 

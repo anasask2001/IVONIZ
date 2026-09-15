@@ -17,16 +17,16 @@ const IDENTITY_WHO = /who('?s| is| are) (your|ur) (owner|creator|maker|founder|d
 /* Company founder/owner/leadership — checked as its own topic, not identity. */
 const FOUNDER_OWNER = /who (founded|started)|who is the (founder|owner|ceo|managing director)|who owns (ivoniz|the company)|who runs (ivoniz|the company)/i;
 const FOUNDER_REPLY =
-  "I'm Ivoniz AI Assistant. Ivoniz Pvt Ltd (legally Ivoniz Technologies Pvt. Ltd.) was founded by Muhammed Anas, who serves as Founder & Managing Director. He leads our web development, mobile app development, digital marketing, and AI solutions teams from our HiLITE Business Park office in Kozhikode (Calicut), Kerala.";
+  "I'm Ivoniz AI Assistant. Ivoniz LLP (legally Ivoniz Technologies LLP) was founded by Muhammed Anas, who serves as Founder & Managing Director. He leads our web development, mobile app development, digital marketing, and AI solutions teams from our HiLITE Business Park office in Kozhikode (Calicut), Kerala.";
 const FOUNDER_IMAGE = {
   src: "/founder/founder-of-ivoniz.jpg",
-  alt: "Muhammed Anas — Founder & Managing Director, Ivoniz Pvt Ltd",
+  alt: "Muhammed Anas — Founder & Managing Director, Ivoniz LLP",
 };
 const IDENTITY_MODEL = /are you (chatgpt|gpt|gemini|claude|bard|copilot|an? ai|a bot|a robot)|what (model|ai|llm) are you|are you (a )?(human|real|a large language model)/i;
 const IDENTITY_TECH = /what (technology|tech) (do you use|are you (built|made) (on|with))|how (were|are) you (built|made|trained|created)/i;
 
 const IDENTITY_REPLY =
-  "I'm Ivoniz AI Assistant, the virtual assistant for Ivoniz Technologies Pvt. Ltd. I'm here to help you with information about our services, solutions, and projects.";
+  "I'm Ivoniz AI Assistant, the virtual assistant for Ivoniz Technologies LLP I'm here to help you with information about our services, solutions, and projects.";
 const IDENTITY_TECH_REPLY =
   "I'm the AI assistant for Ivoniz Technologies, built using advanced AI technology to provide accurate and helpful responses about our company and services.";
 

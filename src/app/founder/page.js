@@ -3,9 +3,9 @@ import { webPageSchema, breadcrumbSchema, ORG_ID } from "@/lib/schema";
 
 const pageSchema = webPageSchema({
   url: "https://ivoniz.com/founder",
-  name: "Muhammed Anas — Founder & Managing Director, Ivoniz Pvt Ltd",
+  name: "Muhammed Anas — Founder & Managing Director, Ivoniz LLP",
   description:
-    "Muhammed Anas is the Founder and Managing Director of Ivoniz Pvt Ltd, a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala.",
+    "Muhammed Anas is the Founder and Managing Director of Ivoniz LLP, a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala.",
 });
 
 const pageBreadcrumb = breadcrumbSchema([
@@ -32,20 +32,20 @@ const personSchema = {
    so search engines and AI answer engines can quote it verbatim. */
 const FAQS = [
   {
-    q: "Who is the founder of Ivoniz Pvt Ltd?",
-    a: "Muhammed Anas is the Founder and Managing Director of Ivoniz Pvt Ltd (Ivoniz Technologies Pvt. Ltd.), a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala, India.",
+    q: "Who is the founder of Ivoniz LLP?",
+    a: "Muhammed Anas is the Founder and Managing Director of Ivoniz LLP (Ivoniz Technologies LLP), a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala, India.",
   },
   {
     q: "Who is the owner of Ivoniz?",
-    a: "Ivoniz Pvt Ltd is owned and led by Muhammed Anas, who founded the company and continues to serve as its Founder and Managing Director.",
+    a: "Ivoniz LLP is owned and led by Muhammed Anas, who founded the company and continues to serve as its Founder and Managing Director.",
   },
   {
     q: "Who is the CEO or Managing Director of Ivoniz?",
-    a: "Muhammed Anas holds the role of Founder and Managing Director at Ivoniz Pvt Ltd, overseeing the company's web development, mobile app development, digital marketing, and AI solutions teams.",
+    a: "Muhammed Anas holds the role of Founder and Managing Director at Ivoniz LLP, overseeing the company's web development, mobile app development, digital marketing, and AI solutions teams.",
   },
   {
     q: "What is Muhammed Anas's background before founding Ivoniz?",
-    a: "Muhammed Anas completed his Bachelor of Commerce (B.Com) before moving into technology through self-learning and hands-on project work, eventually founding Ivoniz Pvt Ltd to help businesses use technology strategically.",
+    a: "Muhammed Anas completed his Bachelor of Commerce (B.Com) before moving into technology through self-learning and hands-on project work, eventually founding Ivoniz LLP to help businesses use technology strategically.",
   },
 ];
 
@@ -62,7 +62,7 @@ const faqSchema = {
 export const metadata = {
   title: "Founder & Managing Director",
   description:
-    "Meet Muhammed Anas, Founder and Managing Director of Ivoniz Pvt Ltd — a technology and digital growth company in Kozhikode (Calicut), Kerala building web, app, and digital marketing solutions.",
+    "Meet Muhammed Anas, Founder and Managing Director of Ivoniz LLP — a technology and digital growth company in Kozhikode (Calicut), Kerala building web, app, and digital marketing solutions.",
   alternates: {
     canonical: "https://ivoniz.com/founder",
     languages: {
@@ -71,9 +71,9 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Muhammed Anas — Founder & Managing Director, Ivoniz Pvt Ltd",
+    title: "Muhammed Anas — Founder & Managing Director, Ivoniz LLP",
     description:
-      "Meet the founder of Ivoniz Pvt Ltd — a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala.",
+      "Meet the founder of Ivoniz LLP — a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala.",
     url: "https://ivoniz.com/founder",
     type: "profile",
     images: [
@@ -81,14 +81,14 @@ export const metadata = {
         url: "/founder/founder-of-ivoniz.jpg",
         width: 800,
         height: 1000,
-        alt: "Muhammed Anas — Founder & Managing Director, Ivoniz Pvt Ltd",
+        alt: "Muhammed Anas — Founder & Managing Director, Ivoniz LLP",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammed Anas — Founder & Managing Director, Ivoniz Pvt Ltd",
-    description: "Founder and Managing Director of Ivoniz Pvt Ltd, Kozhikode, Kerala.",
+    title: "Muhammed Anas — Founder & Managing Director, Ivoniz LLP",
+    description: "Founder and Managing Director of Ivoniz LLP, Kozhikode, Kerala.",
     images: ["/founder/founder-of-ivoniz.jpg"],
   },
   robots: { index: true, follow: true },

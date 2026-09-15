@@ -63,7 +63,7 @@ export default function FounderPageClient({ faqs = [] }) {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/founder/founder-of-ivoniz.jpg"
-                alt="Muhammed Anas — Founder & Managing Director, Ivoniz Pvt Ltd"
+                alt="Muhammed Anas — Founder & Managing Director, Ivoniz LLP"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -83,7 +83,7 @@ export default function FounderPageClient({ faqs = [] }) {
             </motion.h1>
             <motion.p {...fadeUp(0.15)} className="font-bold text-2xl mb-1">Muhammed Anas</motion.p>
             <motion.p {...fadeUp(0.18)} className="text-white/60 text-[15px]">
-              Founder &amp; Managing Director, Ivoniz Pvt Ltd
+              Founder &amp; Managing Director, Ivoniz LLP
             </motion.p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function FounderPageClient({ faqs = [] }) {
             for growth.
           </p>
           <p className="text-black/65 text-[17px] leading-relaxed mb-6">
-            Muhammed Anas, the Founder and Managing Director of Ivoniz Pvt Ltd, completed his Bachelor of Commerce
+            Muhammed Anas, the Founder and Managing Director of Ivoniz LLP, completed his Bachelor of Commerce
             (B.Com) with aspirations of building a meaningful career. While his academic background was rooted in
             business and commerce, his curiosity led him toward an entirely different world—technology.
           </p>
@@ -144,7 +144,7 @@ export default function FounderPageClient({ faqs = [] }) {
         <motion.div {...fadeUp(0)} className="max-w-3xl">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">The Birth of Ivoniz</h2>
           <p className="text-black/65 text-[17px] leading-relaxed mb-6">
-            Driven by the desire to help businesses succeed in the digital era, Muhammed Anas founded Ivoniz Pvt Ltd.
+            Driven by the desire to help businesses succeed in the digital era, Muhammed Anas founded Ivoniz LLP
           </p>
           <p className="text-black/65 text-[17px] leading-relaxed mb-3">
             The company was established with a clear mission:
@@ -279,7 +279,7 @@ export default function FounderPageClient({ faqs = [] }) {
             build something impactful.&rdquo;
           </p>
           <p className="font-bold text-lg">— Muhammed Anas</p>
-          <p className="text-white/60 text-[14px] mt-1">Founder &amp; Managing Director, Ivoniz Pvt Ltd</p>
+          <p className="text-white/60 text-[14px] mt-1">Founder &amp; Managing Director, Ivoniz LLP</p>
         </motion.div>
       </Section>
 

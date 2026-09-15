@@ -7,7 +7,7 @@ import { webPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 const pageSchema = webPageSchema({
   url: "https://ivoniz.com/works",
-  name: "Our Works | Ivoniz Pvt Ltd",
+  name: "Our Works | Ivoniz LLP",
   description:
     "A selection of live websites Ivoniz has designed and built for clients across fashion, jewellery, healthcare, trading, and consulting.",
 });
@@ -28,7 +28,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Our Works | Ivoniz Pvt Ltd",
+    title: "Our Works | Ivoniz LLP",
     description:
       "A selection of live websites Ivoniz has designed and built for clients across fashion, jewellery, healthcare, trading, and consulting.",
     url: "https://ivoniz.com/works",
@@ -38,13 +38,13 @@ export const metadata = {
         url: "/ivoniz-og-image.webp",
         width: 1734,
         height: 907,
-        alt: "Ivoniz Pvt Ltd",
+        alt: "Ivoniz LLP",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Works | Ivoniz Pvt Ltd",
+    title: "Our Works | Ivoniz LLP",
     description: "Live websites Ivoniz has designed and built for clients across Kerala.",
     images: ["/ivoniz-og-image.webp"],
   },

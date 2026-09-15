@@ -8,11 +8,11 @@ const aboutSchema = {
   url: "https://ivoniz.com/about",
   mainEntity: {
     "@type": "Organization",
-    name: "Ivoniz Pvt Ltd",
+    name: "Ivoniz LLP",
     url: "https://ivoniz.com",
     founder: { "@type": "Person", name: "Muhammed Anas" },
     description:
-      "Ivoniz Pvt Ltd is a technology and digital growth company dedicated to helping businesses transform ideas into successful digital products through design, development, and marketing.",
+      "Ivoniz LLP is a technology and digital growth company dedicated to helping businesses transform ideas into successful digital products through design, development, and marketing.",
   },
 };
 
@@ -23,7 +23,7 @@ const pageBreadcrumb = breadcrumbSchema([
 export const metadata = {
   title: "About Us",
   description:
-    "Ivoniz Pvt Ltd is a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala — helping businesses design, build, and market digital products that get results.",
+    "Ivoniz LLP is a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala — helping businesses design, build, and market digital products that get results.",
   alternates: {
     canonical: "https://ivoniz.com/about",
     languages: {
@@ -32,9 +32,9 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "About Ivoniz Pvt Ltd | Kozhikode, Kerala",
+    title: "About Ivoniz LLP | Kozhikode, Kerala",
     description:
-      "A technology partner, not just a vendor — Ivoniz Pvt Ltd designs, builds, and markets digital products for businesses across Kerala.",
+      "A technology partner, not just a vendor — Ivoniz LLP designs, builds, and markets digital products for businesses across Kerala.",
     url: "https://ivoniz.com/about",
     type: "website",
     images: [
@@ -42,13 +42,13 @@ export const metadata = {
         url: "/ivoniz-og-image.webp",
         width: 1734,
         height: 907,
-        alt: "Ivoniz Pvt Ltd",
+        alt: "Ivoniz LLP",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Ivoniz Pvt Ltd | Kozhikode, Kerala",
+    title: "About Ivoniz LLP | Kozhikode, Kerala",
     description: "A technology and digital growth company in Kozhikode (Calicut), Kerala.",
     images: ["/ivoniz-og-image.webp"],
   },

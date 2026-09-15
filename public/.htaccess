@@ -61,3 +61,35 @@ ErrorDocument 404 /404.html
   # available to same-origin (the chat widget's voice input uses it).
   Header always set Permissions-Policy "geolocation=(), camera=(), microphone=(self), payment=()"
 </IfModule>
+
+# ── Compression ──
+# Biggest single lever on a slow connection: shrink every text response
+# before it goes over the wire.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/ld+json application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf font/otf font/woff application/font-woff
+</IfModule>
+
+# ── Caching ──
+# Next.js hashes every filename under _next/static/ on build (a content
+# change always ships under a new name), so those can be cached
+# indefinitely. Pages and RSC data fragments (.html/.txt) must always
+# revalidate, otherwise a repeat visitor on a slow connection would keep
+# being served a stale page from cache after a new deploy instead of
+# skipping the download that failed to matter.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  <FilesMatch "\.(webp|jpe?g|png|gif|svg|ico|mp4)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  <FilesMatch "\.(html|txt)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

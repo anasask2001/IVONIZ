@@ -127,7 +127,7 @@ export default function ContactPageClient() {
               className="not-italic text-white/55 text-[13px] leading-relaxed mt-6"
             >
               7th Floor, Phase 1, HiLITE Business Park,<br />
-              Ivoniz Technologies Private Limited,<br />
+              Ivoniz Technologies LLP,<br />
               Kozhikode (Calicut), Kerala 673001
             </motion.address>
 

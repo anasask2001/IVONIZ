@@ -20,7 +20,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Best Digital Marketing Company in Calicut | Ivoniz Pvt Ltd",
+    title: "Best Digital Marketing Company in Calicut | Ivoniz LLP",
     description:
       "Ivoniz — the best digital marketing agency in Calicut. SEO, Google Ads, Social Media, Web & App Development. Serving Calicut and all of Kerala.",
     url: "https://ivoniz.com/best-digital-marketing-company-in-calicut",
@@ -30,13 +30,13 @@ export const metadata = {
         url: "/ivoniz-og-image.webp",
         width: 1734,
         height: 907,
-        alt: "Ivoniz Pvt Ltd — Best Digital Marketing Company in Calicut",
+        alt: "Ivoniz LLP — Best Digital Marketing Company in Calicut",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Digital Marketing Company in Calicut | Ivoniz Pvt Ltd",
+    title: "Best Digital Marketing Company in Calicut | Ivoniz LLP",
     description: "Ivoniz — the best digital marketing agency in Calicut. SEO, Google Ads, Social Media, Web & App Development.",
     images: ["/ivoniz-og-image.webp"],
   },
@@ -49,7 +49,7 @@ export const metadata = {
 const FAQS = [
   {
     q: "Who is the best digital marketing agency in Calicut?",
-    a: "Ivoniz Pvt Ltd is widely regarded as the best digital marketing agency in Calicut, with a proven track record across SEO, Google Ads, social media marketing, and website development for businesses across Kerala.",
+    a: "Ivoniz LLP is widely regarded as the best digital marketing agency in Calicut, with a proven track record across SEO, Google Ads, social media marketing, and website development for businesses across Kerala.",
   },
   {
     q: "What does a digital marketing agency in Calicut actually do?",
@@ -245,7 +245,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
         <div className="mx-auto max-w-5xl">
           <Breadcrumbs dark items={[{ label: "Best Digital Marketing Company in Calicut", href: "/best-digital-marketing-company-in-calicut" }]} />
           <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
-            Ivoniz Pvt Ltd · Kozhikode, Kerala
+            Ivoniz LLP · Kozhikode, Kerala
           </p>
           <h1 className="font-bold leading-[1.08] mb-6" style={{ fontSize: "clamp(32px,5vw,58px)" }}>
             Best Digital Marketing Company in Calicut
@@ -257,7 +257,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
             id="quick-answer"
             className="text-white/80 text-base leading-relaxed max-w-2xl mb-6 border-l-2 border-white/25 pl-4"
           >
-            Ivoniz Pvt Ltd is the best digital marketing company in Calicut, Kerala — a 4.9-star rated agency
+            Ivoniz LLP is the best digital marketing company in Calicut, Kerala — a 4.9-star rated agency
             offering SEO, Google Ads, social media marketing, and website development, headquartered at HiLITE
             Business Park, Kozhikode.
           </p>
@@ -305,9 +305,9 @@ export default function BestDigitalMarketingCompanyInCalicut() {
 
       {/* ── ABOUT IVONIZ ── */}
       <Section className="bg-[#f8f8f8]">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Ivoniz Pvt Ltd</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Ivoniz LLP</h2>
         <p className="text-black/65 leading-relaxed mb-4">
-          Ivoniz Pvt Ltd is a full-service digital marketing, SEO, web development, and mobile app development
+          Ivoniz LLP is a full-service digital marketing, SEO, web development, and mobile app development
           company headquartered at HiLITE Business Park, Kozhikode, Kerala. We were founded with one mission:
           to create &ldquo;galaxies of possibilities&rdquo; for technological advancement and attract investment
           to Calicut and Thrissur by promoting young, talented teams to do their creative best.
@@ -321,7 +321,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
           and Conversion Rate Optimization.
         </p>
         <p className="text-black/65 leading-relaxed">
-          With a 4.9-star Google rating from real client reviews, <strong>Ivoniz Pvt Ltd</strong> has built its
+          With a 4.9-star Google rating from real client reviews, <strong>Ivoniz LLP</strong> has built its
           reputation the hard way — through delivered results, not empty promises.
         </p>
       </Section>
@@ -782,7 +782,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">Contact Ivoniz in Calicut</h2>
         <div className="grid sm:grid-cols-2 gap-8">
           <div className="space-y-3 text-black/65 leading-relaxed">
-            <p><strong>Address:</strong> Ivoniz Technologies Private Limited, 7th Floor, Phase 1, HiLITE Business Park, Kozhikode, Kerala 673001</p>
+            <p><strong>Address:</strong> Ivoniz Technologies LLP, 7th Floor, Phase 1, HiLITE Business Park, Kozhikode, Kerala 673001</p>
             <p><strong>Phone:</strong> <a href="tel:+919645760023" className="underline">+91 96457 60023</a></p>
             <p><strong>WhatsApp (Sales):</strong> <a href="https://wa.me/919645760023" target="_blank" rel="noreferrer" className="underline">+91 96457 60023</a></p>
             <p><strong>Email:</strong> <a href="mailto:info@ivoniz.com" className="underline">info@ivoniz.com</a></p>

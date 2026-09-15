@@ -20,7 +20,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Best Website Development Company in Calicut | Ivoniz Pvt Ltd",
+    title: "Best Website Development Company in Calicut | Ivoniz LLP",
     description:
       "Ivoniz — the best website development company in Calicut and the best website company in Calicut. Custom websites, e-commerce, and web apps built to convert.",
     url: "https://ivoniz.com/best-website-development-company-in-calicut",
@@ -30,13 +30,13 @@ export const metadata = {
         url: "/ivoniz-og-image.webp",
         width: 1734,
         height: 907,
-        alt: "Ivoniz Pvt Ltd — Best Website Development Company in Calicut",
+        alt: "Ivoniz LLP — Best Website Development Company in Calicut",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Website Development Company in Calicut | Ivoniz Pvt Ltd",
+    title: "Best Website Development Company in Calicut | Ivoniz LLP",
     description: "Ivoniz — the best website development company in Calicut and the best website company in Calicut.",
     images: ["/ivoniz-og-image.webp"],
   },
@@ -49,7 +49,7 @@ export const metadata = {
 const FAQS = [
   {
     q: "Who is the best website development company in Calicut?",
-    a: "Ivoniz Pvt Ltd is widely regarded as the best website development company in Calicut, with a proven track record building fast, mobile-first, conversion-focused websites for businesses across Kerala.",
+    a: "Ivoniz LLP is widely regarded as the best website development company in Calicut, with a proven track record building fast, mobile-first, conversion-focused websites for businesses across Kerala.",
   },
   {
     q: "Is Ivoniz also the best website company in Calicut for small businesses?",
@@ -239,7 +239,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
         <div className="mx-auto max-w-5xl">
           <Breadcrumbs dark items={[{ label: "Best Website Development Company in Calicut", href: "/best-website-development-company-in-calicut" }]} />
           <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
-            Ivoniz Pvt Ltd · Kozhikode, Kerala
+            Ivoniz LLP · Kozhikode, Kerala
           </p>
           <h1 className="font-bold leading-[1.08] mb-6" style={{ fontSize: "clamp(32px,5vw,58px)" }}>
             Best Website Development Company in Calicut
@@ -251,7 +251,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
             id="quick-answer"
             className="text-white/80 text-base leading-relaxed max-w-2xl mb-6 border-l-2 border-white/25 pl-4"
           >
-            Ivoniz Pvt Ltd is the best website development company in Calicut and the best website company in
+            Ivoniz LLP is the best website development company in Calicut and the best website company in
             Calicut — a 4.9-star rated agency that has delivered 1000+ websites, building custom, mobile-first,
             SEO-ready sites from HiLITE Business Park, Kozhikode.
           </p>
@@ -300,9 +300,9 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
 
       {/* ── ABOUT IVONIZ ── */}
       <Section className="bg-[#f8f8f8]">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Ivoniz Pvt Ltd</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Ivoniz LLP</h2>
         <p className="text-black/65 leading-relaxed mb-4">
-          Ivoniz Pvt Ltd is a full-service website development, digital marketing, and mobile app development
+          Ivoniz LLP is a full-service website development, digital marketing, and mobile app development
           company headquartered at HiLITE Business Park, Kozhikode, Kerala. We were founded with one mission: to
           create &ldquo;galaxies of possibilities&rdquo; for technological advancement and attract investment to
           Calicut and Thrissur by promoting young, talented teams to do their creative best.
@@ -315,7 +315,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
           Development, UI/UX Design, Cloud & Hosting, Website Maintenance, and SEO.
         </p>
         <p className="text-black/65 leading-relaxed">
-          With a 4.9-star Google rating from real client reviews, <strong>Ivoniz Pvt Ltd</strong> has earned its
+          With a 4.9-star Google rating from real client reviews, <strong>Ivoniz LLP</strong> has earned its
           reputation as the best website company in Calicut the hard way — through delivered results, not empty
           promises.
         </p>
@@ -666,7 +666,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">Contact Ivoniz in Calicut</h2>
         <div className="grid sm:grid-cols-2 gap-8">
           <div className="space-y-3 text-black/65 leading-relaxed">
-            <p><strong>Address:</strong> Ivoniz Technologies Private Limited, 7th Floor, Phase 1, HiLITE Business Park, Kozhikode, Kerala 673001</p>
+            <p><strong>Address:</strong> Ivoniz Technologies LLP, 7th Floor, Phase 1, HiLITE Business Park, Kozhikode, Kerala 673001</p>
             <p><strong>Phone:</strong> <a href="tel:+919645760023" className="underline">+91 96457 60023</a></p>
             <p><strong>WhatsApp (Sales):</strong> <a href="https://wa.me/919645760023" target="_blank" rel="noreferrer" className="underline">+91 96457 60023</a></p>
             <p><strong>Email:</strong> <a href="mailto:info@ivoniz.com" className="underline">info@ivoniz.com</a></p>

@@ -10,21 +10,21 @@ import LazyVideo from "./LazyVideo";
 const SLIDES = [
   {
     word : "Design",
-    video: "/video/all/ivoniz-pvt-ltd-butterfly.mp4",
+    video: "/video/all/ivoniz-llp-butterfly.mp4",
     desc : "Intelligent design is the essence of nature;\nthat's our inspiration in crafting tomorrow's tech realm.",
     href : "/best-website-development-company-in-calicut",
     vPos : { top: "30%", right: "20vw", transform: "translateY(-50%)" },
   },
   {
     word : "Build",
-    video: "/video/all/ivoniz-pvt-ltd-build.mp4",
+    video: "/video/all/ivoniz-llp-build.mp4",
     desc : "Constantly adopting cutting-edge technology\nfor your enterprise to harness its endless\npossibilities and leave a global imprint.",
     href : "/best-website-development-company-in-calicut",
     vPos : { top: "40%", right: "54vw", transform: "translateY(-50%)" },
   },
   {
     word : "Market",
-    video: "/video/all/ivoniz-pvt-ltd-market.mp4",
+    video: "/video/all/ivoniz-llp-market.mp4",
     desc : "Experts in solving the WHY, WHERE, and HOW\nof propelling your business to new frontiers.",
     href : "/best-digital-marketing-company-in-calicut",
     vPos : { top: "38%", right: "22vw", transform: "translateY(-50%)" },
