@@ -24,7 +24,7 @@ const SelectedWorks    = dynamic(() => import("@/components/SelectedWorks"));
 const homePageSchema = webPageSchema({
   url: "https://ivoniz.com/",
   name: "Ivoniz LLP | Web & App Development Company in Kerala",
-  description: "Ivoniz LLP is a leading web development, mobile app development, and digital marketing company in Kozhikode, Kerala. We build scalable apps, websites, and AI tools to grow your business.",
+  description: "Ivoniz LLP is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
 });
 
 const homeServiceSchema = {

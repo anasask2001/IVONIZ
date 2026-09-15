@@ -21,9 +21,9 @@ const pageBreadcrumb = breadcrumbSchema([
 ]);
 
 export const metadata = {
-  title: "About Us",
+  title: "About Us — Web & App Development, Kozhikode",
   description:
-    "Ivoniz LLP is a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala — helping businesses design, build, and market digital products that get results.",
+    "Ivoniz LLP is a technology and digital growth company in Kozhikode, Kerala — we design, build, and market digital products that get real results.",
   alternates: {
     canonical: "https://ivoniz.com/about",
     languages: {

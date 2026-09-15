@@ -80,7 +80,9 @@ export const organizationSchema = {
   hasMap: "https://maps.app.goo.gl/q6C1CnZSwnbcX2R47",
   sameAs: [
     "https://maps.app.goo.gl/q6C1CnZSwnbcX2R47",
-    "https://www.instagram.com/ivoniz.pvt/",
+    "https://www.instagram.com/ivoniz.llp/",
+    "https://www.instagram.com/ivoniz.media/",
+    "https://www.instagram.com/ivoniz.official/",
     "https://www.facebook.com/profile.php?id=61579264607681",
     "https://www.linkedin.com/company/ivoniz-llp/",
   ],

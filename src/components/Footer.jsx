@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FaArrowRight, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 
 const SOCIAL = [
-  { label: "Instagram", href: "https://www.instagram.com/ivoniz.pvt/", Icon: FaInstagram },
+  { label: "Instagram", href: "https://www.instagram.com/ivoniz.llp/", Icon: FaInstagram },
   { label: "Facebook",  href: "https://www.facebook.com/profile.php?id=61579264607681", Icon: FaFacebook },
   { label: "LinkedIn",  href: "https://www.linkedin.com/company/ivoniz-llp/", Icon: FaLinkedin },
 ];
@@ -45,6 +45,7 @@ const SERVICES_COLS = [
       { label: "SEO", href: "/best-digital-marketing-company-in-calicut" },
       { label: "SMM", href: "/best-digital-marketing-company-in-calicut" },
       { label: "SEM", href: "/best-digital-marketing-company-in-calicut" },
+      { label: "Digital Marketing in Kochi", href: "/best-digital-marketing-company-in-kochi" },
     ],
   },
   {
@@ -192,7 +193,7 @@ export default function Footer() {
           <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-black/55 mb-4">Find Us</p>
           <div className="w-full rounded-2xl overflow-hidden border border-black/[0.07]" style={{ height: "280px" }}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.1849838091516!2d75.83147697481216!3d11.247798588931074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b57e1fbe7ef%3A0x6fbdbc4ed078a88!2sIvoniz%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1780247990377!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.1849838091516!2d75.83147697481216!3d11.247798588931074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b57e1fbe7ef%3A0x6fbdbc4ed078a88!2sIvoniz%20Technologies%20LLP!5e0!3m2!1sen!2sin!4v1780247990377!5m2!1sen!2sin"
               width="100%" height="100%" style={{ border: 0 }}
               allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               title="Ivoniz Technologies LLP location"

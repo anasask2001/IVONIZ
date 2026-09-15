@@ -14,9 +14,9 @@ const pageBreadcrumb = breadcrumbSchema([
 ]);
 
 export const metadata = {
-  title: "Contact Us",
+  title: "Contact Us — Kozhikode, Kerala",
   description:
-    "Contact Ivoniz LLP in Kozhikode (Calicut), Kerala for web development, mobile app development, and digital marketing services. Call +91 96457 60023, WhatsApp, or visit us at HiLITE Business Park.",
+    "Contact Ivoniz LLP at HiLITE Business Park, Kozhikode, Kerala for web development, app development, and digital marketing. Call +91 96457 60023 today.",
   alternates: {
     canonical: "https://ivoniz.com/contact",
     languages: {

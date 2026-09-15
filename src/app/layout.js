@@ -25,7 +25,7 @@ export const metadata = {
     default: "Ivoniz LLP | Web & App Development Company in Kerala",
     template: "%s | Ivoniz LLP",
   },
-  description: "Ivoniz LLP is a leading web development, mobile app development, and digital marketing company in Kozhikode, Kerala. We build scalable apps, websites, and AI tools to grow your business.",
+  description: "Ivoniz LLP is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
   keywords: [
     "mobile app development", "web development", "AI tools",
     "Flutter", "React Native", "Next.js", "UI UX Design",
@@ -50,7 +50,7 @@ export const metadata = {
     url: "https://ivoniz.com",
     siteName: "Ivoniz LLP",
     title: "Ivoniz LLP | Web & App Development Company in Kerala",
-    description: "Ivoniz LLP is a leading web development, mobile app development, and digital marketing company in Kozhikode, Kerala. We build scalable apps, websites, and AI tools to grow your business.",
+    description: "Ivoniz LLP is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
     images: [
       {
         url: "/ivoniz-og-image.webp",

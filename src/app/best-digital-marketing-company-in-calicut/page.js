@@ -11,7 +11,7 @@ import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 export const metadata = {
   title: "Best Digital Marketing Company in Calicut",
   description:
-    "Ivoniz is the best digital marketing agency in Calicut — offering SEO, Google Ads, social media marketing, website & app development. Trusted digital marketing agency in Kerala. Free audit & consultation. Call or WhatsApp now.",
+    "Ivoniz LLP is the best digital marketing agency in Calicut — SEO, Google Ads, social media, and web development. Free audit. Call or WhatsApp now.",
   alternates: {
     canonical: "https://ivoniz.com/best-digital-marketing-company-in-calicut",
     languages: {
@@ -320,9 +320,16 @@ export default function BestDigitalMarketingCompanyInCalicut() {
           Development, Ecommerce Development, Mobile App Development, Branding, AI Automation, Lead Generation,
           and Conversion Rate Optimization.
         </p>
-        <p className="text-black/65 leading-relaxed">
+        <p className="text-black/65 leading-relaxed mb-4">
           With a 4.9-star Google rating from real client reviews, <strong>Ivoniz LLP</strong> has built its
           reputation the hard way — through delivered results, not empty promises.
+        </p>
+        <p className="text-black/65 leading-relaxed">
+          Outside Calicut? We also run a dedicated{" "}
+          <Link href="/best-digital-marketing-company-in-kochi" className="underline font-medium">
+            digital marketing team in Kochi
+          </Link>
+          , serving Ernakulam and the surrounding region.
         </p>
       </Section>
 

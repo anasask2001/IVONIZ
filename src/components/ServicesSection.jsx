@@ -194,7 +194,7 @@ export default function ServicesSection({ services }) {
                     {svc.title}
                   </h3>
                   <Link href={svc.href} className="hidden sm:flex items-center gap-1.5 text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors shrink-0 mt-3 group">
-                    <span className="group-hover:text-white transition-colors">+</span>&nbsp;KNOW MORE
+                    <span className="group-hover:text-white transition-colors">+</span>&nbsp;KNOW MORE<span className="sr-only"> about {svc.title}</span>
                   </Link>
                 </div>
 
@@ -212,7 +212,7 @@ export default function ServicesSection({ services }) {
                 ))}
 
                 <Link href={svc.href} className="sm:hidden inline-flex items-center gap-1.5 mt-8 text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors">
-                  + KNOW MORE
+                  + KNOW MORE<span className="sr-only"> about {svc.title}</span>
                 </Link>
               </div>
             </div>

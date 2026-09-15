@@ -11,7 +11,7 @@ import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 export const metadata = {
   title: "Best Website Development Company in Calicut",
   description:
-    "Ivoniz is the best website development company in Calicut and the best website company in Calicut for businesses that want fast, mobile-first, conversion-focused websites. Free website audit & consultation. Call or WhatsApp now.",
+    "Ivoniz LLP is the best website development company in Calicut — fast, mobile-first websites built to convert. Free consultation. Call or WhatsApp now.",
   alternates: {
     canonical: "https://ivoniz.com/best-website-development-company-in-calicut",
     languages: {
@@ -314,10 +314,17 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
           Development, Web Application & Portal Development, Landing Page Design, WordPress & WooCommerce
           Development, UI/UX Design, Cloud & Hosting, Website Maintenance, and SEO.
         </p>
-        <p className="text-black/65 leading-relaxed">
+        <p className="text-black/65 leading-relaxed mb-4">
           With a 4.9-star Google rating from real client reviews, <strong>Ivoniz LLP</strong> has earned its
           reputation as the best website company in Calicut the hard way — through delivered results, not empty
           promises.
+        </p>
+        <p className="text-black/65 leading-relaxed">
+          Need a team closer to Kochi? We also run a dedicated{" "}
+          <Link href="/best-digital-marketing-company-in-kochi" className="underline font-medium">
+            digital marketing team in Kochi
+          </Link>
+          , serving Ernakulam and the surrounding region.
         </p>
       </Section>
 

@@ -17,9 +17,9 @@ const pageBreadcrumb = breadcrumbSchema([
 ]);
 
 export const metadata = {
-  title: "Our Works",
+  title: "Our Works — Websites We Have Built",
   description:
-    "A selection of live websites Ivoniz has designed and built for clients across fashion, jewellery, healthcare, trading, and consulting.",
+    "Explore live websites Ivoniz LLP has designed and built for clients across fashion, jewellery, healthcare, trading, and consulting in Kerala and the Gulf.",
   alternates: {
     canonical: "https://ivoniz.com/works",
     languages: {

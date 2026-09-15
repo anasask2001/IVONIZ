@@ -11,7 +11,7 @@ import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 export const metadata = {
   title: "Best Digital Marketing Company in Kochi",
   description:
-    "Looking for the best digital marketing agency in Kochi? Ivoniz is a results-driven digital marketing agency offering SEO, ads, social media, and web development. Trusted digital marketing agency in Kerala. Free audit available.",
+    "Looking for the best digital marketing agency in Kochi? Ivoniz LLP offers SEO, ads, social media, and web development across Kerala. Free audit available.",
   alternates: {
     canonical: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
     languages: {
@@ -479,9 +479,20 @@ export default function BestDigitalMarketingCompanyInKochi() {
           mobile-first sites on modern frameworks like Next.js, with click-to-call and click-to-WhatsApp on every
           page and a layout designed to move visitors toward enquiring.
         </p>
-        <p className="text-black/65 leading-relaxed">
+        <p className="text-black/65 leading-relaxed mb-4">
           Because the same team runs your SEO and your website, fixes happen in days, not after weeks of emails
           between separate vendors.
+        </p>
+        <p className="text-black/65 leading-relaxed">
+          Based near Kochi? See the full breakdown on our{" "}
+          <Link href="/best-website-development-company-in-calicut" className="underline font-medium">
+            website development services
+          </Link>{" "}
+          and{" "}
+          <Link href="/best-digital-marketing-company-in-calicut" className="underline font-medium">
+            digital marketing services in Calicut
+          </Link>
+          , delivered by the same Kerala-based team.
         </p>
       </Section>
 
