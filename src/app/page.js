@@ -201,22 +201,20 @@ export default function Home() {
           className="relative flex flex-col justify-end px-6 sm:px-10 lg:px-14 xl:px-20 pb-44 sm:pb-12 lg:pb-16 min-h-dvh"
           style={{ zIndex: 3 }}
         >
-          {/* Text block — the page's single H1 */}
+          {/* Text block — the page's single H1.
+              "We" and "develop" render as plain (non-motion) spans, visible
+              in the static HTML with no entrance fade: as the LCP candidate,
+              gating their paint on framer-motion hydration was adding ~3.7s
+              of render delay on mobile (measured via PageSpeed Insights). */}
           <h1 className="mb-8 lg:mb-10 m-0">
-            <motion.span
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            <span
               className="font-light select-none block"
               style={{ fontSize: "clamp(76px, 11.5vw, 175px)", lineHeight: 0.87, letterSpacing: "-0.025em", color: "#D9D9D9" }}
             >
               We
-            </motion.span>
+            </span>
 
-            <motion.span
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+            <span
               className="font-light select-none block"
               style={{
                 fontSize: "clamp(76px, 11.5vw, 175px)",
@@ -228,7 +226,7 @@ export default function Home() {
               }}
             >
               develop
-            </motion.span>
+            </span>
 
             <span className="select-none block" style={{ overflow: "hidden", lineHeight: 0.87 }}>
               <AnimatePresence mode="wait">

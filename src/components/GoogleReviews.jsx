@@ -16,9 +16,9 @@ function initials(name) {
 function Stars({ rating, size = 12 }) {
   if (!rating) return null;
   return (
-    <div className="flex gap-0.5" aria-label={`${rating} star rating`}>
+    <div className="flex gap-0.5" role="img" aria-label={`${rating} star rating`}>
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} viewBox="0 0 20 20" width={size} height={size}
+        <svg key={i} viewBox="0 0 20 20" width={size} height={size} aria-hidden="true"
           fill={i < Math.round(rating) ? "#f5b400" : "rgba(0,0,0,0.12)"}>
           <path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 14.9 4.4 18.1l1.4-6.3L1 7.5l6.4-.6z" />
         </svg>
