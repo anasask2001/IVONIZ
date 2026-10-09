@@ -59,6 +59,8 @@ export const WORKS = [
     location: "Calicut, Kerala",
     url: "https://poshpalette.in/",
     gradient: "linear-gradient(135deg, #c2410c 0%, #7c2d12 100%)",
+    image: "/Portfolios/POSHPALETTE.png",
+    type: "semi-dynamic",
   },
   {
     title: "Nizra Gold and Diamonds",
@@ -66,6 +68,8 @@ export const WORKS = [
     location: "Kerala",
     url: "https://nizragold.com/",
     gradient: "linear-gradient(135deg, #b45309 0%, #422006 100%)",
+    image: "/Portfolios/NIZRA_GOLD_AND_DIAMONS.png",
+    type: "semi-dynamic",
   },
   {
     title: "Rivaura Hospital",
@@ -73,6 +77,8 @@ export const WORKS = [
     location: "Malappuram, Kerala",
     url: "https://www.rivaurahospital.com/",
     gradient: "linear-gradient(135deg, #0e7490 0%, #083344 100%)",
+    image: "/Portfolios/RIVAURA_HOSPITAL.png",
+    type: "semi-dynamic",
   },
   {
     title: "Opiz Global LLP",
@@ -80,6 +86,8 @@ export const WORKS = [
     location: "Calicut, Kerala",
     url: "https://opizglobal.com/",
     gradient: "linear-gradient(135deg, #15803d 0%, #052e16 100%)",
+    image: "/Portfolios/OPIZ_GLOBAL.png",
+    type: "semi-dynamic",
   },
   {
     title: "Feraro International",
@@ -87,6 +95,8 @@ export const WORKS = [
     location: "Manufacturing",
     url: "https://www.ferarointernational.com/",
     gradient: "linear-gradient(135deg, #334155 0%, #0f172a 100%)",
+    image: "/Portfolios/FERARO_INTERNATIONAL.png",
+    type: "static",
   },
   {
     title: "Sky Pure Water",
@@ -94,6 +104,8 @@ export const WORKS = [
     location: "UAE",
     url: "https://www.skypurewater.com/",
     gradient: "linear-gradient(135deg, #0284c7 0%, #082f49 100%)",
+    image: "/Portfolios/SKYPUREWATER.png",
+    type: "static",
   },
   {
     title: "Technical Trade Co.",
@@ -101,6 +113,8 @@ export const WORKS = [
     location: "Saudi Arabia",
     url: "https://techtrade.sa/",
     gradient: "linear-gradient(135deg, #1e3a8a 0%, #020617 100%)",
+    image: "/Portfolios/TECH_TRADE.png",
+    type: "semi-dynamic",
   },
   {
     title: "CapitalCore",
@@ -108,6 +122,8 @@ export const WORKS = [
     location: "UAE",
     url: "https://www.capitalcoreuae.com/",
     gradient: "linear-gradient(135deg, #525252 0%, #171717 100%)",
+    image: "/Portfolios/CAPITAL_CORE_UAE.png",
+    type: "static",
   },
   {
     title: "Arlocks Gents Wear",
@@ -115,6 +131,8 @@ export const WORKS = [
     location: "Kooriyad, Kerala",
     url: "https://arlocksgentswear.com/",
     gradient: "linear-gradient(135deg, #1e40af 0%, #1e1b4b 100%)",
+    image: "/Portfolios/ARLOCKS_GENTS_WEAR.png",
+    type: "semi-dynamic",
   },
   {
     title: "Danthika Dental Zone",
@@ -122,6 +140,8 @@ export const WORKS = [
     location: "Kondotty, Malappuram, Kerala",
     url: "https://danthikadentalzone.com/",
     gradient: "linear-gradient(135deg, #0891b2 0%, #164e63 100%)",
+    image: "/Portfolios/DANTHIKA_DENTAL_ZONE.png",
+    type: "semi-dynamic",
   },
   {
     title: "Docview Business Services",
@@ -129,6 +149,8 @@ export const WORKS = [
     location: "UAE",
     url: "https://docviewbs.com/",
     gradient: "linear-gradient(135deg, #4338ca 0%, #1e1b4b 100%)",
+    image: "/Portfolios/DOCVIEW_BUSINESS_SERVICES.png",
+    type: "semi-dynamic",
   },
   {
     title: "Elnyca Solutions General Trading LLC",
@@ -136,6 +158,17 @@ export const WORKS = [
     location: "UAE",
     url: "https://elnyca.ae/",
     gradient: "linear-gradient(135deg, #b91c1c 0%, #450a0a 100%)",
+    image: "/Portfolios/ELNYCA_DUBAI.png",
+    type: "semi-dynamic",
+  },
+  {
+    title: "Gaming Qatar",
+    category: "Gaming & E-Commerce",
+    location: "Qatar",
+    url: "https://mygamehobbies.qa/",
+    gradient: "linear-gradient(135deg, #7e22ce 0%, #2e1065 100%)",
+    image: "/Portfolios/MYGAME_HOBBIES_ecommerce.png",
+    type: "fully-dynamic",
   },
 ];
 
