@@ -3,23 +3,21 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 
 /*
- * SELECTED WORKS — editorial overlay cards
+ * SELECTED WORKS — simple, editorial project grid
  * ─────────────────────────────────────────────────────
- * Full-bleed image, numbered tag, title/category revealed
- * over a bottom gradient. GSAP clip-path reveal on scroll +
- * hover zoom/tilt for a more premium, magazine-style feel.
+ * Real client sites shown as clean landscape screenshots,
+ * with name, industry and location set quietly underneath.
+ * Each card opens the live website.
  */
 export default function SelectedWorks({ works }) {
   const sectionRef = useRef(null);
-  const cardRefs    = useRef([]);
-  const imgRefs     = useRef([]);
+  const cardRefs = useRef([]);
 
-  const items = works.slice(0, 3);
+  const items = works.slice(0, 4);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -27,15 +25,16 @@ export default function SelectedWorks({ works }) {
     const ctx = gsap.context(() => {
       cardRefs.current.forEach((card, i) => {
         if (!card) return;
-        gsap.fromTo(card,
-          { clipPath: "inset(0 0 100% 0)", opacity: 0 },
+        gsap.fromTo(
+          card,
+          { y: 32, opacity: 0 },
           {
-            clipPath: "inset(0 0 0% 0)",
+            y: 0,
             opacity: 1,
             duration: 0.8,
             ease: "power3.out",
-            delay: i * 0.12,
-            scrollTrigger: { trigger: card, start: "top 88%", once: true },
+            delay: (i % 2) * 0.1,
+            scrollTrigger: { trigger: card, start: "top 90%", once: true },
           }
         );
       });
@@ -44,70 +43,46 @@ export default function SelectedWorks({ works }) {
     return () => ctx.revert();
   }, [works]);
 
-  const handleEnter = (i) => () => {
-    gsap.to(imgRefs.current[i], { scale: 1.08, duration: 0.6, ease: "power2.out" });
-  };
-  const handleLeave = (i) => () => {
-    gsap.to(imgRefs.current[i], { scale: 1, duration: 0.6, ease: "power2.out" });
-  };
-
   return (
-    <div ref={sectionRef} className="grid sm:grid-cols-3 gap-5">
+    <div ref={sectionRef} className="grid sm:grid-cols-2 gap-x-6 lg:gap-x-10 gap-y-10 sm:gap-y-14">
       {items.map((work, i) => (
-        <Link
-          key={work.id}
-          href={work.href}
+        <a
+          key={work.url}
+          href={work.url}
+          target="_blank"
+          rel="noopener noreferrer"
           ref={(el) => (cardRefs.current[i] = el)}
-          className="group relative block rounded-2xl overflow-hidden bg-black"
-          style={{ aspectRatio: "4/5" }}
-          onMouseEnter={handleEnter(i)}
-          onMouseLeave={handleLeave(i)}
+          className="group block"
+          aria-label={`${work.title} — visit live website (opens in a new tab)`}
         >
-          <Image
-            ref={(el) => (imgRefs.current[i] = el)}
-            src={work.image}
-            alt={work.title}
-            fill
-            sizes="(max-width: 640px) 100vw, 33vw"
-            className="object-cover"
-            style={{ willChange: "transform" }}
-          />
+          {/* screenshot */}
+          <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-white border border-black/8 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow duration-500 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]">
+            <Image
+              src={work.image}
+              alt={`${work.title} website designed by Ivoniz`}
+              fill
+              sizes="(max-width: 640px) 100vw, 50vw"
+              className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            />
+          </div>
 
-          {/* bottom gradient for text legibility */}
-          <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%)" }}
-          />
-
-          {/* numbered tag */}
-          <span
-            className="absolute top-4 left-4 text-[12px] font-bold text-white/70 rounded-full w-8 h-8 flex items-center justify-center"
-            style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", backdropFilter: "blur(8px)" }}
-          >
-            {String(i + 1).padStart(2, "0")}
-          </span>
-
-          {/* category badge */}
-          <span
-            className="absolute top-4 right-4 text-[11px] font-semibold text-white/80 uppercase tracking-wide px-3 py-1.5 rounded-full"
-            style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", backdropFilter: "blur(8px)" }}
-          >
-            {work.category}
-          </span>
-
-          {/* title + year */}
-          <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between gap-2">
-            <div>
-              <h3 className="font-bold text-white text-lg leading-tight mb-1">{work.title}</h3>
-              <p className="text-[12px] text-white/50">{work.year}</p>
+          {/* meta */}
+          <div className="mt-5 flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <h3 className="text-[19px] sm:text-[21px] font-semibold text-black leading-snug">
+                {work.title}
+              </h3>
+              <p className="mt-1 text-[14px] text-black/55">
+                {work.category}
+                <span className="mx-2 text-black/25" aria-hidden="true">·</span>
+                {work.location}
+              </p>
             </div>
-            <span
-              className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-white bg-white/10 border border-white/20 group-hover:bg-white group-hover:text-black transition-colors"
-            >
+            <span className="shrink-0 mt-1 w-9 h-9 rounded-full border border-black/15 flex items-center justify-center text-black/70 transition-colors duration-300 group-hover:bg-black group-hover:border-black group-hover:text-white">
               <FiArrowUpRight aria-hidden="true" className="text-[16px]" />
             </span>
           </div>
-        </Link>
+        </a>
       ))}
     </div>
   );

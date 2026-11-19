@@ -96,11 +96,12 @@ const SERVICES = [
   },
 ];
 
+/* Real client projects (same data as /works) — cards link to the live sites */
 const WORKS = [
-  { id: 1, title: "Arlocks Gents Wear", category: "E-Commerce", year: "2024", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/works" },
-  { id: 2, title: "TechFlow Dashboard",  category: "Web App",    year: "2024", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/works" },
-  { id: 3, title: "FoodieSpot",          category: "Mobile App", year: "2024", image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/works" },
-  { id: 4, title: "Luxe Interiors",      category: "Website",    year: "2023", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80", href: "/works" },
+  { title: "Posh Palette",            category: "Fashion & Accessories",        location: "Calicut, Kerala",    url: "https://poshpalette.in/",           image: "/Portfolios/POSHPALETTE.png" },
+  { title: "Nizra Gold and Diamonds", category: "Jewellery",                    location: "Kerala",             url: "https://nizragold.com/",            image: "/Portfolios/NIZRA_GOLD_AND_DIAMONS.png" },
+  { title: "Rivaura Hospital",        category: "Healthcare",                   location: "Malappuram, Kerala", url: "https://www.rivaurahospital.com/",  image: "/Portfolios/RIVAURA_HOSPITAL.png" },
+  { title: "Opiz Global LLP",         category: "Agro-Food Export & Logistics", location: "Calicut, Kerala",    url: "https://opizglobal.com/",           image: "/Portfolios/OPIZ_GLOBAL.png" },
 ];
 
 const PARTNERS = ["React","Next.js","Flutter","Node.js","MongoDB","AWS","Firebase","WordPress","Figma","PostgreSQL","Shopify","Tailwind CSS"];
