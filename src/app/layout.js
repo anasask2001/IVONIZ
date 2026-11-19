@@ -22,19 +22,19 @@ export const metadata = {
   metadataBase: new URL("https://ivoniz.com"),
 
   title: {
-    default: "Ivoniz LLP | Web & App Development Company in Kerala",
-    template: "%s | Ivoniz LLP",
+    default: "Ivoniz Pvt Ltd | Web & App Development Company in Kerala",
+    template: "%s | Ivoniz Pvt Ltd",
   },
-  description: "Ivoniz LLP is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
+  description: "Ivoniz Pvt Ltd is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
   keywords: [
     "mobile app development", "web development", "AI tools",
     "Flutter", "React Native", "Next.js", "UI UX Design",
     "Kozhikode", "Kerala", "India",
   ],
-  authors: [{ name: "Ivoniz Technologies LLP", url: "https://ivoniz.com" }],
-  creator: "Ivoniz Technologies LLP",
-  publisher: "Ivoniz Technologies LLP",
-  applicationName: "Ivoniz LLP",
+  authors: [{ name: "Ivoniz Technologies Private Limited", url: "https://ivoniz.com" }],
+  creator: "Ivoniz Technologies Private Limited",
+  publisher: "Ivoniz Technologies Private Limited",
+  applicationName: "Ivoniz Pvt Ltd",
 
   alternates: {
     canonical: "https://ivoniz.com",
@@ -48,22 +48,22 @@ export const metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://ivoniz.com",
-    siteName: "Ivoniz LLP",
-    title: "Ivoniz LLP | Web & App Development Company in Kerala",
-    description: "Ivoniz LLP is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
+    siteName: "Ivoniz Pvt Ltd",
+    title: "Ivoniz Pvt Ltd | Web & App Development Company in Kerala",
+    description: "Ivoniz Pvt Ltd is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
     images: [
       {
         url: "/ivoniz-og-image.webp",
         width: 1734,
         height: 907,
-        alt: "Ivoniz LLP — Web & App Development Company in Kerala",
+        alt: "Ivoniz Pvt Ltd — Web & App Development Company in Kerala",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Ivoniz LLP | Web & App Development Company in Kerala",
+    title: "Ivoniz Pvt Ltd | Web & App Development Company in Kerala",
     description: "Leading web development, mobile app development, and digital marketing company in Kozhikode, Kerala.",
     images: ["/ivoniz-og-image.webp"],
   },
@@ -81,13 +81,13 @@ export const metadata = {
 
   appleWebApp: {
     capable: true,
-    title: "Ivoniz LLP",
+    title: "Ivoniz Pvt Ltd",
     statusBarStyle: "black-translucent",
   },
 
   other: {
     "geo.region": "IN-KL",
-    "geo.placename": "Kozhikode, Kerala",
+    "geo.placename": "Kozhikode (Calicut), Kerala",
     "geo.position": "11.247798588931074;75.83147697481216",
     ICBM: "11.247798588931074, 75.83147697481216",
   },

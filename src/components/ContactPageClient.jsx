@@ -7,6 +7,9 @@ import { FaArrowRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
+// Brochure is being revised — keep the download hidden until the new PDF is in place.
+const SHOW_BROCHURE = false;
+
 const FIELD_BASE =
   "w-full bg-[#161616] border border-white/10 rounded-lg px-4 py-3.5 sm:py-3 text-[15px] sm:text-[14px] text-white placeholder:text-white/55 focus:outline-none focus:border-white/30 focus:bg-[#1c1c1c] transition-colors";
 
@@ -127,11 +130,12 @@ export default function ContactPageClient() {
               className="not-italic text-white/55 text-[13px] leading-relaxed mt-6"
             >
               7th Floor, Phase 1, HiLITE Business Park,<br />
-              Ivoniz Technologies LLP,<br />
-              Kozhikode (Calicut), Kerala 673001
+              Ivoniz Technologies Private Limited,<br />
+              Kozhikode (Calicut), Kerala 673014
             </motion.address>
 
-            {/* Brochure download */}
+            {/* Brochure download — hidden until the updated brochure is ready. Set SHOW_BROCHURE to true to restore. */}
+            {SHOW_BROCHURE && (
             <motion.a
               {...fadeUp(0.22)}
               href="/pdf/Ivoniz%20Brochure%202026.pdf"
@@ -154,6 +158,7 @@ export default function ContactPageClient() {
                 </p>
               </div>
             </motion.a>
+            )}
           </div>
 
           {/* ── RIGHT: form ── */}

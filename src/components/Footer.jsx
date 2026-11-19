@@ -90,10 +90,12 @@ export default function Footer() {
             <p className="text-black/50 text-[14px] leading-relaxed mb-4">
               Creating galaxies of possibilities for technological advancement — promoting young talents in Calicut and Thrissur. Experts in Web Development, App Development, AI Integration, Digital Marketing, and more.
             </p>
+            {/* Name, address, phone: same wording and order as the Google Business Profile and src/lib/schema.js */}
             <address className="not-italic text-[13px] text-black/60 leading-relaxed">
+              Ivoniz Technologies Private Limited,<br />
               7th Floor, Phase 1, HiLITE Business Park,<br />
-              Ivoniz Technologies LLP,<br />
-              Kozhikode, Kerala 673001
+              Kozhikode, Kerala 673014<br />
+              <a href="tel:+919645760023" className="hover:text-black">+91 96457 60023</a>
             </address>
           </div>
 
@@ -115,10 +117,10 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-black/55 mb-5">Office Address</p>
             <address className="not-italic text-[13px] text-black/50 leading-relaxed">
+              Ivoniz Technologies Private Limited,<br />
               7th Floor, Phase 1,<br />
               HiLITE Business Park,<br />
-              Ivoniz Technologies LLP,<br />
-              Kozhikode, Kerala 673001
+              Kozhikode, Kerala 673014
             </address>
             <a href="https://maps.app.goo.gl/q6C1CnZSwnbcX2R47" target="_blank" rel="noreferrer"
               className="inline-flex items-center gap-1.5 mt-4 text-[12px] text-black/60 hover:text-black transition-colors">
@@ -196,7 +198,7 @@ export default function Footer() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.1849838091516!2d75.83147697481216!3d11.247798588931074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b57e1fbe7ef%3A0x6fbdbc4ed078a88!2sIvoniz%20Technologies%20LLP!5e0!3m2!1sen!2sin!4v1780247990377!5m2!1sen!2sin"
               width="100%" height="100%" style={{ border: 0 }}
               allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              title="Ivoniz Technologies LLP location"
+              title="Ivoniz Technologies Private Limited location"
             />
           </div>
         </div>
@@ -204,7 +206,7 @@ export default function Footer() {
         {/* ── Bottom bar ── */}
         <div className="border-t border-black/[0.07] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[13px] text-black/60">
-            © {new Date().getFullYear()} Ivoniz LLP All rights reserved.
+            © {new Date().getFullYear()} Ivoniz Pvt Ltd All rights reserved.
           </p>
           <div className="flex gap-6 text-[13px] text-black/60">
             <Link href="/privacy" className="hover:text-black transition-colors">Privacy Policy</Link>

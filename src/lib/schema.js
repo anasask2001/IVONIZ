@@ -13,11 +13,24 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
   "@id": ORG_ID,
-  name: "Ivoniz LLP",
-  legalName: "Ivoniz Technologies LLP",
-  alternateName: ["Ivoniz", "Ivoniz Technologies"],
+  name: "Ivoniz Pvt Ltd",
+  legalName: "Ivoniz Technologies Private Limited",
+  // The former LLP names stay listed, so directories, reviews and search results under the old name are tied to
+  // this same business while they are being updated
+  alternateName: ["Ivoniz", "Ivoniz Technologies", "Ivoniz Technologies Pvt Ltd", "Ivoniz LLP", "Ivoniz Technologies LLP"],
+  slogan: "Web, app and digital growth company in Kozhikode (Calicut), Kerala",
+  knowsAbout: [
+    "Website development",
+    "Mobile app development",
+    "Digital marketing",
+    "Search engine optimization",
+    "Social media marketing",
+    "Branding",
+    "AI solutions",
+  ],
+  knowsLanguage: ["en", "ml"],
   description:
-    "Ivoniz LLP is a technology and digital growth company in Kozhikode, Kerala, offering website development, mobile app development, digital marketing, branding, and AI solutions.",
+    "Ivoniz Pvt Ltd is a technology and digital growth company in Kozhikode, Kerala, offering website development, mobile app development, digital marketing, branding, and AI solutions.",
   url: "https://ivoniz.com",
   logo: "https://ivoniz.com/icons/ivoniz-logo1.png",
   image: "https://ivoniz.com/icons/ivoniz-logo1.png",
@@ -55,12 +68,14 @@ export const organizationSchema = {
       height: 1000,
     },
   },
+  // Keep character-for-character the same as the Google Business Profile (name, address, phone), because Google
+  // matches the website to the profile with them. TODO: add openingHoursSpecification once the profile's hours are set.
   address: {
     "@type": "PostalAddress",
     streetAddress: "7th Floor, Phase 1, HiLITE Business Park",
     addressLocality: "Kozhikode",
     addressRegion: "Kerala",
-    postalCode: "673001",
+    postalCode: "673014",
     addressCountry: "IN",
   },
   geo: {
@@ -69,8 +84,8 @@ export const organizationSchema = {
     longitude: 75.83147697481216,
   },
   areaServed: [
-    { "@type": "City", name: "Kozhikode" },
-    { "@type": "City", name: "Kochi" },
+    { "@type": "City", name: "Kozhikode", alternateName: "Calicut" },
+    { "@type": "City", name: "Kochi", alternateName: "Cochin" },
     { "@type": "City", name: "Thrissur" },
     { "@type": "City", name: "Malappuram" },
     { "@type": "City", name: "Kannur" },
@@ -86,18 +101,13 @@ export const organizationSchema = {
     "https://www.facebook.com/profile.php?id=61579264607681",
     "https://www.linkedin.com/company/ivoniz-llp/",
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "7",
-  },
 };
 
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": WEBSITE_ID,
-  name: "Ivoniz LLP",
+  name: "Ivoniz Pvt Ltd",
   url: "https://ivoniz.com",
   inLanguage: "en-IN",
   publisher: { "@id": ORG_ID },

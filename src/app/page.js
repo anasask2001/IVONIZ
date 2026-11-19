@@ -23,8 +23,8 @@ const SelectedWorks    = dynamic(() => import("@/components/SelectedWorks"));
    shown below via GoogleReviews. ──────────────────────────────── */
 const homePageSchema = webPageSchema({
   url: "https://ivoniz.com/",
-  name: "Ivoniz LLP | Web & App Development Company in Kerala",
-  description: "Ivoniz LLP is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
+  name: "Ivoniz Pvt Ltd | Web & App Development Company in Kerala",
+  description: "Ivoniz Pvt Ltd is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
 });
 
 const homeServiceSchema = {
@@ -52,31 +52,8 @@ const homeServiceSchema = {
   },
 };
 
-const homeReviewSchema = [
-  {
-    author: "Rahul Mehta",
-    company: "TechCorp India",
-    quote: "Ivoniz delivered an outstanding mobile app for our business. The team was professional, creative, and delivered exactly what we envisioned — on time and within budget.",
-    rating: 5,
-  },
-  {
-    author: "Sarah Johnson",
-    company: "Arlocks Fashion",
-    quote: "Working with Ivoniz was a game changer for us. They built a stunning e-commerce website that increased our online sales by 300%. Highly recommended!",
-    rating: 5,
-  },
-].map((r) => ({
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: { "@id": ORG_ID },
-  author: {
-    "@type": "Person",
-    name: r.author,
-    worksFor: { "@type": "Organization", name: r.company },
-  },
-  reviewBody: r.quote,
-  reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
-}));
+/* No Review markup here: Google does not allow a business to mark up reviews of itself (self-serving reviews),
+   and can penalise sites that do. The testimonials stay on the page; real ratings live on the Google Business Profile. */
 
 /* ── Data ───────────────────────────────────────────────────── */
 
@@ -151,9 +128,6 @@ export default function Home() {
     <main id="main-content" className="bg-white text-black overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeServiceSchema) }} />
-      {homeReviewSchema.map((r, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(r) }} />
-      ))}
 
       {/* ══════════════════════════════════════════════════════════
           HERO
