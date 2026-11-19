@@ -7,8 +7,8 @@ import { FaArrowRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-// Brochure is being revised — keep the download hidden until the new PDF is in place.
-const SHOW_BROCHURE = false;
+// Brochure is being revised — the button stays, but the download is off until the new PDF is in place.
+const BROCHURE_AVAILABLE = false;
 
 const FIELD_BASE =
   "w-full bg-[#161616] border border-white/10 rounded-lg px-4 py-3.5 sm:py-3 text-[15px] sm:text-[14px] text-white placeholder:text-white/55 focus:outline-none focus:border-white/30 focus:bg-[#1c1c1c] transition-colors";
@@ -134,13 +134,16 @@ export default function ContactPageClient() {
               Kozhikode (Calicut), Kerala 673014
             </motion.address>
 
-            {/* Brochure download — hidden until the updated brochure is ready. Set SHOW_BROCHURE to true to restore. */}
-            {SHOW_BROCHURE && (
+            {/* Brochure download — button stays visible; the download is disabled until the updated brochure is ready.
+                Set BROCHURE_AVAILABLE to true to re-enable it. */}
             <motion.a
               {...fadeUp(0.22)}
-              href="/pdf/Ivoniz%20Brochure%202026.pdf"
-              download="Ivoniz Brochure 2026.pdf"
-              className="group mt-6 flex items-center gap-4 bg-white/3 border border-white/10 rounded-xl p-3 max-w-sm hover:border-white/25 hover:bg-white/5 transition-colors"
+              {...(BROCHURE_AVAILABLE
+                ? { href: "/pdf/Ivoniz%20Brochure%202026.pdf", download: "Ivoniz Brochure 2026.pdf" }
+                : { "aria-disabled": true, role: "link", title: "Updated brochure coming soon" })}
+              className={`group mt-6 flex items-center gap-4 bg-white/3 border border-white/10 rounded-xl p-3 max-w-sm transition-colors ${
+                BROCHURE_AVAILABLE ? "hover:border-white/25 hover:bg-white/5" : "cursor-default"
+              }`}
             >
               <div
                 className="shrink-0 w-14 h-14 rounded-lg flex items-center justify-center overflow-hidden"
@@ -150,15 +153,18 @@ export default function ContactPageClient() {
               </div>
               <div>
                 <p className="font-semibold text-white text-[14px] leading-tight">Download Our Brochure</p>
-                <p className="text-white/60 text-[12px] mt-1 flex items-center gap-1.5">
-                  PDF · 2.8 MB
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="group-hover:translate-y-0.5 transition-transform" aria-hidden="true">
-                    <path d="M12 3v13m0 0-5-5m5 5 5-5M5 21h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </p>
+                {BROCHURE_AVAILABLE ? (
+                  <p className="text-white/60 text-[12px] mt-1 flex items-center gap-1.5">
+                    PDF · 2.8 MB
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="group-hover:translate-y-0.5 transition-transform" aria-hidden="true">
+                      <path d="M12 3v13m0 0-5-5m5 5 5-5M5 21h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </p>
+                ) : (
+                  <p className="text-white/60 text-[12px] mt-1">Updated version coming soon</p>
+                )}
               </div>
             </motion.a>
-            )}
           </div>
 
           {/* ── RIGHT: form ── */}
