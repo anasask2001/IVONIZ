@@ -23,8 +23,8 @@ const SelectedWorks    = dynamic(() => import("@/components/SelectedWorks"));
    shown below via GoogleReviews. ──────────────────────────────── */
 const homePageSchema = webPageSchema({
   url: "https://ivoniz.com/",
-  name: "Ivoniz Pvt Ltd | Web & App Development Company in Kerala",
-  description: "Ivoniz Pvt Ltd is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
+  name: "Ivoniz LLP | Web & App Development Company in Kerala",
+  description: "Ivoniz LLP is a web development, mobile app development, and digital marketing company in Kozhikode, Kerala — scalable apps, websites, and AI tools.",
 });
 
 const homeServiceSchema = {

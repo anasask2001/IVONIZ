@@ -138,7 +138,7 @@ export default function AboutPageClient() {
                 A technology partner, not just a vendor.
               </motion.h2>
               <motion.p {...fadeUp(0.08)} className="text-white/55 text-[16px] sm:text-[17px] leading-relaxed mb-5">
-                Ivoniz Pvt Ltd is a technology and digital growth company dedicated to helping businesses transform
+                Ivoniz LLP is a technology and digital growth company dedicated to helping businesses transform
                 ideas into successful digital products.
               </motion.p>
               <motion.p {...fadeUp(0.14)} className="text-white/55 text-[16px] sm:text-[17px] leading-relaxed">

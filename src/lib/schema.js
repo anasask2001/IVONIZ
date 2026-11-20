@@ -13,11 +13,11 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
   "@id": ORG_ID,
-  name: "Ivoniz Pvt Ltd",
-  legalName: "Ivoniz Technologies Private Limited",
-  // The former LLP names stay listed, so directories, reviews and search results under the old name are tied to
-  // this same business while they are being updated
-  alternateName: ["Ivoniz", "Ivoniz Technologies", "Ivoniz Technologies Pvt Ltd", "Ivoniz LLP", "Ivoniz Technologies LLP"],
+  name: "Ivoniz LLP",
+  legalName: "Ivoniz LLP",
+  // The business name used everywhere on the site is "Ivoniz LLP". Short and long forms are listed so directories,
+  // reviews and search results using them are tied to this same business.
+  alternateName: ["Ivoniz", "Ivoniz Technologies", "Ivoniz Technologies LLP"],
   slogan: "Web, app and digital growth company in Kozhikode (Calicut), Kerala",
   knowsAbout: [
     "Website development",
@@ -30,7 +30,7 @@ export const organizationSchema = {
   ],
   knowsLanguage: ["en", "ml"],
   description:
-    "Ivoniz Pvt Ltd is a technology and digital growth company in Kozhikode, Kerala, offering website development, mobile app development, digital marketing, branding, and AI solutions.",
+    "Ivoniz LLP is a technology and digital growth company in Kozhikode, Kerala, offering website development, mobile app development, digital marketing, branding, and AI solutions.",
   url: "https://ivoniz.com",
   logo: "https://ivoniz.com/icons/ivoniz-logo1.png",
   image: "https://ivoniz.com/icons/ivoniz-logo1.png",
@@ -107,7 +107,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": WEBSITE_ID,
-  name: "Ivoniz Pvt Ltd",
+  name: "Ivoniz LLP",
   url: "https://ivoniz.com",
   inLanguage: "en-IN",
   publisher: { "@id": ORG_ID },
