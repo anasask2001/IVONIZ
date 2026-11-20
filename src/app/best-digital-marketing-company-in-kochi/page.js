@@ -77,7 +77,7 @@ const FAQS = [
   },
   {
     q: "Does Ivoniz work as a digital marketing agency in Kerala beyond Kochi?",
-    a: "Yes. As a digital marketing agency in Kerala, Ivoniz serves businesses across Kochi, Ernakulam, Calicut, Thrissur, and other districts using the same proven SEO and advertising process.",
+    a: "Yes. As a digital marketing agency in Kerala, Ivoniz serves businesses across Kochi, Ernakulam, Thrissur, and other districts using the same proven SEO and advertising process.",
   },
   {
     q: "How long before a digital marketing agency in Kochi shows SEO results?",
@@ -304,8 +304,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
       <Section className="bg-[#f8f8f8]">
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Ivoniz LLP</h2>
         <p className="text-black/65 leading-relaxed mb-4">
-          Ivoniz LLP is a Kerala-based digital marketing, SEO, web, and app development company headquartered
-          at HiLITE Business Park, Kozhikode. We started with a simple aim — give Kerala businesses the same
+          Ivoniz LLP is a Kerala-based digital marketing, SEO, web, and app development company. We started with a simple aim — give Kerala businesses the same
           calibre of digital marketing usually reserved for metro cities, delivered by a team that actually
           understands the local market.
         </p>
@@ -484,15 +483,11 @@ export default function BestDigitalMarketingCompanyInKochi() {
           between separate vendors.
         </p>
         <p className="text-black/65 leading-relaxed">
-          Based near Kochi? See the full breakdown on our{" "}
-          <Link href="/best-website-development-company-in-calicut" className="underline font-medium">
+          Need a new website as well? See our{" "}
+          <Link href="/website-development" className="underline font-medium">
             website development services
-          </Link>{" "}
-          and{" "}
-          <Link href="/best-digital-marketing-company-in-calicut" className="underline font-medium">
-            digital marketing services in Calicut
           </Link>
-          , delivered by the same Kerala-based team.
+          , delivered by the same team that runs your marketing.
         </p>
       </Section>
 
@@ -662,7 +657,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
         <h3 className="text-xl font-bold mb-3">One Digital Marketing Agency in Kerala, Every District</h3>
         <p className="text-black/65 leading-relaxed">
           The same process that works in Kochi runs across the rest of the state too — as a digital marketing
-          agency in Kerala, Ivoniz applies it consistently in Ernakulam, Calicut, Thrissur, and beyond.
+          agency in Kerala, Ivoniz applies it consistently in Ernakulam, Thrissur, and beyond.
         </p>
       </Section>
 
@@ -749,7 +744,6 @@ export default function BestDigitalMarketingCompanyInKochi() {
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">Talk to Our Team</h2>
         <div className="grid sm:grid-cols-2 gap-8">
           <div className="space-y-3 text-black/65 leading-relaxed">
-            <p><strong>Head Office:</strong> Ivoniz LLP, 7th Floor, Phase 1, HiLITE Business Park, Kozhikode, Kerala 673014</p>
             <p><strong>Phone:</strong> <a href="tel:+919645760023" className="underline">+91 96457 60023</a></p>
             <p><strong>WhatsApp (Sales):</strong> <a href="https://wa.me/919645760023" target="_blank" rel="noreferrer" className="underline">+91 96457 60023</a></p>
             <p><strong>Email:</strong> <a href="mailto:info@ivoniz.com" className="underline">info@ivoniz.com</a></p>
@@ -784,7 +778,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
         </div>
       </Section>
 
-      <Footer />
+      <Footer hideLocation />
     </main>
   );
 }

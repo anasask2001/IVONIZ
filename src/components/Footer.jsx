@@ -70,7 +70,9 @@ const COMPANY = [
   { label: "Contact",  href: "/contact" },
 ];
 
-export default function Footer() {
+/* hideLocation: hides the office address, map and city names (used on location
+   pages for other cities, e.g. Kochi). The address stays in the sitewide schema. */
+export default function Footer({ hideLocation = false }) {
   return (
     <footer className="bg-white border-t border-black/[0.07] px-4 sm:px-6 lg:px-10 xl:px-16 pt-16 pb-8">
       <div className="mx-auto max-w-350">
@@ -88,13 +90,17 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-black/50 text-[14px] leading-relaxed mb-4">
-              Creating galaxies of possibilities for technological advancement — promoting young talents in Calicut and Thrissur. Experts in Web Development, App Development, AI Integration, Digital Marketing, and more.
+              Creating galaxies of possibilities for technological advancement — promoting young talents {hideLocation ? "across Kerala" : "in Calicut and Thrissur"}. Experts in Web Development, App Development, AI Integration, Digital Marketing, and more.
             </p>
             {/* Name, address, phone: same wording and order as the Google Business Profile and src/lib/schema.js */}
             <address className="not-italic text-[13px] text-black/60 leading-relaxed">
               Ivoniz LLP,<br />
-              7th Floor, Phase 1, HiLITE Business Park,<br />
-              Kozhikode, Kerala 673014<br />
+              {!hideLocation && (
+                <>
+                  7th Floor, Phase 1, HiLITE Business Park,<br />
+                  Kozhikode, Kerala 673014<br />
+                </>
+              )}
               <a href="tel:+919645760023" className="hover:text-black">+91 96457 60023</a>
             </address>
           </div>
@@ -114,6 +120,7 @@ export default function Footer() {
           </div>
 
           {/* Office Address */}
+          {!hideLocation && (
           <div className="lg:col-span-3">
             <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-black/55 mb-5">Office Address</p>
             <address className="not-italic text-[13px] text-black/50 leading-relaxed">
@@ -127,9 +134,10 @@ export default function Footer() {
               View on Maps <FaArrowRight aria-hidden="true" className="text-[10px]" />
             </a>
           </div>
+          )}
 
           {/* Connect */}
-          <div className="lg:col-span-3">
+          <div className={hideLocation ? "lg:col-span-6" : "lg:col-span-3"}>
             <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-black/55 mb-5">Connect</p>
             <ul className="space-y-3">
               <li>
@@ -191,6 +199,7 @@ export default function Footer() {
         </div>
 
         {/* ── Google Maps ── */}
+        {!hideLocation && (
         <div className="mb-12">
           <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-black/55 mb-4">Find Us</p>
           <div className="w-full rounded-2xl overflow-hidden border border-black/[0.07]" style={{ height: "280px" }}>
@@ -202,6 +211,7 @@ export default function Footer() {
             />
           </div>
         </div>
+        )}
 
         {/* ── Bottom bar ── */}
         <div className="border-t border-black/[0.07] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
