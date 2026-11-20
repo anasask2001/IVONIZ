@@ -23,6 +23,7 @@ export default function sitemap() {
     { path: "/ecommerce-website-development", priority: 0.9, changeFrequency: "weekly" },
     { path: "/woocommerce-website-development", priority: 0.85, changeFrequency: "weekly" },
     { path: "/catalogue-website-development", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/web-portal-development", priority: 0.85, changeFrequency: "monthly" },
     { path: "/custom-website-vs-wordpress", priority: 0.85, changeFrequency: "monthly" },
   ];
 

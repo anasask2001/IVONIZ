@@ -21,3 +21,12 @@ export const CATALOGUE_PACKAGES = [
   { label: "Business", note: "Hundreds of products, filters, bulk upload", inr: "₹60,000 – ₹1,50,000", aed: "AED 10,000 – 25,000" },
   { label: "Advanced", note: "Dealer login, multi-language, CRM / ERP sync", inr: "₹1,50,000 – ₹4,00,000+", aed: "AED 25,000 – 60,000+" },
 ];
+
+/* Web portal packages — INDICATIVE MARKET RANGES from the SEO brief: replace with Ivoniz pricing,
+   including a real first-phase starting price (PORTAL_FIRST_PHASE). */
+export const PORTAL_PACKAGES = [
+  { label: "Basic portal", note: "1–2 user roles, core features", inr: "₹1,50,000 – ₹4,00,000", aed: "AED 25,000 – 60,000" },
+  { label: "Business portal", note: "Multiple roles, workflows, integrations", inr: "₹4,00,000 – ₹12,00,000", aed: "AED 60,000 – 150,000" },
+  { label: "Enterprise portal", note: "Complex integrations, high security, mobile app", inr: "₹12,00,000+", aed: "AED 150,000+" },
+];
+export const PORTAL_FIRST_PHASE = { inr: "₹1,50,000", aed: "AED 25,000" };

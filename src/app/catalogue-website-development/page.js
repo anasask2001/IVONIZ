@@ -349,6 +349,10 @@ export default function CatalogueWebsiteDevelopmentPage() {
               </div>
             ))}
           </div>
+          <p className="mt-6 text-[15px] text-black/60">
+            Need dealer logins and order history? See{" "}
+            <Link href="/web-portal-development" className={LINK_LIGHT}>B2B portal development</Link>.
+          </p>
         </div>
       </section>
 
