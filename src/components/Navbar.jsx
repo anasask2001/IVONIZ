@@ -82,7 +82,7 @@ export default function Navbar() {
   const closeNow   = ()    => { clearTimeout(megaTimer.current); setActiveMega(null); };
 
   /* Each link points to a real, relevant page or in-page anchor —
-     there are no standalone /services/* pages on this site. */
+     Web Development items go to their own service pages. */
   const servicesCols = useMemo(() => [
     {
       title: "Mobile App",
@@ -95,13 +95,14 @@ export default function Navbar() {
     },
     {
       title: "Web Development",
+      href: "/website-development",
       links: [
-        { label: "E-Commerce Website",  href: "/best-website-development-company-in-calicut" },
-        { label: "WooCommerce Website", href: "/best-website-development-company-in-calicut" },
-        { label: "Catalogue Website",   href: "/best-website-development-company-in-calicut" },
-        { label: "Portal Website",      href: "/best-website-development-company-in-calicut" },
-        { label: "WordPress Website",   href: "/best-website-development-company-in-calicut" },
-        { label: "Static Website",      href: "/best-website-development-company-in-calicut" },
+        { label: "E-Commerce Website",  href: "/ecommerce-website-development" },
+        { label: "WooCommerce Website", href: "/woocommerce-website-development" },
+        { label: "Catalogue Website",   href: "/catalogue-website-development" },
+        { label: "Portal Website",      href: "/web-portal-development" },
+        { label: "WordPress Website",   href: "/wordpress-website-development" },
+        { label: "Static Website",      href: "/static-website-development" },
       ],
     },
     {
@@ -416,7 +417,13 @@ export default function Navbar() {
                 {servicesCols.map((col) => (
                   <div key={col.title}>
                     <p className="mb-3.5 text-[9.5px] font-bold tracking-[0.22em] text-white/55 uppercase">
-                      {col.title}
+                      {col.href ? (
+                        <Link href={col.href} onClick={closeNow} className="hover:text-white transition-colors duration-150">
+                          {col.title}
+                        </Link>
+                      ) : (
+                        col.title
+                      )}
                     </p>
                     <ul className="space-y-2.5">
                       {col.links.map((l) => (

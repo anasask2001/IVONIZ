@@ -9,7 +9,7 @@ const SOCIAL = [
 ];
 
 /* Each link points to a real, relevant page or in-page anchor —
-   there are no standalone /services/* pages on this site. */
+   Web Development items go to their own service pages. */
 const SERVICES_COLS = [
   {
     title: "Mobile App",
@@ -22,13 +22,14 @@ const SERVICES_COLS = [
   },
   {
     title: "Web Development",
+    href: "/website-development",
     links: [
-      { label: "E-Commerce Website",  href: "/best-website-development-company-in-calicut" },
-      { label: "WooCommerce Website", href: "/best-website-development-company-in-calicut" },
-      { label: "Catalogue Website",   href: "/best-website-development-company-in-calicut" },
-      { label: "Portal Website",      href: "/best-website-development-company-in-calicut" },
-      { label: "WordPress Website",   href: "/best-website-development-company-in-calicut" },
-      { label: "Static Website",      href: "/best-website-development-company-in-calicut" },
+      { label: "E-Commerce Website",  href: "/ecommerce-website-development" },
+      { label: "WooCommerce Website", href: "/woocommerce-website-development" },
+      { label: "Catalogue Website",   href: "/catalogue-website-development" },
+      { label: "Portal Website",      href: "/web-portal-development" },
+      { label: "WordPress Website",   href: "/wordpress-website-development" },
+      { label: "Static Website",      href: "/static-website-development" },
     ],
   },
   {
@@ -182,7 +183,9 @@ export default function Footer({ hideLocation = false }) {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
             {SERVICES_COLS.map(col => (
               <div key={col.title}>
-                <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-black/55 mb-4">{col.title}</p>
+                <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-black/55 mb-4">
+                  {col.href ? <Link href={col.href} className="hover:text-black transition-colors">{col.title}</Link> : col.title}
+                </p>
                 <ul className="space-y-3">
                   {col.links.map(l => (
                     <li key={l.label}>
