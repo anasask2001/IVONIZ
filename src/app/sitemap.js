@@ -19,6 +19,10 @@ export default function sitemap() {
     { path: "/best-digital-marketing-company-in-calicut", priority: 0.95, changeFrequency: "weekly" },
     { path: "/best-website-development-company-in-calicut", priority: 0.95, changeFrequency: "weekly" },
     { path: "/best-digital-marketing-company-in-kochi", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/website-development", priority: 0.95, changeFrequency: "weekly" },
+    { path: "/ecommerce-website-development", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/woocommerce-website-development", priority: 0.85, changeFrequency: "weekly" },
+    { path: "/custom-website-vs-wordpress", priority: 0.85, changeFrequency: "monthly" },
   ];
 
   return routes.map((route) => ({

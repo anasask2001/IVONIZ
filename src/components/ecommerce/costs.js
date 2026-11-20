@@ -1,0 +1,16 @@
+/* Ecommerce cost ranges — single source for the page's cost table and the estimate widget.
+   INDICATIVE MARKET RANGES from the SEO brief: replace with Ivoniz packages before relying on them. */
+export const STORE_TYPES = [
+  { id: "woo", label: "WooCommerce starter store", inr: "₹50,000 – ₹1,50,000", aed: "AED 8,000 – 20,000" },
+  { id: "advanced", label: "Advanced WooCommerce or headless", inr: "₹1,50,000 – ₹4,00,000", aed: "AED 20,000 – 50,000" },
+  { id: "custom", label: "Custom ecommerce platform", inr: "₹3,00,000 – ₹10,00,000+", aed: "AED 40,000 – 150,000+" },
+  { id: "b2b", label: "B2B portal or multi-vendor marketplace", inr: "₹5,00,000+", aed: "AED 60,000+" },
+];
+
+/* WooCommerce packages — INDICATIVE MARKET RANGES from the SEO brief: replace with Ivoniz pricing. */
+export const WOO_PACKAGES = [
+  { label: "Starter store", note: "Up to ~100 products, standard theme", inr: "₹40,000 – ₹80,000", aed: "AED 6,000 – 12,000" },
+  { label: "Business store", note: "Custom design, integrations", inr: "₹80,000 – ₹2,00,000", aed: "AED 12,000 – 30,000" },
+  { label: "Advanced store", note: "Custom plugins, ERP, multi-language", inr: "₹2,00,000 – ₹5,00,000+", aed: "AED 30,000 – 70,000+" },
+  { label: "Maintenance plan", note: "Updates, backups, security, small changes", inr: "₹3,000 – ₹15,000 / month", aed: "AED 500 – 2,500 / month" },
+];
