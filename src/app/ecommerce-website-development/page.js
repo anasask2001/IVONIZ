@@ -338,6 +338,13 @@ export default function EcommerceWebsiteDevelopmentPage() {
               custom website vs WordPress for ecommerce
             </Link>.
           </p>
+          <p className="mt-3 text-[16px] text-black/60 leading-relaxed max-w-[760px]">
+            Don&apos;t need online payments? See{" "}
+            <Link href="/catalogue-website-development" className="text-black font-medium underline underline-offset-4 decoration-black/25 hover:decoration-black">
+              product catalogue website development
+            </Link>{" "}
+            for enquiry and WhatsApp ordering.
+          </p>
         </div>
       </section>
 

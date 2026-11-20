@@ -14,3 +14,10 @@ export const WOO_PACKAGES = [
   { label: "Advanced store", note: "Custom plugins, ERP, multi-language", inr: "₹2,00,000 – ₹5,00,000+", aed: "AED 30,000 – 70,000+" },
   { label: "Maintenance plan", note: "Updates, backups, security, small changes", inr: "₹3,000 – ₹15,000 / month", aed: "AED 500 – 2,500 / month" },
 ];
+
+/* Product catalogue website packages — INDICATIVE MARKET RANGES from the SEO brief: replace with Ivoniz pricing. */
+export const CATALOGUE_PACKAGES = [
+  { label: "Starter", note: "Up to ~100 products, enquiry + WhatsApp", inr: "₹30,000 – ₹60,000", aed: "AED 5,000 – 10,000" },
+  { label: "Business", note: "Hundreds of products, filters, bulk upload", inr: "₹60,000 – ₹1,50,000", aed: "AED 10,000 – 25,000" },
+  { label: "Advanced", note: "Dealer login, multi-language, CRM / ERP sync", inr: "₹1,50,000 – ₹4,00,000+", aed: "AED 25,000 – 60,000+" },
+];
