@@ -13,11 +13,12 @@ const SOCIAL = [
 const SERVICES_COLS = [
   {
     title: "Mobile App",
+    href: "/mobile-app-development",
     links: [
-      { label: "Flutter Development", href: "/#our-services" },
-      { label: "iOS Development",     href: "/#our-services" },
-      { label: "Android Development", href: "/#our-services" },
-      { label: "Native Development",  href: "/#our-services" },
+      { label: "Flutter Development", href: "/flutter-app-development" },
+      { label: "iOS Development",     href: "/mobile-app-development#services" },
+      { label: "Android Development", href: "/mobile-app-development#services" },
+      { label: "Native Development",  href: "/mobile-app-development#technologies" },
     ],
   },
   {

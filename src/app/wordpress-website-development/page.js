@@ -392,6 +392,8 @@ export default function WordPressWebsiteDevelopmentPage() {
           <p className="mt-4 text-[13px] text-white/55 max-w-[820px] leading-relaxed">
             Indicative ranges. Cost depends on number of pages, custom design, content writing, integrations and
             languages. Hosting, domain and premium plugin licences are separate. For UAE and GCC projects, we quote in AED.
+            Need just a few pages on a tight budget? A{" "}
+            <Link href="/static-website-development" className={LINK}>static website</Link> is the lower-budget option.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <PillLink href="#quote-website" solid label="Get a WordPress Website Quote" location="pricing" />

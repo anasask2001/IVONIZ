@@ -504,6 +504,11 @@ export default function WebPortalDevelopmentPage() {
           <div>
             <Label>FAQ</Label>
             <Heading>Web portal development FAQs</Heading>
+            <p className="mt-6 text-[15px] text-white/60 leading-relaxed">
+              Need Android and iOS apps on the same backend? See our{" "}
+              <Link href="/mobile-app-development" className={LINK_DARK}>mobile app development company</Link> services,
+              or a cross-platform <Link href="/flutter-app-development" className={LINK_DARK}>Flutter app</Link>.
+            </p>
           </div>
           <FaqList items={FAQS} />
         </div>

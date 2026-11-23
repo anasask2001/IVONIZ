@@ -542,7 +542,8 @@ export default function CustomWebsiteVsWordPressPage() {
             <H2 id="small-business" eyebrow="Small business">Which is better for small businesses?</H2>
             <P>
               For most small businesses, startups, clinics, schools and local retailers, WordPress is the better starting
-              point. It launches fast, costs less and your team can update it without a developer.
+              point. It launches fast, costs less and your team can update it without a developer. If the site is only a
+              few pages that rarely change, a <A href="/static-website-development">static website</A> costs even less.
             </P>
             <p className="font-semibold mb-4">Choose custom development as a small business when:</p>
             <Bullets

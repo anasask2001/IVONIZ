@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { FaWhatsapp, FaGoogle } from "react-icons/fa";
+import Image from "next/image";
+import { FaWhatsapp, FaGoogle, FaInstagram } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ClientsWall from "@/components/clients/ClientsWall";
 import { PillLink } from "@/components/comparison/Interactive";
-import { PAD, OPEN_SANS, waLink, Label, Heading, HeroTitle, Grid, PetalSketch } from "@/components/site/SiteUI";
+import { PAD, OPEN_SANS, waLink, Label, Heading, Grid } from "@/components/site/SiteUI";
 import { CLIENTS, INDUSTRY_GROUPS } from "@/lib/clients";
 import { WEBSITE_ID, ORG_ID, organizationSchema } from "@/lib/schema";
 
@@ -18,24 +19,22 @@ const PAGE_URL = "https://ivoniz.com/clients";
 const DESCRIPTION =
   "Meet the businesses Ivoniz LLP builds for: retailers, hospitals, exporters and consultants in Kerala, the UAE, Saudi Arabia and Qatar. Visit their live websites.";
 
-const COUNTRY_OF = (loc) =>
-  !loc ? null : /Kerala/.test(loc) ? "India" : loc;
-const COUNTRIES = [...new Set(CLIENTS.map((c) => COUNTRY_OF(c.location)).filter(Boolean))];
 const INDUSTRIES = INDUSTRY_GROUPS.filter((g) => g.clients.length);
 
-const FACTS = [
-  { n: CLIENTS.length, label: "Live client websites" },
-  { n: COUNTRIES.length, label: `Countries: ${COUNTRIES.join(", ")}` },
-  { n: INDUSTRIES.length, label: "Industries served" },
-];
 
-/* Real client video review (public/video/clients-review). */
-const REVIEW = {
-  name: "Dr. Sanjeev",
-  org: "Rivaura Hospital",
-  location: "Malappuram",
+/* Featured client: video review (public/video/clients-review) + website +
+   Instagram showcase (public/clients, WebP made from the supplied PNG). */
+const FEATURED = {
+  name: "Dr. Affan A Akbar",
+  org: "Rivaura Multispeciality Hospital",
+  short: "Rivaura Hospital",
+  location: "Areekode, Malappuram",
   url: "https://www.rivaurahospital.com/",
-  video: "/video/clients-review/ivoniz-client-review-rivaurahospital-Dr-Sanjeev.mp4",
+  instagram: "https://www.instagram.com/rivaura.hospital/",
+  handle: "@rivaura.hospital",
+  video: "/video/clients-review/ivoniz-client-review-rivaurahospital-Dr-Sanjeev-Thomas.mp4",
+  showcase: "/clients/rivaura-hospital-instagram-showcase.webp",
+  work: ["Hospital website", "Instagram content and design"],
 };
 
 const WA_MSG ="Hi Ivoniz, I saw your clients page and would like to discuss a project for my business.";
@@ -103,32 +102,71 @@ export default function ClientsPage() {
     <main id="main-content" className="bg-black text-white overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-20 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      {/* ── CLIENT REVIEW (top of page): Rivaura Hospital ── */}
+      <section className={`relative pt-32 sm:pt-40 pb-12 sm:pb-16 ${PAD} overflow-hidden`} style={{ background: "#060606" }} aria-labelledby="featured-heading">
         <Grid />
-        <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
           <Breadcrumbs dark items={[{ label: "Clients", href: "/clients" }]} />
-          <div className="mt-8"><Label>Our Clients</Label></div>
-          <HeroTitle outline="trust Ivoniz">Businesses that</HeroTitle>
-          <p className="mt-10 text-white/60 text-[16px] sm:text-[18px] leading-relaxed max-w-[720px]">
-            Retailers, hospitals, exporters and consultants in Kerala and across the Gulf run their business online
-            on websites we designed and built. Every client below is a live site. Click any card to visit it.
-          </p>
+          {/* Page H1, styled as the site's "▶ LABEL" eyebrow. */}
+          <h1 className="mt-8 mb-5 flex items-center gap-2.5">
+            <span className="text-[10px] text-white" style={{ lineHeight: 1 }} aria-hidden="true">▶</span>
+            <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/60">Our Clients · Client Review</span>
+          </h1>
+          <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end mb-10 sm:mb-14">
+            <Heading><span id="featured-heading">{FEATURED.short}, {FEATURED.location}</span></Heading>
+            <ul className="flex flex-wrap gap-2">
+              {FEATURED.work.map((w) => (
+                <li key={w} className="px-4 py-2 rounded-full border border-white/15 text-[13px] text-white/75">{w}</li>
+              ))}
+            </ul>
+          </div>
 
-          <dl className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 border-t border-white/10">
-            {FACTS.map((f, i) => (
-              <div key={f.label} className={`py-6 sm:py-8 ${i ? "sm:pl-8 sm:border-l border-t sm:border-t-0 border-white/10" : ""}`}>
-                <dt className="sr-only">{f.label}</dt>
-                <dd>
-                  <span className="block text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(40px,4.4vw,60px)", lineHeight: 1, letterSpacing: "-0.03em" }}>
-                    {f.n}
-                  </span>
-                  <span className="mt-3 block text-[13px] text-white/55">{f.label}</span>
-                </dd>
+          <div className="grid md:grid-cols-[minmax(0,320px)_1fr] gap-6 lg:gap-10 items-start">
+            {/* Video review in a phone-style frame. #t=0.5 + preload="metadata" shows a
+                frame as the preview but only downloads the video when played. */}
+            <figure className="m-0">
+              <div className="mx-auto w-full max-w-[320px] rounded-[28px] border border-white/15 bg-white/4 p-2.5">
+                <video
+                  className="block w-full rounded-[20px] bg-black"
+                  style={{ aspectRatio: "9/16" }}
+                  src={`${FEATURED.video}#t=0.5`}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  aria-label={`Video review from ${FEATURED.name}, ${FEATURED.org}`}
+                />
               </div>
-            ))}
-          </dl>
+              <figcaption className="mt-5 flex items-center gap-4 justify-center md:justify-start">
+                <span aria-hidden="true" className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white text-[15px]">A</span>
+                <span>
+                  <span className="block text-white text-[16px]">{FEATURED.name}</span>
+                  <span className="block text-[13px] text-white/55">{FEATURED.org}</span>
+                </span>
+              </figcaption>
+            </figure>
+
+            <div className="flex flex-col gap-6">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "1672/941" }}>
+                <Image
+                  src={FEATURED.showcase}
+                  alt="Rivaura Hospital Instagram profile and posts designed by Ivoniz, shown on a phone"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 900px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="grid sm:grid-cols-[1fr_auto] gap-6 items-end">
+                <p className="text-white/65 text-[16px] sm:text-[17px] leading-relaxed max-w-[620px]">
+                  We built the website for {FEATURED.org} and design the content for its Instagram page. In the video,
+                  {" "}{FEATURED.name} talks about working with Ivoniz.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <PillLink href={FEATURED.url} external solid label="Visit website" location="featured_client" event="outbound_click" />
+                  <PillLink href={FEATURED.instagram} external label={FEATURED.handle} location="featured_client" event="outbound_click" icon={<FaInstagram aria-hidden="true" />} />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -140,45 +178,6 @@ export default function ClientsPage() {
             <Heading><span id="clients-heading">Work our clients use every day</span></Heading>
           </div>
           <ClientsWall clients={CLIENTS} />
-        </div>
-      </section>
-
-      {/* ── CLIENT VIDEO REVIEW ── */}
-      <section className={`relative py-16 sm:py-24 ${PAD} overflow-hidden border-t border-white/10`} style={{ background: "#060606" }} aria-labelledby="review-heading">
-        <Grid />
-        <div className="relative mx-auto max-w-[1100px] grid md:grid-cols-[minmax(0,340px)_1fr] gap-10 md:gap-16 items-center">
-          <div className="mx-auto w-full max-w-[340px] rounded-[28px] border border-white/15 bg-white/4 p-2.5">
-            {/* #t=0.5 + preload="metadata": shows a frame as the preview but only
-                fetches the video's header until the visitor presses play. */}
-            <video
-              className="block w-full rounded-[20px] bg-black"
-              style={{ aspectRatio: "9/16" }}
-              src={`${REVIEW.video}#t=0.5`}
-              controls
-              playsInline
-              preload="metadata"
-              aria-label={`Video review from ${REVIEW.name}, ${REVIEW.org}`}
-            />
-          </div>
-          <div>
-            <Label>Client Review</Label>
-            <Heading><span id="review-heading">Hear it from our clients.</span></Heading>
-            <p className="mt-6 text-white/60 text-[16px] sm:text-[17px] leading-relaxed max-w-[520px]">
-              {REVIEW.name} of {REVIEW.org}, {REVIEW.location}, talks about working with Ivoniz on the hospital&apos;s
-              website.
-            </p>
-            <div className="mt-8 flex items-center gap-4">
-              <span aria-hidden="true" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white text-[15px]">
-                {REVIEW.name.replace("Dr. ", "").charAt(0)}
-              </span>
-              <div>
-                <p className="text-white text-[16px]">{REVIEW.name}</p>
-                <a href={REVIEW.url} target="_blank" rel="noopener noreferrer" className="text-[13px] text-white/55 hover:text-white transition-colors underline underline-offset-4 decoration-white/20">
-                  {REVIEW.org} ↗
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

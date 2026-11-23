@@ -518,8 +518,9 @@ export default function WebsiteDevelopmentPage() {
               "SEO and speed built in from day one, not added later",
               "Clear fixed quotes and a single point of contact",
               "You own your domain, content and code",
+              <>Websites and <Link key="app" href="/mobile-app-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">Android and iOS app development</Link> from the same team</>,
             ].map((t, i) => (
-              <li key={t} className="flex items-baseline gap-6 border-b border-white/10 py-6">
+              <li key={i} className="flex items-baseline gap-6 border-b border-white/10 py-6">
                 <span className="text-[13px] text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                 <span className="text-[17px] sm:text-[19px] text-white/85 leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 300 }}>{t}</span>
               </li>

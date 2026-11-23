@@ -51,7 +51,7 @@ export const metadata = {
 
 /* ── Content data ─────────────────────────────────────────────── */
 const SERVICES = [
-  { title: "New online store development", text: "From product catalogue to checkout, built to load fast on mobile." },
+  { title: "New online store development", text: <>From product catalogue to checkout, built to load fast on mobile. Want a shopping app too? See <Link href="/mobile-app-development#apps" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">ecommerce app development</Link>.</> },
   { title: "Custom ecommerce development", text: "Built on React / Next.js and Node.js for unique features, high traffic and complex logic." },
   { title: "WooCommerce development", text: <>Affordable, easy-to-manage stores on WordPress. See our <Link href="/woocommerce-website-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">WooCommerce development services</Link>.</> },
   { title: "B2B and wholesale portals", text: <>Dealer logins, tiered pricing, bulk ordering, credit limits and quotation requests, built with our <Link href="/web-portal-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">web portal development</Link> team.</> },

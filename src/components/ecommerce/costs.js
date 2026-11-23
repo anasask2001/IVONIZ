@@ -40,3 +40,40 @@ export const WP_PACKAGES = [
   { id: "care", label: "Monthly maintenance", note: "Updates, backups, security, small changes", inr: "₹2,500 – ₹10,000 / month", time: "Ongoing" },
 ];
 export const WP_DUBAI_RANGE = "AED 4,000 – 15,000";
+
+/* Static website packages — INDICATIVE MARKET RANGES from the SEO brief (23 Nov 2026):
+   replace with Ivoniz pricing. Used by /static-website-development (package cards,
+   "from" price in the hero, FAQs, Offer schema and the quote form). */
+export const STATIC_PACKAGES = [
+  { id: "starter", label: "Starter", pages: "Up to 5 pages", inr: "₹8,000 – ₹15,000", min: 8000, max: 15000, time: "5–7 days" },
+  { id: "business", label: "Business", pages: "6–10 pages", inr: "₹15,000 – ₹30,000", min: 15000, max: 30000, time: "1–2 weeks" },
+  { id: "premium", label: "Premium", pages: "10–20 pages, custom design, animations", inr: "₹30,000 – ₹60,000", min: 30000, max: 60000, time: "2–3 weeks" },
+];
+export const STATIC_SUPPORT = { label: "Yearly support", note: "Content updates, hosting check, backups", inr: "₹3,000 – ₹8,000 / year" };
+export const STATIC_FROM = "₹8,000";
+
+/* Mobile app packages — INDICATIVE MARKET RANGES from the SEO brief (23 Nov 2026):
+   replace with Ivoniz pricing. Used by /mobile-app-development (cost table, FAQs
+   and the AppCostEstimator). min/max in INR and AED feed the estimator. */
+export const APP_PACKAGES = [
+  { id: "mvp", label: "Simple app / MVP", features: "Login, a few screens, basic admin", inr: "₹1,50,000 – ₹4,00,000", time: "6–10 weeks", min: 150000, max: 400000, aedMin: 25000, aedMax: 50000 },
+  { id: "business", label: "Business app", features: "Payments, notifications, dashboard, integrations", inr: "₹4,00,000 – ₹10,00,000", time: "10–16 weeks", min: 400000, max: 1000000, aedMin: 50000, aedMax: 120000 },
+  { id: "ecommerce", label: "Ecommerce / on-demand app", features: "Catalogue, cart, payments, tracking, multi-role", inr: "₹8,00,000 – ₹20,00,000", time: "14–24 weeks", min: 800000, max: 2000000, aedMin: 100000, aedMax: 220000 },
+  { id: "enterprise", label: "Complex / enterprise app", features: "Real-time features, ERP integration, high security", inr: "₹15,00,000+", time: "20+ weeks", min: 1500000, max: 3000000, aedMin: 180000, aedMax: 350000, openEnded: true },
+];
+/* Estimator multipliers (indicative): applied to the chosen app type's range. */
+export const APP_FACTORS = {
+  platform: { android: 0.8, ios: 0.8, both: 1 },
+  roles: { one: 0.9, few: 1, many: 1.25 },
+  payments: { no: 0.95, yes: 1.05 },
+  admin: { no: 0.9, yes: 1 },
+};
+
+/* Flutter app packages — INDICATIVE MARKET RANGES from the SEO brief (23 Nov 2026):
+   replace with Ivoniz pricing. Used by /flutter-app-development (cost table, FAQ). */
+export const FLUTTER_PACKAGES = [
+  { id: "mvp", label: "Flutter MVP", features: "Core features, basic admin", inr: "₹1,50,000 – ₹3,50,000", time: "6–9 weeks" },
+  { id: "business", label: "Business app", features: "Payments, notifications, dashboard", inr: "₹3,50,000 – ₹8,00,000", time: "9–14 weeks" },
+  { id: "ecommerce", label: "Ecommerce / on-demand app", features: "Catalogue, cart, payments, tracking", inr: "₹7,00,000 – ₹15,00,000", time: "12–20 weeks" },
+  { id: "complex", label: "Complex app", features: "Real-time, integrations, multi-role", inr: "₹12,00,000+", time: "18+ weeks" },
+];

@@ -70,7 +70,7 @@ const SERVICES = [
       "Native App Development (iOS / Android)",
       "AI-Powered App Features",
     ],
-    href: "/#our-services",
+    href: "/mobile-app-development",
   },
   {
     number: "02",
