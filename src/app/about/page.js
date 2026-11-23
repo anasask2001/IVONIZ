@@ -26,10 +26,6 @@ export const metadata = {
     "Ivoniz LLP is a technology and digital growth company in Kozhikode, Kerala — we design, build, and market digital products that get real results.",
   alternates: {
     canonical: "https://ivoniz.com/about",
-    languages: {
-      "en-IN": "https://ivoniz.com/about",
-      "x-default": "https://ivoniz.com/about",
-    },
   },
   openGraph: {
     siteName: "Ivoniz LLP",

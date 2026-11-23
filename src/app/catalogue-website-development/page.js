@@ -58,10 +58,10 @@ const SEND_CATALOGUE_MSG = "Hi Ivoniz, I want a product catalogue website. I'll 
 
 /* Real sites from /works for catalogue-style businesses (built by Ivoniz; not all are enquiry catalogues) */
 const EXAMPLES = [
-  { industry: "Jewellery", title: "Nizra Gold and Diamonds", url: "https://nizragold.com/", image: "/Portfolios/NIZRA_GOLD_AND_DIAMONS.png" },
-  { industry: "Manufacturing", title: "Feraro International", url: "https://www.ferarointernational.com/", image: "/Portfolios/FERARO_INTERNATIONAL.png" },
-  { industry: "Export", title: "Opiz Global LLP", url: "https://opizglobal.com/", image: "/Portfolios/OPIZ_GLOBAL.png" },
-  { industry: "Trading · UAE", title: "Elnyca Solutions", url: "https://elnyca.ae/", image: "/Portfolios/ELNYCA_DUBAI.png" },
+  { industry: "Jewellery", title: "Nizra Gold and Diamonds", url: "https://nizragold.com/", image: "/Portfolios/NIZRA_GOLD_AND_DIAMONS.webp" },
+  { industry: "Manufacturing", title: "Feraro International", url: "https://www.ferarointernational.com/", image: "/Portfolios/FERARO_INTERNATIONAL.webp" },
+  { industry: "Export", title: "Opiz Global LLP", url: "https://opizglobal.com/", image: "/Portfolios/OPIZ_GLOBAL.webp" },
+  { industry: "Trading · UAE", title: "Elnyca Solutions", url: "https://elnyca.ae/", image: "/Portfolios/ELNYCA_DUBAI.webp" },
 ];
 
 const PDF_VS = [

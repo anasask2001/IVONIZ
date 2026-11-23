@@ -8,6 +8,7 @@ const pageSchema = webPageSchema({
     "Get in touch with Ivoniz LLP at HiLITE Business Park, Kozhikode (Calicut), Kerala. Call +91 96457 60023 or +91 81138 47950 (Sales) for web development, app development, and digital marketing enquiries.",
   type: "ContactPage",
 });
+pageSchema.mainEntity = { "@id": ORG_ID };
 
 const pageBreadcrumb = breadcrumbSchema([
   { name: "Contact", url: "https://ivoniz.com/contact" },
@@ -19,10 +20,6 @@ export const metadata = {
     "Contact Ivoniz LLP at HiLITE Business Park, Kozhikode, Kerala for web development, app development, and digital marketing. Call +91 96457 60023 today.",
   alternates: {
     canonical: "https://ivoniz.com/contact",
-    languages: {
-      "en-IN": "https://ivoniz.com/contact",
-      "x-default": "https://ivoniz.com/contact",
-    },
   },
   openGraph: {
     siteName: "Ivoniz LLP",
@@ -54,17 +51,6 @@ export default function ContactPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumb) }} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "@id": "https://ivoniz.com/contact#contactpage",
-            mainEntity: { "@id": ORG_ID },
-          }),
-        }}
-      />
       <ContactPageClient />
     </>
   );

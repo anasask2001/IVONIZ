@@ -134,9 +134,9 @@ const MARKETS = [
 
 /* Real work from /works. Only Gaming Qatar is a full online store; the others are retail brand sites. */
 const STORES = [
-  { title: "Gaming Qatar", category: "Online store · Qatar", url: "https://mygamehobbies.qa/", image: "/Portfolios/MYGAME_HOBBIES_ecommerce.png", tag: "Live online store" },
-  { title: "Arlocks Gents Wear", category: "Men's fashion · Kerala", url: "https://arlocksgentswear.com/", image: "/Portfolios/ARLOCKS_GENTS_WEAR.png", tag: "Retail brand website" },
-  { title: "Posh Palette", category: "Fashion & accessories · Calicut", url: "https://poshpalette.in/", image: "/Portfolios/POSHPALETTE.png", tag: "Retail brand website" },
+  { title: "Gaming Qatar", category: "Online store · Qatar", url: "https://mygamehobbies.qa/", image: "/Portfolios/MYGAME_HOBBIES_ecommerce.webp", tag: "Live online store" },
+  { title: "Arlocks Gents Wear", category: "Men's fashion · Kerala", url: "https://arlocksgentswear.com/", image: "/Portfolios/ARLOCKS_GENTS_WEAR.webp", tag: "Retail brand website" },
+  { title: "Posh Palette", category: "Fashion & accessories · Calicut", url: "https://poshpalette.in/", image: "/Portfolios/POSHPALETTE.webp", tag: "Retail brand website" },
 ];
 
 const FAQS = [

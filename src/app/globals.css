@@ -17,6 +17,14 @@ body {
   font-family: var(--font-sans, Arial, Helvetica, sans-serif);
 }
 
+/* Hero entrance that runs before JS loads and never sets opacity to 0,
+   so it does not delay Largest Contentful Paint. */
+@keyframes hero-rise {
+  from { transform: translateY(12px); }
+  to   { transform: translateY(0); }
+}
+.hero-rise { animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both; }
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }

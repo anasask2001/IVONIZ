@@ -98,10 +98,10 @@ const SERVICES = [
 
 /* Real client projects (same data as /works) — cards link to the live sites */
 const WORKS = [
-  { title: "Posh Palette",            category: "Fashion & Accessories",        location: "Calicut, Kerala",    url: "https://poshpalette.in/",           image: "/Portfolios/POSHPALETTE.png" },
-  { title: "Nizra Gold and Diamonds", category: "Jewellery",                    location: "Kerala",             url: "https://nizragold.com/",            image: "/Portfolios/NIZRA_GOLD_AND_DIAMONS.png" },
-  { title: "Rivaura Hospital",        category: "Healthcare",                   location: "Malappuram, Kerala", url: "https://www.rivaurahospital.com/",  image: "/Portfolios/RIVAURA_HOSPITAL.png" },
-  { title: "Opiz Global LLP",         category: "Agro-Food Export & Logistics", location: "Calicut, Kerala",    url: "https://opizglobal.com/",           image: "/Portfolios/OPIZ_GLOBAL.png" },
+  { title: "Posh Palette",            category: "Fashion & Accessories",        location: "Calicut, Kerala",    url: "https://poshpalette.in/",           image: "/Portfolios/POSHPALETTE.webp" },
+  { title: "Nizra Gold and Diamonds", category: "Jewellery",                    location: "Kerala",             url: "https://nizragold.com/",            image: "/Portfolios/NIZRA_GOLD_AND_DIAMONS.webp" },
+  { title: "Rivaura Hospital",        category: "Healthcare",                   location: "Malappuram, Kerala", url: "https://www.rivaurahospital.com/",  image: "/Portfolios/RIVAURA_HOSPITAL.webp" },
+  { title: "Opiz Global LLP",         category: "Agro-Food Export & Logistics", location: "Calicut, Kerala",    url: "https://opizglobal.com/",           image: "/Portfolios/OPIZ_GLOBAL.webp" },
 ];
 
 const PARTNERS = ["React","Next.js","Flutter","Node.js","MongoDB","AWS","Firebase","WordPress","Figma","PostgreSQL","Shopify","Tailwind CSS"];

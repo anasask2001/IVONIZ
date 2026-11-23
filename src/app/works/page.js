@@ -22,10 +22,6 @@ export const metadata = {
     "Explore live websites Ivoniz LLP has designed and built for clients across fashion, jewellery, healthcare, trading, and consulting in Kerala and the Gulf.",
   alternates: {
     canonical: "https://ivoniz.com/works",
-    languages: {
-      "en-IN": "https://ivoniz.com/works",
-      "x-default": "https://ivoniz.com/works",
-    },
   },
   openGraph: {
     siteName: "Ivoniz LLP",
@@ -60,7 +56,7 @@ export const WORKS = [
     location: "Calicut, Kerala",
     url: "https://poshpalette.in/",
     gradient: "linear-gradient(135deg, #c2410c 0%, #7c2d12 100%)",
-    image: "/Portfolios/POSHPALETTE.png",
+    image: "/Portfolios/POSHPALETTE.webp",
     type: "semi-dynamic",
   },
   {
@@ -69,7 +65,7 @@ export const WORKS = [
     location: "Kerala",
     url: "https://nizragold.com/",
     gradient: "linear-gradient(135deg, #b45309 0%, #422006 100%)",
-    image: "/Portfolios/NIZRA_GOLD_AND_DIAMONS.png",
+    image: "/Portfolios/NIZRA_GOLD_AND_DIAMONS.webp",
     type: "semi-dynamic",
   },
   {
@@ -78,7 +74,7 @@ export const WORKS = [
     location: "Malappuram, Kerala",
     url: "https://www.rivaurahospital.com/",
     gradient: "linear-gradient(135deg, #0e7490 0%, #083344 100%)",
-    image: "/Portfolios/RIVAURA_HOSPITAL.png",
+    image: "/Portfolios/RIVAURA_HOSPITAL.webp",
     type: "semi-dynamic",
   },
   {
@@ -87,7 +83,7 @@ export const WORKS = [
     location: "Calicut, Kerala",
     url: "https://opizglobal.com/",
     gradient: "linear-gradient(135deg, #15803d 0%, #052e16 100%)",
-    image: "/Portfolios/OPIZ_GLOBAL.png",
+    image: "/Portfolios/OPIZ_GLOBAL.webp",
     type: "semi-dynamic",
   },
   {
@@ -96,7 +92,7 @@ export const WORKS = [
     location: "Manufacturing",
     url: "https://www.ferarointernational.com/",
     gradient: "linear-gradient(135deg, #334155 0%, #0f172a 100%)",
-    image: "/Portfolios/FERARO_INTERNATIONAL.png",
+    image: "/Portfolios/FERARO_INTERNATIONAL.webp",
     type: "static",
   },
   {
@@ -105,7 +101,7 @@ export const WORKS = [
     location: "UAE",
     url: "https://www.skypurewater.com/",
     gradient: "linear-gradient(135deg, #0284c7 0%, #082f49 100%)",
-    image: "/Portfolios/SKYPUREWATER.png",
+    image: "/Portfolios/SKYPUREWATER.webp",
     type: "static",
   },
   {
@@ -114,7 +110,7 @@ export const WORKS = [
     location: "Saudi Arabia",
     url: "https://techtrade.sa/",
     gradient: "linear-gradient(135deg, #1e3a8a 0%, #020617 100%)",
-    image: "/Portfolios/TECH_TRADE.png",
+    image: "/Portfolios/TECH_TRADE.webp",
     type: "semi-dynamic",
   },
   {
@@ -123,7 +119,7 @@ export const WORKS = [
     location: "UAE",
     url: "https://www.capitalcoreuae.com/",
     gradient: "linear-gradient(135deg, #525252 0%, #171717 100%)",
-    image: "/Portfolios/CAPITAL_CORE_UAE.png",
+    image: "/Portfolios/CAPITAL_CORE_UAE.webp",
     type: "static",
   },
   {
@@ -132,7 +128,7 @@ export const WORKS = [
     location: "Kooriyad, Kerala",
     url: "https://arlocksgentswear.com/",
     gradient: "linear-gradient(135deg, #1e40af 0%, #1e1b4b 100%)",
-    image: "/Portfolios/ARLOCKS_GENTS_WEAR.png",
+    image: "/Portfolios/ARLOCKS_GENTS_WEAR.webp",
     type: "semi-dynamic",
   },
   {
@@ -141,7 +137,7 @@ export const WORKS = [
     location: "Kondotty, Malappuram, Kerala",
     url: "https://danthikadentalzone.com/",
     gradient: "linear-gradient(135deg, #0891b2 0%, #164e63 100%)",
-    image: "/Portfolios/DANTHIKA_DENTAL_ZONE.png",
+    image: "/Portfolios/DANTHIKA_DENTAL_ZONE.webp",
     type: "semi-dynamic",
   },
   {
@@ -150,7 +146,7 @@ export const WORKS = [
     location: "UAE",
     url: "https://docviewbs.com/",
     gradient: "linear-gradient(135deg, #4338ca 0%, #1e1b4b 100%)",
-    image: "/Portfolios/DOCVIEW_BUSINESS_SERVICES.png",
+    image: "/Portfolios/DOCVIEW_BUSINESS_SERVICES.webp",
     type: "semi-dynamic",
   },
   {
@@ -159,7 +155,7 @@ export const WORKS = [
     location: "UAE",
     url: "https://elnyca.ae/",
     gradient: "linear-gradient(135deg, #b91c1c 0%, #450a0a 100%)",
-    image: "/Portfolios/ELNYCA_DUBAI.png",
+    image: "/Portfolios/ELNYCA_DUBAI.webp",
     type: "semi-dynamic",
   },
   {
@@ -168,7 +164,7 @@ export const WORKS = [
     location: "Qatar",
     url: "https://mygamehobbies.qa/",
     gradient: "linear-gradient(135deg, #7e22ce 0%, #2e1065 100%)",
-    image: "/Portfolios/MYGAME_HOBBIES_ecommerce.png",
+    image: "/Portfolios/MYGAME_HOBBIES_ecommerce.webp",
     type: "fully-dynamic",
   },
 ];

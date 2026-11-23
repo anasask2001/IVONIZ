@@ -128,10 +128,10 @@ const MARKETS = [
 
 /* Real, live client sites (from /works), one per market */
 const PROJECTS = [
-  { title: "Rivaura Hospital", category: "Healthcare", market: "Kerala, India", url: "https://www.rivaurahospital.com/", image: "/Portfolios/RIVAURA_HOSPITAL.png" },
-  { title: "CapitalCore", category: "Business Consulting", market: "UAE", url: "https://www.capitalcoreuae.com/", image: "/Portfolios/CAPITAL_CORE_UAE.png" },
-  { title: "Technical Trade Co.", category: "Engineering & IT Solutions", market: "Saudi Arabia", url: "https://techtrade.sa/", image: "/Portfolios/TECH_TRADE.png" },
-  { title: "Gaming Qatar", category: "Gaming & E-Commerce", market: "Qatar", url: "https://mygamehobbies.qa/", image: "/Portfolios/MYGAME_HOBBIES_ecommerce.png" },
+  { title: "Rivaura Hospital", category: "Healthcare", market: "Kerala, India", url: "https://www.rivaurahospital.com/", image: "/Portfolios/RIVAURA_HOSPITAL.webp" },
+  { title: "CapitalCore", category: "Business Consulting", market: "UAE", url: "https://www.capitalcoreuae.com/", image: "/Portfolios/CAPITAL_CORE_UAE.webp" },
+  { title: "Technical Trade Co.", category: "Engineering & IT Solutions", market: "Saudi Arabia", url: "https://techtrade.sa/", image: "/Portfolios/TECH_TRADE.webp" },
+  { title: "Gaming Qatar", category: "Gaming & E-Commerce", market: "Qatar", url: "https://mygamehobbies.qa/", image: "/Portfolios/MYGAME_HOBBIES_ecommerce.webp" },
 ];
 
 const FAQS = [

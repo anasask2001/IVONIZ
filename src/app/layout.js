@@ -36,13 +36,8 @@ export const metadata = {
   publisher: "Ivoniz LLP",
   applicationName: "Ivoniz LLP",
 
-  alternates: {
-    canonical: "https://ivoniz.com",
-    languages: {
-      "en-IN": "https://ivoniz.com",
-      "x-default": "https://ivoniz.com",
-    },
-  },
+  // Homepage canonical (page.js is a client component, so it cannot export metadata).
+  alternates: { canonical: "https://ivoniz.com" },
 
   openGraph: {
     type: "website",
@@ -126,8 +121,8 @@ export default function RootLayout({ children }) {
           />
         </noscript>
 
-        {/* ── Google Tag Manager — deferred until after hydration ── */}
-        <Script id="gtm-init" strategy="afterInteractive">
+        {/* ── Google Tag Manager — loaded after the page finishes loading, keeping the main thread free for first paint ── */}
+        <Script id="gtm-init" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -141,9 +136,9 @@ export default function RootLayout({ children }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
 
-        {/* ── Google Analytics (gtag.js) — deferred until after hydration ── */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZJKMLK68Z3" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">
+        {/* ── Google Analytics (gtag.js) — loaded after the page finishes loading, keeping the main thread free for first paint ── */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZJKMLK68Z3" strategy="lazyOnload" />
+        <Script id="gtag-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -152,8 +147,8 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* ── Meta Pixel — deferred until after hydration ── */}
-        <Script id="meta-pixel-init" strategy="afterInteractive">
+        {/* ── Meta Pixel — loaded after the page finishes loading, keeping the main thread free for first paint ── */}
+        <Script id="meta-pixel-init" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

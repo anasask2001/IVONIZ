@@ -14,10 +14,6 @@ export const metadata = {
     "Ivoniz LLP is the best website development company in Calicut — fast, mobile-first websites built to convert. Free consultation. Call or WhatsApp now.",
   alternates: {
     canonical: "https://ivoniz.com/best-website-development-company-in-calicut",
-    languages: {
-      "en-IN": "https://ivoniz.com/best-website-development-company-in-calicut",
-      "x-default": "https://ivoniz.com/best-website-development-company-in-calicut",
-    },
   },
   openGraph: {
     siteName: "Ivoniz LLP",

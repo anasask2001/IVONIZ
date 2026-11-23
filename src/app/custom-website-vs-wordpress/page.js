@@ -158,9 +158,9 @@ const DECISION = [
 ];
 
 const PROJECTS = [
-  { title: "Posh Palette", category: "Fashion & Accessories", url: "https://poshpalette.in/", image: "/Portfolios/POSHPALETTE.png" },
-  { title: "Rivaura Hospital", category: "Healthcare", url: "https://www.rivaurahospital.com/", image: "/Portfolios/RIVAURA_HOSPITAL.png" },
-  { title: "Gaming Qatar", category: "Gaming & E-Commerce", url: "https://mygamehobbies.qa/", image: "/Portfolios/MYGAME_HOBBIES_ecommerce.png" },
+  { title: "Posh Palette", category: "Fashion & Accessories", url: "https://poshpalette.in/", image: "/Portfolios/POSHPALETTE.webp" },
+  { title: "Rivaura Hospital", category: "Healthcare", url: "https://www.rivaurahospital.com/", image: "/Portfolios/RIVAURA_HOSPITAL.webp" },
+  { title: "Gaming Qatar", category: "Gaming & E-Commerce", url: "https://mygamehobbies.qa/", image: "/Portfolios/MYGAME_HOBBIES_ecommerce.webp" },
 ];
 
 /* ════════════════════════════════════════════════════════════════

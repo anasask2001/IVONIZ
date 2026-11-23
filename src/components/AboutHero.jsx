@@ -34,7 +34,6 @@ export default function AboutHero() {
         { height: "6vh", duration: 1.3, ease: "power3.inOut" }
       );
 
-      tl.fromTo(labelRef.current, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.6 }, 0.5);
 
       wordRefs.current.forEach((el, i) => {
         if (!el) return;
@@ -45,7 +44,6 @@ export default function AboutHero() {
         );
       });
 
-      tl.fromTo(subRef.current, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.7 }, "+=0.05");
 
       /* ── slow Ken Burns breathing zoom — runs forever ── */
       gsap.to(videoRef.current, {
@@ -130,8 +128,7 @@ export default function AboutHero() {
       >
         <p
           ref={labelRef}
-          className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/60 mb-6"
-          style={{ opacity: 0 }}
+          className="hero-rise text-[11px] font-semibold tracking-[0.3em] uppercase text-white/60 mb-6"
         >
           About Ivoniz
         </p>
@@ -151,7 +148,9 @@ export default function AboutHero() {
           ))}
         </h1>
 
-        <div ref={subRef} style={{ opacity: 0 }}>
+        {/* CSS-only entrance (transform, never hidden): this paragraph is the LCP
+            element, and the old GSAP opacity fade held it back until hydration. */}
+        <div ref={subRef} className="hero-rise" style={{ animationDelay: "0.9s" }}>
           <p className="text-white/55 text-[16px] sm:text-[18px] leading-relaxed max-w-xl">
             At Ivoniz, we believe great businesses need more than just a website. They need a complete
             digital ecosystem that attracts customers, builds trust, and drives growth.

@@ -8,6 +8,7 @@ export const metadata = {
   title: "Static Website Development",
   description: "Static Website Development by Ivoniz LLP, Calicut.",
   alternates: { canonical: "https://ivoniz.com/static-website-development" },
+  openGraph: { url: "https://ivoniz.com/static-website-development" },
   robots: { index: false, follow: true },
 };
 

@@ -14,10 +14,6 @@ export const metadata = {
     "Looking for the best digital marketing agency in Kochi? Ivoniz LLP offers SEO, ads, social media, and web development across Kerala. Free audit available.",
   alternates: {
     canonical: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
-    languages: {
-      "en-IN": "https://ivoniz.com/best-digital-marketing-company-in-kochi",
-      "x-default": "https://ivoniz.com/best-digital-marketing-company-in-kochi",
-    },
   },
   openGraph: {
     siteName: "Ivoniz LLP",

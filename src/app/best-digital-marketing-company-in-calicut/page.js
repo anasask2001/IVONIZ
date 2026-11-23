@@ -14,10 +14,6 @@ export const metadata = {
     "Ivoniz LLP is the best digital marketing agency in Calicut — SEO, Google Ads, social media, and web development. Free audit. Call or WhatsApp now.",
   alternates: {
     canonical: "https://ivoniz.com/best-digital-marketing-company-in-calicut",
-    languages: {
-      "en-IN": "https://ivoniz.com/best-digital-marketing-company-in-calicut",
-      "x-default": "https://ivoniz.com/best-digital-marketing-company-in-calicut",
-    },
   },
   openGraph: {
     siteName: "Ivoniz LLP",

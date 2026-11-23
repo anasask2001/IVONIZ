@@ -65,10 +65,6 @@ export const metadata = {
     "Meet Muhammed Anas, Founder and Managing Director of Ivoniz LLP, a technology and digital growth company based in Kozhikode, Kerala.",
   alternates: {
     canonical: "https://ivoniz.com/founder",
-    languages: {
-      "en-IN": "https://ivoniz.com/founder",
-      "x-default": "https://ivoniz.com/founder",
-    },
   },
   openGraph: {
     siteName: "Ivoniz LLP",

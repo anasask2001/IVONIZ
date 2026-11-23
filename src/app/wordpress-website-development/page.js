@@ -8,6 +8,7 @@ export const metadata = {
   title: "WordPress Website Development",
   description: "WordPress Website Development by Ivoniz LLP, Calicut.",
   alternates: { canonical: "https://ivoniz.com/wordpress-website-development" },
+  openGraph: { url: "https://ivoniz.com/wordpress-website-development" },
   robots: { index: false, follow: true },
 };
 
