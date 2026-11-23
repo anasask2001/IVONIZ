@@ -308,7 +308,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
           Calicut and Thrissur by promoting young, talented teams to do their creative best.
         </p>
         <p className="text-black/65 leading-relaxed mb-4">
-          Today, <strong>Ivoniz</strong> — also known as <strong>Ivoniz Technologies</strong> and operating as a{" "}
+          Today, <strong>Ivoniz LLP</strong>, operating as a{" "}
           <strong>website development company in Calicut</strong> — serves clients across Calicut, Thrissur,
           Malappuram, Kannur, and beyond. Our services span Custom Website Design, Website Development, Ecommerce
           Development, Web Application & Portal Development, Landing Page Design, WordPress & WooCommerce

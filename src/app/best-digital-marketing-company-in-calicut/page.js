@@ -313,7 +313,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
           to Calicut and Thrissur by promoting young, talented teams to do their creative best.
         </p>
         <p className="text-black/65 leading-relaxed mb-4">
-          Today, <strong>Ivoniz</strong> — also known as <strong>Ivoniz Technologies</strong> and operating as a{" "}
+          Today, <strong>Ivoniz LLP</strong>, operating as a{" "}
           <strong>Ivoniz digital marketing agency</strong> — serves clients across Calicut, Thrissur, Malappuram,
           Kannur, and beyond. Our services span Search Engine Optimization (SEO), Local SEO, Google Ads Management,
           Meta Ads Management, Social Media Marketing, Performance Marketing, Content Marketing, Website

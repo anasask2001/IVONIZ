@@ -28,7 +28,7 @@ const IDENTITY_TECH = /what (technology|tech) (do you use|are you (built|made) (
 const IDENTITY_REPLY =
   "I'm Ivoniz AI Assistant, the virtual assistant for Ivoniz LLP. I'm here to help you with information about our services, solutions, and projects.";
 const IDENTITY_TECH_REPLY =
-  "I'm the AI assistant for Ivoniz Technologies, built using advanced AI technology to provide accurate and helpful responses about our company and services.";
+  "I'm the AI assistant for Ivoniz LLP, built using advanced AI technology to provide accurate and helpful responses about our company and services.";
 
 const SALES_EMAIL = "sales@ivoniz.com";
 const HR_EMAIL = "hr@ivoniz.com";
@@ -202,7 +202,7 @@ const CANNED_REPLIES = [
   /* Off-topic / general knowledge */
   {
     match: /\b(weather|tell me a joke|capital of|recommend (me )?a movie|what'?s \d+ ?[x*] ?\d+|quantum physics|best programming language|who won the world cup)\b/,
-    reply: "That's outside what I help with here — I'm focused on Ivoniz Technologies and our services. Anything I can help with for your business?",
+    reply: "That's outside what I help with here — I'm focused on Ivoniz LLP and our services. Anything I can help with for your business?",
   },
 
   /* Requests outside our services */
@@ -214,7 +214,7 @@ const CANNED_REPLIES = [
   /* Generic services catch-all — last, since it's broad */
   {
     match: /\bservices?\b/,
-    reply: `At Ivoniz Technologies, we provide a wide range of digital solutions to help businesses grow, including:
+    reply: `At Ivoniz LLP, we provide a wide range of digital solutions to help businesses grow, including:
 
 Website Development
 E-commerce Development
@@ -236,7 +236,7 @@ If you're looking for a specific service, let me know your requirements, and I'l
 const ROMANTIC_REGEX = /\b(i love you|i like you|love u|like u|marry me|you'?re (cute|beautiful|gorgeous|hot|pretty)|be my (girlfriend|boyfriend)|can we be friends|will you be my friend)\b/i;
 
 const ROMANTIC_REPLIES = [
-  "Thank you for your kind words! I'm here to help you with anything related to Ivoniz Technologies and our services.",
+  "Thank you for your kind words! I'm here to help you with anything related to Ivoniz LLP and our services.",
   "I appreciate your compliment! If you have any questions about our services or a project you'd like to discuss, I'd be happy to help.",
   "That's very kind of you. I'm Ivoniz's AI Assistant, and my role is to help you with your business and technology needs.",
 ];
@@ -270,13 +270,13 @@ function matchHook(text) {
 const ABUSE_WORDS = /\b(fuck(ing|er)?|f\*ck|shit|bullshit|bitch|asshole|a\*\*hole|bastard|dick|cunt|whore|slut|motherf\w*|stfu|wtf|piss off|screw you|go to hell|idiot|moron|dumb(ass)?|loser|worthless|pathetic|shut up)\b/i;
 
 const ABUSE_WARNINGS = [
-  "I'm here to help with Ivoniz Technologies and our services. If you have a genuine question, I'd be happy to assist.",
+  "I'm here to help with Ivoniz LLP and our services. If you have a genuine question, I'd be happy to assist.",
   "I understand you may be frustrated. Let's keep the conversation respectful so I can help you.",
   "If you have any questions about our services or your project, I'm here to assist.",
 ];
 
 const ABUSE_FINAL =
-  "I can't continue this conversation while abusive or disrespectful language is being used. If you'd like to discuss Ivoniz Technologies or our services respectfully, I'll be happy to help.";
+  "I can't continue this conversation while abusive or disrespectful language is being used. If you'd like to discuss Ivoniz LLP or our services respectfully, I'll be happy to help.";
 
 function isAbusive(text) {
   return ABUSE_WORDS.test(text);
