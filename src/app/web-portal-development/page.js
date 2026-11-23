@@ -248,11 +248,11 @@ export default function WebPortalDevelopmentPage() {
                 and payslips, and an admin manages it all from one dashboard. Portals replace phone calls, emails and
                 spreadsheets with self-service.
               </p>
-              <p className="mt-4 text-[13px] text-white/45">Switch roles in the demo to see it.</p>
+              <p className="mt-4 text-[13px] text-white/55">Switch roles in the demo to see it.</p>
             </div>
             <div>
               <RoleDemo />
-              <p className="mt-3 text-[12px] text-white/40">Demo with sample data. Your portal is designed around your own users and workflows.</p>
+              <p className="mt-3 text-[12px] text-white/55">Demo with sample data. Your portal is designed around your own users and workflows.</p>
             </div>
           </div>
         </div>
@@ -269,8 +269,8 @@ export default function WebPortalDevelopmentPage() {
             {TYPES.map(({ Icon, t, d }, i) => (
               <div key={t} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[230px]">
                 <div className="flex items-start justify-between">
-                  <span className="text-[13px] font-medium text-white/40 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
-                  <Icon aria-hidden="true" className="text-[18px] text-white/45" />
+                  <span className="text-[13px] font-medium text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                  <Icon aria-hidden="true" className="text-[18px] text-white/55" />
                 </div>
                 <h3 className="mt-auto pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{t}</h3>
                 <p className="mt-2.5 text-[14px] text-white/55 leading-relaxed">{d}</p>
@@ -324,7 +324,7 @@ export default function WebPortalDevelopmentPage() {
           >
             {INTEGRATIONS.map(([group, items]) => (
               <div key={group} role="listitem" className="rounded-2xl bg-white border border-black/8 p-6">
-                <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-black/50">{group}</p>
+                <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-black/60">{group}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {items.map((x) => <span key={x} className="px-3 py-1.5 rounded-full border border-black/12 text-[13px] text-black/75">{x}</span>)}
                 </div>
@@ -349,7 +349,7 @@ export default function WebPortalDevelopmentPage() {
             <ul className="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3">
               {SECURITY.map((s) => (
                 <li key={s} className="flex items-center gap-3 text-[14.5px] text-white/75">
-                  <FaLock aria-hidden="true" className="shrink-0 text-[11px] text-white/45" />{s}
+                  <FaLock aria-hidden="true" className="shrink-0 text-[11px] text-white/55" />{s}
                 </li>
               ))}
             </ul>
@@ -380,9 +380,9 @@ export default function WebPortalDevelopmentPage() {
               <Heading className="max-w-[760px]">Web portal development cost</Heading>
             </div>
             <div className="rounded-2xl bg-white text-black px-6 py-5">
-              <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-black/50">Start with a first phase</p>
+              <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-black/60">Start with a first phase</p>
               <p className="mt-1 text-[20px]" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>
-                from {PORTAL_FIRST_PHASE.inr} <span className="text-black/45 text-[15px]">/ {PORTAL_FIRST_PHASE.aed}</span>
+                from {PORTAL_FIRST_PHASE.inr} <span className="text-black/60 text-[15px]">/ {PORTAL_FIRST_PHASE.aed}</span>
               </p>
             </div>
           </div>
@@ -396,7 +396,7 @@ export default function WebPortalDevelopmentPage() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-[13px] text-white/45">
+          <p className="mt-4 text-[13px] text-white/55">
             Indicative market ranges. Cost depends on user roles, features, integrations, security requirements and
             hosting. We can start with a smaller first phase and add modules over time.
           </p>
@@ -525,7 +525,7 @@ export default function WebPortalDevelopmentPage() {
             <PillLink href={waLink(CALL_MSG)} external solid event="whatsapp_click" label="Book a Portal Discovery Call" location="closing" icon={<FaWhatsapp aria-hidden="true" />} />
             <PillLink href="#plan" label="Plan my portal first" location="closing" event="portal_planner_click" />
           </div>
-          <p className="mt-6 text-[13px] text-white/45">
+          <p className="mt-6 text-[13px] text-white/55">
             Or <Link href="/contact" className="underline underline-offset-4 hover:text-white">contact our team</Link> directly.
           </p>
         </div>

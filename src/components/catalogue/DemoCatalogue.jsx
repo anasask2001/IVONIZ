@@ -72,8 +72,8 @@ export default function DemoCatalogue() {
         <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-        <span className="ml-3 text-[12px] text-black/45 truncate">yourshowroom.com/catalogue</span>
-        <span className="ml-auto text-[10px] font-bold tracking-[0.18em] uppercase text-black/40">Demo</span>
+        <span className="ml-3 text-[12px] text-black/60 truncate">yourshowroom.com/catalogue</span>
+        <span className="ml-auto text-[10px] font-bold tracking-[0.18em] uppercase text-black/60">Demo</span>
       </div>
 
       <div className="grid lg:grid-cols-[1fr_300px]">
@@ -102,7 +102,7 @@ export default function DemoCatalogue() {
                   <span className="absolute top-2 left-2 rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-semibold">{p.size}</span>
                 </div>
                 <p className="mt-2.5 text-[14px] font-semibold leading-snug">{p.name}</p>
-                <p className="text-[11.5px] text-black/45">{p.sku} · {p.finish}</p>
+                <p className="text-[11.5px] text-black/60">{p.sku} · {p.finish}</p>
                 <p className="mt-1 text-[12px] text-black/60">Price on request</p>
                 <div className="mt-2.5 flex gap-1.5">
                   <button
@@ -129,16 +129,16 @@ export default function DemoCatalogue() {
 
         {/* enquiry basket */}
         <aside className="border-t lg:border-t-0 lg:border-l border-black/8 bg-[#fafafa] p-5 sm:p-6 flex flex-col" aria-live="polite">
-          <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-black/50">Enquiry basket</p>
+          <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-black/60">Enquiry basket</p>
           {items.length === 0 ? (
-            <p className="mt-4 text-[13.5px] text-black/50 leading-relaxed">Tap <strong className="text-black/70">Enquire</strong> on a few tiles to build a multi-product quote request.</p>
+            <p className="mt-4 text-[13.5px] text-black/60 leading-relaxed">Tap <strong className="text-black/70">Enquire</strong> on a few tiles to build a multi-product quote request.</p>
           ) : (
             <ul className="mt-4 space-y-2">
               {items.map((p) => (
                 <li key={p.sku} className="flex items-center gap-3 rounded-lg bg-white border border-black/8 p-2">
                   <span className="relative w-9 h-9 rounded-md overflow-hidden shrink-0"><Swatch pattern={p.pattern} /></span>
-                  <span className="flex-1 min-w-0 text-[12.5px] leading-tight"><span className="block font-semibold truncate">{p.name}</span><span className="text-black/45">{p.sku}</span></span>
-                  <button type="button" onClick={() => toggle(p.sku)} aria-label={`Remove ${p.name}`} className="text-black/40 hover:text-black p-1"><FaTimes aria-hidden="true" className="text-[11px]" /></button>
+                  <span className="flex-1 min-w-0 text-[12.5px] leading-tight"><span className="block font-semibold truncate">{p.name}</span><span className="text-black/60">{p.sku}</span></span>
+                  <button type="button" onClick={() => toggle(p.sku)} aria-label={`Remove ${p.name}`} className="text-black/60 hover:text-black p-1"><FaTimes aria-hidden="true" className="text-[11px]" /></button>
                 </li>
               ))}
             </ul>
@@ -156,7 +156,7 @@ export default function DemoCatalogue() {
 
           {preview && items.length > 0 && (
             <div className="mt-4">
-              <p className="text-[11px] text-black/45 mb-2">What your sales team receives:</p>
+              <p className="text-[11px] text-black/60 mb-2">What your sales team receives:</p>
               <div className="rounded-xl bg-[#dcf8c6] p-3 text-[12.5px] leading-relaxed whitespace-pre-line text-black/80 shadow-sm">{message}</div>
             </div>
           )}

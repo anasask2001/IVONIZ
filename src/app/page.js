@@ -1,9 +1,10 @@
-"use client";
-
-import { useState, useEffect } from "react";
+/* Server component: the static homepage markup renders at build time and is
+   not hydrated. Interactive parts are small client islands in components/home. */
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { motion, AnimatePresence } from "framer-motion";
+import HeroRotator from "@/components/home/HeroRotator";
+import Reveal from "@/components/home/Reveal";
+import TextReveal from "@/components/home/TextReveal";
 import { FaArrowRight } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import Footer from "@/components/Footer";
@@ -57,7 +58,6 @@ const homeServiceSchema = {
 
 /* ── Data ───────────────────────────────────────────────────── */
 
-const HERO_WORDS = ["Apps", "Websites", "AI Tools", "Software"];
 
 
 const SERVICES = [
@@ -115,18 +115,10 @@ const CLIENTS = [
 /* ── Page ───────────────────────────────────────────────────── */
 
 export default function Home() {
-  const [wordIndex, setWordIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(
-      () => setWordIndex((i) => (i + 1) % HERO_WORDS.length),
-      3400
-    );
-    return () => clearInterval(id);
-  }, []);
-
+  // bg-black on <main>: every section sets its own background; black underneath the
+  // hero video also gives accessibility checkers the real backdrop behind the glass navbar.
   return (
-    <main id="main-content" className="bg-white text-black overflow-x-hidden">
+    <main id="main-content" className="bg-black text-black overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeServiceSchema) }} />
 
@@ -203,36 +195,12 @@ export default function Home() {
               develop
             </span>
 
-            <span className="select-none block" style={{ overflow: "hidden", lineHeight: 0.87 }}>
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={wordIndex}
-                  className="font-light block"
-                  style={{
-                    fontSize: "clamp(76px, 11.5vw, 175px)",
-                    lineHeight: 0.87,
-                    letterSpacing: "-0.025em",
-                    color: "#D9D9D9",
-                  }}
-                  initial={{ x: "60px", opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: "-60px", opacity: 0 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  {HERO_WORDS[wordIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </span>
+            <HeroRotator />
           </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="text-white/60 text-[14px] sm:text-[15px] tracking-[0.04em]"
-          >
+          <p className="hero-rise text-white/60 text-[14px] sm:text-[15px] tracking-[0.04em]" style={{ animationDelay: "0.45s" }}>
             Ivoniz — the complete solution for business
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -280,13 +248,7 @@ export default function Home() {
               />
 
               {/* Pill button */}
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="mt-10"
-              >
+              <Reveal className="mt-10" delay={0.2}>
                 <Link
                   href="/about"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-white/25 text-[15px] font-medium text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 group"
@@ -294,7 +256,7 @@ export default function Home() {
                   About us
                   <FiArrowUpRight aria-hidden="true" className="text-[15px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                 </Link>
-              </motion.div>
+              </Reveal>
             </div>
           </div>
         </div>
@@ -313,29 +275,8 @@ export default function Home() {
               { value: "100+",  label: "Mobile Apps Delivered" },
               { value: "100%",  label: "Clients satisfied & retention" },
             ].map(({ value, label }, i) => (
-              <motion.div
-                key={label}
-                initial={{ opacity: 0, y: 40, scale: 0.94 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.65, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{
-                  scale      : 1.04,
-                  boxShadow  : "0 8px 48px rgba(255,255,255,0.10), 0 2px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.22)",
-                  borderColor: "rgba(255,255,255,0.28)",
-                  background : "rgba(255,255,255,0.10)",
-                  transition : { duration: 0.25 },
-                }}
-                className="flex flex-col items-center text-center gap-2 py-8 px-4 cursor-default"
-                style={{
-                  background           : "rgba(255,255,255,0.04)",
-                  backdropFilter       : "blur(24px)",
-                  WebkitBackdropFilter : "blur(24px)",
-                  border               : "1px solid rgba(255,255,255,0.10)",
-                  borderRadius         : "16px",
-                  boxShadow            : "0 4px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08)",
-                }}
-              >
+              <Reveal key={label} y={40} scale={0.94} delay={i * 0.12}>
+              <div className="stat-card flex flex-col items-center text-center gap-2 py-8 px-4 cursor-default h-full">
                 <span
                   className="text-white leading-none"
                   style={{
@@ -350,7 +291,8 @@ export default function Home() {
                 <span className="text-[13px] sm:text-[14px] text-white/60 font-normal leading-snug max-w-32">
                   {label}
                 </span>
-              </motion.div>
+              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -369,7 +311,7 @@ export default function Home() {
               <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-5">Our Work</p>
               <h2 className="text-4xl sm:text-5xl font-bold leading-tight">Selected works</h2>
             </div>
-            <Link href="/works" className="inline-flex items-center gap-2 text-[14px] font-medium text-black/50 hover:text-black transition-colors">View All <FaArrowRight aria-hidden="true" className="text-[12px]" /></Link>
+            <Link href="/works" className="inline-flex items-center gap-2 text-[14px] font-medium text-black/60 hover:text-black transition-colors">View All <FaArrowRight aria-hidden="true" className="text-[12px]" /></Link>
           </div>
           <SelectedWorks works={WORKS} />
         </div>
@@ -449,45 +391,6 @@ export default function Home() {
     </main>
   );
 }
-
-/* ── Text Reveal ─────────────────────────────────────────────── */
-function TextReveal({ primary, secondary, dark = false }) {
-  const allWords  = `${primary}${secondary}`.split(" ");
-  const primCount = primary.trim().split(" ").length;
-
-  const dim    = dark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.14)";
-  const dimSec = dark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.10)";
-  const full   = dark ? "rgba(255,255,255,0.92)" : "rgba(0,0,0,0.92)";
-  const fullSec= dark ? "rgba(255,255,255,0.82)" : "rgba(0,0,0,0.88)";
-
-  return (
-    <p
-      className="font-medium leading-[1.6] tracking-[-0.01em]"
-      style={{ fontSize: "clamp(18px, 2.2vw, 28px)" }}
-    >
-      {allWords.map((word, i) => {
-        const isPrimary = i < primCount;
-        return (
-          <motion.span
-            key={i}
-            className="inline"
-            initial={{ color: isPrimary ? dim : dimSec }}
-            whileInView={{ color: isPrimary ? full : fullSec }}
-            viewport={{ once: false, margin: "0px 0px -18% 0px" }}
-            transition={{
-              delay: (i % 12) * 0.028,
-              duration: isPrimary ? 0.45 : 0.55,
-              ease: "easeOut",
-            }}
-          >
-            {word}{" "}
-          </motion.span>
-        );
-      })}
-    </p>
-  );
-}
-
 
 /* ── Shared icon ─────────────────────────────────────────────── */
 function ArrowRight({ className }) {

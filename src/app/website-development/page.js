@@ -280,7 +280,7 @@ export default function WebsiteDevelopmentPage() {
                 className="group relative border-r border-b border-white/10 p-7 sm:p-9 flex flex-col min-h-[280px] hover:bg-white/[0.03] transition-colors duration-300"
               >
                 <div className="flex items-start justify-between">
-                  <span className="text-[13px] font-medium text-white/40 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[13px] font-medium text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                   <Icon aria-hidden="true" className="text-[20px] text-white/50 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="mt-auto pt-10 text-[21px] sm:text-[23px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>
@@ -474,13 +474,13 @@ export default function WebsiteDevelopmentPage() {
               <Label dark={false}>Our Work</Label>
               <Heading dark={false}>Websites we&apos;ve built, from Kerala to the Gulf</Heading>
             </div>
-            <Link href="/works" className="inline-flex items-center gap-2 text-[14px] font-medium text-black/50 hover:text-black transition-colors">
+            <Link href="/works" className="inline-flex items-center gap-2 text-[14px] font-medium text-black/60 hover:text-black transition-colors">
               View All <FiArrowUpRight aria-hidden="true" />
             </Link>
           </div>
           <div className="grid sm:grid-cols-2 gap-x-6 lg:gap-x-10 gap-y-10 sm:gap-y-14">
             {PROJECTS.map((p) => (
-              <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" className="group block" aria-label={`${p.title}, visit live website (opens in a new tab)`}>
+              <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" className="group block"><span className="sr-only">Opens in a new tab: </span>
                 <div className="relative aspect-[2/1] rounded-xl overflow-hidden bg-white border border-black/8 transition-shadow duration-500 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]">
                   <Image src={p.image} alt={`${p.title} website built by Ivoniz`} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
                 </div>
@@ -520,7 +520,7 @@ export default function WebsiteDevelopmentPage() {
               "You own your domain, content and code",
             ].map((t, i) => (
               <li key={t} className="flex items-baseline gap-6 border-b border-white/10 py-6">
-                <span className="text-[13px] text-white/40 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-[13px] text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                 <span className="text-[17px] sm:text-[19px] text-white/85 leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 300 }}>{t}</span>
               </li>
             ))}

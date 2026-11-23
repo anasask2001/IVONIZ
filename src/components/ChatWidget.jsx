@@ -608,7 +608,7 @@ export default function ChatWidget() {
                 aria-label={listening ? "Stop voice input" : "Start voice input"}
                 className={[
                   "h-11 w-11 lg:h-9 lg:w-9 grid place-items-center rounded-full transition-colors shrink-0 disabled:opacity-30",
-                  listening ? "bg-red-500 text-white animate-pulse" : "text-black/50 hover:bg-black/5",
+                  listening ? "bg-red-500 text-white animate-pulse" : "text-black/60 hover:bg-black/5",
                 ].join(" ")}
               >
                 <MicIcon className="h-4 w-4" />
@@ -632,13 +632,8 @@ export default function ChatWidget() {
         aria-expanded={open}
         className="relative h-14 w-14 grid place-items-center rounded-full overflow-hidden hover:scale-105 transition-transform"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/chatbot-asset/chatbot.webp"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        {/* Glowing orb drawn in CSS (was a 159 KB animated WebP; see .chat-orb in globals.css) */}
+        <span aria-hidden="true" className="chat-orb absolute inset-0" />
         <GeminiIcon aria-hidden="true" className="relative h-5.5 w-5.5 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.95)]" />
       </button>
     </div>

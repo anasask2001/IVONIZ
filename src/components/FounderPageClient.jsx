@@ -306,7 +306,7 @@ export default function FounderPageClient({ faqs = [] }) {
       {/* ── CTA ── */}
       <Section className="bg-white text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">Let&apos;s build something together.</h2>
-        <p className="text-black/50 max-w-md mx-auto mb-8">
+        <p className="text-black/60 max-w-md mx-auto mb-8">
           We&apos;d love to hear what you&apos;re working on.
         </p>
         <Link

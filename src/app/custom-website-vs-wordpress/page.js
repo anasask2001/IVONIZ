@@ -169,7 +169,7 @@ const PROJECTS = [
 function H2({ id, children, eyebrow }) {
   return (
     <div className="scroll-mt-28" id={id}>
-      {eyebrow && <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/45 mb-3">{eyebrow}</p>}
+      {eyebrow && <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-3">{eyebrow}</p>}
       <h2 className="text-[28px] sm:text-[34px] font-bold leading-[1.15] tracking-tight mb-5">{children}</h2>
     </div>
   );
@@ -220,7 +220,7 @@ function CostTable({ caption, rows, flag }) {
       <div className="overflow-x-auto">
         <table className="w-full min-w-[520px] text-left text-[14px]">
           <thead>
-            <tr className="text-[12px] uppercase tracking-wide text-black/50">
+            <tr className="text-[12px] uppercase tracking-wide text-black/60">
               <th className="px-5 py-3 font-semibold">Project type</th>
               <th className="px-5 py-3 font-semibold"><PlatformTag kind="wp" />WordPress</th>
               <th className="px-5 py-3 font-semibold"><PlatformTag kind="custom" />Custom</th>
@@ -308,7 +308,7 @@ export default function CustomWebsiteVsWordPressPage() {
           {/* TOC */}
           <aside className="hidden lg:block">
             <nav aria-label="On this page" className="sticky top-28">
-              <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/45 mb-4">On this page</p>
+              <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-black/60 mb-4">On this page</p>
               <ol className="space-y-2.5 border-l border-black/10">
                 {TOC.map((t) => (
                   <li key={t.id}>
@@ -393,7 +393,7 @@ export default function CustomWebsiteVsWordPressPage() {
               WordPress is an open-source content management system that powers a large share of the world&apos;s
               websites. A WordPress developer sets up the platform, builds or customises a theme, adds plugins for
               features such as forms, SEO and ecommerce (WooCommerce), and hands over an admin panel your team can update
-              without code. Explore our <A href="/wordpress-website-development">WordPress development services</A>.
+              without code. Explore our <A href="/wordpress-website-development">WordPress development company</A> services.
             </P>
             <P>
               It suits businesses that publish content often, need a professional site quickly, or want a store with a
@@ -482,7 +482,7 @@ export default function CustomWebsiteVsWordPressPage() {
             </P>
             <CostTable flag="INR" caption="Typical ranges in India (including Kerala)" rows={COST_INDIA} />
             <CostTable flag="AED" caption="Typical ranges in the UAE, Saudi Arabia, Qatar and Oman" rows={COST_GCC} />
-            <p className="text-[13px] text-black/50 -mt-2 mb-6">
+            <p className="text-[13px] text-black/60 -mt-2 mb-6">
               Indicative market ranges. Your fixed estimate depends on scope, and we&apos;ll send one after a short call.
             </p>
             <div className="flex gap-4 rounded-2xl border border-black/8 p-5 mb-6">
@@ -591,7 +591,7 @@ export default function CustomWebsiteVsWordPressPage() {
             <div className="rounded-2xl border border-black/8 overflow-hidden mb-10">
               <table className="w-full text-left text-[14.5px]">
                 <thead>
-                  <tr className="bg-black/[0.03] text-[12px] uppercase tracking-wide text-black/50">
+                  <tr className="bg-black/[0.03] text-[12px] uppercase tracking-wide text-black/60">
                     <th className="px-5 py-3 font-semibold">If you…</th>
                     <th className="px-5 py-3 font-semibold w-[38%]">Choose</th>
                   </tr>
@@ -640,7 +640,7 @@ export default function CustomWebsiteVsWordPressPage() {
                     <Image src={p.image} alt={`${p.title} website built by Ivoniz`} fill sizes="(max-width: 640px) 100vw, 250px" className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]" />
                   </div>
                   <p className="mt-3 text-[14px] font-semibold">{p.title}</p>
-                  <p className="text-[12.5px] text-black/50">{p.category}</p>
+                  <p className="text-[12.5px] text-black/60">{p.category}</p>
                 </a>
               ))}
             </div>
@@ -681,7 +681,7 @@ export default function CustomWebsiteVsWordPressPage() {
             <EstimateButton dark location="closing" />
             <WhatsAppButton dark location="closing" label="Talk to Our Development Team on WhatsApp" />
           </div>
-          <p className="mt-6 text-[13px] text-white/45">
+          <p className="mt-6 text-[13px] text-white/55">
             No obligation. Or <Link href="/contact" className="underline underline-offset-4 hover:text-white">contact our team</Link> directly.
           </p>
         </div>

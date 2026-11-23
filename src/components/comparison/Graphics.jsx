@@ -33,7 +33,7 @@ export function HeroVersus() {
                 style={i === 3 ? { background: WP, color: "#fff" } : undefined}
               >
                 {t}
-                {i === 3 && <span className="text-[8px] bg-white/25 rounded px-1">12</span>}
+                {i === 3 && <span className="text-[8px] bg-white text-blue-700 font-semibold rounded px-1">12</span>}
               </div>
             ))}
           </div>
@@ -91,7 +91,7 @@ function WindowBar({ label }) {
       <span className="w-2 h-2 rounded-full bg-[#ff5f57]" />
       <span className="w-2 h-2 rounded-full bg-[#febc2e]" />
       <span className="w-2 h-2 rounded-full bg-[#28c840]" />
-      <span className="ml-2 text-[9px] text-white/45 truncate">{label}</span>
+      <span className="ml-2 text-[9px] text-white/55 truncate">{label}</span>
     </div>
   );
 }
@@ -134,7 +134,7 @@ function Bar({ value, color, label }) {
       <div className="flex-1 h-2 rounded-full bg-black/6 overflow-hidden">
         <div className="h-full rounded-full" style={{ width: `${value * 20}%`, background: color }} />
       </div>
-      <span className="w-4 text-[11px] font-semibold text-black/50 tabular-nums">{value}</span>
+      <span className="w-4 text-[11px] font-semibold text-black/60 tabular-nums">{value}</span>
     </div>
   );
 }

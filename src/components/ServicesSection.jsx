@@ -165,14 +165,15 @@ export default function ServicesSection({ services }) {
 
             <div className="grid lg:grid-cols-[220px_1fr] xl:grid-cols-[260px_1fr] gap-4 sm:gap-6 lg:gap-14 flex-1">
 
-              {/* LEFT: numbers — laptop/desktop only */}
+              {/* LEFT: numbers — laptop/desktop only.
+                  Inactive steps are dimmed to 0.52 (not lower) so their text keeps WCAG AA contrast. */}
               <div className="hidden lg:flex flex-col justify-start pt-1">
                 {services.map((s, j) => (
-                  <div key={s.number} className="mb-8 flex items-center gap-3" style={{ opacity: j === i ? 1 : 0.18 }}>
-                    <span className="text-[16px] font-light tracking-widest" style={{ color: "rgba(255,255,255,0.85)" }}>
+                  <div key={s.number} className="mb-8 flex items-center gap-3 transition-opacity duration-300" style={{ opacity: j === i ? 1 : 0.52 }}>
+                    <span className="text-[16px] font-light tracking-widest" style={{ color: "rgba(255,255,255,0.95)" }}>
                       ({s.number})
                     </span>
-                    <span className="hidden lg:block text-[10px] font-semibold tracking-[0.18em] uppercase truncate max-w-35" style={{ color: "rgba(255,255,255,0.22)" }}>
+                    <span className="hidden lg:block text-[10px] font-semibold tracking-[0.18em] uppercase truncate max-w-35" style={{ color: "rgba(255,255,255,0.9)" }}>
                       {s.title}
                     </span>
                   </div>

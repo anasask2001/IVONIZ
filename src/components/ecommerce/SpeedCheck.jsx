@@ -59,7 +59,7 @@ export default function SpeedCheck() {
       {error ? (
         <p id="store-url-error" className="mt-3 text-[13px] text-red-300">{error}</p>
       ) : (
-        <p id="store-url-hint" className="mt-3 text-[13px] text-white/45">
+        <p id="store-url-hint" className="mt-3 text-[13px] text-white/55">
           Opens WhatsApp with your store address. We reply with a short PageSpeed report and the fixes we&apos;d make.
         </p>
       )}

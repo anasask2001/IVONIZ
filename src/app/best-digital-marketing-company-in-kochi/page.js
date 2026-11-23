@@ -541,7 +541,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
           ].map(([i, d]) => (
             <div key={i} className="bg-white border border-black/8 rounded-xl px-5 py-4">
               <p className="text-sm font-semibold mb-1">{i}</p>
-              <p className="text-xs text-black/50 leading-relaxed">{d}</p>
+              <p className="text-xs text-black/60 leading-relaxed">{d}</p>
             </div>
           ))}
         </div>
@@ -597,7 +597,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
               ].map(([cap, them, us]) => (
                 <tr key={cap}>
                   <td className="py-3 px-4 font-medium">{cap}</td>
-                  <td className="py-3 px-4 text-black/50">{them}</td>
+                  <td className="py-3 px-4 text-black/60">{them}</td>
                   <td className="py-3 px-4 text-black/70 font-medium">{us}</td>
                 </tr>
               ))}

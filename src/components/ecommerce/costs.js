@@ -30,3 +30,13 @@ export const PORTAL_PACKAGES = [
   { label: "Enterprise portal", note: "Complex integrations, high security, mobile app", inr: "₹12,00,000+", aed: "AED 150,000+" },
 ];
 export const PORTAL_FIRST_PHASE = { inr: "₹1,50,000", aed: "AED 25,000" };
+
+/* WordPress website packages — INDICATIVE MARKET RANGES from the SEO brief (23 Nov 2026):
+   replace with Ivoniz pricing. Used by /wordpress-website-development (table, FAQ, quote widget). */
+export const WP_PACKAGES = [
+  { id: "starter", label: "Starter business site", note: "5–8 pages", inr: "₹20,000 – ₹45,000", time: "2–3 weeks" },
+  { id: "corporate", label: "Corporate website", note: "10–30 pages, custom design", inr: "₹45,000 – ₹1,20,000", time: "3–6 weeks" },
+  { id: "advanced", label: "Custom theme, multilingual or advanced features", note: "Custom theme, Arabic / multi-language, integrations", inr: "₹1,20,000 – ₹3,00,000+", time: "6–10 weeks" },
+  { id: "care", label: "Monthly maintenance", note: "Updates, backups, security, small changes", inr: "₹2,500 – ₹10,000 / month", time: "Ongoing" },
+];
+export const WP_DUBAI_RANGE = "AED 4,000 – 15,000";

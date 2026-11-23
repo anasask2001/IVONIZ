@@ -285,14 +285,14 @@ export default function WooCommerceDevelopmentPage() {
             <Heading>Our WooCommerce development services</Heading>
             <p className="mt-5 text-white/55 text-[16px] leading-relaxed">
               WooCommerce website development, customization and support from a team that also builds{" "}
-              <Link href="/wordpress-website-development" className={LINK}>WordPress websites</Link>, so your store and
+              <Link href="/wordpress-website-development" className={LINK}>WordPress website development</Link>, so your store and
               content work as one.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {SERVICES.map((s, i) => (
               <div key={s.title} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[230px]">
-                <span className="text-[13px] font-medium text-white/40 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-[13px] font-medium text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-auto pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{s.title}</h3>
                 <p className="mt-2.5 text-[14px] text-white/55 leading-relaxed">{s.text}</p>
               </div>
@@ -360,11 +360,11 @@ export default function WooCommerceDevelopmentPage() {
             {PAYMENTS.map((p) => (
               <div key={p.region} role="listitem" className="p-7" style={GLASS}>
                 <p className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/60">{p.region}</p>
-                <p className="mt-6 text-[13px] text-white/45">Payments</p>
+                <p className="mt-6 text-[13px] text-white/55">Payments</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {p.pay.map((x) => <span key={x} className="px-3 py-1.5 rounded-full border border-white/15 text-[13px] text-white/80">{x}</span>)}
                 </div>
-                <p className="mt-6 text-[13px] text-white/45">Shipping</p>
+                <p className="mt-6 text-[13px] text-white/55">Shipping</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {p.ship.map((x) => <span key={x} className="px-3 py-1.5 rounded-full border border-white/10 text-[13px] text-white/60">{x}</span>)}
                 </div>
@@ -419,7 +419,7 @@ export default function WooCommerceDevelopmentPage() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-[13px] text-white/45">
+          <p className="mt-4 text-[13px] text-white/55">
             Indicative market ranges. Ongoing costs also include hosting, premium extension licences and payment gateway fees.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -498,7 +498,7 @@ export default function WooCommerceDevelopmentPage() {
               "You own your store, data and code",
             ].map((t, i) => (
               <li key={t} className="flex items-baseline gap-6 border-b border-white/10 py-6">
-                <span className="text-[13px] text-white/40 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-[13px] text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                 <span className="text-[17px] sm:text-[19px] text-white/85 leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 300 }}>{t}</span>
               </li>
             ))}
@@ -532,7 +532,7 @@ export default function WooCommerceDevelopmentPage() {
             <PillLink href="/contact" solid label="Request a WooCommerce Quote" location="closing" />
             <PillLink href={waLink("Hi Ivoniz, I need a WooCommerce developer. Can we talk?")} external event="whatsapp_click" label="WhatsApp a WooCommerce Developer" location="closing" icon={<FaWhatsapp aria-hidden="true" />} />
           </div>
-          <p className="mt-6 text-[13px] text-white/45">
+          <p className="mt-6 text-[13px] text-white/55">
             Or <Link href="/contact" className="underline underline-offset-4 hover:text-white">contact our team</Link> directly.
           </p>
         </div>

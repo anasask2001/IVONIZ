@@ -88,11 +88,11 @@ export default function WorksGrid({ works }) {
           href={work.url}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${work.title} — visit site (opens in a new tab)`}
           ref={(el) => (cardRefs.current[i] = el)}
           className="group block rounded-2xl overflow-hidden"
           style={{ boxShadow: "0 2px 24px rgba(0,0,0,0.08)" }}
         >
+          <span className="sr-only">Opens in a new tab: </span>
           <div
             className="relative flex flex-col justify-end p-5 overflow-hidden"
             style={{ aspectRatio: "16/10", background: work.gradient }}
@@ -127,7 +127,7 @@ export default function WorksGrid({ works }) {
             <h3 className="relative z-10 text-white font-bold leading-tight text-lg">
               {work.title}
             </h3>
-            <p className="relative z-10 text-white/60 text-[12px] mt-1">{work.location}</p>
+            {work.location && <p className="relative z-10 text-white/60 text-[12px] mt-1">{work.location}</p>}
           </div>
         </a>
       ))}

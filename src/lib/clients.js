@@ -1,0 +1,151 @@
+/* ════════════════════════════════════════════════════════════════
+   Verified clients: every entry is a live website Ivoniz built.
+   Single source for /works and /clients. Add new clients here only
+   once their site is live, with a screenshot in /public/Portfolios.
+   region: "kerala" | "gcc" (UAE, Saudi Arabia, Qatar) | null if unknown
+   ════════════════════════════════════════════════════════════════ */
+
+export const CLIENTS = [
+  {
+    title: "Posh Palette",
+    category: "Fashion & Accessories",
+    location: "Calicut, Kerala",
+    region: "kerala",
+    url: "https://poshpalette.in/",
+    gradient: "linear-gradient(135deg, #c2410c 0%, #7c2d12 100%)",
+    image: "/Portfolios/POSHPALETTE.webp",
+    type: "semi-dynamic",
+  },
+  {
+    title: "Nizra Gold and Diamonds",
+    category: "Jewellery",
+    location: "Kerala",
+    region: "kerala",
+    url: "https://nizragold.com/",
+    gradient: "linear-gradient(135deg, #b45309 0%, #422006 100%)",
+    image: "/Portfolios/NIZRA_GOLD_AND_DIAMONS.webp",
+    type: "semi-dynamic",
+  },
+  {
+    title: "Rivaura Hospital",
+    category: "Healthcare",
+    location: "Malappuram, Kerala",
+    region: "kerala",
+    url: "https://www.rivaurahospital.com/",
+    gradient: "linear-gradient(135deg, #0e7490 0%, #083344 100%)",
+    image: "/Portfolios/RIVAURA_HOSPITAL.webp",
+    type: "semi-dynamic",
+  },
+  {
+    title: "Opiz Global LLP",
+    category: "Agro-Food Export & Logistics",
+    location: "Calicut, Kerala",
+    region: "kerala",
+    url: "https://opizglobal.com/",
+    gradient: "linear-gradient(135deg, #15803d 0%, #052e16 100%)",
+    image: "/Portfolios/OPIZ_GLOBAL.webp",
+    type: "semi-dynamic",
+  },
+  {
+    title: "Feraro International",
+    category: "Steel Windows & Doors",
+    location: null,
+    region: null,
+    url: "https://www.ferarointernational.com/",
+    gradient: "linear-gradient(135deg, #334155 0%, #0f172a 100%)",
+    image: "/Portfolios/FERARO_INTERNATIONAL.webp",
+    type: "static",
+  },
+  {
+    title: "Sky Pure Water",
+    category: "Water Trading",
+    location: "UAE",
+    region: "gcc",
+    url: "https://www.skypurewater.com/",
+    gradient: "linear-gradient(135deg, #0284c7 0%, #082f49 100%)",
+    image: "/Portfolios/SKYPUREWATER.webp",
+    type: "static",
+  },
+  {
+    title: "Technical Trade Co.",
+    category: "Engineering & IT Solutions",
+    location: "Saudi Arabia",
+    region: "gcc",
+    url: "https://techtrade.sa/",
+    gradient: "linear-gradient(135deg, #1e3a8a 0%, #020617 100%)",
+    image: "/Portfolios/TECH_TRADE.webp",
+    type: "semi-dynamic",
+  },
+  {
+    title: "CapitalCore",
+    category: "Business Consulting",
+    location: "UAE",
+    region: "gcc",
+    url: "https://www.capitalcoreuae.com/",
+    gradient: "linear-gradient(135deg, #525252 0%, #171717 100%)",
+    image: "/Portfolios/CAPITAL_CORE_UAE.webp",
+    type: "static",
+  },
+  {
+    title: "Arlocks Gents Wear",
+    category: "Men's Fashion",
+    location: "Kooriyad, Kerala",
+    region: "kerala",
+    url: "https://arlocksgentswear.com/",
+    gradient: "linear-gradient(135deg, #1e40af 0%, #1e1b4b 100%)",
+    image: "/Portfolios/ARLOCKS_GENTS_WEAR.webp",
+    type: "semi-dynamic",
+  },
+  {
+    title: "Danthika Dental Zone",
+    category: "Healthcare",
+    location: "Kondotty, Malappuram, Kerala",
+    region: "kerala",
+    url: "https://danthikadentalzone.com/",
+    gradient: "linear-gradient(135deg, #0891b2 0%, #164e63 100%)",
+    image: "/Portfolios/DANTHIKA_DENTAL_ZONE.webp",
+    type: "semi-dynamic",
+  },
+  {
+    title: "Docview Business Services",
+    category: "Business Consulting",
+    location: "UAE",
+    region: "gcc",
+    url: "https://docviewbs.com/",
+    gradient: "linear-gradient(135deg, #4338ca 0%, #1e1b4b 100%)",
+    image: "/Portfolios/DOCVIEW_BUSINESS_SERVICES.webp",
+    type: "semi-dynamic",
+  },
+  {
+    title: "Elnyca Solutions General Trading LLC",
+    category: "General Trading",
+    location: "UAE",
+    region: "gcc",
+    url: "https://elnyca.ae/",
+    gradient: "linear-gradient(135deg, #b91c1c 0%, #450a0a 100%)",
+    image: "/Portfolios/ELNYCA_DUBAI.webp",
+    type: "semi-dynamic",
+  },
+  {
+    title: "Gaming Qatar",
+    category: "Gaming & E-Commerce",
+    location: "Qatar",
+    region: "gcc",
+    url: "https://mygamehobbies.qa/",
+    gradient: "linear-gradient(135deg, #7e22ce 0%, #2e1065 100%)",
+    image: "/Portfolios/MYGAME_HOBBIES_ecommerce.webp",
+    type: "fully-dynamic",
+  },
+];
+
+/* Broad industry groups for the /clients "industries" strip, derived from
+   the list above so the counts always match. */
+export const INDUSTRY_GROUPS = [
+  { name: "Retail & Fashion", match: ["Fashion & Accessories", "Men's Fashion", "Jewellery", "Gaming & E-Commerce"] },
+  { name: "Healthcare", match: ["Healthcare"] },
+  { name: "Trading & Export", match: ["Agro-Food Export & Logistics", "Water Trading", "General Trading"] },
+  { name: "Consulting & Services", match: ["Business Consulting", "Engineering & IT Solutions"] },
+  { name: "Manufacturing", match: ["Steel Windows & Doors"] },
+].map((g) => ({ ...g, clients: CLIENTS.filter((c) => g.match.includes(c.category)) }));
+
+export const domainOf = (url) => new URL(url).hostname.replace(/^www\./, "");

@@ -22,6 +22,7 @@ const routes = [
   { path: "/", file: "src/app/page.js", priority: 1.0, changeFrequency: "weekly" },
   { path: "/about", file: "src/components/AboutPageClient.jsx", priority: 0.8, changeFrequency: "monthly" },
   { path: "/works", file: "src/app/works/page.js", priority: 0.8, changeFrequency: "weekly" },
+  { path: "/clients", priority: 0.75, changeFrequency: "monthly" },
   { path: "/contact", file: "src/components/ContactPageClient.jsx", priority: 0.7, changeFrequency: "monthly" },
   {
     path: "/founder",
@@ -36,6 +37,7 @@ const routes = [
   { path: "/website-development", priority: 0.95, changeFrequency: "weekly" },
   { path: "/ecommerce-website-development", priority: 0.9, changeFrequency: "weekly" },
   { path: "/woocommerce-website-development", priority: 0.85, changeFrequency: "weekly" },
+  { path: "/wordpress-website-development", priority: 0.85, changeFrequency: "monthly" },
   { path: "/catalogue-website-development", priority: 0.8, changeFrequency: "monthly" },
   { path: "/web-portal-development", priority: 0.85, changeFrequency: "monthly" },
   { path: "/custom-website-vs-wordpress", priority: 0.85, changeFrequency: "monthly" },

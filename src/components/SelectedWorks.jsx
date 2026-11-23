@@ -53,8 +53,7 @@ export default function SelectedWorks({ works }) {
           rel="noopener noreferrer"
           ref={(el) => (cardRefs.current[i] = el)}
           className="group block"
-          aria-label={`${work.title} — visit live website (opens in a new tab)`}
-        >
+        ><span className="sr-only">Opens in a new tab: </span>
           {/* screenshot */}
           <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-white border border-black/8 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow duration-500 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]">
             <Image

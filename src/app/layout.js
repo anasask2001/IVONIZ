@@ -110,56 +110,45 @@ export default function RootLayout({ children }) {
           Skip to main content
         </a>
 
-        {/* ── Google Tag Manager (noscript) ── */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KBMJNB28"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
-
-        {/* ── Google Tag Manager — loaded after the page finishes loading, keeping the main thread free for first paint ── */}
-        <Script id="gtm-init" strategy="lazyOnload">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-KBMJNB28');
-          `}
-        </Script>
-
         {/* ── Sitewide JSON-LD — Organization/LocalBusiness + WebSite ── */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
 
-        {/* ── Google Analytics (gtag.js) — loaded after the page finishes loading, keeping the main thread free for first paint ── */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZJKMLK68Z3" strategy="lazyOnload" />
-        <Script id="gtag-init" strategy="lazyOnload">
+        {/* ── Analytics: Google Analytics 4 + Meta Pixel, loaded on first interaction ──
+            The gtag/fbq queue stubs are defined straight away, so the page view and any
+            early clicks are queued and sent the moment the real scripts arrive. The
+            scripts themselves (~400 KB) load on the visitor's first scroll, tap, key
+            press or mouse move, keeping them off the critical path for real users and
+            PageSpeed alike. Visits with zero interaction are not tracked.
+            (GTM-KBMJNB28 was removed on 2026-11-23: the container had no tags. To use
+            GTM again, add its loader inside load() below.) */}
+        <Script id="analytics-init" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-ZJKMLK68Z3');
-          `}
-        </Script>
+            (function(w,d){
+              w.dataLayer = w.dataLayer || [];
+              w.gtag = w.gtag || function(){ w.dataLayer.push(arguments); };
+              gtag('js', new Date());
+              gtag('config', 'G-ZJKMLK68Z3');
 
-        {/* ── Meta Pixel — loaded after the page finishes loading, keeping the main thread free for first paint ── */}
-        <Script id="meta-pixel-init" strategy="lazyOnload">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1591110779305524');
-            fbq('track', 'PageView');
+              if (!w.fbq) {
+                var n = w.fbq = function(){ n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+                if (!w._fbq) w._fbq = n;
+                n.push = n; n.loaded = true; n.version = '2.0'; n.queue = [];
+              }
+              fbq('init', '1591110779305524');
+              fbq('track', 'PageView');
+
+              var done = false;
+              var events = ['pointerdown', 'keydown', 'touchstart', 'scroll', 'mousemove', 'wheel'];
+              function add(src){ var t = d.createElement('script'); t.async = true; t.src = src; d.head.appendChild(t); }
+              function load(){
+                if (done) return; done = true;
+                events.forEach(function(e){ w.removeEventListener(e, load, { passive: true }); });
+                add('https://www.googletagmanager.com/gtag/js?id=G-ZJKMLK68Z3');
+                add('https://connect.facebook.net/en_US/fbevents.js');
+              }
+              events.forEach(function(e){ w.addEventListener(e, load, { passive: true, once: true }); });
+            })(window, document);
           `}
         </Script>
         <noscript>

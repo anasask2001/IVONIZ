@@ -255,7 +255,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
           </div>
 
           {/* live store proof, framed like the homepage work cards */}
-          <a href={STORES[0].url} target="_blank" rel="noopener noreferrer" className="group mt-14 sm:mt-20 block" aria-label="Gaming Qatar online store built by Ivoniz (opens in a new tab)">
+          <a href={STORES[0].url} target="_blank" rel="noopener noreferrer" className="group mt-14 sm:mt-20 block"><span className="sr-only">Opens in a new tab: </span>
             <div className="relative aspect-[2/1] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-white/10">
               <Image
                 src={STORES[0].image}
@@ -294,7 +294,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {SERVICES.map((s, i) => (
               <div key={s.title} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[230px]">
-                <span className="text-[13px] font-medium text-white/40 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-[13px] font-medium text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-auto pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{s.title}</h3>
                 <p className="mt-2.5 text-[14px] text-white/55 leading-relaxed">{s.text}</p>
               </div>
@@ -380,18 +380,18 @@ export default function EcommerceWebsiteDevelopmentPage() {
             {PAYMENTS.map((p) => (
               <div key={p.region} role="listitem" className="p-7" style={GLASS}>
                 <p className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/60">{p.region}</p>
-                <p className="mt-6 text-[13px] text-white/45">Payments</p>
+                <p className="mt-6 text-[13px] text-white/55">Payments</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {p.pay.map((x) => <span key={x} className="px-3 py-1.5 rounded-full border border-white/15 text-[13px] text-white/80">{x}</span>)}
                 </div>
-                <p className="mt-6 text-[13px] text-white/45">Shipping</p>
+                <p className="mt-6 text-[13px] text-white/55">Shipping</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {p.ship.map((x) => <span key={x} className="px-3 py-1.5 rounded-full border border-white/10 text-[13px] text-white/60">{x}</span>)}
                 </div>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-[13px] text-white/45">Buy-now-pay-later (Tabby, Tamara) and cash on delivery available where the market supports them.</p>
+          <p className="mt-6 text-[13px] text-white/55">Buy-now-pay-later (Tabby, Tamara) and cash on delivery available where the market supports them.</p>
         </div>
       </section>
 
@@ -429,7 +429,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
               </table>
             </div>
           </div>
-          <p className="mt-3 text-[13px] text-white/45">Indicative market ranges. Your fixed estimate depends on scope.</p>
+          <p className="mt-3 text-[13px] text-white/55">Indicative market ranges. Your fixed estimate depends on scope.</p>
 
           <div className="mt-14">
             <p className="text-white mb-5" style={{ fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(22px,2.4vw,30px)", letterSpacing: "-0.02em" }}>
@@ -511,17 +511,17 @@ export default function EcommerceWebsiteDevelopmentPage() {
               <Label dark={false}>Our Work</Label>
               <Heading dark={false}>Retail and ecommerce sites we&apos;ve built</Heading>
             </div>
-            <Link href="/works" className="inline-flex items-center gap-2 text-[14px] font-medium text-black/50 hover:text-black transition-colors">
+            <Link href="/works" className="inline-flex items-center gap-2 text-[14px] font-medium text-black/60 hover:text-black transition-colors">
               View all ecommerce projects <FiArrowUpRight aria-hidden="true" />
             </Link>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {STORES.map((p) => (
-              <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" className="group block" aria-label={`${p.title}, visit live website (opens in a new tab)`}>
+              <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" className="group block"><span className="sr-only">Opens in a new tab: </span>
                 <div className="relative aspect-[2/1] rounded-xl overflow-hidden bg-white border border-black/8 transition-shadow duration-500 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]">
                   <Image src={p.image} alt={`${p.title} website built by Ivoniz`} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
                 </div>
-                <p className="mt-4 text-[11px] font-bold tracking-[0.18em] uppercase text-black/45">{p.tag}</p>
+                <p className="mt-4 text-[11px] font-bold tracking-[0.18em] uppercase text-black/60">{p.tag}</p>
                 <div className="mt-1 flex items-start justify-between gap-4">
                   <div>
                     <h3 className="text-[19px] font-semibold leading-snug">{p.title}</h3>
@@ -556,7 +556,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
               "You own your store, data and code",
             ].map((t, i) => (
               <li key={t} className="flex items-baseline gap-6 border-b border-white/10 py-6">
-                <span className="text-[13px] text-white/40 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-[13px] text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                 <span className="text-[17px] sm:text-[19px] text-white/85 leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 300 }}>{t}</span>
               </li>
             ))}
@@ -591,7 +591,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
             <PillLink href="/contact" solid label="Start Your Ecommerce Project" location="closing" />
             <PillLink href={waLink("Hi Ivoniz, I'm ready to start my online store. Can we talk?")} external event="whatsapp_click" label="Chat on WhatsApp" location="closing" icon={<FaWhatsapp aria-hidden="true" />} />
           </div>
-          <p className="mt-6 text-[13px] text-white/45">
+          <p className="mt-6 text-[13px] text-white/55">
             Or <Link href="/contact" className="underline underline-offset-4 hover:text-white">contact our ecommerce team</Link> directly.
           </p>
         </div>

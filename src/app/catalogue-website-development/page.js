@@ -250,10 +250,10 @@ export default function CatalogueWebsiteDevelopmentPage() {
 
           {/* industry examples — real Ivoniz projects */}
           <div className="mt-14 sm:mt-16">
-            <p className="text-[12px] text-white/45 mb-4">Websites we&apos;ve built for businesses like yours</p>
+            <p className="text-[12px] text-white/55 mb-4">Websites we&apos;ve built for businesses like yours</p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               {EXAMPLES.map((e) => (
-                <a key={e.url} href={e.url} target="_blank" rel="noopener noreferrer" className="group block" aria-label={`${e.title}, ${e.industry} website by Ivoniz (opens in a new tab)`}>
+                <a key={e.url} href={e.url} target="_blank" rel="noopener noreferrer" className="group block"><span className="sr-only">Opens in a new tab: </span>
                   <div className="relative aspect-[2/1] rounded-xl overflow-hidden border border-white/10">
                     <Image src={e.image} alt={`${e.title} website built by Ivoniz`} fill sizes="(max-width: 1024px) 50vw, 340px" className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]" />
                   </div>
@@ -289,7 +289,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
             Try it: a live demo catalogue
           </p>
           <DemoCatalogue />
-          <p className="mt-3 text-[12.5px] text-black/45">Sample products for demonstration. Your catalogue would use your own photos, specs and prices.</p>
+          <p className="mt-3 text-[12.5px] text-black/60">Sample products for demonstration. Your catalogue would use your own photos, specs and prices.</p>
         </div>
       </section>
 
@@ -306,7 +306,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
             <ul className="border-t border-white/10">
               {PDF_VS.map(([b, rest], i) => (
                 <li key={b} className="flex items-baseline gap-6 border-b border-white/10 py-6">
-                  <span className="text-[13px] text-white/40 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[13px] text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                   <p className="text-[16px] sm:text-[17px] text-white/65 leading-relaxed">
                     <span className="text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{b}</span> {rest}
                   </p>
@@ -411,7 +411,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-[13px] text-white/45">
+          <p className="mt-4 text-[13px] text-white/55">
             Indicative market ranges. Cost depends on number of products, who uploads them, filters, languages and integrations.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -526,7 +526,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
             <PillLink href="/contact" solid label="Request a Catalogue Website Quote" location="closing" />
             <PillLink href={waLink(SEND_CATALOGUE_MSG)} external event="whatsapp_click" label="Send Your Catalogue on WhatsApp" location="closing" icon={<FaWhatsapp aria-hidden="true" />} />
           </div>
-          <p className="mt-6 text-[13px] text-white/45">
+          <p className="mt-6 text-[13px] text-white/55">
             Or <Link href="/contact" className="underline underline-offset-4 hover:text-white">contact us</Link> directly.
           </p>
         </div>

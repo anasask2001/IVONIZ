@@ -67,7 +67,7 @@ const SERVICES_COLS = [
 const COMPANY = [
   { label: "About Us", href: "/about" },
   { label: "Works",    href: "/works" },
-  { label: "Clients",  href: "/#clients" },
+  { label: "Clients",  href: "/clients" },
   { label: "Contact",  href: "/contact" },
 ];
 
@@ -84,13 +84,13 @@ export default function Footer({ hideLocation = false }) {
           {/* Brand */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-1 mb-5">
-              <Image src="/icons/ivoniz-logo1.png" alt="Ivoniz"
+              <Image src="/icons/ivoniz-logo1.png" alt=""
                 width={44} height={44} style={{ objectFit: "contain" }} />
               <span style={{ fontSize: "19px", fontWeight: 700, letterSpacing: "0.08em", color: "#000", lineHeight: 1 }}>
                 IVONIZ
               </span>
             </Link>
-            <p className="text-black/50 text-[14px] leading-relaxed mb-4">
+            <p className="text-black/60 text-[14px] leading-relaxed mb-4">
               Creating galaxies of possibilities for technological advancement — promoting young talents {hideLocation ? "across Kerala" : "in Calicut and Thrissur"}. Experts in Web Development, App Development, AI Integration, Digital Marketing, and more.
             </p>
             {/* Name, address, phone: same wording and order as the Google Business Profile and src/lib/schema.js */}
@@ -124,7 +124,7 @@ export default function Footer({ hideLocation = false }) {
           {!hideLocation && (
           <div className="lg:col-span-3">
             <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-black/55 mb-5">Office Address</p>
-            <address className="not-italic text-[13px] text-black/50 leading-relaxed">
+            <address className="not-italic text-[13px] text-black/60 leading-relaxed">
               Ivoniz LLP,<br />
               7th Floor, Phase 1,<br />
               HiLITE Business Park,<br />
@@ -189,7 +189,7 @@ export default function Footer({ hideLocation = false }) {
                 <ul className="space-y-3">
                   {col.links.map(l => (
                     <li key={l.label}>
-                      <Link href={l.href} className="text-[13px] text-black/50 hover:text-black transition-colors leading-snug block">
+                      <Link href={l.href} className="text-[13px] text-black/60 hover:text-black transition-colors leading-snug block">
                         {l.label}
                       </Link>
                     </li>
