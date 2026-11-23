@@ -20,6 +20,7 @@ export const metadata = {
     },
   },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "Best Digital Marketing Company in Kochi | Ivoniz LLP",
     description:
       "Ivoniz — a results-driven digital marketing agency in Kochi serving Ernakulam and all of Kerala.",

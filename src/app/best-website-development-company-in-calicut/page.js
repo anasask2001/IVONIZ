@@ -20,6 +20,7 @@ export const metadata = {
     },
   },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "Best Website Development Company in Calicut | Ivoniz LLP",
     description:
       "Ivoniz — the best website development company in Calicut and the best website company in Calicut. Custom websites, e-commerce, and web apps built to convert.",

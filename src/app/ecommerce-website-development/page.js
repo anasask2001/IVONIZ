@@ -24,7 +24,7 @@ import { STORE_TYPES } from "@/components/ecommerce/costs";
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/ecommerce-website-development";
-const TITLE = "E-commerce Website Development in Kerala & UAE | Ivoniz";
+const TITLE = "E-commerce Website Development in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "Ecommerce website development for Kerala, UAE and GCC brands. WooCommerce or custom stores with local payments, Arabic support and fast checkout. Get a quote.";
 
@@ -33,6 +33,7 @@ export const metadata = {
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "Ecommerce Website Development Company | Kerala, UAE, GCC",
     description: DESCRIPTION,
     url: PAGE_URL,

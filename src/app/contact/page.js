@@ -25,6 +25,7 @@ export const metadata = {
     },
   },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "Contact Ivoniz LLP | Kozhikode, Kerala",
     description:
       "Get in touch with Ivoniz LLP — HiLITE Business Park, Kozhikode (Calicut), Kerala. Web development, app development, and digital marketing.",

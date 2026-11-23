@@ -29,7 +29,7 @@ import { PAD, OPEN_SANS, GLASS, waLink, Label, Heading, Grid, PetalSketch } from
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/website-development";
-const TITLE = "Website Development Company in Kerala, UAE & GCC | Ivoniz";
+const TITLE = "Website Development Company in Kerala, UAE & GCC | Ivoniz LLP";
 const DESCRIPTION =
   "Custom, WordPress and ecommerce website development for businesses in Kerala, the UAE and the GCC. Fast, SEO-ready sites built to bring enquiries. Get a quote.";
 
@@ -38,7 +38,8 @@ export const metadata = {
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "Website Development Services for Growing Businesses | Ivoniz",
+    siteName: "Ivoniz LLP",
+    title: "Website Development Services for Growing Businesses | Ivoniz LLP",
     description: DESCRIPTION,
     url: PAGE_URL,
     type: "website",
@@ -46,7 +47,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Website Development Services for Growing Businesses | Ivoniz",
+    title: "Website Development Services for Growing Businesses | Ivoniz LLP",
     description: DESCRIPTION,
     images: ["/ivoniz-og-image.webp"],
   },

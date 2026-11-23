@@ -32,6 +32,7 @@ export const metadata = {
     },
   },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "About Ivoniz LLP | Kozhikode, Kerala",
     description:
       "A technology partner, not just a vendor — Ivoniz LLP designs, builds, and markets digital products for businesses across Kerala.",

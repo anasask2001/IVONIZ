@@ -25,7 +25,7 @@ import { CATALOGUE_PACKAGES } from "@/components/ecommerce/costs";
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/catalogue-website-development";
-const TITLE = "Product Catalogue Website Development in Kerala & UAE | Ivoniz";
+const TITLE = "Product Catalogue Website Development in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "Product catalogue websites for manufacturers, wholesalers and showrooms in Kerala and the UAE. Show every product and get enquiries on WhatsApp. Get a quote.";
 
@@ -34,6 +34,7 @@ export const metadata = {
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "Product Catalogue Website Development | Enquiry & WhatsApp",
     description: DESCRIPTION,
     url: PAGE_URL,

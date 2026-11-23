@@ -23,7 +23,7 @@ import { WOO_PACKAGES } from "@/components/ecommerce/costs";
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/woocommerce-website-development";
-const TITLE = "WooCommerce Development Services in Kerala & UAE | Ivoniz";
+const TITLE = "WooCommerce Development Services in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "WooCommerce development services for new stores, customization, plugins, migration and speed fixes. Serving Kerala, UAE and GCC businesses. Get a free quote.";
 
@@ -32,6 +32,7 @@ export const metadata = {
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "WooCommerce Development Company | Stores, Plugins, Support",
     description: DESCRIPTION,
     url: PAGE_URL,

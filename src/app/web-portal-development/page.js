@@ -26,7 +26,7 @@ import { PORTAL_PACKAGES, PORTAL_FIRST_PHASE } from "@/components/ecommerce/cost
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/web-portal-development";
-const TITLE = "Web Portal Development Company in Kerala & UAE | Ivoniz";
+const TITLE = "Web Portal Development Company in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "Custom web portal development for customers, dealers, vendors, staff and students. Secure, role-based portals for Kerala, UAE and GCC businesses. Get a quote.";
 
@@ -35,6 +35,7 @@ export const metadata = {
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "Custom Web Portal Development | Customer, B2B & Employee",
     description: DESCRIPTION,
     url: PAGE_URL,

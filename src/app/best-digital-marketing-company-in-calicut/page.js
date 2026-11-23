@@ -20,6 +20,7 @@ export const metadata = {
     },
   },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "Best Digital Marketing Company in Calicut | Ivoniz LLP",
     description:
       "Ivoniz — the best digital marketing agency in Calicut. SEO, Google Ads, Social Media, Web & App Development. Serving Calicut and all of Kerala.",

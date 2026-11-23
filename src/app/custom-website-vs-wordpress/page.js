@@ -19,7 +19,7 @@ import { EstimateButton, WhatsAppButton, PlatformQuiz, StickyMobileCTA } from "@
 const PAGE_URL = "https://ivoniz.com/custom-website-vs-wordpress";
 const UPDATED_ISO = "2026-11-19";
 const UPDATED_LABEL = "19 November 2026";
-const TITLE = "Custom Website vs WordPress: Cost, Speed, SEO Compared | Ivoniz";
+const TITLE = "Custom Website vs WordPress: Cost, Speed, SEO Compared | Ivoniz LLP";
 const DESCRIPTION =
   "Custom website or WordPress? Compare cost, speed, SEO, security and ecommerce, with price ranges for India and the UAE. Get a free project estimate from Ivoniz.";
 
@@ -28,6 +28,7 @@ export const metadata = {
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "Custom Website vs WordPress: An Honest Comparison for Businesses",
     description: DESCRIPTION,
     url: PAGE_URL,

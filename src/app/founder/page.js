@@ -71,6 +71,7 @@ export const metadata = {
     },
   },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "Muhammed Anas — Founder & Managing Director, Ivoniz LLP",
     description:
       "Meet the founder of Ivoniz LLP — a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala.",

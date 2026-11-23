@@ -28,6 +28,7 @@ export const metadata = {
     },
   },
   openGraph: {
+    siteName: "Ivoniz LLP",
     title: "Our Works | Ivoniz LLP",
     description:
       "A selection of live websites Ivoniz has designed and built for clients across fashion, jewellery, healthcare, trading, and consulting.",
