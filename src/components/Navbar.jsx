@@ -106,7 +106,6 @@ export default function Navbar() {
         { label: "Portal Website",      href: "/website-development/web-portal-development" },
         { label: "WordPress Website",   href: "/website-development/wordpress-website-development" },
         { label: "Static Website",      href: "/website-development/static-website-development" },
-        { label: "Websites in Calicut", href: "/website-development/best-website-development-company-in-calicut" },
       ],
     },
     {

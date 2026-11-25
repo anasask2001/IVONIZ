@@ -92,6 +92,7 @@ const INDUSTRIES = [
 
 const FAQS = [
   { q: "How much does digital marketing cost in Calicut?", a: "It depends on the channels, how much content you need and how competitive your market is. Our packages are quoted after a free audit, and ad spend is paid directly to Google or Meta, separate from our management fee." },
+  { q: "Should I hire a freelance digital marketer in Calicut or an agency?", a: "A freelancer can suit a small budget and one channel, such as running Instagram posts or a single ad campaign. An agency suits you when you need several things to work together: ads, SEO, content, and a website that converts. Either way, ask to see live work, who owns the ad accounts, and a sample monthly report showing enquiries, not just likes." },
   { q: "What digital marketing services do you offer?", a: "SEO, Google Business Profile management, Google Ads, Meta (Facebook and Instagram) ads, social media marketing, content and video, landing pages and lead tracking." },
   { q: "How long does it take to see results?", a: "Ads can bring enquiries within days. SEO usually shows clear results in 3 to 6 months, depending on competition and your website's starting point." },
   { q: "Do you guarantee leads or rankings?", a: "No honest agency can guarantee Google rankings. We set clear lead targets, track every enquiry and report cost per lead every month." },

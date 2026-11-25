@@ -23,9 +23,9 @@ import ProjectQuoteForm from "@/components/site/ProjectQuoteForm";
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/website-development/best-website-development-company-in-calicut";
-const TITLE = "Website Development Company in Calicut, Kozhikode | Ivoniz LLP";
+const TITLE = "Web Design & Website Development Company in Calicut | Ivoniz LLP";
 const DESCRIPTION =
-  "Website development in Calicut from our team at HiLITE Business Park. Business, catalogue and ecommerce websites, with live Kerala client sites to check first.";
+  "Web design and development in Calicut from our team at HiLITE Business Park. Business, catalogue and ecommerce websites, with live client sites to check.";
 
 export const metadata = {
   title: { absolute: TITLE },
@@ -165,7 +165,7 @@ const schema = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: "Website Development Company in Calicut",
+      name: "Web Design and Website Development Company in Calicut",
       description: DESCRIPTION,
       inLanguage: "en",
       isPartOf: { "@id": WEBSITE_ID },
@@ -211,7 +211,7 @@ export default function CalicutWebsiteDevelopmentPage() {
             ]}
           />
           <div className="mt-8"><Label>Kozhikode, Kerala</Label></div>
-          <HeroTitle outline="in Calicut">Website Development Company</HeroTitle>
+          <HeroTitle outline="in Calicut">Web Design and Website Development Company</HeroTitle>
 
           <div className="mt-10 grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end">
             <p className="text-white/60 text-[16px] sm:text-[18px] leading-relaxed max-w-[680px]">

@@ -34,7 +34,8 @@
   RewriteRule ^technical-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/technical-seo-services [R=301,L]
   RewriteRule ^on-page-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/on-page-seo-services [R=301,L]
   # "Best digital marketing company" pages consolidated into the hub (26 Nov 2026)
-  RewriteRule ^(?:digital-marketing/)?best-digital-marketing-company-in-(?:calicut|kochi)(?:\.html)?/?$ /digital-marketing [R=301,L]
+  # Also older variants Google still lists (Search Console, Nov 2026): …-in-calicut, …-company-in-kozhikode
+  RewriteRule ^(?:digital-marketing/)?best-digital-marketing-(?:company-)?in-(?:calicut|kochi|kozhikode)(?:\.html)?/?$ /digital-marketing [R=301,L]
   RewriteRule ^founder(?:\.html)?/?$ /about/founder [R=301,L]
 
   # ── Clean-URL routing for the static export ──
