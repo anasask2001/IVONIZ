@@ -418,7 +418,7 @@ export default function SeoServicesPage() {
             <Heading>Why choose Ivoniz as your SEO company in Calicut</Heading>
             <p className="mt-6 text-[15px] text-white/60 leading-relaxed">
               SEO is part of our full <Link href="/digital-marketing" className={LINK}>digital marketing agency in Calicut</Link> service,
-              alongside Google Ads and social media.
+              alongside Google Ads and <Link href="/digital-marketing/social-media-marketing" className={LINK}>social media marketing</Link>.
             </p>
           </div>
           <ul className="border-t border-white/10">

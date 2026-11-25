@@ -223,3 +223,54 @@ export const SEO_AUDIT_TIERS = [
   { id: "large", label: "Ecommerce / large site audit", size: "500+ pages", includes: "Advanced + catalogue, filter and crawl-budget review", inr: null, aed: null },
 ];
 export const AUDIT_FEE_CREDIT = false;
+
+/* Social media marketing (/digital-marketing/social-media-marketing).
+   Monthly prices NOT fixed yet → "Price on request". Set INR and AED.
+   Brief benchmarks: India basic ₹5,000–₹15,000/month; Kerala plans from ₹15,000;
+   UAE AED 2,500–12,000+/month. Ad spend is separate; prices exclude GST/VAT. */
+export const SMM_PACKAGES = [
+  { id: "starter", label: "Starter", platforms: "2 platforms (e.g. Instagram + Facebook)", includes: "12 posts, 2 reels, captions, monthly report", inr: null, aed: null },
+  { id: "growth", label: "Growth", platforms: "3 platforms", includes: "16 posts, 4 reels, stories, replies, ads management", inr: null, aed: null },
+  { id: "premium", label: "Premium", platforms: "4+ platforms", includes: "20 posts, 8 reels, daily stories, ads, competitor review", inr: null, aed: null },
+];
+
+/* Instagram marketing (/digital-marketing/social-media-marketing/instagram-marketing-services).
+   Monthly prices NOT fixed yet → "Price on request". Set INR and AED.
+   Brief benchmarks: Kerala Instagram SMM / ads listings from ₹7,000/month.
+   Ad spend is separate (paid to Meta); prices exclude GST/VAT. */
+export const IG_PACKAGES = [
+  { id: "starter", label: "Starter", content: "10 posts, 2 reels, weekly stories", extras: "Profile optimisation, monthly report", inr: null, aed: null },
+  { id: "growth", label: "Growth", content: "12 posts, 6 reels, stories 3× a week", extras: "Comment and DM replies, 1 ad campaign", inr: null, aed: null },
+  { id: "pro", label: "Pro", content: "16 posts, 10 reels, daily stories", extras: "Full community management, ads, influencer outreach", inr: null, aed: null },
+];
+
+/* Social media management (/digital-marketing/social-media-marketing/social-media-management).
+   Monthly prices NOT fixed yet → "Price on request". Set INR and AED.
+   Brief benchmarks: India basic ₹5,000–₹15,000; Kerala from ₹15,000; UAE AED 3,000–12,000/month.
+   Not included: ad spend, photo/video shoots (add-on), printing. Prices exclude GST/VAT. */
+export const SMM_MGMT_PACKAGES = [
+  { id: "starter", label: "Starter", platforms: "2 platforms", content: "12 posts, 2 reels, weekly stories", management: "Monthly report", inr: null, aed: null },
+  { id: "growth", label: "Growth", platforms: "3 platforms", content: "16 posts, 4 reels, stories 3× a week", management: "Comment and DM replies, competitor review", inr: null, aed: null },
+  { id: "premium", label: "Premium", platforms: "4+ platforms", content: "20 posts, 8 reels, daily stories", management: "Full community management, ads management, monthly strategy call", inr: null, aed: null },
+];
+
+/* Social media advertising (/digital-marketing/social-media-marketing/social-media-advertising).
+   Monthly MANAGEMENT FEES not fixed yet → "Price on request". Set INR and AED.
+   Ad budget is paid separately to the platform; prices exclude GST/VAT.
+   ADS_MIN_DAILY_BUDGET: optional "start from ₹X a day" guide (null hides it). */
+export const ADS_PACKAGES = [
+  { id: "starter", label: "Starter", platforms: "Facebook + Instagram", includes: "1 campaign, 4 ad creatives, lead tracking, monthly report", inr: null, aed: null },
+  { id: "growth", label: "Growth", platforms: "Facebook + Instagram", includes: "Up to 3 campaigns, 8 creatives, remarketing, landing page tweaks", inr: null, aed: null },
+  { id: "scale", label: "Scale", platforms: "Meta + LinkedIn", includes: "Multiple campaigns, video ads, weekly optimisation, CRM / lead sheet integration", inr: null, aed: null },
+];
+export const ADS_MIN_DAILY_BUDGET = null;
+
+/* Social media content creation (/digital-marketing/social-media-marketing/social-media-content-creation).
+   Monthly prices NOT fixed yet → "Price on request". Set INR and AED.
+   Brief benchmark: Dubai video-led content strategies from AED 6,000+.
+   Posting / community management can be added. Prices exclude GST/VAT. */
+export const CONTENT_PACKAGES = [
+  { id: "essential", label: "Essential", content: "10 post designs, 2 reels, captions", revisions: "1 revision per item", inr: null, aed: null },
+  { id: "growth", label: "Growth", content: "15 post designs, 5 reels, 8 stories, captions", revisions: "2 revisions per item", inr: null, aed: null },
+  { id: "video-first", label: "Video-first", content: "8 post designs, 12 reels, 1 shoot day", revisions: "2 revisions per item", inr: null, aed: null },
+];
