@@ -77,3 +77,67 @@ export const FLUTTER_PACKAGES = [
   { id: "ecommerce", label: "Ecommerce / on-demand app", features: "Catalogue, cart, payments, tracking", inr: "₹7,00,000 – ₹15,00,000", time: "12–20 weeks" },
   { id: "complex", label: "Complex app", features: "Real-time, integrations, multi-role", inr: "₹12,00,000+", time: "18+ weeks" },
 ];
+
+/* iOS app packages — INDICATIVE MARKET RANGES from the SEO brief (23 Nov 2026):
+   replace with Ivoniz pricing. Used by /ios-app-development (cost table, FAQ). */
+export const IOS_PACKAGES = [
+  { id: "mvp", label: "iOS MVP", features: "Core features, basic backend", inr: "₹2,00,000 – ₹4,50,000", time: "7–10 weeks" },
+  { id: "business", label: "Business iOS app", features: "Payments, notifications, admin", inr: "₹4,50,000 – ₹10,00,000", time: "10–16 weeks" },
+  { id: "advanced", label: "Advanced app", features: "Real-time, integrations, Apple ecosystem", inr: "₹10,00,000+", time: "16+ weeks" },
+];
+
+/* Android app packages — INDICATIVE MARKET RANGES from the SEO brief (24 Nov 2026):
+   replace with Ivoniz pricing. Used by /android-app-development (cost table, FAQ). */
+export const ANDROID_PACKAGES = [
+  { id: "mvp", label: "Android MVP", features: "Core features, basic admin", inr: "₹1,25,000 – ₹3,00,000", time: "6–9 weeks" },
+  { id: "business", label: "Business Android app", features: "Payments, notifications, dashboard", inr: "₹3,00,000 – ₹8,00,000", time: "9–14 weeks" },
+  { id: "ecommerce", label: "Ecommerce / on-demand app", features: "Catalogue, cart, UPI / COD, tracking", inr: "₹6,00,000 – ₹15,00,000", time: "12–20 weeks" },
+  { id: "complex", label: "Complex app", features: "Real-time, integrations, multi-role", inr: "₹12,00,000+", time: "18+ weeks" },
+];
+
+/* Native app packages — INDICATIVE MARKET RANGES from the SEO brief (24 Nov 2026):
+   replace with Ivoniz pricing. Used by /native-app-development (cost table, FAQ). */
+export const NATIVE_PACKAGES = [
+  { id: "mvp", label: "MVP (core features)", one: "₹1,50,000 – ₹4,50,000", both: "₹3,00,000 – ₹8,00,000", time: "7–10 weeks" },
+  { id: "business", label: "Business app", one: "₹4,50,000 – ₹10,00,000", both: "₹8,00,000 – ₹18,00,000", time: "10–18 weeks" },
+  { id: "enterprise", label: "Advanced / enterprise", one: "₹10,00,000+", both: "₹18,00,000+", time: "18+ weeks" },
+];
+
+/* Custom software packages — INDICATIVE MARKET RANGES from the SEO brief (24 Nov 2026):
+   replace with Ivoniz pricing. Used by /software-development (cost table, FAQ). */
+export const SOFTWARE_PACKAGES = [
+  { id: "small", label: "Small business tool", note: "1–2 modules", inr: "₹50,000 – ₹1,50,000", time: "3–6 weeks" },
+  { id: "business", label: "Business software", note: "3–6 modules, roles, reports", inr: "₹1,50,000 – ₹5,00,000", time: "6–12 weeks" },
+  { id: "erp", label: "ERP / multi-branch system", note: "With mobile app", inr: "₹5,00,000+", time: "12+ weeks" },
+];
+
+/* Custom ERP packages — INDICATIVE MARKET RANGES from the SEO brief (24 Nov 2026):
+   replace with Ivoniz pricing. Used by /erp-software-development (hero "from"
+   line, cost table, FAQ). */
+export const ERP_PACKAGES = [
+  { id: "starter", label: "Starter ERP", note: "3–4 modules, one branch", inr: "₹2,00,000 – ₹5,00,000", time: "8–12 weeks" },
+  { id: "business", label: "Business ERP", note: "6–8 modules, multi-branch, mobile app", inr: "₹5,00,000 – ₹12,00,000", time: "12–20 weeks" },
+  { id: "enterprise", label: "Enterprise / manufacturing ERP", note: "Phased delivery", inr: "₹12,00,000+", time: "Phased, 4–8 months" },
+];
+export const ERP_FROM = { price: "₹2 lakh", golive: "8–12 weeks" };
+
+/* Custom CRM packages — INDICATIVE MARKET RANGES from the SEO brief (24 Nov 2026):
+   replace with Ivoniz pricing. Used by /crm-software-development (hero "from"
+   line, cost table, FAQ). */
+export const CRM_PACKAGES = [
+  { id: "starter", label: "Starter CRM", note: "Leads, follow-ups, reports", inr: "₹60,000 – ₹1,50,000", time: "4–6 weeks" },
+  { id: "business", label: "Business CRM", note: "WhatsApp, call tracking, quotations, mobile app", inr: "₹1,50,000 – ₹4,00,000", time: "6–10 weeks" },
+  { id: "industry", label: "Industry CRM", note: "With ERP or portal integration", inr: "₹4,00,000+", time: "10+ weeks" },
+];
+export const CRM_FROM = { price: "₹60,000", golive: "4–6 weeks" };
+
+/* Billing software options — /billing-software-development. Ready-product prices
+   are NOT fixed yet (decision 24 Nov 2026): shown as "Price on request" until set.
+   Custom development range is the brief's indicative market range. */
+export const BILLING_OPTIONS = [
+  { id: "ready", label: "Ready billing software, customised", price: "Price on request", best: "Single shop, standard needs" },
+  { id: "multi", label: "Multi-counter / multi-branch billing", price: "Price on request", best: "Supermarkets, chains" },
+  { id: "custom", label: "Fully custom billing software development", price: "₹60,000 – ₹2,00,000+", best: "Unique workflows, integrations" },
+];
+/* Set to e.g. "₹15,000" once fixed; null shows "Free demo · price on request". */
+export const BILLING_FROM = null;

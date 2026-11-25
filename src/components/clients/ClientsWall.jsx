@@ -46,10 +46,8 @@ export default function ClientsWall({ clients }) {
           const hidden = filter !== "all" && c.region !== filter;
           return (
             <li key={c.url} className={hidden ? "hidden" : ""}>
-              <a
-                href={c.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href={`/works/${c.slug}`}
                 className="group block h-full rounded-2xl border border-white/10 bg-white/3 p-3 transition-all duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-white/6 focus-visible:outline-2 focus-visible:outline-white"
               >
                 {/* Browser frame */}
@@ -83,7 +81,6 @@ export default function ClientsWall({ clients }) {
                     <p className="text-[10.5px] font-semibold tracking-[0.18em] uppercase text-white/55">{c.category}</p>
                     <h3 className="mt-1.5 text-[17px] leading-snug text-white">{c.title}</h3>
                     {c.location && <p className="mt-1 text-[13px] text-white/50">{c.location}</p>}
-                    <span className="sr-only"> (opens their website in a new tab)</span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -92,7 +89,7 @@ export default function ClientsWall({ clients }) {
                     <FiArrowUpRight className="text-[15px]" />
                   </span>
                 </div>
-              </a>
+              </Link>
             </li>
           );
         })}

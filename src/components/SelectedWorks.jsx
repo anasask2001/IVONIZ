@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
 /*
@@ -46,14 +47,12 @@ export default function SelectedWorks({ works }) {
   return (
     <div ref={sectionRef} className="grid sm:grid-cols-2 gap-x-6 lg:gap-x-10 gap-y-10 sm:gap-y-14">
       {items.map((work, i) => (
-        <a
+        <Link
           key={work.url}
-          href={work.url}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={`/works/${work.slug}`}
           ref={(el) => (cardRefs.current[i] = el)}
           className="group block"
-        ><span className="sr-only">Opens in a new tab: </span>
+        >
           {/* screenshot */}
           <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-white border border-black/8 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow duration-500 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]">
             <Image
@@ -81,7 +80,7 @@ export default function SelectedWorks({ works }) {
               <FiArrowUpRight aria-hidden="true" className="text-[16px]" />
             </span>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );

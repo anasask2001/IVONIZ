@@ -507,7 +507,10 @@ export default function WebPortalDevelopmentPage() {
             <p className="mt-6 text-[15px] text-white/60 leading-relaxed">
               Need Android and iOS apps on the same backend? See our{" "}
               <Link href="/mobile-app-development" className={LINK_DARK}>mobile app development company</Link> services,
-              or a cross-platform <Link href="/flutter-app-development" className={LINK_DARK}>Flutter app</Link>.
+              or a cross-platform <Link href="/flutter-app-development" className={LINK_DARK}>Flutter app</Link>. For ERP,
+              CRM or billing systems, see our <Link href="/software-development" className={LINK_DARK}>custom software development</Link> services,
+              including <Link href="/erp-software-development" className={LINK_DARK}>ERP integration</Link> for dealer and vendor portals and{" "}
+              <Link href="/crm-software-development" className={LINK_DARK}>CRM integration</Link> for customer portals.
             </p>
           </div>
           <FaqList items={FAQS} />

@@ -10,6 +10,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Footer from "@/components/Footer";
 import LazyVideo from "@/components/LazyVideo";
 import { webPageSchema, ORG_ID } from "@/lib/schema";
+import { clientBySlug } from "@/lib/clients";
 
 /* Code-split below-the-fold sections — still statically prerendered
    (no ssr:false) so content stays in the static HTML for SEO/no-JS,
@@ -94,15 +95,21 @@ const SERVICES = [
     ],
     href: "/best-website-development-company-in-calicut",
   },
+  {
+    number: "04",
+    title: "Software Development",
+    description: "As a software development company in Calicut, we build custom business software around how your team works: ERP, CRM, GST billing and industry-specific systems you own outright.",
+    items: [
+      "ERP Software Development",
+      "CRM Software Development",
+      "Billing & Custom Business Software",
+    ],
+    href: "/software-development",
+  },
 ];
 
 /* Real client projects (same data as /works) — cards link to the live sites */
-const WORKS = [
-  { title: "Posh Palette",            category: "Fashion & Accessories",        location: "Calicut, Kerala",    url: "https://poshpalette.in/",           image: "/Portfolios/POSHPALETTE.webp" },
-  { title: "Nizra Gold and Diamonds", category: "Jewellery",                    location: "Kerala",             url: "https://nizragold.com/",            image: "/Portfolios/NIZRA_GOLD_AND_DIAMONS.webp" },
-  { title: "Rivaura Hospital",        category: "Healthcare",                   location: "Malappuram, Kerala", url: "https://www.rivaurahospital.com/",  image: "/Portfolios/RIVAURA_HOSPITAL.webp" },
-  { title: "Opiz Global LLP",         category: "Agro-Food Export & Logistics", location: "Calicut, Kerala",    url: "https://opizglobal.com/",           image: "/Portfolios/OPIZ_GLOBAL.webp" },
-];
+const WORKS = ["posh-palette", "nizra-gold-and-diamonds", "rivaura-hospital", "opiz-global"].map(clientBySlug);
 
 const PARTNERS = ["React","Next.js","Flutter","Node.js","MongoDB","AWS","Firebase","WordPress","Figma","PostgreSQL","Shopify","Tailwind CSS"];
 

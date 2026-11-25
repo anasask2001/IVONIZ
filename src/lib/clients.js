@@ -3,11 +3,19 @@
    Single source for /works and /clients. Add new clients here only
    once their site is live, with a screenshot in /public/Portfolios.
    region: "kerala" | "gcc" (UAE, Saudi Arabia, Qatar) | null if unknown
+   slug → case-study page /works/<slug>. about: what the business does (from
+   the client's own site); tech: platform detected on the live site (null if
+   unknown); services: what Ivoniz delivered. Optional extras per project:
+   review { name, video }, showcase { image, alt, instagram, handle }.
    ════════════════════════════════════════════════════════════════ */
 
 export const CLIENTS = [
   {
     title: "Posh Palette",
+    slug: "posh-palette",
+    about: "Posh Palette is a bag shop in Calicut, Kerala, selling ladies' handbags, imported bags, leather goods, luggage and wallets.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "Fashion & Accessories",
     location: "Calicut, Kerala",
     region: "kerala",
@@ -18,8 +26,12 @@ export const CLIENTS = [
   },
   {
     title: "Nizra Gold and Diamonds",
+    slug: "nizra-gold-and-diamonds",
+    about: "Nizra Gold and Diamonds is a jewellery showroom in Kondotty, Kerala, known for gold designs, diamond jewellery and Kerala bridal collections.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "Jewellery",
-    location: "Kerala",
+    location: "Kondotty, Kerala",
     region: "kerala",
     url: "https://nizragold.com/",
     gradient: "linear-gradient(135deg, #b45309 0%, #422006 100%)",
@@ -28,16 +40,40 @@ export const CLIENTS = [
   },
   {
     title: "Rivaura Hospital",
+    slug: "rivaura-hospital",
+    about: "Rivaura Multispeciality Hospital in Areekode, Malappuram offers 24/7 emergency care, orthopaedics, ICU, surgery, diagnostics and a pharmacy.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup","Instagram content and design"],
     category: "Healthcare",
     location: "Malappuram, Kerala",
     region: "kerala",
     url: "https://www.rivaurahospital.com/",
     gradient: "linear-gradient(135deg, #0e7490 0%, #083344 100%)",
     image: "/Portfolios/RIVAURA_HOSPITAL.webp",
+    review: { name: "Dr. Affan A Akbar", org: "Rivaura Multispeciality Hospital", video: "/video/clients-review/ivoniz-client-review-rivaurahospital-Dr-Sanjeev-Thomas.mp4" },
+    showcase: { image: "/clients/rivaura-hospital-instagram-showcase.webp", alt: "Rivaura Hospital Instagram profile and posts designed by Ivoniz, shown on a phone", instagram: "https://www.instagram.com/rivaura.hospital/", handle: "@rivaura.hospital" },
+    type: "semi-dynamic",
+  },
+  {
+    title: "EduGems",
+    slug: "edugems",
+    about: "EduGems is an art and music academy in Calicut, Kerala, teaching drawing, painting, Kerala mural, digital art, guitar, violin and keyboard.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
+    category: "Art & Music Academy",
+    location: "Calicut, Kerala",
+    region: "kerala",
+    url: "https://www.edugems.in/",
+    gradient: "linear-gradient(135deg, #9333ea 0%, #3b0764 100%)",
+    image: "/Portfolios/EDUGEMS.webp",
     type: "semi-dynamic",
   },
   {
     title: "Opiz Global LLP",
+    slug: "opiz-global",
+    about: "Opiz Global LLP is an agro-food exporter and logistics company in Calicut, Kerala, shipping grains, spices, millets, pulses and nuts to international buyers.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "Agro-Food Export & Logistics",
     location: "Calicut, Kerala",
     region: "kerala",
@@ -48,6 +84,10 @@ export const CLIENTS = [
   },
   {
     title: "Feraro International",
+    slug: "feraro-international",
+    about: "Feraro International makes steel windows and doors for modern homes and commercial architecture.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "Steel Windows & Doors",
     location: null,
     region: null,
@@ -58,6 +98,10 @@ export const CLIENTS = [
   },
   {
     title: "Sky Pure Water",
+    slug: "sky-pure-water",
+    about: "Sky Pure Water Trading LLC supplies drinking water to homes, offices and businesses in Dubai, Sharjah and Ajman.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "Water Trading",
     location: "UAE",
     region: "gcc",
@@ -68,6 +112,10 @@ export const CLIENTS = [
   },
   {
     title: "Technical Trade Co.",
+    slug: "technical-trade-co",
+    about: "Technical Trade Co. is a supplier in Al Khobar, Saudi Arabia, providing telecom OSP and ISP materials, IT networking, security and industrial components.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "Engineering & IT Solutions",
     location: "Saudi Arabia",
     region: "gcc",
@@ -78,6 +126,10 @@ export const CLIENTS = [
   },
   {
     title: "CapitalCore",
+    slug: "capitalcore",
+    about: "CapitalCore Business Solutions is a business consulting firm in the UAE.",
+    tech: null,
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "Business Consulting",
     location: "UAE",
     region: "gcc",
@@ -88,6 +140,10 @@ export const CLIENTS = [
   },
   {
     title: "Arlocks Gents Wear",
+    slug: "arlocks-gents-wear",
+    about: "Arlocks Gents Wear is a men's clothing store in Kooriyad, Kerala, offering modern styles at affordable prices.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "Men's Fashion",
     location: "Kooriyad, Kerala",
     region: "kerala",
@@ -98,6 +154,10 @@ export const CLIENTS = [
   },
   {
     title: "Danthika Dental Zone",
+    slug: "danthika-dental-zone",
+    about: "Danthika Multi Speciality Dental Care in Kondotty, Kerala brings specialist dentists together for orthodontics, implants, root canal treatment and cosmetic dentistry.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "Healthcare",
     location: "Kondotty, Malappuram, Kerala",
     region: "kerala",
@@ -108,6 +168,10 @@ export const CLIENTS = [
   },
   {
     title: "Docview Business Services",
+    slug: "docview-business-services",
+    about: "Docview Business Services is a business services and consulting firm in the UAE.",
+    tech: null,
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "Business Consulting",
     location: "UAE",
     region: "gcc",
@@ -118,6 +182,10 @@ export const CLIENTS = [
   },
   {
     title: "Elnyca Solutions General Trading LLC",
+    slug: "elnyca-solutions",
+    about: "Elnyca Solutions General Trading LLC is a Dubai company working in government and defence procurement, IT and cybersecurity solutions, and general trading.",
+    tech: ["Next.js","React"],
+    services: ["Website design","Website development","Mobile-responsive build","On-page SEO setup"],
     category: "General Trading",
     location: "UAE",
     region: "gcc",
@@ -128,6 +196,10 @@ export const CLIENTS = [
   },
   {
     title: "Gaming Qatar",
+    slug: "gaming-qatar",
+    about: "Gaming Qatar is an online store in Qatar for gaming consoles, accessories and digital vouchers.",
+    tech: ["Shopify"],
+    services: ["Ecommerce store design","Shopify store setup","Product catalogue and checkout","Mobile-responsive build"],
     category: "Gaming & E-Commerce",
     location: "Qatar",
     region: "gcc",
@@ -143,9 +215,18 @@ export const CLIENTS = [
 export const INDUSTRY_GROUPS = [
   { name: "Retail & Fashion", match: ["Fashion & Accessories", "Men's Fashion", "Jewellery", "Gaming & E-Commerce"] },
   { name: "Healthcare", match: ["Healthcare"] },
+  { name: "Education", match: ["Art & Music Academy"] },
   { name: "Trading & Export", match: ["Agro-Food Export & Logistics", "Water Trading", "General Trading"] },
   { name: "Consulting & Services", match: ["Business Consulting", "Engineering & IT Solutions"] },
   { name: "Manufacturing", match: ["Steel Windows & Doors"] },
 ].map((g) => ({ ...g, clients: CLIENTS.filter((c) => g.match.includes(c.category)) }));
 
 export const domainOf = (url) => new URL(url).hostname.replace(/^www\./, "");
+
+export const TYPE_LABEL = {
+  static: { label: "Static website", text: "Fixed pages built for speed and security, with no admin panel to maintain." },
+  "semi-dynamic": { label: "Semi-dynamic website", text: "A fast site with selected sections, such as products, galleries or updates, that change without a full rebuild." },
+  "fully-dynamic": { label: "Fully dynamic website", text: "A database-driven site with live content, accounts, cart and checkout." },
+};
+
+export const clientBySlug = (slug) => CLIENTS.find((c) => c.slug === slug);

@@ -106,7 +106,7 @@ const COMPARE = [
   ["Performance", "Very high", "High", "Highest"],
   ["UI consistency", "Same on every device", "Uses native components", "Platform-specific"],
   ["Development cost", "Lower", "Lower", "Highest"],
-  ["Best for", "Most business apps, design-heavy apps, MVPs", "Teams already using React", "Apps needing deep device or OS features"],
+  ["Best for", "Most business apps, design-heavy apps, MVPs", "Teams already using React", <>Apps needing deep device or OS features; see <Link key="ios" href="/ios-app-development" className={LINK_DARK}>native iOS app development</Link> and <Link key="android" href="/android-app-development" className={LINK_DARK}>native Android app development</Link></>],
 ];
 
 const APPS = [
@@ -410,8 +410,8 @@ export default function FlutterAppDevelopmentPage() {
           <div className="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-5">
             <p className="text-[16px] text-black/65 leading-relaxed max-w-[640px]">
               Not sure which suits you? We&apos;ll recommend honestly after a short call, whether that&apos;s Flutter,
-              React Native or native. See our <Link href="/mobile-app-development" className={LINK_DARK}>mobile app development</Link> services
-              for every option.
+              React Native or <Link href="/native-app-development" className={LINK_DARK}>native app development</Link>. See our{" "}
+              <Link href="/mobile-app-development" className={LINK_DARK}>mobile app development</Link> services for every option.
             </p>
             <PillLink href={waLink(WA.consult)} external solid dark={false} event="consult_click" label="Free 20-minute platform consultation" location="compare" icon={<FaWhatsapp aria-hidden="true" />} />
           </div>

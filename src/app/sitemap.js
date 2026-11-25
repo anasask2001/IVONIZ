@@ -1,4 +1,5 @@
 import { execSync } from "node:child_process";
+import { CLIENTS } from "@/lib/clients";
 
 export const dynamic = "force-static";
 
@@ -41,6 +42,13 @@ const routes = [
   { path: "/static-website-development", priority: 0.7, changeFrequency: "monthly" },
   { path: "/mobile-app-development", priority: 0.95, changeFrequency: "weekly" },
   { path: "/flutter-app-development", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/ios-app-development", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/android-app-development", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/native-app-development", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/software-development", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/erp-software-development", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/crm-software-development", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/billing-software-development", priority: 0.8, changeFrequency: "monthly" },
   { path: "/catalogue-website-development", priority: 0.8, changeFrequency: "monthly" },
   { path: "/web-portal-development", priority: 0.85, changeFrequency: "monthly" },
   { path: "/custom-website-vs-wordpress", priority: 0.85, changeFrequency: "monthly" },
@@ -48,8 +56,17 @@ const routes = [
   { path: "/terms", priority: 0.2, changeFrequency: "yearly" },
 ];
 
+/* One case-study page per portfolio project (/works/<slug>). */
+const projectRoutes = CLIENTS.map((c) => ({
+  path: `/works/${c.slug}`,
+  file: "src/lib/clients.js",
+  priority: 0.6,
+  changeFrequency: "monthly",
+  images: [`${BASE_URL}${c.image}`],
+}));
+
 export default function sitemap() {
-  return routes.map((route) => ({
+  return [...routes, ...projectRoutes].map((route) => ({
     url: `${BASE_URL}${route.path}`,
     lastModified: lastModified(route.file || `src/app${route.path}/page.js`),
     changeFrequency: route.changeFrequency,

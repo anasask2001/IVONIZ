@@ -15,6 +15,11 @@ import { waLink, GLASS, OPEN_SANS } from "@/components/site/SiteUI";
  *              place of Platforms / Stage; CTAs link to #quote-<id> to pre-select it.
  *   tech     — technology named in the WhatsApp message (e.g. "Flutter").
  *   leadType — GA4 lead_type when no need is chosen (default "mobile_app").
+ *
+ * Optional props (used by /native-app-development):
+ *   platformOptions — replaces the default Platforms list (e.g. adds "Not sure").
+ *   features        — multi-select "Key features" list shown in place of Stage;
+ *                     Target launch is hidden in this mode (brief's field list).
  */
 
 const TYPES = ["Ecommerce", "Booking", "Healthcare", "Education", "On-demand", "Business", "Other"];
@@ -28,10 +33,12 @@ const BUDGETS = {
 };
 const EMAIL = "info@ivoniz.com";
 
-export default function AppQuoteForm({ needs, tech, leadType = "mobile_app" }) {
+export default function AppQuoteForm({ needs, tech, leadType = "mobile_app", platformOptions = PLATFORMS, features }) {
   const [need, setNeed] = useState(needs ? needs[0].id : null);
   const [type, setType] = useState("");
   const [platforms, setPlatforms] = useState("Both");
+  const [picked, setPicked] = useState([]);
+  const toggleFeature = (x) => setPicked((list) => (list.includes(x) ? list.filter((y) => y !== x) : [...list, x]));
   const [stage, setStage] = useState("Idea");
   const [country, setCountry] = useState("India");
   const [budget, setBudget] = useState("");
@@ -62,7 +69,8 @@ export default function AppQuoteForm({ needs, tech, leadType = "mobile_app" }) {
         ? `Hi Ivoniz, I'd like to hire ${tech ? tech + " " : ""}developers. I'm based in ${country}.`
         : `Hi Ivoniz, I want to build ${type ? `a ${type.toLowerCase()} ${appWord}` : `a ${appWord}`} for my business in ${country}.`,
       needObj ? `Need: ${needObj.label}` : `Platforms: ${platforms}`,
-      needObj ? (type ? `App type: ${type}` : null) : `Stage: ${stage}`,
+      needObj ? (type ? `App type: ${type}` : null) : features ? (type ? `App type: ${type}` : null) : `Stage: ${stage}`,
+      features && picked.length ? `Key features: ${picked.join(", ")}` : null,
       budget ? `Budget: ${budget}` : null,
       launch ? `Target launch: ${launch}` : null,
       `Name: ${f.name}`,
@@ -80,7 +88,7 @@ export default function AppQuoteForm({ needs, tech, leadType = "mobile_app" }) {
       return;
     }
     setError("");
-    track("generate_lead", { lead_type: needObj?.lead || leadType, need: need || undefined, app_type: type || "unspecified", platforms: needs ? undefined : platforms, stage: needs ? undefined : stage, country, budget, channel, location: "app_quote_form" });
+    track("generate_lead", { lead_type: needObj?.lead || leadType, need: need || undefined, app_type: type || "unspecified", platforms: needs ? undefined : platforms, stage: needs || features ? undefined : stage, features: features ? picked.join("|") : undefined, country, budget, channel, location: "app_quote_form" });
     if (channel === "whatsapp") {
       window.open(waLink(summary()), "_blank", "noopener,noreferrer");
     } else {
@@ -97,15 +105,40 @@ export default function AppQuoteForm({ needs, tech, leadType = "mobile_app" }) {
           </Field>
         )}
         <Field label="App type"><Choice name="App type" options={TYPES} value={type} onChange={setType} /></Field>
-        {!needs && (
+        {!needs && !features && (
           <div className="grid sm:grid-cols-2 gap-7">
-            <Field label="Platforms"><Choice name="Platforms" options={PLATFORMS} value={platforms} onChange={setPlatforms} /></Field>
+            <Field label="Platforms"><Choice name="Platforms" options={platformOptions} value={platforms} onChange={setPlatforms} /></Field>
             <Field label="Stage"><Choice name="Stage" options={STAGES} value={stage} onChange={setStage} /></Field>
           </div>
         )}
+        {features && (
+          <>
+            <Field label="Platforms"><Choice name="Platforms" options={platformOptions} value={platforms} onChange={setPlatforms} /></Field>
+            <Field label="Key features (choose any)">
+              <div role="group" aria-label="Key features" className="flex flex-wrap gap-2">
+                {features.map((x) => {
+                  const on = picked.includes(x);
+                  return (
+                    <button
+                      key={x}
+                      type="button"
+                      aria-pressed={on}
+                      onClick={() => toggleFeature(x)}
+                      className={`px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
+                        on ? "bg-white text-black border-white" : "border-white/20 text-white/75 hover:border-white/50 hover:text-white"
+                      }`}
+                    >
+                      {x}
+                    </button>
+                  );
+                })}
+              </div>
+            </Field>
+          </>
+        )}
         <Field label="Country"><Choice name="Country" options={COUNTRIES} value={country} onChange={(c) => { setCountry(c); setBudget(""); }} /></Field>
         <Field label={`Budget range (${currency})`}><Choice name="Budget" options={BUDGETS[currency]} value={budget} onChange={setBudget} /></Field>
-        <Field label="Target launch"><Choice name="Target launch" options={LAUNCH} value={launch} onChange={setLaunch} /></Field>
+        {!features && <Field label="Target launch"><Choice name="Target launch" options={LAUNCH} value={launch} onChange={setLaunch} /></Field>}
 
         <div className="grid sm:grid-cols-3 gap-4">
           <Input id="app-name" label="Name" required value={f.name} onChange={set("name")} autoComplete="name" />

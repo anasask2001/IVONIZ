@@ -413,6 +413,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
           </div>
           <p className="mt-4 text-[13px] text-white/55">
             Indicative market ranges. Cost depends on number of products, who uploads them, filters, languages and integrations.
+            Selling from a showroom too? Our <Link href="/billing-software-development" className={LINK_DARK}>GST billing software</Link> can share the same product list.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <PillLink href="/contact" solid label="Get a Catalogue Website Estimate" location="pricing" />

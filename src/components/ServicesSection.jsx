@@ -173,7 +173,7 @@ export default function ServicesSection({ services }) {
                     <span className="text-[16px] font-light tracking-widest" style={{ color: "rgba(255,255,255,0.95)" }}>
                       ({s.number})
                     </span>
-                    <span className="hidden lg:block text-[10px] font-semibold tracking-[0.18em] uppercase truncate max-w-35" style={{ color: "rgba(255,255,255,0.9)" }}>
+                    <span className="hidden lg:block text-[10px] font-semibold tracking-[0.18em] uppercase truncate max-w-44" style={{ color: "rgba(255,255,255,0.9)" }}>
                       {s.title}
                     </span>
                   </div>

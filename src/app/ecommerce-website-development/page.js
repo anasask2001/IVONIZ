@@ -57,7 +57,7 @@ const SERVICES = [
   { title: "B2B and wholesale portals", text: <>Dealer logins, tiered pricing, bulk ordering, credit limits and quotation requests, built with our <Link href="/web-portal-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">web portal development</Link> team.</> },
   { title: "Multi-vendor marketplaces", text: "Vendor onboarding, commissions, payouts and separate dashboards." },
   { title: "Store migration and redesign", text: "Move from an old platform or rebuild a slow store without losing products, customers or rankings." },
-  { title: "Integrations", text: "ERP and accounting (Tally, Zoho, Odoo), CRM, inventory, shipping and marketing tools." },
+  { title: "Integrations", text: <>ERP and accounting (Tally, Zoho, Odoo), CRM, inventory, shipping and marketing tools. Also run a physical store? See <Link href="/billing-software-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">billing software for your shop</Link>.</> },
   { title: "AI features", text: <>Product recommendations, smart search and chat assistants, through our <Link href="/#our-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">AI integration</Link> services.</> },
 ];
 

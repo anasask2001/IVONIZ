@@ -37,8 +37,15 @@ Calicut (Kozhikode), Kochi, and across Kerala, India — also serving clients na
 - [Best Digital Marketing Company in Calicut](https://ivoniz.com/best-digital-marketing-company-in-calicut): SEO, Google Ads, Meta Ads, and social media marketing services in Calicut.
 - [Best Website Development Company in Calicut](https://ivoniz.com/best-website-development-company-in-calicut): Custom website, e-commerce, and web application development in Calicut.
 - [Best Digital Marketing Company in Kochi](https://ivoniz.com/best-digital-marketing-company-in-kochi): Digital marketing services in Kochi.
+- [Software Development](https://ivoniz.com/software-development): Custom software development company in Calicut (Kozhikode), Kerala: ERP, CRM, GST billing and industry-specific business software, with costs and process.
+- [ERP Software Development](https://ivoniz.com/erp-software-development): Custom ERP software for manufacturers, distributors, retailers, schools and hospitals in Kerala and India: modules, industries, custom vs SAP/Odoo, costs and phased delivery.
+- [CRM Software Development](https://ivoniz.com/crm-software-development): Custom CRM software with WhatsApp Business API integration, lead capture from Facebook, IndiaMart and JustDial, call tracking, mobile app, industry CRMs and costs.
+- [Billing Software](https://ivoniz.com/billing-software-development): GST billing software for retail shops, supermarkets, restaurants, jewellery and medical stores in Kerala, set up and supported from Kozhikode, plus custom billing software development.
 - [Mobile App Development](https://ivoniz.com/mobile-app-development): Android, iOS, Flutter and React Native app development for businesses in India and the UAE, with an app cost guide and estimator.
 - [Flutter App Development](https://ivoniz.com/flutter-app-development): Flutter app development company for Android and iOS apps from one codebase, Flutter vs React Native, costs, and hiring dedicated Flutter developers.
+- [iOS App Development](https://ivoniz.com/ios-app-development): iOS app development company for native iPhone and iPad apps in Swift and SwiftUI, App Store launch, costs, and hiring dedicated iOS developers.
+- [Android App Development](https://ivoniz.com/android-app-development): Android app development company in India for native Kotlin and Flutter apps, Google Play launch, costs, and hiring dedicated Android developers.
+- [Native App Development](https://ivoniz.com/native-app-development): What native app development is, native vs hybrid vs cross-platform compared, native iOS (Swift) and Android (Kotlin) services, costs, and a platform decision tool.
 - [Website Development](https://ivoniz.com/website-development): Custom, WordPress and ecommerce website development for Kerala, UAE and GCC businesses.
 - [Ecommerce Website Development](https://ivoniz.com/ecommerce-website-development): WooCommerce and custom online stores with local payments and fast checkout.
 - [WooCommerce Development](https://ivoniz.com/woocommerce-website-development): New WooCommerce stores, customisation, plugins, migration and speed fixes.
@@ -49,7 +56,7 @@ Calicut (Kozhikode), Kochi, and across Kerala, India — also serving clients na
 - [Custom Website vs WordPress](https://ivoniz.com/custom-website-vs-wordpress): Comparison of cost, speed, SEO and security, with price ranges for India and the UAE.
 - [About](https://ivoniz.com/about): Company history, mission, and vision.
 - [Founder](https://ivoniz.com/founder): Muhammed Anas, Founder & Managing Director — background, leadership philosophy, and founder photo.
-- [Works](https://ivoniz.com/works): Portfolio of delivered projects.
+- [Works](https://ivoniz.com/works): Portfolio of delivered projects. Each project has its own page at https://ivoniz.com/works/<project> with the client, industry, location, platform and services (for example https://ivoniz.com/works/rivaura-hospital).
 - [Clients](https://ivoniz.com/clients): Verified clients with live websites built by Ivoniz, by industry and region.
 - [Contact](https://ivoniz.com/contact): Contact form and direct contact details.
 

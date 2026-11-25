@@ -389,8 +389,7 @@ export default function StaticWebsiteDevelopmentPage() {
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {EXAMPLES.map((c) => (
                 <li key={c.url}>
-                  <a href={c.url} target="_blank" rel="noopener noreferrer" className="group block">
-                    <span className="sr-only">Opens in a new tab: </span>
+                  <Link href={`/works/${c.slug}`} className="group block">
                     <div className="relative overflow-hidden rounded-xl border border-white/10" style={{ aspectRatio: "21/10", background: c.gradient }}>
                       <Image
                         src={c.image}
@@ -403,7 +402,7 @@ export default function StaticWebsiteDevelopmentPage() {
                     <p className="mt-4 text-[10.5px] font-semibold tracking-[0.18em] uppercase text-white/55">{c.category}{c.location ? ` · ${c.location}` : ""}</p>
                     <p className="mt-1 text-[17px] text-white inline-flex items-center gap-1.5">{c.title} <FiArrowUpRight aria-hidden="true" className="text-white/55" /></p>
                     <p className="text-[13px] text-white/55">{domainOf(c.url)}</p>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

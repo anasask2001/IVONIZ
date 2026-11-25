@@ -89,9 +89,9 @@ export default function Navbar() {
       href: "/mobile-app-development",
       links: [
         { label: "Flutter Development", href: "/flutter-app-development" },
-        { label: "iOS Development",      href: "/mobile-app-development#services" },
-        { label: "Android Development",  href: "/mobile-app-development#services" },
-        { label: "Native Development",   href: "/mobile-app-development#technologies" },
+        { label: "iOS Development",      href: "/ios-app-development" },
+        { label: "Android Development",  href: "/android-app-development" },
+        { label: "Native Development",   href: "/native-app-development" },
       ],
     },
     {
@@ -108,10 +108,11 @@ export default function Navbar() {
     },
     {
       title: "Software",
+      href: "/software-development",
       links: [
-        { label: "ERP Software",     href: "/#our-services" },
-        { label: "CRM Software",     href: "/#our-services" },
-        { label: "Billing Software", href: "/#our-services" },
+        { label: "ERP Software",     href: "/erp-software-development" },
+        { label: "CRM Software",     href: "/crm-software-development" },
+        { label: "Billing Software", href: "/billing-software-development" },
       ],
     },
     {
