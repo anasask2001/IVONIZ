@@ -337,7 +337,7 @@ export default function SocialMediaContentCreationPage() {
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
               We produce social media content for businesses in Dubai, Abu Dhabi, Sharjah and the GCC, with pricing in AED.
               Since 1 February 2026, promotional content on social media in the UAE requires a UAE Advertiser Permit, so for
-              on-camera creator content in the UAE we work only with permitted creators.
+              on-camera creator content in the UAE we work only with permitted creators. We work with Gulf clients remotely from our office in Kozhikode, with calls in Gulf time; we have no office in the UAE.
             </p>
             <ul className="mt-6 grid gap-3 text-[15px] text-white/80 flex-1">
               <Check>Monthly content packages in AED</Check>

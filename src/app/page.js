@@ -9,7 +9,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Footer from "@/components/Footer";
 import LazyVideo from "@/components/LazyVideo";
 import { webPageSchema, ORG_ID, organizationSchema } from "@/lib/schema";
-import { clientBySlug, CLIENTS as CLIENT_LIST } from "@/lib/clients";
+import { clientBySlug, CLIENTS as CLIENT_LIST, CLIENT_STATS } from "@/lib/clients";
 import { waLink } from "@/components/site/SiteUI";
 
 /* Code-split below-the-fold sections — still statically prerendered
@@ -91,7 +91,7 @@ const SERVICES = [
       "Web Application & Portal Development",
       "API & Backend Development",
     ],
-    href: "/website-development/best-website-development-company-in-calicut",
+    href: "/website-development",
   },
   {
     number: "04",
@@ -259,10 +259,10 @@ export default function Home() {
         <div className="mx-auto max-w-350 px-4 sm:px-6 lg:px-10 xl:px-16">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {[
-              { value: "5+",    label: "Years of Building" },
-              { value: "1000+", label: "Websites Delivered" },
-              { value: "100+",  label: "Mobile Apps Delivered" },
-              { value: "100%",  label: "Clients satisfied & retention" },
+              { value: CLIENT_STATS.total,     label: "Live client websites" },
+              { value: CLIENT_STATS.kerala,    label: "Clients in Kerala" },
+              { value: CLIENT_STATS.gcc,       label: "Clients in the GCC" },
+              { value: CLIENT_STATS.countries, label: "Countries" },
             ].map(({ value, label }, i) => (
               <Reveal key={label} y={40} scale={0.94} delay={i * 0.12}>
               <div className="stat-card flex flex-col items-center justify-center text-center gap-3 py-10 sm:py-14 px-4 cursor-default h-full">

@@ -335,7 +335,7 @@ export default function InstagramMarketingServicesPage() {
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
               We run Instagram marketing for businesses in Dubai, Abu Dhabi, Sharjah and the wider GCC, with packages in
               AED. Since 1 February 2026, promotional content on social media in the UAE requires a UAE Advertiser Permit.
-              We plan your content and influencer work with this in mind and only work with permitted creators.
+              We plan your content and influencer work with this in mind and only work with permitted creators. We work with Gulf clients remotely from our office in Kozhikode, with calls in Gulf time; we have no office in the UAE.
             </p>
             <ul className="mt-6 grid gap-3 text-[15px] text-white/80 flex-1">
               <Check>Monthly packages priced in AED</Check>

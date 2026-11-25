@@ -506,7 +506,8 @@ export default function FlutterAppDevelopmentPage() {
               <h3 className="text-white" style={h2Style}>UAE and GCC</h3>
               <p className="mt-5 text-[15.5px] leading-relaxed text-white/65 flex-1">
                 We build bilingual English–Arabic Flutter apps with right-to-left layouts, GCC payment gateways (PayTabs,
-                Telr, Tap, Apple Pay, Mada) and in-region hosting where needed. We quote in AED and meet in Gulf time.
+                Telr, Tap, Apple Pay, Mada) and in-region hosting where needed. We have no office in the Gulf: we work
+                remotely from Kozhikode, quote in AED and hold calls in Gulf time.
               </p>
               <div className="mt-8">
                 <PillLink href={waLink(WA.gcc)} external solid event="whatsapp_click" label="Talk to us in Gulf time" location="gcc_block" icon={<FaWhatsapp aria-hidden="true" />} />

@@ -28,7 +28,7 @@ import BillingQuoteForm from "@/components/software/BillingQuoteForm";
 const PAGE_URL = "https://ivoniz.com/software-development/billing-software-development";
 const TITLE = "GST Billing Software in Kerala & Kozhikode | Ivoniz LLP";
 const DESCRIPTION =
-  "GST billing software for shops, restaurants, jewellers and medical stores in Kerala. Customised to your business, with local setup and support. Free demo.";
+  "GST billing software for shops, restaurants, jewellers and pharmacies in Kerala. Customised to your business, with local setup and support. Free demo.";
 
 export const metadata = {
   title: { absolute: TITLE },

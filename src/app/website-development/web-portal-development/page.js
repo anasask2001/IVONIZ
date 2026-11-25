@@ -117,8 +117,8 @@ const MARKETS = [
     location: "markets_gcc",
   },
   {
-    label: "Africa and global",
-    text: "For organisations in Rwanda and other markets, we build lightweight portals that work well on mobile and slower connections, delivered remotely with calls in your time zone.",
+    label: "Other countries",
+    text: "For organisations outside India and the Gulf, we can build lightweight portals that work well on mobile and slower connections, delivered remotely with calls in your time zone.",
     cta: "Talk to our team",
     message: "Hi Ivoniz, we're planning a web portal for our organisation outside India. Can we talk?",
     location: "markets_international",
@@ -155,7 +155,6 @@ const schema = {
         { "@type": "Country", name: "Saudi Arabia" },
         { "@type": "Country", name: "Qatar" },
         { "@type": "Country", name: "Oman" },
-        { "@type": "Country", name: "Rwanda" },
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",

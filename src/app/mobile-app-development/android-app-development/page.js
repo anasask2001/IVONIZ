@@ -514,7 +514,8 @@ export default function AndroidAppDevelopmentPage() {
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65 flex-1">
               We build bilingual English–Arabic Android apps with right-to-left layouts, GCC payment gateways (PayTabs,
               Telr, Tap, Mada) and in-region hosting where needed, for businesses in Dubai, Abu Dhabi, Sharjah and across
-              the Gulf, including Muscat and Kuwait. Quotes in AED, meetings in Gulf time.
+              the Gulf, including Muscat and Kuwait. We have no office in the Gulf: we work remotely from Kozhikode, with
+              quotes in AED and calls in Gulf time.
             </p>
             <div className="mt-8">
               <PillLink href={waLink(WA.gcc)} external solid event="whatsapp_click" label="Talk to us in Gulf time" location="gcc_block" icon={<FaWhatsapp aria-hidden="true" />} />

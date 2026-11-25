@@ -405,7 +405,7 @@ export default function OffPageSeoServicesPage() {
               We provide off-page SEO services in Dubai and link building services for businesses in Abu Dhabi, Sharjah,
               Saudi Arabia, Qatar, Oman, Bahrain and Kuwait. That includes UAE and GCC business directories, regional
               industry sites and English-language publications. You get white-hat work, clear monthly reporting and
-              pricing in AED, delivered by our team in Calicut.
+              pricing in AED, delivered remotely by our team in Calicut, with calls in Gulf time. We have no office in the UAE.
             </p>
             <ul className="mt-6 grid gap-3 text-[15px] text-white/80 flex-1">
               <Check>UAE and GCC business directories</Check>

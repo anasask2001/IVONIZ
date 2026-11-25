@@ -15,7 +15,7 @@ const LINKS = [
   { href: "/", label: "Home" },
   { href: "/website-development", label: "Website Development" },
   { href: "/website-development/ecommerce-website-development", label: "Ecommerce Websites" },
-  { href: "/digital-marketing/best-digital-marketing-company-in-calicut", label: "Digital Marketing" },
+  { href: "/digital-marketing", label: "Digital Marketing" },
   { href: "/works", label: "Our Works" },
   { href: "/contact", label: "Contact Us" },
 ];

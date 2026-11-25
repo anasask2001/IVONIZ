@@ -31,6 +31,7 @@ const SERVICES_COLS = [
       { label: "Portal Website",      href: "/website-development/web-portal-development" },
       { label: "WordPress Website",   href: "/website-development/wordpress-website-development" },
       { label: "Static Website",      href: "/website-development/static-website-development" },
+      { label: "Websites in Calicut", href: "/website-development/best-website-development-company-in-calicut" },
     ],
   },
   {
@@ -71,7 +72,7 @@ const SERVICES_COLS = [
   {
     title: "UI / UX",
     links: [
-      { label: "UI/UX Design", href: "/website-development/best-website-development-company-in-calicut" },
+      { label: "UI/UX Design", href: "/#our-services" },
     ],
   },
 ];

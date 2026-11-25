@@ -371,7 +371,7 @@ export default function SocialMediaManagementPage() {
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
               We manage social media for businesses in Dubai, Abu Dhabi, Sharjah and the GCC, with packages in AED and
               content for UAE audiences. Since 1 February 2026, promotional content on social media in the UAE requires a
-              UAE Advertiser Permit. We plan your content and creator collaborations to stay within the rules.
+              UAE Advertiser Permit. We plan your content and creator collaborations to stay within the rules. We work with Gulf clients remotely from our office in Kozhikode, with calls in Gulf time; we have no office in the UAE.
             </p>
             <ul className="mt-6 grid gap-3 text-[15px] text-white/80 flex-1">
               <Check>Monthly packages priced in AED</Check>

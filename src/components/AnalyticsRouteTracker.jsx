@@ -26,5 +26,31 @@ export default function AnalyticsRouteTracker() {
     }
   }, [pathname]);
 
+  // Phone-call leads: one delegated listener covers every tel: link on the
+  // site (footer, menu, contact, quick rail, service pages), including links
+  // added later. Mark "phone_click" as a key event in GA4 to count calls.
+  useEffect(() => {
+    const onClick = (e) => {
+      const a = e.target.closest?.('a[href^="tel:"]');
+      if (!a) return;
+      const number = a.getAttribute("href").slice(4);
+      const location = a.closest("footer") ? "footer"
+        : a.closest("nav, header") ? "menu"
+        : a.closest(".quick-rail") ? "quick_rail"
+        : "page";
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "phone_click", {
+          page: window.location.pathname,
+          phone_number: number,
+          location,
+          lead_type: "call",
+        });
+      }
+      if (typeof window.fbq === "function") window.fbq("track", "Contact");
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
   return null;
 }

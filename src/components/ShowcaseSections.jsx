@@ -18,15 +18,15 @@ const SLIDES = [
   {
     word : "Build",
     video: "/video/all/ivoniz-llp-build.mp4",
-    desc : "Constantly adopting cutting-edge technology\nfor your enterprise to harness its endless\npossibilities and leave a global imprint.",
-    href : "/website-development/best-website-development-company-in-calicut",
+    desc : "Websites, apps and software built\non modern, proven technology,\nmade to grow with your business.",
+    href : "/website-development",
     vPos : { top: "40%", right: "54vw", transform: "translateY(-50%)" },
   },
   {
     word : "Market",
     video: "/video/all/ivoniz-llp-market.mp4",
     desc : "Experts in solving the WHY, WHERE, and HOW\nof propelling your business to new frontiers.",
-    href : "/digital-marketing/best-digital-marketing-company-in-calicut",
+    href : "/digital-marketing",
     vPos : { top: "38%", right: "22vw", transform: "translateY(-50%)" },
   },
 ];

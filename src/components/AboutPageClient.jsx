@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { FaArrowRight, FaStar } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+import { CLIENT_STATS } from "@/lib/clients";
 import Footer from "@/components/Footer";
 import AboutHero from "@/components/AboutHero";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -151,10 +152,10 @@ export default function AboutPageClient() {
             {/* proof stats */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { v: "5+", l: "Years building" },
-                { v: "1000+", l: "Websites delivered" },
-                { v: "100+", l: "Apps shipped" },
-                { v: "4.9", l: "Client rating", star: true },
+                { v: CLIENT_STATS.total, l: "Live client websites" },
+                { v: CLIENT_STATS.kerala, l: "Clients in Kerala" },
+                { v: CLIENT_STATS.gcc, l: "Clients in the GCC" },
+                { v: CLIENT_STATS.countries, l: "Countries" },
               ].map((s, i) => (
                 <motion.div
                   key={s.l}
@@ -164,7 +165,6 @@ export default function AboutPageClient() {
                 >
                   <p className="font-bold text-2xl sm:text-3xl mb-1 inline-flex items-center gap-1.5">
                     {s.v}
-                    {s.star && <FaStar className="text-[18px] sm:text-[20px] text-amber-400" />}
                   </p>
                   <p className="text-white/60 text-[12px]">{s.l}</p>
                 </motion.div>
@@ -196,7 +196,7 @@ export default function AboutPageClient() {
                   { t: "Learning By Doing", d: "Years of self-taught development, real client projects, and hard-won problem-solving — turning curiosity into real, usable skill." },
                   { t: "Ivoniz Is Born", d: "A clear mission takes shape: bridge the gap between business goals and technology solutions, under one accountable roof." },
                   { t: "Building Momentum", d: "Capabilities grow across web, mobile, AI, and digital marketing — one client outcome at a time, one referral at a time." },
-                  { t: "Today", d: "5+ years of building, 1000+ websites delivered, and a 4.9-star reputation earned through results, not promises." },
+                  { t: "Today", d: `A team at HiLITE Business Park, Kozhikode, with ${CLIENT_STATS.total} live client websites across Kerala, the UAE, Saudi Arabia and Qatar.` },
                 ].map((stage, i) => (
                   <motion.div
                     key={stage.t}

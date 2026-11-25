@@ -11,6 +11,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
 import { PAD, OPEN_SANS, GLASS, waLink, Label, Heading, Grid, PetalSketch } from "@/components/site/SiteUI";
+import ProjectQuoteForm from "@/components/site/ProjectQuoteForm";
+import { CLIENTS } from "@/lib/clients";
+
+const KERALA_COUNT = CLIENTS.filter((c) => c.region === "kerala").length;
+const GCC_COUNT = CLIENTS.filter((c) => c.region === "gcc").length;
 
 
 /* ════════════════════════════════════════════════════════════════
@@ -112,14 +117,14 @@ const MARKETS = [
   },
   {
     label: "UAE, Saudi Arabia, Qatar and Oman",
-    text: "We build English and Arabic (RTL) websites with local payment gateways such as PayTabs, Telr, Tap and Mada, VAT-ready invoicing and hosting close to your customers. Calls are scheduled in Gulf time.",
+    text: "We have no office in the Gulf. We work with GCC clients remotely from Kozhikode, by video call and WhatsApp scheduled in Gulf time. We build English and Arabic (RTL) websites and can connect local gateways such as PayTabs, Telr, Tap and Mada.",
     cta: "Chat in Gulf time",
     message: "Hi Ivoniz, I need a website for my business in the UAE / GCC.",
     location: "markets_gcc",
   },
   {
-    label: "Africa and international",
-    text: "We work remotely with startups and businesses in Rwanda and other markets, including mobile-money payment integrations where needed. Hire a full web development team in India with one point of contact and calls in your time zone.",
+    label: "Other countries",
+    text: "Outside India and the Gulf? We can still work with you remotely, with one point of contact, calls in your time zone and a private link to review progress before launch.",
     cta: "Talk to our team",
     message: "Hi Ivoniz, I'm outside India and need a website for my business.",
     location: "markets_international",
@@ -137,7 +142,8 @@ const PROJECTS = [
 const FAQS = [
   { q: "How much does website development cost?", a: "It depends on pages, features and integrations. WordPress business websites are the most affordable option, while custom websites, ecommerce stores and web applications cost more. Share your requirements and we'll send a fixed estimate." },
   { q: "How long does it take to develop a website?", a: "A WordPress business website usually takes 2 to 6 weeks; custom websites and ecommerce stores usually take 6 to 16 weeks." },
-  { q: "Do you work with businesses outside Kerala?", a: "Yes. We work with clients across India and remotely with businesses in the UAE, Saudi Arabia, Qatar, Oman, Rwanda and other countries." },
+  { q: "Can a Kerala company build a website for my business in Dubai or Saudi Arabia?", a: "Yes. Our live client sites include businesses in Dubai, Sharjah, Al Khobar and Qatar. We don't have an office in the Gulf: we work remotely from Kozhikode, with video calls and WhatsApp scheduled in Gulf time, and you review progress on a private link before launch." },
+  { q: "Should I hire a website company in Kerala or one near me?", a: "A local team is easier to meet in person. A remote team can work well if you get a written scope, regular check-ins and a staging link to review. If you're in or near Kozhikode, you can do both with us: see our Calicut website development page." },
   { q: "Can you build a website in Arabic and English?", a: "Yes. We build bilingual websites with right-to-left Arabic layouts and correct language tags for Google." },
   { q: "Will my website be SEO-friendly?", a: "Yes. Every site launches with clean URLs, meta tags, a sitemap, schema markup, fast loading and Search Console setup." },
   { q: "Can you redesign my existing website without losing rankings?", a: "Yes. We map old URLs to new ones with 301 redirects and keep your existing content and SEO signals." },
@@ -162,7 +168,6 @@ const schema = {
         { "@type": "Country", name: "Saudi Arabia" },
         { "@type": "Country", name: "Qatar" },
         { "@type": "Country", name: "Oman" },
-        { "@type": "Country", name: "Rwanda" },
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
@@ -218,20 +223,20 @@ export default function WebsiteDevelopmentPage() {
           <div className="mt-8"><Label>Website Development Services</Label></div>
 
           <h1 className="m-0 max-w-[1100px]" style={{ fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(40px, 6.4vw, 96px)", lineHeight: 0.98, letterSpacing: "-0.03em", color: "#D9D9D9" }}>
-            Website Development Services for Businesses in{" "}
+            Website Development Company in Kerala,{" "}
             <span style={{ WebkitTextStroke: "1.5px rgba(217,217,217,0.45)", WebkitTextFillColor: "transparent", color: "transparent" }}>
-              Kerala and Worldwide
+              for India and the Gulf
             </span>
           </h1>
 
           <div className="mt-10 grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end">
             <p className="text-white/60 text-[16px] sm:text-[18px] leading-relaxed max-w-[680px]">
-              Ivoniz designs and develops fast, secure, SEO-ready websites that turn visitors into enquiries, for
-              startups, retailers, hospitals, schools and growing companies in Kerala, the UAE, Saudi Arabia, Qatar,
-              Oman and Africa.
+              We design and build business websites, online stores, product catalogues and web portals from our office
+              in Kozhikode. Our live client sites include a hospital in Malappuram, a jewellery showroom in Kondotty,
+              trading companies in Dubai and an online store in Qatar.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <PillLink href="/contact" solid label="Request a Website Development Quote" location="hero" />
+              <PillLink href="#quote" solid label="Request a Website Development Quote" location="hero" />
               <PillLink
                 href={waLink("Hi Ivoniz, I need a website for my business. Can we discuss my project?")}
                 external
@@ -246,7 +251,7 @@ export default function WebsiteDevelopmentPage() {
           {/* trust strip — glass cards, only verifiable facts */}
           <ul className="mt-14 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-3">
             {[
-              ["Live client websites", "Kerala, UAE, Saudi Arabia, Qatar"],
+              [`${CLIENTS.length} live client websites`, `${KERALA_COUNT} in Kerala, ${GCC_COUNT} in the GCC`],
               ["WordPress + Custom", "Under one team"],
               ["English + Arabic", "RTL builds for the GCC"],
               ["HiLITE Business Park", "Kozhikode, Kerala"],
@@ -411,7 +416,7 @@ export default function WebsiteDevelopmentPage() {
               Tell us your pages, features and target market. We&apos;ll recommend a platform and send a clear price.
             </p>
             <div className="relative mt-7 flex flex-col gap-3">
-              <PillLink href="/contact" solid label="Get a Website Development Estimate" location="pricing" />
+              <PillLink href="#quote" solid label="Get a Website Development Estimate" location="pricing" />
               <PillLink
                 href={waLink("Hi Ivoniz, I'd like a website development estimate. Here's what I need:")}
                 external
@@ -533,6 +538,32 @@ export default function WebsiteDevelopmentPage() {
         </div>
       </section>
 
+      {/* ── QUOTE FORM ── */}
+      <section id="quote" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+        <div className="mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <Label>Get a Quote</Label>
+            <Heading>Tell us what you need</Heading>
+            <p className="mt-6 text-[16px] text-white/60 leading-relaxed">
+              A few questions, sent on WhatsApp or email. We reply with questions about scope, a platform
+              recommendation and a fixed written quote.
+            </p>
+          </div>
+          <ProjectQuoteForm
+            idPrefix="wd"
+            location="website_hub_quote_form"
+            types={[
+              { id: "business", label: "Business website" },
+              { id: "store", label: "Online store" },
+              { id: "catalogue", label: "Product catalogue" },
+              { id: "portal", label: "Web portal" },
+              { id: "redesign", label: "Redesign" },
+            ]}
+            places={["Kerala", "Elsewhere in India", "UAE", "Saudi Arabia", "Qatar", "Other GCC", "Other"]}
+          />
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className={`py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
@@ -568,7 +599,7 @@ export default function WebsiteDevelopmentPage() {
             timeline and send a clear estimate.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-3">
-            <PillLink href="/contact" solid label="Request a Website Development Quote" location="closing" />
+            <PillLink href="#quote" solid label="Request a Website Development Quote" location="closing" />
             <PillLink
               href={waLink("Hi Ivoniz, I'm ready to build my website. Can we talk?")}
               external

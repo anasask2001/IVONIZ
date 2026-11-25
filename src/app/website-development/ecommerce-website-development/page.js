@@ -11,6 +11,7 @@ import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
 import { PAD, OPEN_SANS, GLASS, OUTLINE, waLink, Label, Heading, HeroTitle, Grid, PetalSketch, FaqList } from "@/components/site/SiteUI";
 import EstimateWidget from "@/components/ecommerce/EstimateWidget";
+import ProjectQuoteForm from "@/components/site/ProjectQuoteForm";
 import { STORE_TYPES } from "@/components/ecommerce/costs";
 
 /* ════════════════════════════════════════════════════════════════
@@ -26,7 +27,7 @@ import { STORE_TYPES } from "@/components/ecommerce/costs";
 const PAGE_URL = "https://ivoniz.com/website-development/ecommerce-website-development";
 const TITLE = "E-commerce Website Development in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
-  "Ecommerce website development for Kerala, UAE and GCC brands. WooCommerce or custom stores with local payments, Arabic support and fast checkout. Get a quote.";
+  "Shopify, WooCommerce and custom online stores for Kerala, UAE and GCC businesses, with local payments, Arabic and mobile checkout. See a live store we built.";
 
 export const metadata = {
   title: { absolute: TITLE },
@@ -53,6 +54,7 @@ export const metadata = {
 const SERVICES = [
   { title: "New online store development", text: <>From product catalogue to checkout, built to load fast on mobile. Want a shopping app too? See <Link href="/mobile-app-development#apps" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">ecommerce app development</Link>.</> },
   { title: "Custom ecommerce development", text: "Built on React / Next.js and Node.js for unique features, high traffic and complex logic." },
+  { title: "Shopify store setup", text: "Theme, products, collections, payments and shipping on Shopify, the platform behind the Gaming Qatar store shown above. Good when you want to launch fast and avoid managing hosting." },
   { title: "WooCommerce development", text: <>Affordable, easy-to-manage stores on WordPress. See our <Link href="/website-development/ecommerce-website-development/woocommerce-website-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">WooCommerce development services</Link>.</> },
   { title: "B2B and wholesale portals", text: <>Dealer logins, tiered pricing, bulk ordering, credit limits and quotation requests, built with our <Link href="/website-development/web-portal-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">web portal development</Link> team.</> },
   { title: "Multi-vendor marketplaces", text: "Vendor onboarding, commissions, payouts and separate dashboards." },
@@ -87,7 +89,6 @@ const FEATURES = [
 const PAYMENTS = [
   { region: "India", pay: ["Razorpay", "PayU", "Cashfree", "PhonePe", "UPI", "Cash on delivery"], ship: ["Shiprocket", "Delhivery"] },
   { region: "UAE and GCC", pay: ["PayTabs", "Telr", "Network International", "Tap", "Stripe", "Apple Pay", "Mada", "Tabby", "Tamara"], ship: ["Aramex", "Local couriers"] },
-  { region: "Africa", pay: ["Card payments", "MTN MoMo", "Airtel Money"], ship: ["Local couriers"] },
 ];
 
 const PROCESS = [
@@ -124,8 +125,8 @@ const MARKETS = [
     location: "markets_gcc",
   },
   {
-    label: "Africa and global",
-    text: "We help businesses in Rwanda and other markets sell online with mobile-money payments, multi-currency pricing and lightweight pages for slower networks, delivered remotely by our team in India.",
+    label: "Other countries",
+    text: "Selling outside India and the GCC? We can build multi-currency stores and connect the payment gateway your customers use, working with you remotely from India.",
     cta: "Talk to our team",
     message: "Hi Ivoniz, I want to start an online store outside India.",
     location: "markets_international",
@@ -143,7 +144,8 @@ const FAQS = [
   { q: "How much does ecommerce website development cost in Kerala?", a: "A WooCommerce store in Kerala typically costs ₹50,000 to ₹1,50,000, while custom ecommerce platforms start around ₹3,00,000, depending on products, features and integrations." },
   { q: "How much does an ecommerce website cost in Dubai or the UAE?", a: "A WooCommerce store typically costs AED 8,000 to 20,000, and custom ecommerce platforms usually start around AED 40,000, with Arabic and integrations adding to scope." },
   { q: "How long does it take to build an ecommerce website?", a: "A WooCommerce store usually takes 3 to 6 weeks; custom ecommerce platforms and marketplaces usually take 8 to 20 weeks." },
-  { q: "Which payment gateways can you integrate?", a: "We integrate Razorpay, PayU, Cashfree and UPI in India, and PayTabs, Telr, Tap, Stripe, Mada, Tabby and Tamara in the GCC, plus cash on delivery." },
+  { q: "Which payment gateways can you integrate?", a: "We can set up Razorpay, PayU, Cashfree and UPI in India, and PayTabs, Telr, Tap, Stripe, Mada, Tabby and Tamara in the GCC, plus cash on delivery." },
+  { q: "Do you build Shopify stores?", a: "Yes. Gaming Qatar, an online store for consoles, accessories and digital vouchers, runs on a Shopify store we designed and set up. Shopify suits stores that want to launch quickly without managing hosting; WooCommerce or custom suits stores that need more control or lower monthly fees." },
   { q: "Can you build an Arabic ecommerce website?", a: "Yes. We build bilingual English and Arabic stores with right-to-left layouts, local currencies and VAT-compliant invoices." },
   { q: "Can you connect my store to Tally, Zoho or my ERP?", a: "Yes. We sync products, stock, orders and invoices with accounting and ERP systems through APIs or connectors." },
   { q: "Can I manage products and orders myself?", a: "Yes. You get an admin panel to add products, update prices and stock, and manage orders, and we train your team at handover." },
@@ -169,7 +171,6 @@ const schema = {
         { "@type": "Country", name: "Saudi Arabia" },
         { "@type": "Country", name: "Qatar" },
         { "@type": "Country", name: "Oman" },
-        { "@type": "Country", name: "Rwanda" },
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
@@ -237,12 +238,12 @@ export default function EcommerceWebsiteDevelopmentPage() {
           <div className="mt-10 grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end">
             <p className="text-white/60 text-[16px] sm:text-[18px] leading-relaxed max-w-[700px]">
               Ivoniz builds fast, secure online stores for retailers, wholesalers, brands and startups in Kerala, the
-              UAE, Saudi Arabia, Qatar and beyond. Whether you need a WooCommerce shop, a custom ecommerce platform or a
+              UAE, Saudi Arabia, Qatar and beyond. Whether you need a Shopify or WooCommerce shop, a custom ecommerce platform or a
               B2B ordering portal, we handle design, development, payments, shipping and launch, so you can focus on
               selling.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <PillLink href="/contact" solid label="Start Your Ecommerce Project" location="hero" />
+              <PillLink href="#quote" solid label="Start Your Ecommerce Project" location="hero" />
               <PillLink
                 href={waLink("Hi Ivoniz, I want to start an online store. Can we discuss it?")}
                 external
@@ -291,7 +292,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
               <Link href="/website-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">website development services</Link>.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/10">
             {SERVICES.map((s, i) => (
               <div key={s.title} className="border-r border-b border-white/10 p-5 sm:p-7 flex flex-col sm:min-h-[230px]">
                 <span className="text-[13px] font-medium text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
@@ -375,8 +376,8 @@ export default function EcommerceWebsiteDevelopmentPage() {
       <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <Label>Payments and Shipping</Label>
-          <Heading className="max-w-[820px] mb-8 sm:mb-14">Payment gateways and shipping we integrate</Heading>
-          <div className="grid lg:grid-cols-3 gap-3" role="list" aria-label="Payment gateways for ecommerce in India and the UAE">
+          <Heading className="max-w-[820px] mb-8 sm:mb-14">Payment gateways and couriers we can connect</Heading>
+          <div className="grid lg:grid-cols-2 gap-3" role="list" aria-label="Payment gateways for ecommerce in India and the UAE">
             {PAYMENTS.map((p) => (
               <div key={p.region} role="listitem" className="p-7" style={GLASS}>
                 <p className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/60">{p.region}</p>
@@ -564,6 +565,35 @@ export default function EcommerceWebsiteDevelopmentPage() {
         </div>
       </section>
 
+      {/* ── QUOTE FORM ── */}
+      <section id="quote" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+        <div className="mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <Label>Get a Quote</Label>
+            <Heading>Tell us about your store</Heading>
+            <p className="mt-6 text-[16px] text-white/60 leading-relaxed">
+              What you sell, roughly how many products, and where your customers are. We reply with a platform
+              recommendation and a fixed written quote.
+            </p>
+          </div>
+          <ProjectQuoteForm
+            idPrefix="ec"
+            subject="online store"
+            leadType="ecommerce_quote"
+            location="ecommerce_quote_form"
+            messageHint="What do you sell, how many products, and which payment methods do your customers use?"
+            types={[
+              { id: "new", label: "New online store" },
+              { id: "shopify", label: "Shopify store" },
+              { id: "woocommerce", label: "WooCommerce store" },
+              { id: "custom", label: "Custom or B2B store" },
+              { id: "migrate", label: "Move or redesign my store" },
+            ]}
+            places={["Kerala", "Elsewhere in India", "UAE", "Saudi Arabia", "Qatar", "Other GCC", "Other"]}
+          />
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className={`py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
@@ -588,7 +618,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
             right platform and send a clear estimate.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-3">
-            <PillLink href="/contact" solid label="Start Your Ecommerce Project" location="closing" />
+            <PillLink href="#quote" solid label="Start Your Ecommerce Project" location="closing" />
             <PillLink href={waLink("Hi Ivoniz, I'm ready to start my online store. Can we talk?")} external event="whatsapp_click" label="Chat on WhatsApp" location="closing" icon={<FaWhatsapp aria-hidden="true" />} />
           </div>
           <p className="mt-6 text-[13px] text-white/55">

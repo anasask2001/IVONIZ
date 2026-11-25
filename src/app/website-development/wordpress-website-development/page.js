@@ -435,14 +435,13 @@ export default function WordPressWebsiteDevelopmentPage() {
           <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Dubai and GCC</Label>
             <h2 className="text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(26px,2.8vw,38px)", lineHeight: 1.12, letterSpacing: "-0.03em" }}>
-              WordPress development company in Dubai and the GCC
+              WordPress development for Dubai and GCC businesses
             </h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65 flex-1">
-              Businesses in Dubai, Abu Dhabi and across the UAE work with Ivoniz for bilingual English–Arabic WordPress
-              websites with RTL layouts, fast hosting close to Gulf visitors, and local integrations such as WhatsApp
-              Business and UAE payment gateways. We quote in AED (a bilingual business site typically costs{" "}
-              {WP_DUBAI_RANGE}), schedule calls in Gulf time, and manage the project fully online. We also support
-              companies in Saudi Arabia, Qatar and Oman.
+              We build bilingual English–Arabic WordPress websites with RTL layouts, hosting close to Gulf visitors,
+              WhatsApp Business links and UAE payment gateways, for businesses in Dubai, Abu Dhabi, Saudi Arabia, Qatar
+              and Oman. We have no office in the Gulf: we work remotely from Kozhikode, quote in AED (a bilingual
+              business site typically costs {WP_DUBAI_RANGE}) and schedule calls in Gulf time.
             </p>
             <div className="mt-8">
               <PillLink href={waLink(WA.dubai)} external solid event="whatsapp_click" label="Talk to Our WordPress Team in Gulf Time" location="gcc_block" icon={<FaWhatsapp aria-hidden="true" />} />

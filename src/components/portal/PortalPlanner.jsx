@@ -16,7 +16,7 @@ import { waLink, GLASS, OPEN_SANS } from "@/components/site/SiteUI";
 const TYPES = ["Customer", "B2B / dealer", "Vendor", "Employee", "Student", "Patient", "Other"];
 const USERS = ["Under 100", "100 – 1,000", "1,000 – 10,000", "10,000+"];
 const SYSTEMS = ["ERP / accounting", "CRM", "HR / payroll", "Hospital (HMS)", "School (LMS)", "Payment gateway", "WhatsApp / SMS", "None yet"];
-const MARKETS = ["Kerala / India", "UAE / GCC", "Africa / other"];
+const MARKETS = ["Kerala / India", "UAE / GCC", "Other country"];
 const LAUNCH = ["Within 3 months", "3 – 6 months", "Just exploring"];
 
 function Pills({ options, value, onChange, multi = false, name }) {

@@ -57,7 +57,7 @@ const FAQS = [
   { q: "Is WordPress secure enough for a business website?", a: "Yes, if it is maintained. Keep core, themes and plugins updated, use few trusted plugins, strong logins, backups and a firewall." },
   { q: "Can you build an Arabic and English website?", a: "Yes. We build bilingual sites with right-to-left Arabic layouts and correct hreflang tags, on both WordPress and custom stacks." },
   { q: "How long does it take to build a website?", a: "A WordPress business website usually takes 2 to 6 weeks; a custom website or web application usually takes 6 to 16 weeks or more, depending on scope." },
-  { q: "Do you work with clients outside India?", a: "Yes. Ivoniz works remotely with businesses in the UAE, Saudi Arabia, Qatar, Oman, Rwanda and other markets, with calls scheduled in the client's time zone." },
+  { q: "Do you work with clients outside India?", a: "Yes. Our live client websites include businesses in the UAE, Saudi Arabia and Qatar. We work with clients outside India remotely, with calls scheduled in their time zone." },
   { q: "Will I own my website?", a: "Yes. On both WordPress and custom builds you own the domain, content and code once the project is paid for." },
 ];
 
@@ -615,7 +615,7 @@ export default function CustomWebsiteVsWordPressPage() {
             <H2 id="why-ivoniz" eyebrow="About us">Why businesses choose Ivoniz</H2>
             <P>
               Ivoniz is a web development and digital solutions company headquartered in Kozhikode (Calicut), Kerala,
-              working with clients across India, the GCC and Africa. We build WordPress websites, custom websites and web
+              working with clients across India and the GCC. We build WordPress websites, custom websites and web
               applications, ecommerce stores and <A href="/#our-services">AI integration for websites</A>, so our advice
               is not tied to one platform.
             </P>

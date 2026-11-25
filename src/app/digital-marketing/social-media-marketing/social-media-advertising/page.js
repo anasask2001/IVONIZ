@@ -339,7 +339,7 @@ export default function SocialMediaAdvertisingPage() {
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
               We run Facebook, Instagram and LinkedIn ads for businesses in Dubai, Abu Dhabi, Sharjah and the wider GCC,
               with management fees in AED. The UAE requires an Advertiser Permit for promotional content on social media,
-              and we plan campaigns and creator collaborations in line with those rules.
+              and we plan campaigns and creator collaborations in line with those rules. We work with Gulf clients remotely from our office in Kozhikode, with calls in Gulf time; we have no office in the UAE.
             </p>
             <ul className="mt-6 grid gap-3 text-[15px] text-white/80 flex-1">
               <Check>Management fees in AED</Check>

@@ -498,9 +498,9 @@ export default function IosAppDevelopmentPage() {
               <p className="mt-5 text-[15.5px] leading-relaxed text-white/65 flex-1">
                 We build bilingual English–Arabic iPhone apps with right-to-left layouts, Apple Pay and GCC payment
                 gateways, and in-region hosting where required. With iPhone so widely used across the UAE, Saudi Arabia
-                and Qatar, a polished iOS app is often the first platform GCC businesses launch on. As an iOS app
-                development company for Dubai clients, we also work with businesses in Sharjah, Doha, Riyadh and
-                Muscat. Quotes in AED, meetings in Gulf time.
+                and Qatar, many GCC businesses want an iOS app from day one. We have no office in the Gulf: we work
+                with UAE, Saudi, Qatar and Oman clients remotely from Kozhikode, with quotes in AED and calls in Gulf
+                time.
               </p>
               <div className="mt-8">
                 <PillLink href={waLink(WA.gcc)} external solid event="whatsapp_click" label="Talk to us in Gulf time" location="gcc_block" icon={<FaWhatsapp aria-hidden="true" />} />

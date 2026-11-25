@@ -230,3 +230,13 @@ export const TYPE_LABEL = {
 };
 
 export const clientBySlug = (slug) => CLIENTS.find((c) => c.slug === slug);
+
+/* Verifiable headline numbers, computed from the list above so they can't
+   drift. Used instead of unverified "1000+ websites / 5+ years" style stats. */
+const COUNTRY = (c) => (c.region === "kerala" ? "India" : c.region === "gcc" ? c.location : null);
+export const CLIENT_STATS = {
+  total: CLIENTS.length,
+  kerala: CLIENTS.filter((c) => c.region === "kerala").length,
+  gcc: CLIENTS.filter((c) => c.region === "gcc").length,
+  countries: new Set(CLIENTS.map(COUNTRY).filter(Boolean)).size,
+};

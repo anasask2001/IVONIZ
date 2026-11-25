@@ -12,6 +12,7 @@ import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
 import { PAD, OPEN_SANS, GLASS, OUTLINE, waLink, Label, Heading, HeroTitle, Grid, PetalSketch, FaqList } from "@/components/site/SiteUI";
 import DemoCatalogue from "@/components/catalogue/DemoCatalogue";
+import ProjectQuoteForm from "@/components/site/ProjectQuoteForm";
 import { CATALOGUE_PACKAGES } from "@/components/ecommerce/costs";
 
 /* ════════════════════════════════════════════════════════════════
@@ -131,8 +132,8 @@ const MARKETS = [
     location: "markets_gcc",
   },
   {
-    label: "Africa and global",
-    text: "Exporters and suppliers in Rwanda and other markets get lightweight catalogues that load quickly on mobile networks and make it easy for international buyers to send enquiries.",
+    label: "Exporters and other countries",
+    text: "Exporters selling abroad get lightweight catalogues that load quickly on mobile networks and make it easy for international buyers to send enquiries. We work with clients outside India remotely.",
     cta: "Talk to our team",
     message: "Hi Ivoniz, I'm an exporter / supplier outside India and want a product catalogue website.",
     location: "markets_international",
@@ -243,7 +244,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
               <Link href="/website-development" className={LINK_DARK}>website development services</Link>.
             </p>
             <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
-              <PillLink href="/contact" solid label="Request a Catalogue Website Quote" location="hero" />
+              <PillLink href="#quote" solid label="Request a Catalogue Website Quote" location="hero" />
               <PillLink href={waLink(SEND_CATALOGUE_MSG)} external event="whatsapp_click" label="Send Your Catalogue on WhatsApp" location="hero" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
           </div>
@@ -416,7 +417,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
             Selling from a showroom too? Our <Link href="/software-development/billing-software-development" className={LINK_DARK}>GST billing software</Link> can share the same product list.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <PillLink href="/contact" solid label="Get a Catalogue Website Estimate" location="pricing" />
+            <PillLink href="#quote" solid label="Get a Catalogue Website Estimate" location="pricing" />
             <PillLink href={waLink(SEND_CATALOGUE_MSG)} external event="whatsapp_click" label="Send your price list for a quote" location="pricing" icon={<FaWhatsapp aria-hidden="true" />} />
           </div>
         </div>
@@ -477,7 +478,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
             <Label>Why Ivoniz</Label>
             <Heading>Why Ivoniz for your product catalogue website</Heading>
             <div className="mt-8 flex flex-col items-start gap-3">
-              <PillLink href="/contact" label="Start Your Catalogue Website" location="why_ivoniz" />
+              <PillLink href="#quote" label="Start Your Catalogue Website" location="why_ivoniz" />
               <Link href="/works" className="inline-flex items-center gap-1.5 text-[14px] text-white/55 hover:text-white">
                 See our catalogue website projects <FiArrowUpRight aria-hidden="true" />
               </Link>
@@ -498,6 +499,35 @@ export default function CatalogueWebsiteDevelopmentPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* ── QUOTE FORM ── */}
+      <section id="quote" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+        <div className="mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <Label>Get a Quote</Label>
+            <Heading>Tell us about your catalogue</Heading>
+            <p className="mt-6 text-[16px] text-white/60 leading-relaxed">
+              Roughly how many products you have, how buyers order today, and whether you have product photos. We reply
+              with questions, then a fixed written quote.
+            </p>
+          </div>
+          <ProjectQuoteForm
+            idPrefix="cat"
+            subject="catalogue website"
+            question="How many products?"
+            leadType="catalogue_quote"
+            location="catalogue_quote_form"
+            messageHint="What do you sell, how many products, and how do buyers order today (WhatsApp, phone, visit)?"
+            types={[
+              { id: "under100", label: "Up to 100 products" },
+              { id: "100to1000", label: "100 – 1,000 products" },
+              { id: "over1000", label: "Over 1,000 products" },
+              { id: "convert", label: "Convert my PDF catalogue" },
+            ]}
+            places={["Kerala", "Elsewhere in India", "UAE", "Saudi Arabia", "Qatar", "Other GCC", "Other"]}
+          />
         </div>
       </section>
 
@@ -525,7 +555,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
             a clear estimate.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-3">
-            <PillLink href="/contact" solid label="Request a Catalogue Website Quote" location="closing" />
+            <PillLink href="#quote" solid label="Request a Catalogue Website Quote" location="closing" />
             <PillLink href={waLink(SEND_CATALOGUE_MSG)} external event="whatsapp_click" label="Send Your Catalogue on WhatsApp" location="closing" icon={<FaWhatsapp aria-hidden="true" />} />
           </div>
           <p className="mt-6 text-[13px] text-white/55">

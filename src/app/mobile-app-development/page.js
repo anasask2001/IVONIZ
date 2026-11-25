@@ -27,9 +27,9 @@ import AppQuoteForm from "@/components/app/AppQuoteForm";
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/mobile-app-development";
-const TITLE = "Mobile App Development Company in India & UAE | Ivoniz LLP";
+const TITLE = "Mobile App Development Company in Kerala, India & UAE | Ivoniz LLP";
 const DESCRIPTION =
-  "Mobile app development company building Android, iOS and Flutter apps for businesses in India and the UAE. See app development costs and get a free estimate.";
+  "Mobile app development company in Kerala building Android, iOS and Flutter apps for businesses in India and the GCC. See typical app costs and get an estimate.";
 
 export const metadata = {
   title: { absolute: TITLE },
@@ -124,6 +124,7 @@ const PROCESS = [
 
 const FAQS = [
   { q: "How much does mobile app development cost in India?", a: "Most business apps in India cost ₹2 lakh to ₹15 lakh. A simple app or MVP starts around ₹1.5 lakh, while ecommerce, on-demand and enterprise apps cost more." },
+  { q: "How much does app development cost in Kerala?", a: "Kerala projects are priced in INR on the same basis as the ranges on this page: most business apps cost ₹2 lakh to ₹15 lakh, and a simple MVP starts around ₹1.5 lakh. The biggest cost drivers are the number of user roles, payments, live tracking and the admin panel. You get a fixed quote once the feature list is agreed." },
   { q: "How much does it cost to develop an app in the UAE?", a: "Business apps for UAE companies typically start around AED 25,000 for an MVP, with full-featured apps ranging from AED 60,000 to 200,000 or more." },
   { q: "How long does it take to develop a mobile app?", a: "A simple app or MVP takes 6 to 10 weeks, a business app 10 to 16 weeks, and complex apps 5 months or more." },
   { q: "Should I build a native app or a cross-platform app?", a: "For most business apps, cross-platform (Flutter or React Native) is the better choice: one codebase for Android and iOS, lower cost and faster launch. Native suits apps needing advanced device features or the highest performance." },
@@ -172,7 +173,7 @@ const schema = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: "Mobile App Development Company in India & UAE",
+      name: "Mobile App Development Company in Kerala, India & UAE",
       description: DESCRIPTION,
       inLanguage: "en",
       isPartOf: { "@id": WEBSITE_ID },
@@ -213,14 +214,14 @@ export default function MobileAppDevelopmentPage() {
         <div className="relative mx-auto max-w-[1400px]">
           <Breadcrumbs dark items={[{ label: "Mobile App Development", href: "/mobile-app-development" }]} />
           <div className="mt-8"><Label>Mobile App Development Company</Label></div>
-          <HeroTitle outline="and Cross-Platform Apps">Mobile App Development Company for Android, iOS</HeroTitle>
+          <HeroTitle outline="Android, iOS and Flutter Apps">Mobile App Development Company in Kerala for</HeroTitle>
 
           <div className="mt-10 grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end">
             <p className="text-white/60 text-[16px] sm:text-[18px] leading-relaxed max-w-[780px]">
-              Ivoniz is a mobile app development company in India that designs, builds and launches Android, iOS and
-              cross-platform apps for startups, retailers, hospitals, schools and growing businesses in India, the UAE
-              and the GCC. From your first idea to Play Store and App Store launch, one team handles strategy, UI/UX,
-              development, backend and support.
+              We design, build and launch Android, iOS and cross-platform apps from our office in Kozhikode, for
+              businesses in Kerala, across India and in the GCC. One team handles the app design, development, the
+              backend and admin panel, and Play Store and App Store submission, so you deal with one point of contact
+              from idea to launch.
             </p>
             <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href="#estimate" solid label="Get a Free App Development Estimate" location="hero" event="estimate_click" />
@@ -469,14 +470,13 @@ export default function MobileAppDevelopmentPage() {
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-2 gap-3">
           <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>UAE and GCC</Label>
-            <h2 className="text-white" style={h2Style}>Mobile app development company in the UAE and GCC</h2>
+            <h2 className="text-white" style={h2Style}>Mobile app development for UAE and GCC businesses</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65 flex-1">
-              Businesses in Dubai, Abu Dhabi and across the UAE, Saudi Arabia, Qatar and Oman work with Ivoniz for
-              bilingual English–Arabic apps with RTL interfaces, local payment gateways (PayTabs, Telr, Tap, Apple Pay,
-              Mada) and in-region cloud hosting where required. We quote in AED, schedule calls in Gulf time and manage
-              projects fully online. Whether you are comparing a mobile app development company in Dubai or
-              looking for a long-term development partner across the Gulf, you get a fixed estimate in AED and one
-              point of contact.
+              We don&apos;t have an office in the Gulf. We work with businesses in the UAE, Saudi Arabia, Qatar and Oman
+              remotely from Kozhikode, with calls and WhatsApp in Gulf time and test builds you install on your own
+              phone. We build bilingual English–Arabic apps with right-to-left layouts, can connect local payment
+              gateways such as PayTabs, Telr, Tap, Apple Pay and Mada, and host in the region where your data rules
+              require it. Estimates are in AED.
             </p>
             <div className="mt-8">
               <PillLink href={waLink(WA.gcc)} external solid event="whatsapp_click" label="Talk to Our App Team in Gulf Time" location="gcc_block" icon={<FaWhatsapp aria-hidden="true" />} />
@@ -487,9 +487,9 @@ export default function MobileAppDevelopmentPage() {
             <Label>Kerala</Label>
             <h2 className="text-white" style={h2Style}>App development company in Kerala</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
-              Our app developers work from HiLITE Business Park, Kozhikode (Calicut), and build apps for businesses
-              across Kerala, including Kochi, Thrissur and Malappuram. Meet us in person for discovery workshops, or
-              work fully online.
+              Our app developers work from HiLITE Business Park, Kozhikode (Calicut). If you&apos;re in Kerala, you can
+              sit with us to plan the app screen by screen, then review test builds on your phone as they&apos;re
+              ready. Kerala projects are quoted in INR using the cost ranges above.
             </p>
             {/* NAP: keep identical to the Google Business Profile (source: src/lib/schema.js) */}
             <address className="not-italic mt-6 grid gap-3 text-[14.5px] text-white/75 flex-1">

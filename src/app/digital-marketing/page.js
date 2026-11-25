@@ -17,9 +17,10 @@ import MarketingAuditForm from "@/components/marketing/MarketingAuditForm";
    SD 27), "digital marketing agency kerala" (590), "digital marketing services"
    (14,800, SD 12), "social media marketing agency kerala" (260) — Ubersuggest
    India db, 25 Nov 2026. No "best" claims in copy.
-   Cannibalisation (decided 25 Nov): /digital-marketing/best-digital-marketing-company-in-calicut
-   stays and owns "best digital marketing COMPANY in Calicut"; this page uses
-   "company in Calicut" once, as a link to it. Kochi page stays for Kochi.
+   Consolidated (26 Nov): the "best digital marketing company in Calicut / Kochi"
+   pages made unverifiable "best" claims and duplicated this intent, so both now
+   301 here (public/.htaccess). This page owns Calicut, Kochi and Kerala terms;
+   the "best …" searches are answered by the how-to-choose checklist, not a claim.
    Package prices not fixed → "Price on request" (DM_PACKAGES in costs.js).
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
@@ -307,10 +308,10 @@ export default function DigitalMarketingPage() {
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>Before You Hire</Label>
-            <Heading>How to choose a digital marketing agency in Kerala</Heading>
+            <Heading>How to choose a digital marketing agency in Calicut</Heading>
             <p className="mt-6 text-[15.5px] text-white/60 leading-relaxed">
-              Many agencies promise rankings and followers. Ask these questions before you sign with any digital
-              marketing agency in Kerala, including us.
+              Every agency calls itself the best, and many promise rankings and followers. Ask these questions before
+              you sign with any digital marketing agency in Calicut or anywhere in Kerala, including us.
             </p>
           </div>
           <ul className="grid sm:grid-cols-2 gap-3">
@@ -377,8 +378,8 @@ export default function DigitalMarketingPage() {
             <Label>Why Ivoniz</Label>
             <Heading>Why choose Ivoniz as your digital marketing agency</Heading>
             <p className="mt-6 text-[15px] text-white/60 leading-relaxed">
-              Comparing a digital marketing company in Calicut?{" "}
-              <Link href="/digital-marketing/best-digital-marketing-company-in-calicut" className={LINK}>See how we work with Calicut businesses</Link>.
+              See real work: we design the Instagram content for Rivaura Hospital in Malappuram. It&apos;s on our{" "}
+              <Link href="/clients" className={LINK}>clients page</Link>, along with a video review from the hospital.
             </p>
           </div>
           <ul className="border-t border-white/10">
@@ -408,7 +409,7 @@ export default function DigitalMarketingPage() {
               Based in Kozhikode (Calicut), we run digital marketing for businesses across Kerala, including Kochi,
               Malappuram, Thrissur, Kannur and Trivandrum, and for clients across India. Whether you need digital
               marketing services in Kochi, Thrissur or Malappuram, you work with the same team and the same reporting.
-              Based in Kochi? See <Link href="/digital-marketing/best-digital-marketing-company-in-kochi" className={LINK}>digital marketing in Kochi</Link>.
+              Outside Calicut, we work by video call and WhatsApp, and you&apos;re welcome to visit the office.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-white/65">
               For most Kerala businesses, the fastest wins come from Google Maps. When someone searches for a clinic,

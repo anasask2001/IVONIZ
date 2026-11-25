@@ -92,7 +92,7 @@ const CANNED_REPLIES = [
   },
   {
     match: /how (long|many years)|years? of experience|how experienced/,
-    reply: "We've got 5+ years of experience, 1000+ websites delivered, and 100+ apps shipped — with a 4.9-star client rating.",
+    reply: "Our work is easiest to judge by our clients' live websites, in Kerala, the UAE, Saudi Arabia and Qatar. You can open every one of them from our Works page: ivoniz.com/works",
   },
 
   /* Contact / address / business hours / careers / partnerships */

@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
+import ProjectQuoteForm from "@/components/site/ProjectQuoteForm";
 import { PAD, OPEN_SANS, GLASS, OUTLINE, waLink, Label, Heading, HeroTitle, Grid, PetalSketch, FaqList } from "@/components/site/SiteUI";
 import SpeedCheck from "@/components/ecommerce/SpeedCheck";
 import { WOO_PACKAGES } from "@/components/ecommerce/costs";
@@ -88,7 +89,6 @@ const FEATURES = [
 const PAYMENTS = [
   { region: "India", pay: ["Razorpay", "PayU", "Cashfree", "PhonePe", "UPI", "COD rules by pincode"], ship: ["Shiprocket", "Delhivery"] },
   { region: "UAE and GCC", pay: ["PayTabs", "Telr", "Network International", "Tap", "Stripe", "Apple Pay", "Mada", "Tabby", "Tamara"], ship: ["Aramex", "Local couriers"] },
-  { region: "Africa", pay: ["Card gateways", "MTN MoMo (where a connector exists)"], ship: ["Local couriers"] },
 ];
 
 const SPEED_FIXES = [
@@ -126,7 +126,7 @@ const MARKETS = [
   },
   {
     label: "Hire a WooCommerce developer remotely",
-    text: "For agencies and businesses abroad, including Africa, we offer project-based work or dedicated developer hours for ongoing WooCommerce development and support.",
+    text: "For agencies and businesses abroad, we offer project-based work or dedicated developer hours for ongoing WooCommerce development and support.",
     cta: "Ask about developer hours",
     message: "Hi Ivoniz, I'd like to hire a WooCommerce developer for ongoing work.",
     location: "markets_hire",
@@ -245,7 +245,7 @@ export default function WooCommerceDevelopmentPage() {
               <p className="mt-3 text-[24px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 300, letterSpacing: "-0.02em" }}>Build a new WooCommerce store</p>
               <p className="mt-2 text-[14.5px] text-white/55 leading-relaxed flex-1">Design, setup, payments, shipping and launch, with a fixed quote.</p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <PillLink href="/contact" solid label="Request a WooCommerce Quote" location="hero_new_store" />
+                <PillLink href="#quote" solid label="Request a WooCommerce Quote" location="hero_new_store" />
                 <PillLink
                   href={waLink("Hi Ivoniz, I want to build a new WooCommerce store.")}
                   external
@@ -356,7 +356,7 @@ export default function WooCommerceDevelopmentPage() {
         <div className="mx-auto max-w-[1400px]">
           <Label>Payments and Shipping</Label>
           <Heading className="max-w-[820px] mb-8 sm:mb-14">Payment gateways and shipping for WooCommerce</Heading>
-          <div className="grid lg:grid-cols-3 gap-3" role="list" aria-label="WooCommerce payment gateways for India and the UAE">
+          <div className="grid lg:grid-cols-2 gap-3" role="list" aria-label="WooCommerce payment gateways for India and the UAE">
             {PAYMENTS.map((p) => (
               <div key={p.region} role="listitem" className="p-7" style={GLASS}>
                 <p className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/60">{p.region}</p>
@@ -423,7 +423,7 @@ export default function WooCommerceDevelopmentPage() {
             Indicative market ranges. Ongoing costs also include hosting, premium extension licences and payment gateway fees.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <PillLink href="/contact" solid label="Get a Fixed WooCommerce Quote" location="pricing" />
+            <PillLink href="#quote" solid label="Get a Fixed WooCommerce Quote" location="pricing" />
             <PillLink href={waLink("Hi Ivoniz, I'd like to know about your WooCommerce maintenance plans.")} external event="whatsapp_click" label="Ask about maintenance plans" location="pricing_maintenance" icon={<FaWhatsapp aria-hidden="true" />} />
           </div>
         </div>
@@ -483,7 +483,7 @@ export default function WooCommerceDevelopmentPage() {
             <Label>Why Ivoniz</Label>
             <Heading>Why Ivoniz for WooCommerce development</Heading>
             <div className="mt-8 flex flex-col items-start gap-3">
-              <PillLink href="/contact" label="Start Your WooCommerce Project" location="why_ivoniz" />
+              <PillLink href="#quote" label="Start Your WooCommerce Project" location="why_ivoniz" />
               <Link href="/works" className="inline-flex items-center gap-1.5 text-[14px] text-white/55 hover:text-white">
                 See our projects <FiArrowUpRight aria-hidden="true" />
               </Link>
@@ -503,6 +503,35 @@ export default function WooCommerceDevelopmentPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* ── QUOTE FORM ── */}
+      <section id="quote" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+        <div className="mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <Label>Get a Quote</Label>
+            <Heading>New store or a fix for your current one?</Heading>
+            <p className="mt-6 text-[16px] text-white/60 leading-relaxed">
+              Tell us what you need. For an existing store, include its address so we can look at it before we reply
+              with a fixed written quote.
+            </p>
+          </div>
+          <ProjectQuoteForm
+            idPrefix="woo"
+            subject="WooCommerce project"
+            leadType="woocommerce_quote"
+            location="woocommerce_quote_form"
+            messageHint="What do you sell, roughly how many products, and what needs doing?"
+            types={[
+              { id: "new", label: "New WooCommerce store" },
+              { id: "fix", label: "Fix or speed up my store" },
+              { id: "custom", label: "Plugin or customisation" },
+              { id: "migrate", label: "Move my store to WooCommerce" },
+              { id: "maintain", label: "Ongoing maintenance" },
+            ]}
+            places={["Kerala", "Elsewhere in India", "UAE", "Saudi Arabia", "Qatar", "Other GCC", "Other"]}
+          />
         </div>
       </section>
 
@@ -529,7 +558,7 @@ export default function WooCommerceDevelopmentPage() {
             Tell us what you sell and what your store needs. We&apos;ll suggest the right setup and send a fixed quote.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-3">
-            <PillLink href="/contact" solid label="Request a WooCommerce Quote" location="closing" />
+            <PillLink href="#quote" solid label="Request a WooCommerce Quote" location="closing" />
             <PillLink href={waLink("Hi Ivoniz, I need a WooCommerce developer. Can we talk?")} external event="whatsapp_click" label="WhatsApp a WooCommerce Developer" location="closing" icon={<FaWhatsapp aria-hidden="true" />} />
           </div>
           <p className="mt-6 text-[13px] text-white/55">
