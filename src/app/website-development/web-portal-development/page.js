@@ -15,7 +15,7 @@ import PortalPlanner from "@/components/portal/PortalPlanner";
 import { PORTAL_PACKAGES, PORTAL_FIRST_PHASE } from "@/components/ecommerce/costs";
 
 /* ════════════════════════════════════════════════════════════════
-   /web-portal-development — owns "web portal development" and portal-type
+   /website-development/web-portal-development — owns "web portal development" and portal-type
    terms (customer, B2B / dealer, vendor, employee, student, patient portals).
    High-value leads: optimised for qualified conversations, not form volume.
    URL kept flat like the other service pages; breadcrumb parent is
@@ -25,7 +25,7 @@ import { PORTAL_PACKAGES, PORTAL_FIRST_PHASE } from "@/components/ecommerce/cost
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/web-portal-development";
+const PAGE_URL = "https://ivoniz.com/website-development/web-portal-development";
 const TITLE = "Web Portal Development Company in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "Custom web portal development for customers, dealers, vendors, staff and students. Secure, role-based portals for Kerala, UAE and GCC businesses. Get a quote.";
@@ -216,7 +216,7 @@ export default function WebPortalDevelopmentPage() {
             dark
             items={[
               { label: "Website Development", href: "/website-development" },
-              { label: "Web Portal Development", href: "/web-portal-development" },
+              { label: "Web Portal Development", href: "/website-development/web-portal-development" },
             ]}
           />
           <div className="mt-8"><Label>Web Portal Development</Label></div>
@@ -279,7 +279,7 @@ export default function WebPortalDevelopmentPage() {
           </div>
           <p className="mt-6 text-[14px] text-white/50">
             Only need to show products and collect enquiries? A{" "}
-            <Link href="/catalogue-website-development" className={LINK_DARK}>product catalogue website</Link> may be enough to start.
+            <Link href="/website-development/catalogue-website-development" className={LINK_DARK}>product catalogue website</Link> may be enough to start.
           </p>
         </div>
       </section>
@@ -507,10 +507,10 @@ export default function WebPortalDevelopmentPage() {
             <p className="mt-6 text-[15px] text-white/60 leading-relaxed">
               Need Android and iOS apps on the same backend? See our{" "}
               <Link href="/mobile-app-development" className={LINK_DARK}>mobile app development company</Link> services,
-              or a cross-platform <Link href="/flutter-app-development" className={LINK_DARK}>Flutter app</Link>. For ERP,
+              or a cross-platform <Link href="/mobile-app-development/flutter-app-development" className={LINK_DARK}>Flutter app</Link>. For ERP,
               CRM or billing systems, see our <Link href="/software-development" className={LINK_DARK}>custom software development</Link> services,
-              including <Link href="/erp-software-development" className={LINK_DARK}>ERP integration</Link> for dealer and vendor portals and{" "}
-              <Link href="/crm-software-development" className={LINK_DARK}>CRM integration</Link> for customer portals.
+              including <Link href="/software-development/erp-software-development" className={LINK_DARK}>ERP integration</Link> for dealer and vendor portals and{" "}
+              <Link href="/software-development/crm-software-development" className={LINK_DARK}>CRM integration</Link> for customer portals.
             </p>
           </div>
           <FaqList items={FAQS} />

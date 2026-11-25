@@ -10,13 +10,13 @@ import { waLink, GLASS, OPEN_SANS } from "@/components/site/SiteUI";
  * budget, launch date) so sales can call the best leads first. Static site:
  * sends by WhatsApp (primary) or email. GA4: generate_lead { lead_type, app_type, country, channel }.
  *
- * Optional props (used by /flutter-app-development):
+ * Optional props (used by /mobile-app-development/flutter-app-development):
  *   needs    — list of { id, label, lead } shown as a "What do you need?" field in
  *              place of Platforms / Stage; CTAs link to #quote-<id> to pre-select it.
  *   tech     — technology named in the WhatsApp message (e.g. "Flutter").
  *   leadType — GA4 lead_type when no need is chosen (default "mobile_app").
  *
- * Optional props (used by /native-app-development):
+ * Optional props (used by /mobile-app-development/native-app-development):
  *   platformOptions — replaces the default Platforms list (e.g. adds "Not sure").
  *   features        — multi-select "Key features" list shown in place of Stage;
  *                     Target launch is hidden in this mode (brief's field list).

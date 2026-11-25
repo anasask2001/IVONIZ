@@ -65,8 +65,8 @@ const WA = {
 };
 
 const SERVICES = [
-  { Icon: FaAndroid, title: "Android app development", text: <>Native Kotlin apps or cross-platform apps published on Google Play. See <Link href="/android-app-development" className={LINK}>Android app development</Link>.</> },
-  { Icon: FaApple, title: "iOS app development", text: <>Swift or cross-platform apps for iPhone and iPad, published on the App Store. See <Link href="/ios-app-development" className={LINK}>iOS app development</Link>.</> },
+  { Icon: FaAndroid, title: "Android app development", text: <>Native Kotlin apps or cross-platform apps published on Google Play. See <Link href="/mobile-app-development/android-app-development" className={LINK}>Android app development</Link>.</> },
+  { Icon: FaApple, title: "iOS app development", text: <>Swift or cross-platform apps for iPhone and iPad, published on the App Store. See <Link href="/mobile-app-development/ios-app-development" className={LINK}>iOS app development</Link>.</> },
   { Icon: FaLayerGroup, title: "Cross-platform apps (Flutter / React Native)", text: "One codebase for Android and iOS, so you launch faster and spend less." },
   { Icon: FaPencilRuler, title: "App UI/UX design", text: "Wireframes, prototypes and app designs tested before development." },
   { Icon: FaServer, title: "Backend and API development", text: "Secure Node.js backends, admin panels and integrations." },
@@ -88,7 +88,7 @@ const APP_TYPES = [
   {
     Icon: FaLink,
     title: "Companion apps for web portals",
-    text: <>A mobile app on the same backend as your <Link href="/web-portal-development" className={LINK}>web portal development</Link> project.</>,
+    text: <>A mobile app on the same backend as your <Link href="/website-development/web-portal-development" className={LINK}>web portal development</Link> project.</>,
   },
 ];
 
@@ -276,8 +276,8 @@ export default function MobileAppDevelopmentPage() {
               <p className="mt-4 text-[16px] text-black/65 leading-relaxed">
                 As an ecommerce mobile app development company, we build shopping apps with product catalogues, cart,
                 payments, order tracking and push notifications, connected to your{" "}
-                <Link href="/ecommerce-website-development" className={LINK_DARK}>ecommerce website development</Link> project or{" "}
-                <Link href="/woocommerce-website-development" className={LINK_DARK}>WooCommerce store</Link>, so products, stock and
+                <Link href="/website-development/ecommerce-website-development" className={LINK_DARK}>ecommerce website development</Link> project or{" "}
+                <Link href="/website-development/ecommerce-website-development/woocommerce-website-development" className={LINK_DARK}>WooCommerce store</Link>, so products, stock and
                 orders stay in sync.
               </p>
               <p className="mt-4 text-[16px] text-black/65 leading-relaxed">
@@ -314,9 +314,9 @@ export default function MobileAppDevelopmentPage() {
           <Heading dark={false}>Technologies we use</Heading>
           <p className="mt-5 text-[16px] text-black/65 leading-relaxed max-w-[760px]">
             We use Flutter and React Native for most projects, and use{" "}
-            <Link href="/native-app-development" className={LINK_DARK}>native app development</Link> for Android and iOS
+            <Link href="/mobile-app-development/native-app-development" className={LINK_DARK}>native app development</Link> for Android and iOS
             when an app needs deep device features. For Flutter projects and dedicated Flutter developers, see{" "}
-            <Link href="/flutter-app-development" className={LINK_DARK}>Flutter app development</Link>.
+            <Link href="/mobile-app-development/flutter-app-development" className={LINK_DARK}>Flutter app development</Link>.
           </p>
           <div className="mt-10 overflow-x-auto rounded-2xl border border-black/10 bg-white">
             <table className="w-full min-w-[620px] text-left">

@@ -13,7 +13,7 @@ import AppQuoteForm from "@/components/app/AppQuoteForm";
 import PlatformDecisionTool from "@/components/app/PlatformDecisionTool";
 
 /* ════════════════════════════════════════════════════════════════
-   /native-app-development — owns the generic native terms (SEO brief,
+   /mobile-app-development/native-app-development — owns the generic native terms (SEO brief,
    Ubersuggest India db, 24 Nov 2026): "native app development" 9,900/mo SD 12
    (informational: educate, then convert), buyer terms "native app development
    service" 720 SD 34 and "… company" 320 SD 23, "native vs hybrid app" 260.
@@ -24,7 +24,7 @@ import PlatformDecisionTool from "@/components/app/PlatformDecisionTool";
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/native-app-development";
+const PAGE_URL = "https://ivoniz.com/mobile-app-development/native-app-development";
 const TITLE = "Native App Development Services for iOS & Android | Ivoniz LLP";
 const DESCRIPTION =
   "Native app development services for iOS and Android: fast, secure apps in Swift and Kotlin. Compare native vs hybrid and get a free estimate from Ivoniz.";
@@ -60,8 +60,8 @@ const WA = {
 };
 
 const SERVICES = [
-  { Icon: FaApple, title: "Native iOS app development", text: <>Swift and SwiftUI apps for iPhone, iPad and Apple Watch. See <Link href="/ios-app-development" className={LINK}>iOS app development</Link>.</> },
-  { Icon: FaAndroid, title: "Native Android app development", text: <>Kotlin and Jetpack Compose apps for phones, tablets and Wear OS. See <Link href="/android-app-development" className={LINK}>Android app development</Link>.</> },
+  { Icon: FaApple, title: "Native iOS app development", text: <>Swift and SwiftUI apps for iPhone, iPad and Apple Watch. See <Link href="/mobile-app-development/ios-app-development" className={LINK}>iOS app development</Link>.</> },
+  { Icon: FaAndroid, title: "Native Android app development", text: <>Kotlin and Jetpack Compose apps for phones, tablets and Wear OS. See <Link href="/mobile-app-development/android-app-development" className={LINK}>Android app development</Link>.</> },
   { Icon: FaPencilRuler, title: "Native app UI/UX design", text: "Designs that follow Apple's Human Interface Guidelines and Google's Material Design." },
   { Icon: FaServer, title: "Backend and API development", text: "Secure APIs, admin panels and cloud hosting shared by both apps." },
   { Icon: FaMicrochip, title: "Hardware and OS integrations", text: "Camera, GPS, Bluetooth, NFC, biometrics, background tasks, widgets, Apple Pay and Google Pay." },
@@ -185,7 +185,7 @@ export default function NativeAppDevelopmentPage() {
             dark
             items={[
               { label: "Mobile App Development", href: "/mobile-app-development" },
-              { label: "Native App Development", href: "/native-app-development" },
+              { label: "Native App Development", href: "/mobile-app-development/native-app-development" },
             ]}
           />
           <div className="mt-8"><Label>Native App Development Company</Label></div>
@@ -307,7 +307,7 @@ export default function NativeAppDevelopmentPage() {
             </p>
             <p className="text-[16px] text-black/65 leading-relaxed">
               <strong className="font-semibold text-black">Choose cross-platform</strong> if you need both platforms
-              quickly on a tighter budget. See <Link href="/flutter-app-development" className={LINK_DARK}>Flutter app development</Link>.
+              quickly on a tighter budget. See <Link href="/mobile-app-development/flutter-app-development" className={LINK_DARK}>Flutter app development</Link>.
             </p>
           </div>
           <div className="mt-12 grid md:grid-cols-2 gap-8 md:gap-12 border-t border-black/10 pt-10">

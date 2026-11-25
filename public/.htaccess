@@ -11,6 +11,32 @@
   RewriteCond %{HTTP_HOST} ^www\.ivoniz\.com$ [NC]
   RewriteRule ^(.*)$ https://ivoniz.com/$1 [L,R=301]
 
+  # ── Moved pages (25 Nov 2026): service pages now live under their parent
+  # service. Exact matches only, so /founder/founder-of-ivoniz.jpg and other
+  # files are untouched. Keep these indefinitely (old links and rankings).
+  RewriteRule ^flutter-app-development(?:\.html)?/?$ /mobile-app-development/flutter-app-development [R=301,L]
+  RewriteRule ^ios-app-development(?:\.html)?/?$ /mobile-app-development/ios-app-development [R=301,L]
+  RewriteRule ^android-app-development(?:\.html)?/?$ /mobile-app-development/android-app-development [R=301,L]
+  RewriteRule ^native-app-development(?:\.html)?/?$ /mobile-app-development/native-app-development [R=301,L]
+  RewriteRule ^wordpress-website-development(?:\.html)?/?$ /website-development/wordpress-website-development [R=301,L]
+  RewriteRule ^static-website-development(?:\.html)?/?$ /website-development/static-website-development [R=301,L]
+  RewriteRule ^ecommerce-website-development(?:\.html)?/?$ /website-development/ecommerce-website-development [R=301,L]
+  RewriteRule ^woocommerce-website-development(?:\.html)?/?$ /website-development/ecommerce-website-development/woocommerce-website-development [R=301,L]
+  RewriteRule ^catalogue-website-development(?:\.html)?/?$ /website-development/catalogue-website-development [R=301,L]
+  RewriteRule ^web-portal-development(?:\.html)?/?$ /website-development/web-portal-development [R=301,L]
+  RewriteRule ^custom-website-vs-wordpress(?:\.html)?/?$ /website-development/custom-website-vs-wordpress [R=301,L]
+  RewriteRule ^best-website-development-company-in-calicut(?:\.html)?/?$ /website-development/best-website-development-company-in-calicut [R=301,L]
+  RewriteRule ^erp-software-development(?:\.html)?/?$ /software-development/erp-software-development [R=301,L]
+  RewriteRule ^crm-software-development(?:\.html)?/?$ /software-development/crm-software-development [R=301,L]
+  RewriteRule ^billing-software-development(?:\.html)?/?$ /software-development/billing-software-development [R=301,L]
+  RewriteRule ^seo-services(?:\.html)?/?$ /digital-marketing/seo-services [R=301,L]
+  RewriteRule ^local-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/local-seo-services [R=301,L]
+  RewriteRule ^technical-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/technical-seo-services [R=301,L]
+  RewriteRule ^on-page-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/on-page-seo-services [R=301,L]
+  RewriteRule ^best-digital-marketing-company-in-calicut(?:\.html)?/?$ /digital-marketing/best-digital-marketing-company-in-calicut [R=301,L]
+  RewriteRule ^best-digital-marketing-company-in-kochi(?:\.html)?/?$ /digital-marketing/best-digital-marketing-company-in-kochi [R=301,L]
+  RewriteRule ^founder(?:\.html)?/?$ /about/founder [R=301,L]
+
   # ── Clean-URL routing for the static export ──
   # Next.js writes each page as a sibling "<route>.html" file (e.g.
   # about.html), but it ALSO creates a same-named "<route>/" directory

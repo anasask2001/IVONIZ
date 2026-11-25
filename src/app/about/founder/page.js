@@ -2,24 +2,25 @@ import FounderPageClient from "@/components/FounderPageClient";
 import { webPageSchema, breadcrumbSchema, ORG_ID } from "@/lib/schema";
 
 const pageSchema = webPageSchema({
-  url: "https://ivoniz.com/founder",
+  url: "https://ivoniz.com/about/founder",
   name: "Muhammed Anas — Founder & Managing Director, Ivoniz LLP",
   description:
     "Muhammed Anas is the Founder and Managing Director of Ivoniz LLP, a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala.",
 });
 
 const pageBreadcrumb = breadcrumbSchema([
-  { name: "Founder", url: "https://ivoniz.com/founder" },
+  { name: "About", url: "https://ivoniz.com/about" },
+  { name: "Founder", url: "https://ivoniz.com/about/founder" },
 ]);
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://ivoniz.com/founder#person",
+  "@id": "https://ivoniz.com/about/founder#person",
   name: "Muhammed Anas",
   jobTitle: "Founder & Managing Director",
   worksFor: { "@id": ORG_ID },
-  url: "https://ivoniz.com/founder",
+  url: "https://ivoniz.com/about/founder",
   image: {
     "@type": "ImageObject",
     url: "https://ivoniz.com/founder/founder-of-ivoniz.jpg",
@@ -64,14 +65,14 @@ export const metadata = {
   description:
     "Meet Muhammed Anas, Founder and Managing Director of Ivoniz LLP, a technology and digital growth company based in Kozhikode, Kerala.",
   alternates: {
-    canonical: "https://ivoniz.com/founder",
+    canonical: "https://ivoniz.com/about/founder",
   },
   openGraph: {
     siteName: "Ivoniz LLP",
     title: "Muhammed Anas — Founder & Managing Director, Ivoniz LLP",
     description:
       "Meet the founder of Ivoniz LLP — a technology and digital growth company headquartered in Kozhikode (Calicut), Kerala.",
-    url: "https://ivoniz.com/founder",
+    url: "https://ivoniz.com/about/founder",
     type: "profile",
     images: [
       {

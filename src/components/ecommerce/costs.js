@@ -32,7 +32,7 @@ export const PORTAL_PACKAGES = [
 export const PORTAL_FIRST_PHASE = { inr: "₹1,50,000", aed: "AED 25,000" };
 
 /* WordPress website packages — INDICATIVE MARKET RANGES from the SEO brief (23 Nov 2026):
-   replace with Ivoniz pricing. Used by /wordpress-website-development (table, FAQ, quote widget). */
+   replace with Ivoniz pricing. Used by /website-development/wordpress-website-development (table, FAQ, quote widget). */
 export const WP_PACKAGES = [
   { id: "starter", label: "Starter business site", note: "5–8 pages", inr: "₹20,000 – ₹45,000", time: "2–3 weeks" },
   { id: "corporate", label: "Corporate website", note: "10–30 pages, custom design", inr: "₹45,000 – ₹1,20,000", time: "3–6 weeks" },
@@ -42,7 +42,7 @@ export const WP_PACKAGES = [
 export const WP_DUBAI_RANGE = "AED 4,000 – 15,000";
 
 /* Static website packages — INDICATIVE MARKET RANGES from the SEO brief (23 Nov 2026):
-   replace with Ivoniz pricing. Used by /static-website-development (package cards,
+   replace with Ivoniz pricing. Used by /website-development/static-website-development (package cards,
    "from" price in the hero, FAQs, Offer schema and the quote form). */
 export const STATIC_PACKAGES = [
   { id: "starter", label: "Starter", pages: "Up to 5 pages", inr: "₹8,000 – ₹15,000", min: 8000, max: 15000, time: "5–7 days" },
@@ -70,7 +70,7 @@ export const APP_FACTORS = {
 };
 
 /* Flutter app packages — INDICATIVE MARKET RANGES from the SEO brief (23 Nov 2026):
-   replace with Ivoniz pricing. Used by /flutter-app-development (cost table, FAQ). */
+   replace with Ivoniz pricing. Used by /mobile-app-development/flutter-app-development (cost table, FAQ). */
 export const FLUTTER_PACKAGES = [
   { id: "mvp", label: "Flutter MVP", features: "Core features, basic admin", inr: "₹1,50,000 – ₹3,50,000", time: "6–9 weeks" },
   { id: "business", label: "Business app", features: "Payments, notifications, dashboard", inr: "₹3,50,000 – ₹8,00,000", time: "9–14 weeks" },
@@ -79,7 +79,7 @@ export const FLUTTER_PACKAGES = [
 ];
 
 /* iOS app packages — INDICATIVE MARKET RANGES from the SEO brief (23 Nov 2026):
-   replace with Ivoniz pricing. Used by /ios-app-development (cost table, FAQ). */
+   replace with Ivoniz pricing. Used by /mobile-app-development/ios-app-development (cost table, FAQ). */
 export const IOS_PACKAGES = [
   { id: "mvp", label: "iOS MVP", features: "Core features, basic backend", inr: "₹2,00,000 – ₹4,50,000", time: "7–10 weeks" },
   { id: "business", label: "Business iOS app", features: "Payments, notifications, admin", inr: "₹4,50,000 – ₹10,00,000", time: "10–16 weeks" },
@@ -87,7 +87,7 @@ export const IOS_PACKAGES = [
 ];
 
 /* Android app packages — INDICATIVE MARKET RANGES from the SEO brief (24 Nov 2026):
-   replace with Ivoniz pricing. Used by /android-app-development (cost table, FAQ). */
+   replace with Ivoniz pricing. Used by /mobile-app-development/android-app-development (cost table, FAQ). */
 export const ANDROID_PACKAGES = [
   { id: "mvp", label: "Android MVP", features: "Core features, basic admin", inr: "₹1,25,000 – ₹3,00,000", time: "6–9 weeks" },
   { id: "business", label: "Business Android app", features: "Payments, notifications, dashboard", inr: "₹3,00,000 – ₹8,00,000", time: "9–14 weeks" },
@@ -96,7 +96,7 @@ export const ANDROID_PACKAGES = [
 ];
 
 /* Native app packages — INDICATIVE MARKET RANGES from the SEO brief (24 Nov 2026):
-   replace with Ivoniz pricing. Used by /native-app-development (cost table, FAQ). */
+   replace with Ivoniz pricing. Used by /mobile-app-development/native-app-development (cost table, FAQ). */
 export const NATIVE_PACKAGES = [
   { id: "mvp", label: "MVP (core features)", one: "₹1,50,000 – ₹4,50,000", both: "₹3,00,000 – ₹8,00,000", time: "7–10 weeks" },
   { id: "business", label: "Business app", one: "₹4,50,000 – ₹10,00,000", both: "₹8,00,000 – ₹18,00,000", time: "10–18 weeks" },
@@ -112,7 +112,7 @@ export const SOFTWARE_PACKAGES = [
 ];
 
 /* Custom ERP packages — INDICATIVE MARKET RANGES from the SEO brief (24 Nov 2026):
-   replace with Ivoniz pricing. Used by /erp-software-development (hero "from"
+   replace with Ivoniz pricing. Used by /software-development/erp-software-development (hero "from"
    line, cost table, FAQ). */
 export const ERP_PACKAGES = [
   { id: "starter", label: "Starter ERP", note: "3–4 modules, one branch", inr: "₹2,00,000 – ₹5,00,000", time: "8–12 weeks" },
@@ -122,7 +122,7 @@ export const ERP_PACKAGES = [
 export const ERP_FROM = { price: "₹2 lakh", golive: "8–12 weeks" };
 
 /* Custom CRM packages — INDICATIVE MARKET RANGES from the SEO brief (24 Nov 2026):
-   replace with Ivoniz pricing. Used by /crm-software-development (hero "from"
+   replace with Ivoniz pricing. Used by /software-development/crm-software-development (hero "from"
    line, cost table, FAQ). */
 export const CRM_PACKAGES = [
   { id: "starter", label: "Starter CRM", note: "Leads, follow-ups, reports", inr: "₹60,000 – ₹1,50,000", time: "4–6 weeks" },
@@ -141,3 +141,51 @@ export const BILLING_OPTIONS = [
 ];
 /* Set to e.g. "₹15,000" once fixed; null shows "Free demo · price on request". */
 export const BILLING_FROM = null;
+
+/* Digital marketing packages — /digital-marketing. Monthly prices NOT fixed yet
+   (brief has ₹X placeholders): `price: null` shows "Price on request". Set e.g.
+   "₹15,000" per package once decided. Ad spend is always separate. */
+export const DM_PACKAGES = [
+  { id: "starter", label: "Local Starter", includes: "Google Business Profile, local SEO basics, 8 social posts", price: null },
+  { id: "growth", label: "Growth", includes: "SEO, social media (12 posts + reels), Meta or Google Ads management", price: null },
+  { id: "engine", label: "Lead Engine", includes: "SEO, Google + Meta ads, landing page, call and WhatsApp tracking, monthly strategy call", price: null },
+];
+
+/* SEO packages — /seo-services. Monthly prices NOT fixed yet (brief: ₹X).
+   `price: null` shows "Price on request". Brief benchmarks (25 Nov 2026):
+   Local Starter ~₹10,000–15,000, Growth ~₹20,000–30,000, Competitive ₹35,000+
+   per month; Calicut IndiaMart sellers from ₹10,000/month. */
+export const SEO_PACKAGES = [
+  { id: "starter", label: "Local Starter", best: "Shops, clinics, local services", includes: "Google Business Profile, local SEO, 5 target keywords, monthly report", price: null },
+  { id: "growth", label: "Growth", best: "SMEs targeting Kerala", includes: "Local + on-page + technical SEO, 15 keywords, 2 content pieces a month, link building", price: null },
+  { id: "competitive", label: "Competitive / Ecommerce", best: "National reach, online stores", includes: "Full SEO, 30+ keywords, ecommerce SEO, content, digital PR", price: null },
+];
+export const SEO_AUDIT_PRICE = null; // one-time audit price; free for businesses that start a package
+
+/* Local SEO (/digital-marketing/seo-services/local-seo-services) — prices not fixed yet → "Price on request".
+   Set a monthly figure per package (per location for multi-location) and the GBP setup fee. */
+export const LOCAL_SEO_PACKAGES = [
+  { id: "gbp-starter", label: "GBP Starter", best: "Single shop or clinic", includes: "Google Business Profile optimisation, 4 posts a month, review system, 10 citations, monthly report", price: null, unit: "month" },
+  { id: "local-growth", label: "Local Growth", best: "Businesses targeting a town or district", includes: "Starter + 8 posts a month, 25 citations, 2 location pages, review replies, local keyword tracking", price: null, unit: "month" },
+  { id: "multi-location", label: "Multi-Location", best: "Chains and multi-branch businesses", includes: "Everything per branch, plus location pages and a combined report", price: null, unit: "location / month" },
+];
+export const GBP_SETUP_PRICE = null;
+
+/* Technical SEO (/digital-marketing/seo-services/technical-seo-services) — prices not fixed yet → "Price on request".
+   Brief benchmarks: Kerala audits ₹10,000–₹30,000; national fixed audits ~₹25,000;
+   suggested Ivoniz audit ₹10,000–₹20,000 for SME sites. */
+export const TECH_SEO_PACKAGES = [
+  { id: "audit", label: "Technical Audit", best: "Websites up to about 500 pages", includes: "Full audit, prioritised fix list and a walkthrough call", price: null, unit: "one-time" },
+  { id: "audit-fix", label: "Audit + Fix", best: "Small business and WordPress websites", includes: "Audit plus implementation of priority fixes, with a before-and-after report", price: null, unit: "one-time" },
+  { id: "large", label: "Ecommerce / Large Site", best: "Online stores and sites with 500+ pages", includes: "Deep crawl, filters and faceted navigation, schema, speed and fixes", price: null, unit: "one-time" },
+  { id: "care", label: "Technical SEO Care", best: "Ongoing protection", includes: "Monthly crawl, Core Web Vitals monitoring and fixes as needed", price: null, unit: "month" },
+];
+
+/* On-page SEO (/digital-marketing/seo-services/on-page-seo-services) — prices not fixed yet → "Price on request".
+   One-time project prices; per-page pricing for a few pages (ON_PAGE_PER_PAGE). */
+export const ON_PAGE_PACKAGES = [
+  { id: "starter", label: "Starter", pages: "Up to 5 pages", includes: "Keyword mapping, titles, meta descriptions, headings and internal links", price: null },
+  { id: "growth", label: "Growth", pages: "Up to 15 pages", includes: "Starter + content optimisation, images and FAQ sections", price: null },
+  { id: "advanced", label: "Advanced", pages: "30+ pages", includes: "Growth + schema, content writing and monthly refinements", price: null },
+];
+export const ON_PAGE_PER_PAGE = null;

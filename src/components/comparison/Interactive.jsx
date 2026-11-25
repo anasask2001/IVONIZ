@@ -6,7 +6,7 @@ import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
 /* Shared lead-capture pieces (tracked CTAs, quiz, sticky mobile bar).
-   Used by /custom-website-vs-wordpress and /website-development. */
+   Used by /website-development/custom-website-vs-wordpress and /website-development. */
 
 const WA_NUMBER = "919645760023";
 

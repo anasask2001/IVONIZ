@@ -18,7 +18,7 @@ import SoftwareQuoteForm from "@/components/software/SoftwareQuoteForm";
    and Kerala intent, plus "custom software development company" (Google
    autocomplete data; volumes still to verify). The home page keeps "web
    development company in Calicut"; this page never targets web/app terms.
-   Children: /erp-software-development, /crm-software-development and
+   Children: /software-development/erp-software-development, /software-development/crm-software-development and
    /billing-software-development. Cards keep #erp / #crm / #billing anchors.
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
@@ -59,11 +59,11 @@ const WA = {
 
 /* ERP / CRM / billing: anchor ids here until their own pages are built. */
 const SERVICES = [
-  { id: "erp", Icon: FaCubes, title: "ERP software development", text: <>Inventory, purchase, sales, production, HR and accounts in one system. See <Link href="/erp-software-development" className={LINK}>ERP software development</Link>.</>, quote: "erp" },
-  { id: "crm", Icon: FaUsers, title: "CRM software development", text: <>Leads, follow-ups, sales pipeline and customer history, with WhatsApp and call tracking. See <Link href="/crm-software-development" className={LINK}>CRM software development</Link>.</>, quote: "crm" },
-  { id: "billing", Icon: FaFileInvoice, title: "Billing software development", text: <>GST billing, POS, stock and reports built for your shop or business type. See <Link href="/billing-software-development" className={LINK}>billing software</Link>.</>, quote: "billing" },
+  { id: "erp", Icon: FaCubes, title: "ERP software development", text: <>Inventory, purchase, sales, production, HR and accounts in one system. See <Link href="/software-development/erp-software-development" className={LINK}>ERP software development</Link>.</>, quote: "erp" },
+  { id: "crm", Icon: FaUsers, title: "CRM software development", text: <>Leads, follow-ups, sales pipeline and customer history, with WhatsApp and call tracking. See <Link href="/software-development/crm-software-development" className={LINK}>CRM software development</Link>.</>, quote: "crm" },
+  { id: "billing", Icon: FaFileInvoice, title: "Billing software development", text: <>GST billing, POS, stock and reports built for your shop or business type. See <Link href="/software-development/billing-software-development" className={LINK}>billing software</Link>.</>, quote: "billing" },
   { id: "custom", Icon: FaCogs, title: "Custom business software", text: "Booking, job-card, dealer, field-service and approval systems.", quote: "custom" },
-  { Icon: FaThLarge, title: "Web portals and dashboards", text: <>Customer, vendor, dealer and staff portals. See <Link href="/web-portal-development" className={LINK}>web portal development</Link>.</> },
+  { Icon: FaThLarge, title: "Web portals and dashboards", text: <>Customer, vendor, dealer and staff portals. See <Link href="/website-development/web-portal-development" className={LINK}>web portal development</Link>.</> },
   { Icon: FaMobileAlt, title: "Mobile apps for your software", text: <>Android and iOS apps on the same backend. See <Link href="/mobile-app-development" className={LINK}>mobile app development</Link>.</> },
   { Icon: FaPlug, title: "Integrations", text: "Tally, Zoho, payment gateways, WhatsApp Business API, SMS and e-invoicing." },
   { Icon: FaTools, title: "Software maintenance and upgrades", text: "Support, new features and modernisation of old systems." },
@@ -504,7 +504,7 @@ export default function SoftwareDevelopmentPage() {
             <Heading>Software development FAQs</Heading>
             <p className="mt-6 text-[15px] text-white/60 leading-relaxed">
               Need a customer or dealer login area? See{" "}
-              <Link href="/web-portal-development" className={LINK}>web portal development</Link>.
+              <Link href="/website-development/web-portal-development" className={LINK}>web portal development</Link>.
             </p>
           </div>
           <FaqList items={FAQS} />

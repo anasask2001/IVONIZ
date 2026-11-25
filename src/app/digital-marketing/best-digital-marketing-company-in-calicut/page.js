@@ -11,16 +11,16 @@ import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 export const metadata = {
   title: "Best Digital Marketing Company in Calicut",
   description:
-    "Ivoniz LLP is the best digital marketing agency in Calicut — SEO, Google Ads, social media, and web development. Free audit. Call or WhatsApp now.",
+    "Ivoniz LLP is the best digital marketing company in Calicut — SEO, Google Ads, social media, and web development. Free audit. Call or WhatsApp now.",
   alternates: {
-    canonical: "https://ivoniz.com/best-digital-marketing-company-in-calicut",
+    canonical: "https://ivoniz.com/digital-marketing/best-digital-marketing-company-in-calicut",
   },
   openGraph: {
     siteName: "Ivoniz LLP",
     title: "Best Digital Marketing Company in Calicut | Ivoniz LLP",
     description:
-      "Ivoniz — the best digital marketing agency in Calicut. SEO, Google Ads, Social Media, Web & App Development. Serving Calicut and all of Kerala.",
-    url: "https://ivoniz.com/best-digital-marketing-company-in-calicut",
+      "Ivoniz — the best digital marketing company in Calicut. SEO, Google Ads, Social Media, Web & App Development. Serving Calicut and all of Kerala.",
+    url: "https://ivoniz.com/digital-marketing/best-digital-marketing-company-in-calicut",
     type: "website",
     images: [
       {
@@ -34,7 +34,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Best Digital Marketing Company in Calicut | Ivoniz LLP",
-    description: "Ivoniz — the best digital marketing agency in Calicut. SEO, Google Ads, Social Media, Web & App Development.",
+    description: "Ivoniz — the best digital marketing company in Calicut. SEO, Google Ads, Social Media, Web & App Development.",
     images: ["/ivoniz-og-image.webp"],
   },
   robots: { index: true, follow: true },
@@ -162,11 +162,12 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://ivoniz.com/" },
+    { "@type": "ListItem", position: 2, name: "Digital Marketing", item: "https://ivoniz.com/digital-marketing" },
     {
       "@type": "ListItem",
-      position: 2,
+      position: 3,
       name: "Best Digital Marketing Company in Calicut",
-      item: "https://ivoniz.com/best-digital-marketing-company-in-calicut",
+      item: "https://ivoniz.com/digital-marketing/best-digital-marketing-company-in-calicut",
     },
   ],
 };
@@ -176,7 +177,7 @@ const breadcrumbSchema = {
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  url: "https://ivoniz.com/best-digital-marketing-company-in-calicut",
+  url: "https://ivoniz.com/digital-marketing/best-digital-marketing-company-in-calicut",
   name: "Best Digital Marketing Company in Calicut",
   isPartOf: { "@id": WEBSITE_ID },
   about: { "@id": ORG_ID },
@@ -240,7 +241,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
       {/* ── HERO ── */}
       <section className="bg-black text-white pt-32 sm:pt-40 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-5xl">
-          <Breadcrumbs dark items={[{ label: "Best Digital Marketing Company in Calicut", href: "/best-digital-marketing-company-in-calicut" }]} />
+          <Breadcrumbs dark items={[{ label: "Digital Marketing", href: "/digital-marketing" }, { label: "Best Digital Marketing Company in Calicut", href: "/digital-marketing/best-digital-marketing-company-in-calicut" }]} />
           <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
             Ivoniz LLP · Kozhikode, Kerala
           </p>
@@ -307,7 +308,8 @@ export default function BestDigitalMarketingCompanyInCalicut() {
           Ivoniz LLP is a full-service digital marketing, SEO, web development, and mobile app development
           company headquartered at HiLITE Business Park, Kozhikode, Kerala. We were founded with one mission:
           to create &ldquo;galaxies of possibilities&rdquo; for technological advancement and attract investment
-          to Calicut and Thrissur by promoting young, talented teams to do their creative best.
+          to Calicut and Thrissur by promoting young, talented teams to do their creative best. See our full{" "}
+          <Link href="/digital-marketing" className="text-black underline underline-offset-4 decoration-black/25 hover:decoration-black">digital marketing services</Link> and packages.
         </p>
         <p className="text-black/65 leading-relaxed mb-4">
           Today, <strong>Ivoniz LLP</strong>, operating as a{" "}
@@ -323,7 +325,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
         </p>
         <p className="text-black/65 leading-relaxed">
           Outside Calicut? We also run a dedicated{" "}
-          <Link href="/best-digital-marketing-company-in-kochi" className="underline font-medium">
+          <Link href="/digital-marketing/best-digital-marketing-company-in-kochi" className="underline font-medium">
             digital marketing team in Kochi
           </Link>
           , serving Ernakulam and the surrounding region.
@@ -380,7 +382,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
       {/* ── OUR SERVICES OVERVIEW ── */}
       <Section className="bg-white">
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-          Our Services — Digital Marketing Agency in Calicut Solutions
+          Our Services — Digital Marketing Company in Calicut Solutions
         </h2>
         <p className="text-black/65 leading-relaxed mb-8">
           As a complete <strong>digital marketing agency in Calicut</strong>, Ivoniz offers every service a growing
@@ -513,7 +515,7 @@ export default function BestDigitalMarketingCompanyInCalicut() {
         </p>
         <p className="text-black/65 leading-relaxed">
           Looking for a dedicated web build? See our full breakdown on{" "}
-          <Link href="/best-website-development-company-in-calicut" className="underline font-medium">
+          <Link href="/website-development/best-website-development-company-in-calicut" className="underline font-medium">
             website development services in Calicut
           </Link>
           , including e-commerce, web apps, and SEO-ready builds.

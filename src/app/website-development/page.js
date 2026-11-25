@@ -20,7 +20,7 @@ import { PAD, OPEN_SANS, GLASS, waLink, Label, Heading, Grid, PetalSketch } from
    Kerala + GCC appear in the title and one "markets" block each; the H1 stays broad.
    Does NOT target: "custom website vs wordpress" (comparison page),
    "[service] development [place]" (child pages), or "web development company
-   Calicut" (owned by /best-website-development-company-in-calicut).
+   Calicut" (owned by /website-development/best-website-development-company-in-calicut).
 
    Design follows the homepage: black / #0a0a0a + #f8f8f8 sections, "▶ LABEL"
    eyebrows, light Open Sans headings with an outlined word, the faint 72px grid,
@@ -56,17 +56,17 @@ export const metadata = {
 
 /* ── Content data ─────────────────────────────────────────────── */
 const SERVICES = [
-  { title: "E-Commerce Website Development", text: "Online stores with local payment gateways, shipping and inventory sync, built to convert on mobile.", href: "/ecommerce-website-development", Icon: FaShoppingCart },
-  { title: "WooCommerce Development", text: "WordPress-powered stores your team can run themselves, with the plugins you need and nothing more.", href: "/woocommerce-website-development", Icon: FaStore },
-  { title: "Catalogue Websites", text: "Product catalogues with search, filters and enquiry buttons for retailers, wholesalers and manufacturers.", href: "/catalogue-website-development", Icon: FaBookOpen },
-  { title: "Web Portal Development", text: "Customer portals, dashboards and booking systems built around your workflow and integrations.", href: "/web-portal-development", Icon: FaThLarge },
-  { title: "WordPress Website Development", text: "Professional, easy-to-edit websites that launch fast and stay affordable.", href: "/wordpress-website-development", Icon: FaWordpress },
-  { title: "Static Website Development", text: "Fast, secure sites for brochures, landing pages and campaigns, with almost no upkeep.", href: "/static-website-development", Icon: FaBolt },
+  { title: "E-Commerce Website Development", text: "Online stores with local payment gateways, shipping and inventory sync, built to convert on mobile.", href: "/website-development/ecommerce-website-development", Icon: FaShoppingCart },
+  { title: "WooCommerce Development", text: "WordPress-powered stores your team can run themselves, with the plugins you need and nothing more.", href: "/website-development/ecommerce-website-development/woocommerce-website-development", Icon: FaStore },
+  { title: "Catalogue Websites", text: "Product catalogues with search, filters and enquiry buttons for retailers, wholesalers and manufacturers.", href: "/website-development/catalogue-website-development", Icon: FaBookOpen },
+  { title: "Web Portal Development", text: "Customer portals, dashboards and booking systems built around your workflow and integrations.", href: "/website-development/web-portal-development", Icon: FaThLarge },
+  { title: "WordPress Website Development", text: "Professional, easy-to-edit websites that launch fast and stay affordable.", href: "/website-development/wordpress-website-development", Icon: FaWordpress },
+  { title: "Static Website Development", text: "Fast, secure sites for brochures, landing pages and campaigns, with almost no upkeep.", href: "/website-development/static-website-development", Icon: FaBolt },
 ];
 
 const INCLUDES = [
   { Icon: FaMobileAlt, title: "Mobile-first, responsive design" },
-  { Icon: FaTachometerAlt, title: "Core Web Vitals and page-speed optimisation" },
+  { Icon: FaTachometerAlt, title: <>Core Web Vitals and page-speed optimisation, backed by our <Link href="/digital-marketing/seo-services/technical-seo-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">technical SEO</Link> team</> },
   { Icon: FaSearch, title: "On-page SEO: clean URLs, meta tags, sitemap, schema" },
   { Icon: FaWhatsapp, title: "Forms, WhatsApp and call buttons to your inbox or CRM" },
   { Icon: FaLock, title: "SSL, security hardening and backups" },
@@ -101,7 +101,7 @@ const MARKETS = [
         Our team is based in Kozhikode (Calicut), and we work with businesses across Kerala, including Kochi,
         Malappuram, Thrissur and Kannur, and across India. Meet us in person or work fully online. Looking for a local
         team? See our{" "}
-        <Link href="/best-website-development-company-in-calicut" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">
+        <Link href="/website-development/best-website-development-company-in-calicut" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">
           Calicut website development page
         </Link>.
       </>
@@ -310,7 +310,7 @@ export default function WebsiteDevelopmentPage() {
               both, so we recommend whichever fits your goals and budget.
             </p>
             <div className="mt-8">
-              <PillLink href="/custom-website-vs-wordpress" dark={false} label="Read our custom website vs WordPress comparison" location="platform_block" event="internal_link_click" />
+              <PillLink href="/website-development/custom-website-vs-wordpress" dark={false} label="Read our custom website vs WordPress comparison" location="platform_block" event="internal_link_click" />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3" aria-hidden="true">
@@ -338,11 +338,15 @@ export default function WebsiteDevelopmentPage() {
           <div>
             <Label>Included as Standard</Label>
             <Heading>What every Ivoniz website includes</Heading>
+            <p className="mt-6 text-[15px] text-white/60 leading-relaxed">
+              Want visitors after launch? Pair your site with our{" "}
+              <Link href="/digital-marketing" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">digital marketing</Link> services.
+            </p>
             <PetalSketch className="hidden lg:block w-[200px] mt-12" />
           </div>
           <ul className="grid sm:grid-cols-2 gap-3">
-            {INCLUDES.map(({ Icon, title }) => (
-              <li key={title} className="flex items-center gap-4 px-5 py-5" style={GLASS}>
+            {INCLUDES.map(({ Icon, title }, i) => (
+              <li key={i} className="flex items-center gap-4 px-5 py-5" style={GLASS}>
                 <span className="shrink-0 w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/75">
                   <Icon aria-hidden="true" className="text-[15px]" />
                 </span>
@@ -396,7 +400,7 @@ export default function WebsiteDevelopmentPage() {
               business websites cost less to launch, while custom sites and web applications cost more upfront but are
               built around your exact needs. You get a clear, fixed estimate before any work starts.
             </p>
-            <Link href="/custom-website-vs-wordpress#cost" className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-medium text-black underline underline-offset-4 decoration-black/25 hover:decoration-black">
+            <Link href="/website-development/custom-website-vs-wordpress#cost" className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-medium text-black underline underline-offset-4 decoration-black/25 hover:decoration-black">
               See the full cost comparison in custom website vs WordPress <FiArrowUpRight aria-hidden="true" />
             </Link>
           </div>
@@ -515,7 +519,7 @@ export default function WebsiteDevelopmentPage() {
             {[
               "WordPress, custom and ecommerce under one team, so the advice isn't tied to one platform",
               "Modern stack: React, Next.js, Node.js and the MERN stack",
-              "SEO and speed built in from day one, not added later",
+              <>SEO and speed built in from day one, with ongoing <Link key="seo" href="/digital-marketing/seo-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">SEO services</Link> after launch</>,
               "Clear fixed quotes and a single point of contact",
               "You own your domain, content and code",
               <>Websites and <Link key="app" href="/mobile-app-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">Android and iOS app development</Link> from the same team</>,

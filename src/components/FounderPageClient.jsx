@@ -70,7 +70,7 @@ export default function FounderPageClient({ faqs = [] }) {
           </motion.div>
 
           <div>
-            <Breadcrumbs dark items={[{ label: "Founder", href: "/founder" }]} />
+            <Breadcrumbs dark items={[{ label: "About", href: "/about" }, { label: "Founder", href: "/about/founder" }]} />
             <motion.p {...fadeUp(0.05)} className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
               About the Founder
             </motion.p>

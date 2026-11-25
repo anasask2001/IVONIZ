@@ -15,7 +15,7 @@ import { STATIC_PACKAGES, STATIC_SUPPORT, STATIC_FROM } from "@/components/ecomm
 import StaticQuoteForm from "@/components/static/StaticQuoteForm";
 
 /* ════════════════════════════════════════════════════════════════
-   /static-website-development — owns "static website design / development"
+   /website-development/static-website-development — owns "static website design / development"
    and the static-website cost cluster (SEO brief, 23 Nov 2026, Ubersuggest:
    ~500 buyer searches/mo in India, SD 5–18; cost terms ≈ 220/mo).
    Budget-entry page: price-led, short form, WhatsApp-first, visible upgrade
@@ -25,7 +25,7 @@ import StaticQuoteForm from "@/components/static/StaticQuoteForm";
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/static-website-development";
+const PAGE_URL = "https://ivoniz.com/website-development/static-website-development";
 const TITLE = "Static Website Design & Development in India | Ivoniz LLP";
 const DESCRIPTION =
   "Static website design and development for small businesses in India. Fast, secure 5-page to 20-page sites at a fixed price. See costs and get a quote today.";
@@ -179,7 +179,7 @@ export default function StaticWebsiteDevelopmentPage() {
             dark
             items={[
               { label: "Website Development", href: "/website-development" },
-              { label: "Static Website Development", href: "/static-website-development" },
+              { label: "Static Website Development", href: "/website-development/static-website-development" },
             ]}
           />
           <div className="mt-8"><Label>Static Website Design</Label></div>
@@ -231,7 +231,7 @@ export default function StaticWebsiteDevelopmentPage() {
             </p>
             <p>
               Modern static sites can still look premium and include contact forms, WhatsApp chat, Google Maps, image
-              galleries and animations.
+              galleries and animations. Pair your site with <Link href="/digital-marketing/seo-services/local-seo-services" className="text-black underline underline-offset-4 decoration-black/25 hover:decoration-black">local SEO</Link> so nearby customers find you on Google Maps.
             </p>
           </div>
         </div>
@@ -337,7 +337,7 @@ export default function StaticWebsiteDevelopmentPage() {
           </div>
           <p className="mt-6 text-[16px] text-black/65 leading-relaxed">
             If you want to edit pages and publish blogs yourself, see our{" "}
-            <Link href="/wordpress-website-development" className={LINK_DARK}>WordPress website development</Link> services.
+            <Link href="/website-development/wordpress-website-development" className={LINK_DARK}>WordPress website development</Link> services.
           </p>
         </div>
       </section>
@@ -465,7 +465,7 @@ export default function StaticWebsiteDevelopmentPage() {
                 "Fixed, transparent prices with no hidden costs",
                 "Fast delivery, from 5 days for a starter site",
                 "Clean, hand-coded pages that load fast and rank well",
-                <>Easy upgrade to <Link key="wp" href="/wordpress-website-development" className={LINK}>WordPress</Link>, <Link key="ec" href="/ecommerce-website-development" className={LINK}>ecommerce website development</Link> or a web app when you grow</>,
+                <>Easy upgrade to <Link key="wp" href="/website-development/wordpress-website-development" className={LINK}>WordPress</Link>, <Link key="ec" href="/website-development/ecommerce-website-development" className={LINK}>ecommerce website development</Link> or a web app when you grow, plus <Link key="dm" href="/digital-marketing" className={LINK}>digital marketing packages</Link> to bring enquiries</>,
                 "Local team in Calicut, with support on WhatsApp",
               ].map((t, i) => (
                 <li key={i} className="flex gap-3 text-[15.5px] text-white/80 leading-relaxed">

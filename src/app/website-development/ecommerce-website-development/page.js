@@ -14,16 +14,16 @@ import EstimateWidget from "@/components/ecommerce/EstimateWidget";
 import { STORE_TYPES } from "@/components/ecommerce/costs";
 
 /* ════════════════════════════════════════════════════════════════
-   /ecommerce-website-development — single owner of "ecommerce website
+   /website-development/ecommerce-website-development — single owner of "ecommerce website
    development" and its location variants. Intent: transactional.
    "E-commerce" (hyphenated) appears once, in the title, to catch both spellings.
    Does NOT target: "website development company" (/website-development),
    "is WordPress good for ecommerce" / custom vs WordPress (comparison page),
-   "web application development" (/web-portal-development).
+   "web application development" (/website-development/web-portal-development).
    Design: same homepage language as /website-development (see SiteUI).
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/ecommerce-website-development";
+const PAGE_URL = "https://ivoniz.com/website-development/ecommerce-website-development";
 const TITLE = "E-commerce Website Development in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "Ecommerce website development for Kerala, UAE and GCC brands. WooCommerce or custom stores with local payments, Arabic support and fast checkout. Get a quote.";
@@ -53,11 +53,11 @@ export const metadata = {
 const SERVICES = [
   { title: "New online store development", text: <>From product catalogue to checkout, built to load fast on mobile. Want a shopping app too? See <Link href="/mobile-app-development#apps" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">ecommerce app development</Link>.</> },
   { title: "Custom ecommerce development", text: "Built on React / Next.js and Node.js for unique features, high traffic and complex logic." },
-  { title: "WooCommerce development", text: <>Affordable, easy-to-manage stores on WordPress. See our <Link href="/woocommerce-website-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">WooCommerce development services</Link>.</> },
-  { title: "B2B and wholesale portals", text: <>Dealer logins, tiered pricing, bulk ordering, credit limits and quotation requests, built with our <Link href="/web-portal-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">web portal development</Link> team.</> },
+  { title: "WooCommerce development", text: <>Affordable, easy-to-manage stores on WordPress. See our <Link href="/website-development/ecommerce-website-development/woocommerce-website-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">WooCommerce development services</Link>.</> },
+  { title: "B2B and wholesale portals", text: <>Dealer logins, tiered pricing, bulk ordering, credit limits and quotation requests, built with our <Link href="/website-development/web-portal-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">web portal development</Link> team.</> },
   { title: "Multi-vendor marketplaces", text: "Vendor onboarding, commissions, payouts and separate dashboards." },
-  { title: "Store migration and redesign", text: "Move from an old platform or rebuild a slow store without losing products, customers or rankings." },
-  { title: "Integrations", text: <>ERP and accounting (Tally, Zoho, Odoo), CRM, inventory, shipping and marketing tools. Also run a physical store? See <Link href="/billing-software-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">billing software for your shop</Link>.</> },
+  { title: "Store migration and redesign", text: <>Move from an old platform or rebuild a slow store without losing products, customers or rankings. Then grow sales with <Link href="/digital-marketing" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">ecommerce marketing</Link>.</> },
+  { title: "Integrations", text: <>ERP and accounting (Tally, Zoho, Odoo), CRM, inventory, shipping and marketing tools. Also run a physical store? See <Link href="/software-development/billing-software-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">billing software for your shop</Link>.</> },
   { title: "AI features", text: <>Product recommendations, smart search and chat assistants, through our <Link href="/#our-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">AI integration</Link> services.</> },
 ];
 
@@ -96,7 +96,7 @@ const PROCESS = [
   { title: "UX and design", text: "Home, category, product, cart and checkout designs for approval." },
   { title: "Development and integrations", text: "Store build, payments, shipping, ERP and tracking." },
   { title: "Product upload and testing", text: "Catalogue import, test orders, speed and device checks." },
-  { title: "Launch and growth support", text: "Go live, team training, maintenance and SEO." },
+  { title: "Launch and growth support", text: <>Go live, team training, maintenance and <Link href="/digital-marketing/seo-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">ecommerce SEO</Link>.</> },
 ];
 
 const BUSINESSES = [
@@ -228,7 +228,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
             dark
             items={[
               { label: "Website Development", href: "/website-development" },
-              { label: "Ecommerce Website Development", href: "/ecommerce-website-development" },
+              { label: "Ecommerce Website Development", href: "/website-development/ecommerce-website-development" },
             ]}
           />
           <div className="mt-8"><Label>Ecommerce Website Development</Label></div>
@@ -335,13 +335,13 @@ export default function EcommerceWebsiteDevelopmentPage() {
           <p className="mt-7 text-[16px] text-black/60 leading-relaxed max-w-[760px]">
             We recommend the platform after understanding your catalogue, order volume and growth plans. Still deciding?
             Read{" "}
-            <Link href="/custom-website-vs-wordpress#ecommerce" className="text-black font-medium underline underline-offset-4 decoration-black/25 hover:decoration-black">
+            <Link href="/website-development/custom-website-vs-wordpress#ecommerce" className="text-black font-medium underline underline-offset-4 decoration-black/25 hover:decoration-black">
               custom website vs WordPress for ecommerce
             </Link>.
           </p>
           <p className="mt-3 text-[16px] text-black/60 leading-relaxed max-w-[760px]">
             Don&apos;t need online payments? See{" "}
-            <Link href="/catalogue-website-development" className="text-black font-medium underline underline-offset-4 decoration-black/25 hover:decoration-black">
+            <Link href="/website-development/catalogue-website-development" className="text-black font-medium underline underline-offset-4 decoration-black/25 hover:decoration-black">
               product catalogue website development
             </Link>{" "}
             for enquiry and WhatsApp ordering.

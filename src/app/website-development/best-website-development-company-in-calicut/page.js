@@ -13,14 +13,14 @@ export const metadata = {
   description:
     "Ivoniz LLP is the best website development company in Calicut — fast, mobile-first websites built to convert. Free consultation. Call or WhatsApp now.",
   alternates: {
-    canonical: "https://ivoniz.com/best-website-development-company-in-calicut",
+    canonical: "https://ivoniz.com/website-development/best-website-development-company-in-calicut",
   },
   openGraph: {
     siteName: "Ivoniz LLP",
     title: "Best Website Development Company in Calicut | Ivoniz LLP",
     description:
       "Ivoniz — the best website development company in Calicut and the best website company in Calicut. Custom websites, e-commerce, and web apps built to convert.",
-    url: "https://ivoniz.com/best-website-development-company-in-calicut",
+    url: "https://ivoniz.com/website-development/best-website-development-company-in-calicut",
     type: "website",
     images: [
       {
@@ -156,11 +156,12 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://ivoniz.com/" },
+    { "@type": "ListItem", position: 2, name: "Website Development", item: "https://ivoniz.com/website-development" },
     {
       "@type": "ListItem",
-      position: 2,
+      position: 3,
       name: "Best Website Development Company in Calicut",
-      item: "https://ivoniz.com/best-website-development-company-in-calicut",
+      item: "https://ivoniz.com/website-development/best-website-development-company-in-calicut",
     },
   ],
 };
@@ -170,7 +171,7 @@ const breadcrumbSchema = {
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  url: "https://ivoniz.com/best-website-development-company-in-calicut",
+  url: "https://ivoniz.com/website-development/best-website-development-company-in-calicut",
   name: "Best Website Development Company in Calicut",
   isPartOf: { "@id": WEBSITE_ID },
   about: { "@id": ORG_ID },
@@ -234,7 +235,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
       {/* ── HERO ── */}
       <section className="bg-black text-white pt-32 sm:pt-40 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-5xl">
-          <Breadcrumbs dark items={[{ label: "Best Website Development Company in Calicut", href: "/best-website-development-company-in-calicut" }]} />
+          <Breadcrumbs dark items={[{ label: "Website Development", href: "/website-development" }, { label: "Best Website Development Company in Calicut", href: "/website-development/best-website-development-company-in-calicut" }]} />
           <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
             Ivoniz LLP · Kozhikode, Kerala
           </p>
@@ -318,7 +319,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
         </p>
         <p className="text-black/65 leading-relaxed">
           Need a team closer to Kochi? We also run a dedicated{" "}
-          <Link href="/best-digital-marketing-company-in-kochi" className="underline font-medium">
+          <Link href="/digital-marketing/best-digital-marketing-company-in-kochi" className="underline font-medium">
             digital marketing team in Kochi
           </Link>
           , serving Ernakulam and the surrounding region.
@@ -590,7 +591,7 @@ export default function BestWebsiteDevelopmentCompanyInCalicut() {
         <p className="text-black/65 leading-relaxed mb-4">
           A great website performs even better with the right traffic behind it. If you&apos;re also looking for SEO,
           Google Ads, or social media marketing in Calicut, check out our dedicated page on{" "}
-          <Link href="/best-digital-marketing-company-in-calicut" className="underline font-medium">
+          <Link href="/digital-marketing/best-digital-marketing-company-in-calicut" className="underline font-medium">
             digital marketing services in Calicut
           </Link>{" "}
           to see how Ivoniz combines website development with full-funnel growth marketing.

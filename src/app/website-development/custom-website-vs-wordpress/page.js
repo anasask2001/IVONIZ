@@ -16,7 +16,7 @@ import { EstimateButton, WhatsAppButton, PlatformQuiz, StickyMobileCTA } from "@
    phrases belong to the service and location pages.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/custom-website-vs-wordpress";
+const PAGE_URL = "https://ivoniz.com/website-development/custom-website-vs-wordpress";
 const UPDATED_ISO = "2026-11-19";
 const UPDATED_LABEL = "19 November 2026";
 const TITLE = "Custom Website vs WordPress: Cost, Speed, SEO Compared | Ivoniz LLP";
@@ -271,7 +271,7 @@ export default function CustomWebsiteVsWordPressPage() {
         />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
           <div>
-            <Breadcrumbs dark items={[{ label: "Website Development", href: "/website-development" }, { label: "Custom Website vs WordPress", href: "/custom-website-vs-wordpress" }]} />
+            <Breadcrumbs dark items={[{ label: "Website Development", href: "/website-development" }, { label: "Custom Website vs WordPress", href: "/website-development/custom-website-vs-wordpress" }]} />
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-6 mb-5 text-[12px] text-white/55">
               <span className="font-semibold tracking-[0.2em] uppercase text-white/70">Platform guide</span>
               <span className="inline-flex items-center gap-1.5"><FaRegClock aria-hidden="true" /> 9 min read</span>
@@ -393,7 +393,7 @@ export default function CustomWebsiteVsWordPressPage() {
               WordPress is an open-source content management system that powers a large share of the world&apos;s
               websites. A WordPress developer sets up the platform, builds or customises a theme, adds plugins for
               features such as forms, SEO and ecommerce (WooCommerce), and hands over an admin panel your team can update
-              without code. Explore our <A href="/wordpress-website-development">WordPress development company</A> services.
+              without code. Explore our <A href="/website-development/wordpress-website-development">WordPress development company</A> services.
             </P>
             <P>
               It suits businesses that publish content often, need a professional site quickly, or want a store with a
@@ -411,7 +411,7 @@ export default function CustomWebsiteVsWordPressPage() {
               items={[
                 <><strong className="text-black">Architecture.</strong> WordPress is a PHP application with a MySQL database and a plugin system. A custom site is built on whatever architecture the project needs, including static generation, server-side rendering or a separate API.</>,
                 <><strong className="text-black">Features.</strong> On WordPress, features usually come from plugins. On a custom build, features are written for you, so there are no unused settings, scripts or plugin conflicts.</>,
-                <><strong className="text-black">Integrations.</strong> WordPress handles common integrations through plugins. Custom builds handle complex ones directly, such as two-way sync with an ERP, a hospital appointment system or a school&apos;s student records. That is the core of <A href="/web-portal-development">web application development</A>.</>,
+                <><strong className="text-black">Integrations.</strong> WordPress handles common integrations through plugins. Custom builds handle complex ones directly, such as two-way sync with an ERP, a hospital appointment system or a school&apos;s student records. That is the core of <A href="/website-development/web-portal-development">web application development</A>.</>,
                 <><strong className="text-black">Content management.</strong> WordPress gives you its admin. A custom site can use a headless CMS (such as Strapi or Sanity) or a purpose-built admin panel.</>,
                 <><strong className="text-black">Hosting.</strong> WordPress needs PHP hosting. Custom sites can run on modern cloud and edge platforms with a CDN.</>,
               ]}
@@ -443,7 +443,7 @@ export default function CustomWebsiteVsWordPressPage() {
             <H2 id="seo" eyebrow="Search">SEO and Google search visibility</H2>
             <P>
               Neither platform ranks a site by itself. Rankings come from content, technical quality, links and user
-              experience.
+              experience. Our <Link href="/digital-marketing/seo-services" className="text-black underline underline-offset-4 decoration-black/25 hover:decoration-black">SEO services</Link> work on both.
             </P>
             <div className="grid sm:grid-cols-2 gap-4 mb-6">
               <div className="rounded-2xl p-5 border" style={{ borderColor: `${WP}33`, background: `${WP}0d` }}>
@@ -543,7 +543,7 @@ export default function CustomWebsiteVsWordPressPage() {
             <P>
               For most small businesses, startups, clinics, schools and local retailers, WordPress is the better starting
               point. It launches fast, costs less and your team can update it without a developer. If the site is only a
-              few pages that rarely change, a <A href="/static-website-development">static website</A> costs even less.
+              few pages that rarely change, a <A href="/website-development/static-website-development">static website</A> costs even less.
             </P>
             <p className="font-semibold mb-4">Choose custom development as a small business when:</p>
             <Bullets
@@ -561,7 +561,7 @@ export default function CustomWebsiteVsWordPressPage() {
                 <p className="font-bold mb-2"><PlatformTag kind="wp" />WooCommerce (WordPress)</p>
                 <p className="text-[15px] leading-relaxed text-black/70">
                   Suits stores with up to a few thousand products, standard checkout, and common payment and shipping
-                  integrations. A good fit for Kerala retailers moving online and GCC boutiques starting with one market. See our <A href="/woocommerce-website-development">WooCommerce development</A>.
+                  integrations. A good fit for Kerala retailers moving online and GCC boutiques starting with one market. See our <A href="/website-development/ecommerce-website-development/woocommerce-website-development">WooCommerce development</A>.
                 </p>
               </div>
               <div className="rounded-2xl border border-black/8 p-5">
@@ -575,7 +575,7 @@ export default function CustomWebsiteVsWordPressPage() {
             <P>
               A middle path is headless commerce: WordPress or another CMS for content, with a custom fast storefront.
               We&apos;ll tell you honestly if that is overkill for your stage. Learn more about our{" "}
-              <A href="/ecommerce-website-development">ecommerce website development</A>.
+              <A href="/website-development/ecommerce-website-development">ecommerce website development</A>.
             </P>
             <InlineCTA
               location="ecommerce_section"

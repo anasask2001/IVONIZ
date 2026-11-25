@@ -13,7 +13,7 @@ import { ANDROID_PACKAGES } from "@/components/ecommerce/costs";
 import AppQuoteForm from "@/components/app/AppQuoteForm";
 
 /* ════════════════════════════════════════════════════════════════
-   /android-app-development — owns Android-specific terms (SEO brief, Ubersuggest
+   /mobile-app-development/android-app-development — owns Android-specific terms (SEO brief, Ubersuggest
    India db, 24 Nov 2026): "android app development company" 1,600/mo SD 42;
    "… india" 320 SD 12 (first realistic win: exact phrase in H1 + first sentence);
    "hire android developer" 590; cost 260; "native android app development
@@ -25,7 +25,7 @@ import AppQuoteForm from "@/components/app/AppQuoteForm";
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/android-app-development";
+const PAGE_URL = "https://ivoniz.com/mobile-app-development/android-app-development";
 const TITLE = "Android App Development Company in India & Dubai | Ivoniz LLP";
 const DESCRIPTION =
   "Android app development company building fast, secure Kotlin and Flutter apps for Indian and GCC businesses. Google Play launch and support. Get a quote.";
@@ -73,7 +73,7 @@ const NEEDS = [
 ];
 
 const SERVICES = [
-  { Icon: FaAndroid, title: "Custom native Android app development", text: <>Native apps built around your business, following Google&apos;s Material Design guidelines. Part of our <Link href="/native-app-development" className={LINK}>native app development services</Link>.</> },
+  { Icon: FaAndroid, title: "Custom native Android app development", text: <>Native apps built around your business, following Google&apos;s Material Design guidelines. Part of our <Link href="/mobile-app-development/native-app-development" className={LINK}>native app development services</Link>.</> },
   { Icon: FaCode, title: "Kotlin and Jetpack Compose development", text: "Modern, maintainable native Android code." },
   { Icon: FaPencilRuler, title: "Android UI/UX design", text: "App designs and prototypes tested before development." },
   { Icon: FaGooglePlay, title: "Google Play launch", text: "Developer account, store listing, screenshots, policy checks and release." },
@@ -105,7 +105,7 @@ const APPS = [
   "Education apps for schools, colleges and coaching centres",
   "Field-sales, dealer-ordering and inspection apps",
   "Hospital and patient apps",
-  <>Companion apps for <Link key="wp" href="/web-portal-development" className={LINK}>web portal development</Link> projects</>,
+  <>Companion apps for <Link key="wp" href="/website-development/web-portal-development" className={LINK}>web portal development</Link> projects</>,
 ];
 
 /* TODO before launch: confirm this matches Ivoniz's real Android setup. */
@@ -227,7 +227,7 @@ export default function AndroidAppDevelopmentPage() {
             dark
             items={[
               { label: "Mobile App Development", href: "/mobile-app-development" },
-              { label: "Android App Development", href: "/android-app-development" },
+              { label: "Android App Development", href: "/mobile-app-development/android-app-development" },
             ]}
           />
           <div className="mt-8"><Label>Android App Development Company</Label></div>
@@ -311,8 +311,8 @@ export default function AndroidAppDevelopmentPage() {
             <Heading dark={false}>Why build an Android app?</Heading>
             <div className="mt-8 rounded-2xl bg-black text-white p-6">
               <p className="text-[15px] leading-relaxed text-white/75">
-                Need iPhone too? See <Link href="/flutter-app-development" className={LINK}>Flutter app development</Link> (one
-                codebase) or <Link href="/ios-app-development" className={LINK}>iOS app development</Link>.
+                Need iPhone too? See <Link href="/mobile-app-development/flutter-app-development" className={LINK}>Flutter app development</Link> (one
+                codebase) or <Link href="/mobile-app-development/ios-app-development" className={LINK}>iOS app development</Link>.
               </p>
             </div>
           </div>
@@ -561,7 +561,7 @@ export default function AndroidAppDevelopmentPage() {
             <Heading>Android app development FAQs</Heading>
             <p className="mt-6 text-[15px] text-white/60 leading-relaxed">
               Want Android and iPhone from one codebase? See{" "}
-              <Link href="/flutter-app-development" className={LINK}>Flutter app development</Link>.
+              <Link href="/mobile-app-development/flutter-app-development" className={LINK}>Flutter app development</Link>.
             </p>
           </div>
           <FaqList items={FAQS} />

@@ -27,9 +27,9 @@ const BASE = "https://ivoniz.com";
 
 /* The Ivoniz service page closest to each project. */
 function relatedService(c) {
-  if (c.type === "static") return { href: "/static-website-development", label: "static website development" };
-  if (/Gaming|Fashion|Men's Fashion/.test(c.category)) return { href: "/ecommerce-website-development", label: "ecommerce website development" };
-  if (/Jewellery|Steel|Engineering|Export/.test(c.category)) return { href: "/catalogue-website-development", label: "product catalogue website development" };
+  if (c.type === "static") return { href: "/website-development/static-website-development", label: "static website development" };
+  if (/Gaming|Fashion|Men's Fashion/.test(c.category)) return { href: "/website-development/ecommerce-website-development", label: "ecommerce website development" };
+  if (/Jewellery|Steel|Engineering|Export/.test(c.category)) return { href: "/website-development/catalogue-website-development", label: "product catalogue website development" };
   return { href: "/website-development", label: "website development" };
 }
 

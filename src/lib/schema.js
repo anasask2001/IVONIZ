@@ -57,10 +57,10 @@ export const organizationSchema = {
   ],
   founder: {
     "@type": "Person",
-    "@id": "https://ivoniz.com/founder#person",
+    "@id": "https://ivoniz.com/about/founder#person",
     name: "Muhammed Anas",
     jobTitle: "Founder & Managing Director",
-    url: "https://ivoniz.com/founder",
+    url: "https://ivoniz.com/about/founder",
     image: {
       "@type": "ImageObject",
       url: "https://ivoniz.com/founder/founder-of-ivoniz.jpg",

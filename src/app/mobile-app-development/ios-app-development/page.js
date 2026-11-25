@@ -13,7 +13,7 @@ import { IOS_PACKAGES } from "@/components/ecommerce/costs";
 import AppQuoteForm from "@/components/app/AppQuoteForm";
 
 /* ════════════════════════════════════════════════════════════════
-   /ios-app-development — owns iPhone / iPad app terms (SEO brief updated with
+   /mobile-app-development/ios-app-development — owns iPhone / iPad app terms (SEO brief updated with
    Ubersuggest India db, 24 Nov 2026): "ios app development company" 1,000/mo
    SD 34 (primary), "iphone app development company" 390, "hire ios developer"
    320, "… company india" 260; easy wins "native ios app development company"
@@ -24,7 +24,7 @@ import AppQuoteForm from "@/components/app/AppQuoteForm";
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/ios-app-development";
+const PAGE_URL = "https://ivoniz.com/mobile-app-development/ios-app-development";
 const TITLE = "iOS App Development Company in India & Dubai | Ivoniz LLP";
 const DESCRIPTION =
   "iOS app development company building fast, secure iPhone and iPad apps in Swift. App Store launch, support and dedicated iOS developers. Get a quote.";
@@ -96,13 +96,13 @@ const ENGAGEMENTS = [
 ];
 
 const APPS = [
-  <>Ecommerce and shopping apps with Apple Pay, alongside your <Link key="ec" href="/ecommerce-website-development" className={LINK}>ecommerce website development</Link></>,
+  <>Ecommerce and shopping apps with Apple Pay, alongside your <Link key="ec" href="/website-development/ecommerce-website-development" className={LINK}>ecommerce website development</Link></>,
   "Booking and membership apps",
   "Healthcare and fitness apps (HealthKit)",
   "Real estate and property apps",
   "Finance and subscription apps",
   "Enterprise and field-team apps",
-  <>Companion apps for <Link key="wp" href="/web-portal-development" className={LINK}>web portal development</Link> projects</>,
+  <>Companion apps for <Link key="wp" href="/website-development/web-portal-development" className={LINK}>web portal development</Link> projects</>,
 ];
 
 const APP_STORE_STEPS = [
@@ -214,7 +214,7 @@ export default function IosAppDevelopmentPage() {
             dark
             items={[
               { label: "Mobile App Development", href: "/mobile-app-development" },
-              { label: "iOS App Development", href: "/ios-app-development" },
+              { label: "iOS App Development", href: "/mobile-app-development/ios-app-development" },
             ]}
           />
           <div className="mt-8"><Label>iOS App Development Company</Label></div>
@@ -298,10 +298,10 @@ export default function IosAppDevelopmentPage() {
             <Heading dark={false}>Why build a native iOS app?</Heading>
             <div className="mt-8 rounded-2xl bg-black text-white p-6">
               <p className="text-[15px] leading-relaxed text-white/75">
-                Need Android too? See <Link href="/android-app-development" className={LINK}>Android app development</Link>, or save cost with a cross-platform build: see{" "}
-                <Link href="/flutter-app-development" className={LINK}>Flutter app development</Link> or our{" "}
+                Need Android too? See <Link href="/mobile-app-development/android-app-development" className={LINK}>Android app development</Link>, or save cost with a cross-platform build: see{" "}
+                <Link href="/mobile-app-development/flutter-app-development" className={LINK}>Flutter app development</Link> or our{" "}
                 <Link href="/mobile-app-development" className={LINK}>mobile app development</Link> services. Comparing approaches? Read our{" "}
-                <Link href="/native-app-development" className={LINK}>native app development</Link> guide.
+                <Link href="/mobile-app-development/native-app-development" className={LINK}>native app development</Link> guide.
               </p>
             </div>
           </div>
@@ -568,7 +568,7 @@ export default function IosAppDevelopmentPage() {
             <Heading>iOS app development FAQs</Heading>
             <p className="mt-6 text-[15px] text-white/60 leading-relaxed">
               Prefer one app for iPhone and Android? See{" "}
-              <Link href="/flutter-app-development" className={LINK}>Flutter app development</Link>.
+              <Link href="/mobile-app-development/flutter-app-development" className={LINK}>Flutter app development</Link>.
             </p>
           </div>
           <FaqList items={FAQS} />

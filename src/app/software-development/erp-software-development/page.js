@@ -13,7 +13,7 @@ import { ERP_PACKAGES, ERP_FROM } from "@/components/ecommerce/costs";
 import ErpQuoteForm from "@/components/software/ErpQuoteForm";
 
 /* ════════════════════════════════════════════════════════════════
-   /erp-software-development — owns custom ERP terms for Kerala and India
+   /software-development/erp-software-development — owns custom ERP terms for Kerala and India
    (SEO brief, 24 Nov 2026; Google autocomplete, volumes still to verify):
    "erp software development company in india", "custom erp software
    development services", "erp software development cost", "… in kochi",
@@ -24,13 +24,13 @@ import ErpQuoteForm from "@/components/software/ErpQuoteForm";
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/erp-software-development";
+const PAGE_URL = "https://ivoniz.com/software-development/erp-software-development";
 const TITLE = "Custom ERP Software Development Company in Kerala | Ivoniz LLP";
 const DESCRIPTION =
   "Custom ERP software development for manufacturers, distributors, schools and hospitals in Kerala and India. No per-user licence fees. Get an ERP estimate.";
 
-const CRM_HREF = "/crm-software-development";
-const BILLING_HREF = "/billing-software-development";
+const CRM_HREF = "/software-development/crm-software-development";
+const BILLING_HREF = "/software-development/billing-software-development";
 
 export const metadata = {
   title: { absolute: TITLE },
@@ -191,7 +191,7 @@ export default function ErpSoftwareDevelopmentPage() {
             dark
             items={[
               { label: "Software Development", href: "/software-development" },
-              { label: "ERP Software Development", href: "/erp-software-development" },
+              { label: "ERP Software Development", href: "/software-development/erp-software-development" },
             ]}
           />
           <div className="mt-8"><Label>ERP Software Development</Label></div>
@@ -444,7 +444,7 @@ export default function ErpSoftwareDevelopmentPage() {
               ))}
             </ul>
             <p className="mt-6 text-[15px] leading-relaxed text-white/60">
-              Dealer and vendor logins can be added through our <Link href="/web-portal-development" className={LINK}>web portal development</Link> team.
+              Dealer and vendor logins can be added through our <Link href="/website-development/web-portal-development" className={LINK}>web portal development</Link> team.
             </p>
           </article>
         </div>

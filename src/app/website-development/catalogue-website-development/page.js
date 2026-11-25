@@ -15,16 +15,16 @@ import DemoCatalogue from "@/components/catalogue/DemoCatalogue";
 import { CATALOGUE_PACKAGES } from "@/components/ecommerce/costs";
 
 /* ════════════════════════════════════════════════════════════════
-   /catalogue-website-development — owns "product catalogue website
+   /website-development/catalogue-website-development — owns "product catalogue website
    development": catalogue + enquiry / quote / WhatsApp ordering, no checkout.
-   URL kept flat to match the other service pages (/ecommerce-website-development,
-   /woocommerce-website-development); the breadcrumb carries the hierarchy.
+   URL kept flat to match the other service pages (/website-development/ecommerce-website-development,
+   /website-development/ecommerce-website-development/woocommerce-website-development); the breadcrumb carries the hierarchy.
    Does NOT target: "ecommerce website development", "WooCommerce development
    services", "website development company".
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/catalogue-website-development";
+const PAGE_URL = "https://ivoniz.com/website-development/catalogue-website-development";
 const TITLE = "Product Catalogue Website Development in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "Product catalogue websites for manufacturers, wholesalers and showrooms in Kerala and the UAE. Show every product and get enquiries on WhatsApp. Get a quote.";
@@ -228,7 +228,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
             dark
             items={[
               { label: "Website Development", href: "/website-development" },
-              { label: "Product Catalogue Website Development", href: "/catalogue-website-development" },
+              { label: "Product Catalogue Website Development", href: "/website-development/catalogue-website-development" },
             ]}
           />
           <div className="mt-8"><Label>Product Catalogue Websites</Label></div>
@@ -352,7 +352,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
           </div>
           <p className="mt-6 text-[15px] text-black/60">
             Need dealer logins and order history? See{" "}
-            <Link href="/web-portal-development" className={LINK_LIGHT}>B2B portal development</Link>.
+            <Link href="/website-development/web-portal-development" className={LINK_LIGHT}>B2B portal development</Link>.
           </p>
         </div>
       </section>
@@ -388,8 +388,8 @@ export default function CatalogueWebsiteDevelopmentPage() {
           </div>
           <p className="mt-7 text-[16px] text-black/60 leading-relaxed">
             If you want customers to pay online, see our{" "}
-            <Link href="/ecommerce-website-development" className={LINK_LIGHT}>ecommerce website development</Link> services,
-            or <Link href="/woocommerce-website-development" className={LINK_LIGHT}>WooCommerce development</Link> to
+            <Link href="/website-development/ecommerce-website-development" className={LINK_LIGHT}>ecommerce website development</Link> services,
+            or <Link href="/website-development/ecommerce-website-development/woocommerce-website-development" className={LINK_LIGHT}>WooCommerce development</Link> to
             add a cart to a WordPress catalogue later.
           </p>
         </div>
@@ -413,7 +413,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
           </div>
           <p className="mt-4 text-[13px] text-white/55">
             Indicative market ranges. Cost depends on number of products, who uploads them, filters, languages and integrations.
-            Selling from a showroom too? Our <Link href="/billing-software-development" className={LINK_DARK}>GST billing software</Link> can share the same product list.
+            Selling from a showroom too? Our <Link href="/software-development/billing-software-development" className={LINK_DARK}>GST billing software</Link> can share the same product list.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <PillLink href="/contact" solid label="Get a Catalogue Website Estimate" location="pricing" />
@@ -432,7 +432,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
             </div>
             <p className="text-white/55 text-[15px] max-w-[420px] leading-relaxed">
               Typical timeline: 2–5 weeks, depending on the number of products and how ready the product data is.
-              Built on <Link href="/wordpress-website-development" className={LINK_DARK}>WordPress</Link> or a custom stack.
+              Built on <Link href="/website-development/wordpress-website-development" className={LINK_DARK}>WordPress</Link> or a custom stack.
             </p>
           </div>
           <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
@@ -488,10 +488,11 @@ export default function CatalogueWebsiteDevelopmentPage() {
               "Built for enquiries: every product page has a clear next step",
               "Easy product management, including bulk upload from Excel",
               "Fast, mobile-first pages with SEO-friendly product URLs",
+              <>Showroom traffic too: <Link key="lseo" href="/digital-marketing/seo-services/local-seo-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">get found on Google Maps</Link> with local SEO</>,
               "A clear upgrade path to full ecommerce when you're ready",
               "Clear fixed quotes and a single point of contact",
-            ].map((t) => (
-              <li key={t} className="flex items-center gap-5 border-b border-white/10 py-6">
+            ].map((t, i) => (
+              <li key={i} className="flex items-center gap-5 border-b border-white/10 py-6">
                 <FaCheck aria-hidden="true" className="shrink-0 text-[13px] text-white/50" />
                 <span className="text-[17px] sm:text-[19px] text-white/85 leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 300 }}>{t}</span>
               </li>

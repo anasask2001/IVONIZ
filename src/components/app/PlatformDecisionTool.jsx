@@ -34,17 +34,17 @@ const RESULTS = {
   native: {
     title: "Native is the right fit",
     text: "Your app depends on device features and the best possible performance, and your budget and timeline allow separate Swift and Kotlin apps built properly.",
-    links: [{ href: "/ios-app-development", label: "Native iOS (Swift)" }, { href: "/android-app-development", label: "Native Android (Kotlin)" }],
+    links: [{ href: "/mobile-app-development/ios-app-development", label: "Native iOS (Swift)" }, { href: "/mobile-app-development/android-app-development", label: "Native Android (Kotlin)" }],
   },
   flutter: {
     title: "Cross-platform (Flutter) is the better fit",
     text: "You need iPhone and Android on a sensible budget and timeline, and your features don't need deep hardware access. One Flutter codebase gets you to both stores faster.",
-    links: [{ href: "/flutter-app-development", label: "Flutter app development" }],
+    links: [{ href: "/mobile-app-development/flutter-app-development", label: "Flutter app development" }],
   },
   mix: {
     title: "A mix: Flutter with native modules",
     text: "Build the app once in Flutter for both platforms, and write the hardware-heavy parts as small native Swift and Kotlin modules. You get most of native's power at closer to cross-platform cost.",
-    links: [{ href: "/flutter-app-development", label: "Flutter app development" }, { href: "/native-app-development#services", label: "Native modules" }],
+    links: [{ href: "/mobile-app-development/flutter-app-development", label: "Flutter app development" }, { href: "/mobile-app-development/native-app-development#services", label: "Native modules" }],
   },
 };
 

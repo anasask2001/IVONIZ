@@ -13,19 +13,19 @@ import { WP_PACKAGES, WP_DUBAI_RANGE } from "@/components/ecommerce/costs";
 import WordPressQuoteForm from "@/components/wordpress/WordPressQuoteForm";
 
 /* ════════════════════════════════════════════════════════════════
-   /wordpress-website-development — owns WordPress business-website and
+   /website-development/wordpress-website-development — owns WordPress business-website and
    WordPress-company terms (SEO brief, 23 Nov 2026, Ubersuggest data):
    "wordpress development company" (880/mo IN), "wordpress website development"
    (720), the hire cluster (~2,440), cost-in-India (~310), and
    "wordpress development company dubai" (140, high CPC).
-   Does NOT target: WooCommerce (/woocommerce-website-development), platform
-   comparison (/custom-website-vs-wordpress), generic "website development
+   Does NOT target: WooCommerce (/website-development/ecommerce-website-development/woocommerce-website-development), platform
+   comparison (/website-development/custom-website-vs-wordpress), generic "website development
    company" (/website-development), or the job-seeker term "wordpress developer".
    Two lead paths: website quote vs hire a developer (form pre-selects via hash).
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/wordpress-website-development";
+const PAGE_URL = "https://ivoniz.com/website-development/wordpress-website-development";
 const TITLE = "WordPress Development Company in India & Dubai | Ivoniz LLP";
 const DESCRIPTION =
   "WordPress website development company for business websites in India and Dubai. Fast, SEO-ready sites, fixed quotes, or hire a WordPress developer. Get a quote.";
@@ -73,7 +73,7 @@ const SERVICES = [
   { title: "Multilingual WordPress sites", text: "English, Malayalam, Arabic (RTL) and other languages with correct hreflang tags." },
   {
     title: "Online stores",
-    text: <>Selling online? See our <Link href="/woocommerce-website-development" className={LINK}>WooCommerce development services</Link>.</>,
+    text: <>Selling online? See our <Link href="/website-development/ecommerce-website-development/woocommerce-website-development" className={LINK}>WooCommerce development services</Link>.</>,
   },
 ];
 
@@ -94,8 +94,8 @@ const ENGAGEMENTS = [
 
 const INCLUDES = [
   { Icon: FaMobileAlt, t: "Mobile-first, responsive design" },
-  { Icon: FaTachometerAlt, t: "Lightweight theme and minimal plugins, Core Web Vitals checked" },
-  { Icon: FaSearch, t: "On-page SEO setup: titles, meta, schema, sitemap, clean URLs" },
+  { Icon: FaTachometerAlt, t: <>Lightweight theme and minimal plugins, Core Web Vitals checked. Slow existing site? See <Link href="/digital-marketing/seo-services/technical-seo-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">website speed optimisation</Link></> },
+  { Icon: FaSearch, t: <>On-page SEO setup: titles, meta, schema, sitemap, clean URLs. Existing site? See <Link href="/digital-marketing/seo-services/on-page-seo-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">on-page SEO for WordPress</Link></> },
   { Icon: FaEnvelopeOpenText, t: "Contact forms, WhatsApp and call buttons linked to email or CRM" },
   { Icon: FaLock, t: "SSL, security hardening, spam protection and backups" },
   { Icon: FaChartLine, t: "Google Analytics 4 and Search Console setup" },
@@ -206,7 +206,7 @@ export default function WordPressWebsiteDevelopmentPage() {
             dark
             items={[
               { label: "Website Development", href: "/website-development" },
-              { label: "WordPress Website Development", href: "/wordpress-website-development" },
+              { label: "WordPress Website Development", href: "/website-development/wordpress-website-development" },
             ]}
           />
           <div className="mt-8"><Label>WordPress Development Company</Label></div>
@@ -284,8 +284,8 @@ export default function WordPressWebsiteDevelopmentPage() {
             <div className="mt-8 rounded-2xl bg-black text-white p-6">
               <p className="text-[15px] leading-relaxed text-white/75">
                 Need something WordPress can&apos;t do well, like a customer portal or a complex web app? Read our{" "}
-                <Link href="/custom-website-vs-wordpress" className={LINK}>custom website vs WordPress</Link> comparison, or
-                see <Link href="/web-portal-development" className={LINK}>web portal development</Link>.
+                <Link href="/website-development/custom-website-vs-wordpress" className={LINK}>custom website vs WordPress</Link> comparison, or
+                see <Link href="/website-development/web-portal-development" className={LINK}>web portal development</Link>.
               </p>
             </div>
           </div>
@@ -348,8 +348,8 @@ export default function WordPressWebsiteDevelopmentPage() {
             <PetalSketch className="hidden lg:block w-[200px] mt-12" />
           </div>
           <ul className="grid sm:grid-cols-2 gap-3">
-            {INCLUDES.map(({ Icon, t }) => (
-              <li key={t} className="flex items-center gap-4 px-5 py-5" style={GLASS}>
+            {INCLUDES.map(({ Icon, t }, i) => (
+              <li key={i} className="flex items-center gap-4 px-5 py-5" style={GLASS}>
                 <span className="shrink-0 w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/75">
                   <Icon aria-hidden="true" className="text-[15px]" />
                 </span>
@@ -393,7 +393,7 @@ export default function WordPressWebsiteDevelopmentPage() {
             Indicative ranges. Cost depends on number of pages, custom design, content writing, integrations and
             languages. Hosting, domain and premium plugin licences are separate. For UAE and GCC projects, we quote in AED.
             Need just a few pages on a tight budget? A{" "}
-            <Link href="/static-website-development" className={LINK}>static website</Link> is the lower-budget option.
+            <Link href="/website-development/static-website-development" className={LINK}>static website</Link> is the lower-budget option.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <PillLink href="#quote-website" solid label="Get a WordPress Website Quote" location="pricing" />
@@ -497,11 +497,11 @@ export default function WordPressWebsiteDevelopmentPage() {
             {[
               "WordPress, WooCommerce and custom development under one team, so you get honest platform advice",
               "Lightweight builds with fewer plugins and faster pages",
-              "SEO built in at launch, not added later",
+              <>SEO built in at launch, plus <Link key="lseo" href="/digital-marketing/seo-services/local-seo-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">local SEO</Link> to get found on Google Maps</>,
               "Fixed quotes and a single point of contact",
               "You own the domain, content and code",
             ].map((t, i) => (
-              <li key={t} className="flex items-baseline gap-6 border-b border-white/10 py-6">
+              <li key={i} className="flex items-baseline gap-6 border-b border-white/10 py-6">
                 <span className="text-[13px] text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                 <span className="text-[17px] sm:text-[19px] text-white/85 leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 300 }}>{t}</span>
               </li>
@@ -518,7 +518,7 @@ export default function WordPressWebsiteDevelopmentPage() {
             <Heading>WordPress website development FAQs</Heading>
             <p className="mt-6 text-[15px] text-white/55 leading-relaxed">
               Choosing between platforms? See{" "}
-              <Link href="/custom-website-vs-wordpress" className={LINK}>custom website vs WordPress</Link>.
+              <Link href="/website-development/custom-website-vs-wordpress" className={LINK}>custom website vs WordPress</Link>.
             </p>
           </div>
           <FaqList items={FAQS} />

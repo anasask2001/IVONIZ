@@ -13,14 +13,14 @@ export const metadata = {
   description:
     "Looking for the best digital marketing agency in Kochi? Ivoniz LLP offers SEO, ads, social media, and web development across Kerala. Free audit available.",
   alternates: {
-    canonical: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
+    canonical: "https://ivoniz.com/digital-marketing/best-digital-marketing-company-in-kochi",
   },
   openGraph: {
     siteName: "Ivoniz LLP",
     title: "Best Digital Marketing Company in Kochi | Ivoniz LLP",
     description:
       "Ivoniz — a results-driven digital marketing agency in Kochi serving Ernakulam and all of Kerala.",
-    url: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
+    url: "https://ivoniz.com/digital-marketing/best-digital-marketing-company-in-kochi",
     type: "website",
     images: [
       {
@@ -162,11 +162,12 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://ivoniz.com/" },
+    { "@type": "ListItem", position: 2, name: "Digital Marketing", item: "https://ivoniz.com/digital-marketing" },
     {
       "@type": "ListItem",
-      position: 2,
+      position: 3,
       name: "Best Digital Marketing Company in Kochi",
-      item: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
+      item: "https://ivoniz.com/digital-marketing/best-digital-marketing-company-in-kochi",
     },
   ],
 };
@@ -176,7 +177,7 @@ const breadcrumbSchema = {
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  url: "https://ivoniz.com/best-digital-marketing-company-in-kochi",
+  url: "https://ivoniz.com/digital-marketing/best-digital-marketing-company-in-kochi",
   name: "Best Digital Marketing Company in Kochi",
   isPartOf: { "@id": WEBSITE_ID },
   about: { "@id": ORG_ID },
@@ -239,7 +240,7 @@ export default function BestDigitalMarketingCompanyInKochi() {
       {/* ── HERO ── */}
       <section className="bg-black text-white pt-32 sm:pt-40 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-5xl">
-          <Breadcrumbs dark items={[{ label: "Best Digital Marketing Company in Kochi", href: "/best-digital-marketing-company-in-kochi" }]} />
+          <Breadcrumbs dark items={[{ label: "Digital Marketing", href: "/digital-marketing" }, { label: "Best Digital Marketing Company in Kochi", href: "/digital-marketing/best-digital-marketing-company-in-kochi" }]} />
           <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
             Ivoniz LLP · Serving Kochi &amp; Ernakulam
           </p>

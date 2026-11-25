@@ -82,7 +82,7 @@ const SERVICES = [
       "Responsive Web Design",
       "Landing Page & Portfolio Design",
     ],
-    href: "/best-website-development-company-in-calicut",
+    href: "/website-development/best-website-development-company-in-calicut",
   },
   {
     number: "03",
@@ -93,7 +93,7 @@ const SERVICES = [
       "Web Application & Portal Development",
       "API & Backend Development",
     ],
-    href: "/best-website-development-company-in-calicut",
+    href: "/website-development/best-website-development-company-in-calicut",
   },
   {
     number: "04",
@@ -105,6 +105,17 @@ const SERVICES = [
       "Billing & Custom Business Software",
     ],
     href: "/software-development",
+  },
+  {
+    number: "05",
+    title: "Digital Marketing",
+    description: "As a digital marketing agency in Calicut, we run SEO, Google Ads, Meta ads and social media that bring real enquiries, and report leads and cost per lead every month.",
+    items: [
+      "SEO & Google Business Profile",
+      "Google Ads & Meta Ads",
+      "Social Media Marketing & Content",
+    ],
+    href: "/digital-marketing",
   },
 ];
 

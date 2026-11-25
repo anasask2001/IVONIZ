@@ -13,7 +13,7 @@ import { FLUTTER_PACKAGES } from "@/components/ecommerce/costs";
 import AppQuoteForm from "@/components/app/AppQuoteForm";
 
 /* ════════════════════════════════════════════════════════════════
-   /flutter-app-development — owns every Flutter-specific term (SEO brief,
+   /mobile-app-development/flutter-app-development — owns every Flutter-specific term (SEO brief,
    23 Nov 2026): Flutter app development company / services, hire Flutter
    developers, Flutter cost, Flutter vs React Native. Volumes still to be
    verified (Ubersuggest run planned); title keeps "India & UAE" pending the
@@ -24,7 +24,7 @@ import AppQuoteForm from "@/components/app/AppQuoteForm";
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/flutter-app-development";
+const PAGE_URL = "https://ivoniz.com/mobile-app-development/flutter-app-development";
 const TITLE = "Flutter App Development Company in India & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "Flutter app development company building fast Android and iOS apps from one codebase. Hire Flutter developers in India for UAE and GCC projects. Get a quote.";
@@ -106,17 +106,17 @@ const COMPARE = [
   ["Performance", "Very high", "High", "Highest"],
   ["UI consistency", "Same on every device", "Uses native components", "Platform-specific"],
   ["Development cost", "Lower", "Lower", "Highest"],
-  ["Best for", "Most business apps, design-heavy apps, MVPs", "Teams already using React", <>Apps needing deep device or OS features; see <Link key="ios" href="/ios-app-development" className={LINK_DARK}>native iOS app development</Link> and <Link key="android" href="/android-app-development" className={LINK_DARK}>native Android app development</Link></>],
+  ["Best for", "Most business apps, design-heavy apps, MVPs", "Teams already using React", <>Apps needing deep device or OS features; see <Link key="ios" href="/mobile-app-development/ios-app-development" className={LINK_DARK}>native iOS app development</Link> and <Link key="android" href="/mobile-app-development/android-app-development" className={LINK_DARK}>native Android app development</Link></>],
 ];
 
 const APPS = [
-  <>Ecommerce and shopping apps, alongside your <Link key="ec" href="/ecommerce-website-development" className={LINK}>ecommerce website development</Link></>,
+  <>Ecommerce and shopping apps, alongside your <Link key="ec" href="/website-development/ecommerce-website-development" className={LINK}>ecommerce website development</Link></>,
   "Booking and appointment apps for clinics, salons and services",
   "Healthcare and fitness apps",
   "Education and e-learning apps",
   "Delivery and on-demand apps",
   "Business, field-sales and dealer apps",
-  <>Companion apps for <Link key="wp" href="/web-portal-development" className={LINK}>web portal development</Link> projects</>,
+  <>Companion apps for <Link key="wp" href="/website-development/web-portal-development" className={LINK}>web portal development</Link> projects</>,
 ];
 
 const PROCESS = [
@@ -223,7 +223,7 @@ export default function FlutterAppDevelopmentPage() {
             dark
             items={[
               { label: "Mobile App Development", href: "/mobile-app-development" },
-              { label: "Flutter App Development", href: "/flutter-app-development" },
+              { label: "Flutter App Development", href: "/mobile-app-development/flutter-app-development" },
             ]}
           />
           <div className="mt-8"><Label>Flutter App Development Company</Label></div>
@@ -410,7 +410,7 @@ export default function FlutterAppDevelopmentPage() {
           <div className="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-5">
             <p className="text-[16px] text-black/65 leading-relaxed max-w-[640px]">
               Not sure which suits you? We&apos;ll recommend honestly after a short call, whether that&apos;s Flutter,
-              React Native or <Link href="/native-app-development" className={LINK_DARK}>native app development</Link>. See our{" "}
+              React Native or <Link href="/mobile-app-development/native-app-development" className={LINK_DARK}>native app development</Link>. See our{" "}
               <Link href="/mobile-app-development" className={LINK_DARK}>mobile app development</Link> services for every option.
             </p>
             <PillLink href={waLink(WA.consult)} external solid dark={false} event="consult_click" label="Free 20-minute platform consultation" location="compare" icon={<FaWhatsapp aria-hidden="true" />} />

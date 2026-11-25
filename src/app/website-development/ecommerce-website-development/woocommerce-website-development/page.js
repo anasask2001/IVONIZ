@@ -13,16 +13,16 @@ import SpeedCheck from "@/components/ecommerce/SpeedCheck";
 import { WOO_PACKAGES } from "@/components/ecommerce/costs";
 
 /* ════════════════════════════════════════════════════════════════
-   /woocommerce-website-development — owns "WooCommerce development services"
+   /website-development/ecommerce-website-development/woocommerce-website-development — owns "WooCommerce development services"
    and every WooCommerce-specific term (developer, customization, plugins,
    migration, speed, maintenance). Intent: transactional.
-   Does NOT target: "ecommerce website development" (/ecommerce-website-development),
+   Does NOT target: "ecommerce website development" (/website-development/ecommerce-website-development),
    "WordPress website development" (WordPress page), custom vs WordPress (comparison).
    Two buyers: new-store builders and owners of an existing store that needs fixing.
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/woocommerce-website-development";
+const PAGE_URL = "https://ivoniz.com/website-development/ecommerce-website-development/woocommerce-website-development";
 const TITLE = "WooCommerce Development Services in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "WooCommerce development services for new stores, customization, plugins, migration and speed fixes. Serving Kerala, UAE and GCC businesses. Get a free quote.";
@@ -106,7 +106,7 @@ const PROCESS = [
   { title: "Design", text: "Home, category, product, cart and checkout designs." },
   { title: "Build and configure", text: "WooCommerce setup, theme, extensions and custom code on a staging site." },
   { title: "Products and testing", text: "Catalogue import, test orders, payment and shipping checks, speed tests." },
-  { title: "Launch and support", text: "Go live, admin training, maintenance plan." },
+  { title: "Launch and support", text: <>Go live, admin training, maintenance plan and <Link href="/digital-marketing/seo-services" className={LINK}>ecommerce SEO</Link>.</> },
 ];
 
 const MARKETS = [
@@ -196,7 +196,7 @@ const schema = {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://ivoniz.com/" },
         { "@type": "ListItem", position: 2, name: "Website Development", item: "https://ivoniz.com/website-development" },
-        { "@type": "ListItem", position: 3, name: "Ecommerce Website Development", item: "https://ivoniz.com/ecommerce-website-development" },
+        { "@type": "ListItem", position: 3, name: "Ecommerce Website Development", item: "https://ivoniz.com/website-development/ecommerce-website-development" },
         { "@type": "ListItem", position: 4, name: "WooCommerce Development", item: PAGE_URL },
       ],
     },
@@ -225,8 +225,8 @@ export default function WooCommerceDevelopmentPage() {
             dark
             items={[
               { label: "Website Development", href: "/website-development" },
-              { label: "Ecommerce Website Development", href: "/ecommerce-website-development" },
-              { label: "WooCommerce Development", href: "/woocommerce-website-development" },
+              { label: "Ecommerce Website Development", href: "/website-development/ecommerce-website-development" },
+              { label: "WooCommerce Development", href: "/website-development/ecommerce-website-development/woocommerce-website-development" },
             ]}
           />
           <div className="mt-8"><Label>WooCommerce Development Services</Label></div>
@@ -285,7 +285,7 @@ export default function WooCommerceDevelopmentPage() {
             <Heading>Our WooCommerce development services</Heading>
             <p className="mt-5 text-white/55 text-[16px] leading-relaxed">
               WooCommerce website development, customization and support from a team that also builds{" "}
-              <Link href="/wordpress-website-development" className={LINK}>WordPress website development</Link>, so your store and
+              <Link href="/website-development/wordpress-website-development" className={LINK}>WordPress website development</Link>, so your store and
               content work as one.
             </p>
           </div>
@@ -313,8 +313,8 @@ export default function WooCommerceDevelopmentPage() {
               <p className="text-[15px] leading-relaxed text-white/75">
                 WooCommerce isn&apos;t the right fit for every store. Very large catalogues, multi-vendor marketplaces or
                 complex B2B workflows may be better on a custom platform. See{" "}
-                <Link href="/ecommerce-website-development" className={LINK}>ecommerce website development</Link> or read{" "}
-                <Link href="/custom-website-vs-wordpress#ecommerce" className={LINK}>custom website vs WordPress</Link>.
+                <Link href="/website-development/ecommerce-website-development" className={LINK}>ecommerce website development</Link> or read{" "}
+                <Link href="/website-development/custom-website-vs-wordpress#ecommerce" className={LINK}>custom website vs WordPress</Link>.
               </p>
             </div>
           </div>
@@ -385,7 +385,7 @@ export default function WooCommerceDevelopmentPage() {
             <p className="mt-6 text-white/60 text-[16px] leading-relaxed">
               Slow WooCommerce stores lose sales, especially on mobile. Most speed problems come from heavy themes, page
               builders, too many plugins, unoptimised images and shared hosting. We measure before and after with
-              PageSpeed Insights and Core Web Vitals.
+              PageSpeed Insights and Core Web Vitals. For a full <Link href="/digital-marketing/seo-services/technical-seo-services" className={LINK}>technical SEO audit</Link> with fixes, see our technical SEO page.
             </p>
             <ul className="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3">
               {SPEED_FIXES.map((f) => (

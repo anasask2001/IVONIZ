@@ -13,7 +13,7 @@ import { BILLING_OPTIONS, BILLING_FROM } from "@/components/ecommerce/costs";
 import BillingQuoteForm from "@/components/software/BillingQuoteForm";
 
 /* ════════════════════════════════════════════════════════════════
-   /billing-software-development — owns "billing software Kerala / Kozhikode /
+   /software-development/billing-software-development — owns "billing software Kerala / Kozhikode /
    Kochi", GST billing and billing software by shop type (SEO brief, 24 Nov 2026;
    Google autocomplete, volumes still to verify). Searchers mostly want a ready
    product, so the title/H1 lead with "Billing Software", not "development";
@@ -25,7 +25,7 @@ import BillingQuoteForm from "@/components/software/BillingQuoteForm";
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/billing-software-development";
+const PAGE_URL = "https://ivoniz.com/software-development/billing-software-development";
 const TITLE = "GST Billing Software in Kerala & Kozhikode | Ivoniz LLP";
 const DESCRIPTION =
   "GST billing software for shops, restaurants, jewellers and medical stores in Kerala. Customised to your business, with local setup and support. Free demo.";
@@ -67,7 +67,7 @@ const SHOP_TYPES = [
   { Icon: FaPrescriptionBottleAlt, title: "Medical stores and pharmacies", text: "Batch and expiry tracking, drug schedules, doctor-wise reports." },
   { Icon: FaTools, title: "Hardware, electrical and paint shops", text: "Unit conversions, credit customers and contractor accounts." },
   { Icon: FaTshirt, title: "Textile and footwear shops", text: "Size and colour variants, barcode labels, season-wise stock." },
-  { Icon: FaTruck, title: "Wholesale and distribution", text: <>Credit limits, route-wise billing, dealer pricing. Growing beyond billing? See <Link href="/erp-software-development" className={LINK}>ERP software development</Link>.</> },
+  { Icon: FaTruck, title: "Wholesale and distribution", text: <>Credit limits, route-wise billing, dealer pricing. Growing beyond billing? See <Link href="/software-development/erp-software-development" className={LINK}>ERP software development</Link>.</> },
 ];
 
 /* TODO before launch: confirm offline billing and every feature below for the ready product. */
@@ -186,7 +186,7 @@ export default function BillingSoftwarePage() {
             dark
             items={[
               { label: "Software Development", href: "/software-development" },
-              { label: "Billing Software", href: "/billing-software-development" },
+              { label: "Billing Software", href: "/software-development/billing-software-development" },
             ]}
           />
           <div className="mt-8"><Label>GST Billing Software</Label></div>
@@ -435,7 +435,7 @@ export default function BillingSoftwarePage() {
               Our team works from HiLITE Business Park, Kozhikode (Calicut), and supports shops and businesses across
               Kerala, including Kochi, Malappuram, Thrissur, Kannur and Wayanad, with on-site installation where possible
               and remote support everywhere. Looking for billing software in Kozhikode or billing software in Kochi?
-              Visit us, or we&apos;ll come to your shop.
+              Visit us, or we&apos;ll come to your shop. Want more walk-ins too? Our <Link href="/digital-marketing/seo-services/local-seo-services" className={LINK}>local SEO services</Link> help shops get found on Google Maps.
             </p>
             {/* NAP: keep identical to the Google Business Profile (source: src/lib/schema.js) */}
             <address className="not-italic mt-6 grid gap-3 text-[14.5px] text-white/75 flex-1">
@@ -457,7 +457,7 @@ export default function BillingSoftwarePage() {
             <h2 className="text-white" style={h2Style}>Selling online too?</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
               Connect your billing to an online store so stock and prices stay in sync between the shop and the website.
-              See <Link href="/ecommerce-website-development" className={LINK}>ecommerce website development</Link>, or add a
+              See <Link href="/website-development/ecommerce-website-development" className={LINK}>ecommerce website development</Link>, or add a
               customer app through our <Link href="/mobile-app-development" className={LINK}>mobile app development</Link> team.
             </p>
             <ul className="mt-6 grid gap-3 text-[15px] text-white/80">

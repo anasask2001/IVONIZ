@@ -7,7 +7,7 @@ import { track } from "@/components/comparison/Interactive";
 import { waLink, GLASS, OPEN_SANS } from "@/components/site/SiteUI";
 
 /*
- * Portal planner for /web-portal-development — stands in for the brief's
+ * Portal planner for /website-development/web-portal-development — stands in for the brief's
  * "planning checklist" + long qualifying form. Visitors pick portal type,
  * users, systems, market and launch date; the result is a short requirements
  * brief sent on WhatsApp, so sales can prioritise and reply specifically.

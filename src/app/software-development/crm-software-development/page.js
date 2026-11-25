@@ -13,7 +13,7 @@ import { CRM_PACKAGES, CRM_FROM } from "@/components/ecommerce/costs";
 import CrmQuoteForm from "@/components/software/CrmQuoteForm";
 
 /* ════════════════════════════════════════════════════════════════
-   /crm-software-development — owns custom CRM terms (SEO brief, 24 Nov 2026;
+   /software-development/crm-software-development — owns custom CRM terms (SEO brief, 24 Nov 2026;
    Google autocomplete, volumes still to verify): "crm software development
    company (in india / in kochi)", "custom crm software development",
    "crm software development cost in india", real estate and healthcare CRM.
@@ -24,7 +24,7 @@ import CrmQuoteForm from "@/components/software/CrmQuoteForm";
    Design: homepage language via SiteUI.
    ════════════════════════════════════════════════════════════════ */
 
-const PAGE_URL = "https://ivoniz.com/crm-software-development";
+const PAGE_URL = "https://ivoniz.com/software-development/crm-software-development";
 const TITLE = "Custom CRM Software Development Company in Kerala | Ivoniz LLP";
 const DESCRIPTION =
   "Custom CRM software development for Kerala and Indian businesses. Leads, follow-ups, WhatsApp and call tracking in one CRM you own. Get a free CRM estimate.";
@@ -180,7 +180,7 @@ export default function CrmSoftwareDevelopmentPage() {
             dark
             items={[
               { label: "Software Development", href: "/software-development" },
-              { label: "CRM Software Development", href: "/crm-software-development" },
+              { label: "CRM Software Development", href: "/software-development/crm-software-development" },
             ]}
           />
           <div className="mt-8"><Label>CRM Software Development</Label></div>
@@ -383,7 +383,7 @@ export default function CrmSoftwareDevelopmentPage() {
           </div>
           <p className="mt-4 text-[13px] text-white/55 leading-relaxed">
             Indicative ranges. WhatsApp Business API messaging charges are paid separately to Meta or your provider.
-            Need stock, purchase and accounts too? See <Link href="/erp-software-development" className={LINK}>ERP software development</Link>.
+            Need stock, purchase and accounts too? See <Link href="/software-development/erp-software-development" className={LINK}>ERP software development</Link>.
           </p>
           <div className="mt-8">
             <PillLink href="#quote" solid label="Get Your CRM Estimate" location="pricing" event="estimate_click" />
@@ -448,7 +448,7 @@ export default function CrmSoftwareDevelopmentPage() {
             </ul>
             <p className="mt-6 text-[15px] leading-relaxed text-white/60">
               Want customers to log in, see quotes or raise requests? Add a customer portal through our{" "}
-              <Link href="/web-portal-development" className={LINK}>web portal development</Link> team, on the same data.
+              <Link href="/website-development/web-portal-development" className={LINK}>web portal development</Link> team, on the same data.
             </p>
           </article>
         </div>
