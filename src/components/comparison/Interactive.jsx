@@ -17,6 +17,9 @@ export function waLink(message) {
 /* GA4 event — no-ops safely if gtag is not loaded (e.g. ad blockers).
    The page path is attached so reports can split leads by page. */
 export function track(event, params = {}) {
+  /* Lets the site-wide WhatsApp listener (AnalyticsRouteTracker) skip clicks a
+     button already tracked itself, so nothing is counted twice. */
+  if (event === "whatsapp_click" && typeof window !== "undefined") window.__waTrackedAt = Date.now();
   if (typeof window !== "undefined" && typeof window.gtag === "function") {
     window.gtag("event", event, { page: window.location.pathname, ...params });
   }

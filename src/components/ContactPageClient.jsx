@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { track } from "@/components/comparison/Interactive";
 
 // Brochure is being revised — the button stays, but the download is off until the new PDF is in place.
 const BROCHURE_AVAILABLE = false;
@@ -37,6 +38,7 @@ export default function ContactPageClient() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.name || !form.phone || !form.email) return;
+    track("generate_lead", { lead_type: "contact_form", channel: "email", service: form.service || "not_specified", location: "contact_page_form" });
 
     const subject = encodeURIComponent(`New Enquiry from ${form.name}`);
     const body = encodeURIComponent(
