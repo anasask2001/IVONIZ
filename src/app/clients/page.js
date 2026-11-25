@@ -17,7 +17,7 @@ import { WEBSITE_ID, ORG_ID, organizationSchema } from "@/lib/schema";
 
 const PAGE_URL = "https://ivoniz.com/clients";
 const DESCRIPTION =
-  "Meet the businesses Ivoniz LLP builds for: retailers, hospitals, exporters and consultants in Kerala, the UAE, Saudi Arabia and Qatar. Visit their live websites.";
+  "Meet the businesses Ivoniz LLP builds for: retailers, hospitals, exporters and consultants in Kerala, the UAE, Saudi Arabia and Qatar. Visit their live sites.";
 
 const INDUSTRIES = INDUSTRY_GROUPS.filter((g) => g.clients.length);
 

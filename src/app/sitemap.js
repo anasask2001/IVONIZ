@@ -44,6 +44,7 @@ const routes = [
   { path: "/digital-marketing/social-media-marketing/instagram-marketing-services", priority: 0.9, changeFrequency: "weekly" },
   { path: "/digital-marketing/social-media-marketing/social-media-management", priority: 0.9, changeFrequency: "weekly" },
   { path: "/digital-marketing/social-media-marketing/social-media-advertising", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/digital-marketing/social-media-marketing/social-media-content-creation", priority: 0.9, changeFrequency: "weekly" },
   { path: "/digital-marketing/best-digital-marketing-company-in-calicut", priority: 0.95, changeFrequency: "weekly" },
   { path: "/website-development/best-website-development-company-in-calicut", priority: 0.95, changeFrequency: "weekly" },
   { path: "/digital-marketing/best-digital-marketing-company-in-kochi", priority: 0.9, changeFrequency: "weekly" },

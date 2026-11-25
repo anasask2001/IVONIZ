@@ -27,7 +27,7 @@ import BacklinkGapForm from "@/components/marketing/BacklinkGapForm";
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/digital-marketing/seo-services/off-page-seo-services";
-const TITLE = "Off-Page SEO & Link Building Services in Kerala & UAE | Ivoniz LLP";
+const TITLE = "Off-Page SEO & Link Building in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "Off-page SEO and link building services in Kerala and the UAE: white-hat backlinks, digital PR and citations, with a monthly link report. Get a quote.";
 

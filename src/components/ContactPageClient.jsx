@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
@@ -25,11 +24,9 @@ const SERVICES = [
   "Other / Not Sure Yet",
 ];
 
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 18 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
-});
+/* CSS-only entrance (.hero-rise in globals.css): content is never hidden, it only
+   slides up slightly, so the LCP text paints without waiting for JavaScript. */
+const rise = (delay = 0) => ({ animationDelay: `${0.1 + delay}s` });
 
 export default function ContactPageClient() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", service: "", message: "" });
@@ -75,24 +72,23 @@ export default function ContactPageClient() {
           {/* ── LEFT: heading + description + quick actions ── */}
           <div>
             <Breadcrumbs dark items={[{ label: "Contact", href: "/contact" }]} />
-            <motion.h1
-              {...fadeUp(0)}
-              className="font-bold leading-[1.08] mb-5 sm:mb-6 mt-4"
-              style={{ fontSize: "clamp(34px, 6vw, 64px)" }}
+            <h1
+              className="hero-rise font-bold leading-[1.08] mb-5 sm:mb-6 mt-4"
+              style={{ ...rise(0), fontSize: "clamp(34px, 6vw, 64px)" }}
             >
               Have a Project<br />in Mind?
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              {...fadeUp(0.08)}
-              className="text-white/60 text-[15px] sm:text-[16px] leading-relaxed max-w-md mb-7 sm:mb-9"
+            <p
+              style={rise(0.08)}
+              className="hero-rise text-white/60 text-[15px] sm:text-[16px] leading-relaxed max-w-md mb-7 sm:mb-9"
             >
               Tell us about your requirements. We&apos;ll review your needs and provide the right
               solution, timeline, and pricing for your business.
-            </motion.p>
+            </p>
 
             {/* Quick contact — high-value for mobile users */}
-            <motion.div {...fadeUp(0.16)} className="flex flex-wrap gap-3">
+            <div className="hero-rise flex flex-wrap gap-3" style={rise(0.16)}>
               <a
                 href="tel:+919645760023"
                 className="group inline-flex items-center gap-2 h-11 px-5 border border-white/15 rounded-full text-[13px] font-medium hover:bg-white hover:text-black hover:border-white transition-colors"
@@ -122,26 +118,26 @@ export default function ContactPageClient() {
                 </svg>
                 Easy to Connect
               </a>
-            </motion.div>
+            </div>
 
             {/* Office address — local SEO signal + visible NAP on the page */}
-            <motion.address
-              {...fadeUp(0.2)}
-              className="not-italic text-white/55 text-[13px] leading-relaxed mt-6"
+            <address
+              style={rise(0.2)}
+              className="hero-rise not-italic text-white/55 text-[13px] leading-relaxed mt-6"
             >
               7th Floor, Phase 1, HiLITE Business Park,<br />
               Ivoniz LLP,<br />
               Kozhikode (Calicut), Kerala 673014
-            </motion.address>
+            </address>
 
             {/* Brochure download — button stays visible; the download is disabled until the updated brochure is ready.
                 Set BROCHURE_AVAILABLE to true to re-enable it. */}
-            <motion.a
-              {...fadeUp(0.22)}
+            <a
+              style={rise(0.22)}
               {...(BROCHURE_AVAILABLE
                 ? { href: "/pdf/Ivoniz%20Brochure%202026.pdf", download: "Ivoniz Brochure 2026.pdf" }
                 : { "aria-disabled": true, role: "link", title: "Updated brochure coming soon" })}
-              className={`group mt-6 flex items-center gap-4 bg-white/3 border border-white/10 rounded-xl p-3 max-w-sm transition-colors ${
+              className={`hero-rise group mt-6 flex items-center gap-4 bg-white/3 border border-white/10 rounded-xl p-3 max-w-sm transition-colors ${
                 BROCHURE_AVAILABLE ? "hover:border-white/25 hover:bg-white/5" : "cursor-default"
               }`}
             >
@@ -164,14 +160,14 @@ export default function ContactPageClient() {
                   <p className="text-white/60 text-[12px] mt-1">Updated version coming soon</p>
                 )}
               </div>
-            </motion.a>
+            </a>
           </div>
 
           {/* ── RIGHT: form ── */}
-          <motion.form
-            {...fadeUp(0.1)}
+          <form
+            style={rise(0.1)}
             onSubmit={handleSubmit}
-            className="w-full bg-white/2 border border-white/8 rounded-2xl p-5 sm:p-7 lg:p-0 lg:bg-transparent lg:border-0"
+            className="hero-rise w-full bg-white/2 border border-white/8 rounded-2xl p-5 sm:p-7 lg:p-0 lg:bg-transparent lg:border-0"
           >
             <div className="mb-5">
               <label htmlFor="contact-name" className="block text-[13px] font-semibold mb-2">
@@ -276,7 +272,7 @@ export default function ContactPageClient() {
                 Opening your email client to send this enquiry to info@ivoniz.com…
               </p>
             )}
-          </motion.form>
+          </form>
 
         </div>
       </section>

@@ -6,6 +6,13 @@ import { CLIENTS as WORKS } from "@/lib/clients";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { webPageSchema, breadcrumbSchema } from "@/lib/schema";
 
+/* Facts for the intro below, computed from the real project list so they never go stale. */
+const COUNT = WORKS.length;
+const KERALA = WORKS.filter((w) => w.region === "kerala").length;
+const GCC = WORKS.filter((w) => w.region === "gcc").length;
+const NEXT = WORKS.filter((w) => (w.tech || []).includes("Next.js")).length;
+const LINK = "text-black underline underline-offset-4 decoration-black/25 hover:decoration-black";
+
 const pageSchema = webPageSchema({
   url: "https://ivoniz.com/works",
   name: "Our Works | Ivoniz LLP",
@@ -72,6 +79,28 @@ export default function WorksPage() {
         <div className="mx-auto max-w-350">
           <h2 className="sr-only">Client websites</h2>
           <WorksGrid works={WORKS} />
+        </div>
+      </section>
+
+      {/* About these projects — real, computed facts + links to the matching services */}
+      <section className="pb-20 sm:pb-28 px-4 sm:px-6 lg:px-10 xl:px-16">
+        <div className="mx-auto max-w-350 grid lg:grid-cols-[340px_1fr] gap-6 lg:gap-16 border-t border-black/10 pt-12 sm:pt-16">
+          <h2 className="text-[24px] sm:text-[28px] font-semibold text-black leading-tight">About these projects</h2>
+          <div className="grid gap-4 text-[16px] text-black/65 leading-relaxed max-w-3xl">
+            <p>
+              These are {COUNT} live websites our team designed and built: {KERALA} for businesses in Kerala and {GCC} for
+              companies in the UAE, Qatar and Saudi Arabia. They range from fast static sites and product catalogues to an
+              online store with checkout. {NEXT} of them are built with Next.js and React for speed, and every one is built
+              mobile-first.
+            </p>
+            <p>
+              Open any project to see the client&apos;s business, what we built and the technology behind it. If you need
+              something similar, see our <Link href="/website-development" className={LINK}>website development</Link>,{" "}
+              <Link href="/website-development/ecommerce-website-development" className={LINK}>ecommerce website development</Link>,{" "}
+              <Link href="/mobile-app-development" className={LINK}>mobile app development</Link> and{" "}
+              <Link href="/digital-marketing/seo-services" className={LINK}>SEO services</Link>.
+            </p>
+          </div>
         </div>
       </section>
 

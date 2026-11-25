@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { preload } from "react-dom";
 import gsap from "gsap";
 
 /*
@@ -12,7 +13,14 @@ import gsap from "gsap";
  */
 
 const TITLE_WORDS = ["Design.", "Build.", "Market."];
+
+/* Speed: the hero background was an 841 KB animated WebP and the page's LCP.
+   First paint uses an 11 KB still (its first frame, preloaded at high priority);
+   the animated version swaps in once the page has loaded and the browser is idle. */
+const HERO_STILL = "/about-assets/about-hero-still.webp";
+const HERO_ANIMATED = "/about-assets/about-hero.webp";
 export default function AboutHero() {
+  preload(HERO_STILL, { as: "image", fetchPriority: "high" });
   const sectionRef = useRef(null);
   const videoRef    = useRef(null);
   const topBarRef   = useRef(null);
@@ -20,6 +28,21 @@ export default function AboutHero() {
   const wordRefs    = useRef([]);
   const labelRef    = useRef(null);
   const subRef      = useRef(null);
+
+  /* swap in the animated background after load, when idle */
+  useEffect(() => {
+    let cancelled = false;
+    const swap = () => {
+      const img = new Image();
+      img.onload = () => { if (!cancelled && videoRef.current) videoRef.current.style.backgroundImage = `url('${HERO_ANIMATED}')`; };
+      img.src = HERO_ANIMATED;
+    };
+    const idle = (cb) => ("requestIdleCallback" in window ? window.requestIdleCallback(cb, { timeout: 3000 }) : setTimeout(cb, 1200));
+    const start = () => idle(swap);
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
+    return () => { cancelled = true; window.removeEventListener("load", start); };
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -69,7 +92,7 @@ export default function AboutHero() {
           ref={videoRef}
           className="w-full h-full"
           style={{
-            backgroundImage: "url('/about-assets/about-hero.webp')",
+            backgroundImage: `url('${HERO_STILL}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

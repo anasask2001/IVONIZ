@@ -79,7 +79,7 @@ const INCLUDED = [
 const PROCESS = [
   { title: "Audit", text: "We review your profile, content and 2 competitors." },
   { title: "Plan", text: "We agree goals, content pillars and a monthly calendar." },
-  { title: "Create", text: <>Our team designs posts and produces reels (see <Link href={`${HUB}#content-creation`} className={LINK}>reels and content creation</Link>).</> },
+  { title: "Create", text: <>Our team designs posts and produces reels (see <Link href={`${HUB}/social-media-content-creation`} className={LINK}>reels and content creation</Link>).</> },
   { title: "Publish and engage", text: "We post at the best times and manage comments and DMs." },
   { title: "Promote", text: "We boost the best content with targeted ads." },
   { title: "Report and improve", text: "Monthly results and a better plan for next month." },

@@ -19,7 +19,7 @@ import { EstimateButton, WhatsAppButton, PlatformQuiz, StickyMobileCTA } from "@
 const PAGE_URL = "https://ivoniz.com/website-development/custom-website-vs-wordpress";
 const UPDATED_ISO = "2026-11-19";
 const UPDATED_LABEL = "19 November 2026";
-const TITLE = "Custom Website vs WordPress: Cost, Speed, SEO Compared | Ivoniz LLP";
+const TITLE = "Custom Website vs WordPress: Cost, Speed & SEO | Ivoniz LLP";
 const DESCRIPTION =
   "Custom website or WordPress? Compare cost, speed, SEO, security and ecommerce, with price ranges for India and the UAE. Get a free project estimate from Ivoniz.";
 

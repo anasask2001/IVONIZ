@@ -57,6 +57,7 @@ const SERVICES_COLS = [
       { label: "Instagram Marketing", href: "/digital-marketing/social-media-marketing/instagram-marketing-services" },
       { label: "Social Media Management", href: "/digital-marketing/social-media-marketing/social-media-management" },
       { label: "Social Media Advertising", href: "/digital-marketing/social-media-marketing/social-media-advertising" },
+      { label: "Content Creation", href: "/digital-marketing/social-media-marketing/social-media-content-creation" },
       { label: "SEM", href: "/digital-marketing#google-ads" },
     ],
   },

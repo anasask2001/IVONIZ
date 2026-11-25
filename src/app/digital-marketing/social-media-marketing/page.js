@@ -70,7 +70,7 @@ const SERVICES = [
   { id: "instagram-marketing", Icon: FaInstagram, title: "Instagram marketing", text: <>Reels, posts, stories and profile growth for Instagram. See our <Link href="/digital-marketing/social-media-marketing/instagram-marketing-services" className={LINK}>Instagram marketing services</Link>.</> },
   { id: "social-media-management", Icon: FaCalendarAlt, title: "Social media management", text: <>Monthly planning, posting, replies and reporting across your platforms. See <Link href="/digital-marketing/social-media-marketing/social-media-management" className={LINK}>social media management</Link> packages.</> },
   { id: "social-media-advertising", Icon: FaBullhorn, title: "Social media advertising", text: <>Meta (Facebook and Instagram) and LinkedIn ads that bring leads and sales. See <Link href="/digital-marketing/social-media-marketing/social-media-advertising" className={LINK}>social media advertising</Link>.</> },
-  { id: "content-creation", Icon: FaPenNib, title: "Content creation", text: "Designs, reels, short videos and captions that match your brand." },
+  { id: "content-creation", Icon: FaPenNib, title: "Content creation", text: <>Designs, reels, short videos and captions that match your brand. See <Link href="/digital-marketing/social-media-marketing/social-media-content-creation" className={LINK}>content creation</Link>.</> },
   { id: "strategy", Icon: FaChessKnight, title: "Strategy and audits", text: "A clear plan based on your goals, audience and competitors." },
   { id: "reporting", Icon: FaChartLine, title: "Reporting", text: "A monthly report on reach, engagement, followers, leads and ad results." },
 ];

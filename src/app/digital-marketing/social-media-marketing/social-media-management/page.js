@@ -76,7 +76,7 @@ const PLATFORMS = [
 const INCLUDED = [
   { Icon: FaCalendarAlt, title: "Content calendar", text: "A monthly plan of posts, reels and stories, shared for your approval." },
   { Icon: FaPenNib, title: "Design and captions", text: "Branded posts, carousels and captions in English and Malayalam." },
-  { Icon: FaFilm, title: "Reels and short videos", text: <>Edited from your footage or created by our team (see <Link href={`${HUB}#content-creation`} className={LINK}>content creation</Link>).</> },
+  { Icon: FaFilm, title: "Reels and short videos", text: <>Edited from your footage or created by our team (see <Link href={`${HUB}/social-media-content-creation`} className={LINK}>content creation</Link>).</> },
   { Icon: FaClock, title: "Scheduling and posting", text: "At the times your audience is most active." },
   { Icon: FaComments, title: "Community management", text: "Replies to comments and messages during business hours." },
   { Icon: FaUserCircle, title: "Profile upkeep", text: "Bio, highlights, cover images and contact buttons kept up to date." },

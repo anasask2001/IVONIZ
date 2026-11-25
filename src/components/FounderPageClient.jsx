@@ -6,6 +6,9 @@ import { FaArrowRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
+/* Above the fold: no hidden start state (LCP must not wait for JS). */
+const heroIn = () => ({ initial: false });
+
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
@@ -58,11 +61,14 @@ export default function FounderPageClient({ faqs = [] }) {
       <section className="bg-black text-white pt-32 sm:pt-40 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-350 grid lg:grid-cols-[340px_1fr] gap-12 lg:gap-20 items-center">
 
-          <motion.div {...fadeUp(0)}>
+          <motion.div {...heroIn()}>
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-white/5 border border-white/10">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/founder/founder-of-ivoniz.jpg"
+                width={720}
+                height={1010}
+                fetchPriority="high"
                 alt="Muhammed Anas — Founder & Managing Director, Ivoniz LLP"
                 className="w-full h-full object-cover"
               />
@@ -71,18 +77,18 @@ export default function FounderPageClient({ faqs = [] }) {
 
           <div>
             <Breadcrumbs dark items={[{ label: "About", href: "/about" }, { label: "Founder", href: "/about/founder" }]} />
-            <motion.p {...fadeUp(0.05)} className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
+            <motion.p {...heroIn()} className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/60 mt-4 mb-5">
               About the Founder
             </motion.p>
             <motion.h1
-              {...fadeUp(0.1)}
+              {...heroIn()}
               className="font-bold leading-[1.08] mb-6"
               style={{ fontSize: "clamp(32px, 5vw, 56px)" }}
             >
               Building a Vision<br />Beyond Boundaries
             </motion.h1>
-            <motion.p {...fadeUp(0.15)} className="font-bold text-2xl mb-1">Muhammed Anas</motion.p>
-            <motion.p {...fadeUp(0.18)} className="text-white/60 text-[15px]">
+            <motion.p {...heroIn()} className="font-bold text-2xl mb-1">Muhammed Anas</motion.p>
+            <motion.p {...heroIn()} className="text-white/60 text-[15px]">
               Founder &amp; Managing Director, Ivoniz LLP
             </motion.p>
           </div>

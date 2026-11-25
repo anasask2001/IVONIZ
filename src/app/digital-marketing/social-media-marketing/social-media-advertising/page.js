@@ -66,7 +66,7 @@ const SERVICES = [
   { Icon: FaFacebookF, title: "Facebook and Instagram ads (Meta)", text: "Lead forms, WhatsApp and message ads, website traffic and sales campaigns." },
   { Icon: FaLinkedinIn, title: "LinkedIn ads", text: "For B2B, recruitment, education and professional services." },
   { Icon: FaYoutube, title: "YouTube ads", text: "Short video campaigns when video suits your goal." },
-  { Icon: FaImages, title: "Ad creatives", text: <>Images, carousels and short videos made by our <Link href={`${HUB}#content-creation`} className={LINK}>content team</Link>.</> },
+  { Icon: FaImages, title: "Ad creatives", text: <>Images, carousels and short videos: <Link href={`${HUB}/social-media-content-creation`} className={LINK}>ad creatives</Link> made by our content team.</> },
   { Icon: FaCrosshairs, title: "Audience targeting", text: "Location, interests, lookalike audiences and remarketing." },
   { Icon: FaLaptopCode, title: "Landing pages", text: <>Fast pages built by our <Link href="/website-development" className={LINK}>website development</Link> team to turn clicks into leads.</> },
   { Icon: FaCode, title: "Tracking", text: "Meta pixel, conversion events and lead tracking set up properly." },

@@ -25,7 +25,7 @@ import { CATALOGUE_PACKAGES } from "@/components/ecommerce/costs";
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/website-development/catalogue-website-development";
-const TITLE = "Product Catalogue Website Development in Kerala & UAE | Ivoniz LLP";
+const TITLE = "Catalogue Website Development in Kerala & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "Product catalogue websites for manufacturers, wholesalers and showrooms in Kerala and the UAE. Show every product and get enquiries on WhatsApp. Get a quote.";
 
