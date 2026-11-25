@@ -1,12 +1,11 @@
 "use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 /*
  * CINEMATIC HERO
  * ─────────────────────────────────────────────────────────
- * • Letterbox bars close in on load, widen again on scroll-out
+ * • Letterbox bars close in on load (no scroll-out widening: it left a blank band)
  * • Video: slow continuous Ken Burns zoom (breathing, 18s yoyo)
  * • Teal/orange color-grade vignette (classic film grading)
  * • Title: word-by-word clip-path reveal, like title cards
@@ -23,8 +22,6 @@ export default function AboutHero() {
   const subRef      = useRef(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       /* ── opening sequence ── */
       const tl = gsap.timeline({ delay: 0.15 });
@@ -54,20 +51,8 @@ export default function AboutHero() {
         yoyo: true,
       });
 
-      /* ── scroll-tied: letterbox bars widen as the scene exits ── */
-      gsap.fromTo([topBarRef.current, bottomBarRef.current],
-        { height: "6vh" },
-        {
-          height: "16vh",
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        }
-      );
+      /* (No scroll-tied letterbox widening: it grew a solid black band at the
+         bottom while the hero scrolled out, which read as an empty screen.) */
     }, sectionRef);
 
     return () => ctx.revert();
@@ -76,8 +61,7 @@ export default function AboutHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-black text-white overflow-hidden"
-      style={{ minHeight: "100vh" }}
+      className="relative bg-black text-white overflow-hidden min-h-[86svh] sm:min-h-[90svh] lg:min-h-screen"
     >
       {/* Background GIF — Ken Burns zoom */}
       <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 0 }}>
@@ -113,7 +97,7 @@ export default function AboutHero() {
         style={{
           zIndex: 1,
           background:
-            "radial-gradient(ellipse 75% 65% at 50% 45%, transparent 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.93) 100%)",
+            "radial-gradient(ellipse 80% 75% at 50% 45%, transparent 0%, rgba(0,0,0,0.45) 72%, rgba(0,0,0,0.8) 100%)",
         }}
       />
 
@@ -123,8 +107,8 @@ export default function AboutHero() {
 
       {/* Content */}
       <div
-        className="relative flex flex-col items-center justify-center text-center px-6"
-        style={{ zIndex: 2, minHeight: "100vh" }}
+        className="relative flex flex-col items-center justify-center text-center px-6 pt-16 min-h-[86svh] sm:min-h-[90svh] lg:min-h-screen"
+        style={{ zIndex: 2 }}
       >
         <p
           ref={labelRef}

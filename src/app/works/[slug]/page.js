@@ -181,7 +181,7 @@ export default async function ProjectPage({ params }) {
       </section>
 
       {/* ── DETAILS ── */}
-      <section className={`relative py-16 sm:py-24 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-12 sm:py-24 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-start">
           <div>
             <Label>The Project</Label>
@@ -224,11 +224,11 @@ export default async function ProjectPage({ params }) {
 
       {/* ── CLIENT REVIEW + SHOWCASE (where available) ── */}
       {(c.review || c.showcase) && (
-        <section className={`relative py-16 sm:py-24 ${PAD} bg-black`} aria-labelledby="review-heading">
+        <section className={`relative py-12 sm:py-24 ${PAD} bg-black`} aria-labelledby="review-heading">
           <Grid />
           <div className="relative mx-auto max-w-[1400px]">
             <Label>Client Review</Label>
-            <Heading className="mb-10 sm:mb-14"><span id="review-heading">What {c.title} says</span></Heading>
+            <Heading className="mb-8 sm:mb-14"><span id="review-heading">What {c.title} says</span></Heading>
             <div className="grid md:grid-cols-[minmax(0,320px)_1fr] gap-6 lg:gap-10 items-start">
               {c.review && (
                 <figure className="m-0">
@@ -265,9 +265,9 @@ export default async function ProjectPage({ params }) {
       )}
 
       {/* ── CTA ── */}
-      <section className={`relative py-16 sm:py-24 ${PAD}`} style={{ background: "#060606" }}>
+      <section className={`relative py-12 sm:py-24 ${PAD}`} style={{ background: "#060606" }}>
         <Grid />
-        <div className="relative mx-auto max-w-[1400px] p-7 sm:p-10 grid lg:grid-cols-[1fr_auto] gap-6 lg:gap-12 items-center" style={GLASS}>
+        <div className="relative mx-auto max-w-[1400px] p-6 sm:p-10 grid lg:grid-cols-[1fr_auto] gap-6 lg:gap-12 items-center" style={GLASS}>
           <div>
             <h2 className="text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(26px,2.8vw,38px)", letterSpacing: "-0.03em", lineHeight: 1.12 }}>
               Want a website like this for your business?
@@ -285,7 +285,7 @@ export default async function ProjectPage({ params }) {
       </section>
 
       {/* ── MORE PROJECTS ── */}
-      <section className={`relative py-16 sm:py-24 ${PAD} bg-black`} aria-labelledby="more-heading">
+      <section className={`relative py-12 sm:py-24 ${PAD} bg-black`} aria-labelledby="more-heading">
         <div className="mx-auto max-w-[1400px]">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
             <div>

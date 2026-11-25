@@ -172,7 +172,7 @@ export default function CrmSoftwareDevelopmentPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
@@ -201,7 +201,7 @@ export default function CrmSoftwareDevelopmentPage() {
                 <span className="text-[13px] text-white/60">· live in {CRM_FROM.golive}</span>
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+            <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href="#quote" solid label="Get a CRM Estimate" location="hero" event="estimate_click" />
               <PillLink href={waLink(WA.demo)} external event="demo_click" label="See a CRM Demo" location="hero" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
@@ -210,9 +210,9 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section id="features" className={`relative py-20 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
+      <section id="features" className={`relative py-14 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>Custom CRM Software Development</Label>
             <Heading>CRM features we build</Heading>
             <p className="mt-5 text-white/60 text-[16px] leading-relaxed">
@@ -222,11 +222,11 @@ export default function CrmSoftwareDevelopmentPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-white/10">
             {FEATURES.map(({ Icon, title, text }) => (
-              <div key={title} className="border-r border-b border-white/10 p-6 flex flex-col min-h-[220px]">
+              <div key={title} className="border-r border-b border-white/10 p-5 sm:p-6 flex flex-col sm:min-h-[220px]">
                 <span className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/75">
                   <Icon aria-hidden="true" className="text-[15px]" />
                 </span>
-                <h3 className="mt-auto pt-6 text-[18px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-6 text-[18px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
                 <p className="mt-2 text-[13.5px] text-white/60 leading-relaxed">{text}</p>
               </div>
             ))}
@@ -235,7 +235,7 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── WHATSAPP CRM SPOTLIGHT ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1300px] grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
           <div>
@@ -267,7 +267,7 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── SIGNS YOU NEED A CRM ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>Is It Time?</Label>
@@ -296,7 +296,7 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── INDUSTRIES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -left-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1300px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-16">
@@ -320,7 +320,7 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── CUSTOM VS READY-MADE ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black`}>
         <Grid />
         <div className="relative mx-auto max-w-[1100px]">
           <Label>Compare</Label>
@@ -353,7 +353,7 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── COST ── */}
-      <section id="cost" className={`relative py-20 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
+      <section id="cost" className={`relative py-14 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1100px]">
           <Label>Pricing</Label>
           <Heading className="max-w-[760px]">CRM software development cost in India</Heading>
@@ -392,14 +392,14 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black`}>
         <div className="mx-auto max-w-[1400px]">
           <Label>How We Work</Label>
           <Heading className="mb-12 sm:mb-16">How we build your CRM</Heading>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -411,10 +411,10 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── KERALA + INTEGRATIONS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} overflow-hidden`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD} overflow-hidden`} style={{ background: "#0a0a0a" }}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-2 gap-3">
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Kerala</Label>
             <h2 className="text-white" style={h2Style}>CRM software development in Calicut, Kochi and across Kerala</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -438,7 +438,7 @@ export default function CrmSoftwareDevelopmentPage() {
             </div>
           </article>
 
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Integrations</Label>
             <h2 className="text-white" style={h2Style}>Connected to your lead sources and accounts</h2>
             <ul className="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-3 text-[15px] text-white/80">
@@ -455,7 +455,7 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black`}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -485,7 +485,7 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -496,7 +496,7 @@ export default function CrmSoftwareDevelopmentPage() {
       </section>
 
       {/* ── CLOSING CTA + FORM ── */}
-      <section id="quote" className={`relative py-24 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
+      <section id="quote" className={`relative py-16 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">

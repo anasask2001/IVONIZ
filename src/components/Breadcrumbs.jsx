@@ -11,10 +11,10 @@ export default function Breadcrumbs({ items, dark = false }) {
   const currentColor = dark ? "text-white/80" : "text-black/70";
 
   return (
-    <nav aria-label="Breadcrumb" className={`text-[12px] ${textColor}`}>
-      <ol className="flex items-center gap-2 flex-wrap">
+    <nav aria-label="Breadcrumb" className={`text-[13px] sm:text-[12px] ${textColor}`}>
+      <ol className="flex items-center gap-x-2 gap-y-1 flex-wrap">
         <li>
-          <Link href="/" className={`${hoverColor} transition-colors`}>
+          <Link href="/" className={`${hoverColor} transition-colors inline-block py-3 -my-3`}>
             Home
           </Link>
         </li>
@@ -28,7 +28,7 @@ export default function Breadcrumbs({ items, dark = false }) {
                   {item.label}
                 </span>
               ) : (
-                <Link href={item.href} className={`${hoverColor} transition-colors`}>
+                <Link href={item.href} className={`${hoverColor} transition-colors inline-block py-3 -my-3`}>
                   {item.label}
                 </Link>
               )}

@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 /* Words brighten as they scroll into view (and dim again on the way back).
    One IntersectionObserver + CSS colour transitions (.text-reveal in
    globals.css) instead of a framer-motion component per word. */
-export default function TextReveal({ primary, secondary, dark = false }) {
+export default function TextReveal({ primary, secondary, dark = false, center = false, large = false }) {
   const ref = useRef(null);
   const allWords = `${primary}${secondary}`.split(" ");
   const primCount = primary.trim().split(" ").length;
@@ -29,7 +29,11 @@ export default function TextReveal({ primary, secondary, dark = false }) {
   }, []);
 
   return (
-    <p ref={ref} className="text-reveal font-medium leading-[1.6] tracking-[-0.01em]" style={{ fontSize: "clamp(18px, 2.2vw, 28px)" }}>
+    <p
+      ref={ref}
+      className={`text-reveal font-medium tracking-[-0.015em] ${large ? "leading-[1.4]" : "leading-[1.6]"} ${center ? "text-center text-balance" : ""}`}
+      style={{ fontSize: large ? "clamp(22px, calc(1.6vw + 14px), 40px)" : "clamp(18px, 2.2vw, 28px)" }}
+    >
       {allWords.map((word, i) => {
         const isPrimary = i < primCount;
         return (

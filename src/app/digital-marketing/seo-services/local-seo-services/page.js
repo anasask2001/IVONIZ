@@ -147,8 +147,9 @@ const schema = {
       "@id": `${PAGE_URL}#breadcrumb`,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://ivoniz.com/" },
-        { "@type": "ListItem", position: 2, name: "SEO Services", item: "https://ivoniz.com/digital-marketing/seo-services" },
-        { "@type": "ListItem", position: 3, name: "Local SEO Services", item: PAGE_URL },
+        { "@type": "ListItem", position: 2, name: "Digital Marketing", item: "https://ivoniz.com/digital-marketing" },
+        { "@type": "ListItem", position: 3, name: "SEO Services", item: "https://ivoniz.com/digital-marketing/seo-services" },
+        { "@type": "ListItem", position: 4, name: "Local SEO Services", item: PAGE_URL },
       ],
     },
     {
@@ -174,13 +175,14 @@ export default function LocalSeoServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
           <Breadcrumbs
             dark
             items={[
+              { label: "Digital Marketing", href: "/digital-marketing" },
               { label: "SEO Services", href: "/digital-marketing/seo-services" },
               { label: "Local SEO Services", href: "/digital-marketing/seo-services/local-seo-services" },
             ]}
@@ -201,13 +203,13 @@ export default function LocalSeoServicesPage() {
                 <span className="text-[14px] text-white/75">Free local SEO audit · Google Business Profile setup and recovery · monthly packages</span>
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+            <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href="#quote" solid label="Get a Free Local SEO Audit" location="hero" event="audit_click" />
               <PillLink href={waLink(WA.rank)} external event="whatsapp_click" label="Check My Google Ranking" location="hero" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
           </div>
 
-          <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
+          <ul className="mt-10 sm:mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
             <li className="flex items-center gap-2">
               <FaStar aria-hidden="true" className="text-white/55" />
               <a href={organizationSchema.hasMap} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-white/20 hover:text-white">
@@ -221,7 +223,7 @@ export default function LocalSeoServicesPage() {
       </section>
 
       {/* ── WHAT IS LOCAL SEO ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black`}>
         <div className="mx-auto max-w-[1300px] grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16">
           <div>
             <Label dark={false}>The Basics</Label>
@@ -256,9 +258,9 @@ export default function LocalSeoServicesPage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className={`relative py-20 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
+      <section id="services" className={`relative py-14 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>Our Services</Label>
             <Heading>Our local SEO services</Heading>
             <p className="mt-5 text-white/60 text-[16px] leading-relaxed">
@@ -268,11 +270,11 @@ export default function LocalSeoServicesPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {SERVICES.map(({ Icon, title, text }) => (
-              <div key={title} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[230px]">
+              <div key={title} className="border-r border-b border-white/10 p-5 sm:p-7 flex flex-col sm:min-h-[230px]">
                 <span className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/75">
                   <Icon aria-hidden="true" className="text-[15px]" />
                 </span>
-                <h3 className="mt-auto pt-7 text-[18.5px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-7 text-[18.5px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
                 <p className="mt-2.5 text-[14px] text-white/60 leading-relaxed">{text}</p>
               </div>
             ))}
@@ -281,10 +283,10 @@ export default function LocalSeoServicesPage() {
       </section>
 
       {/* ── GBP + REVIEWS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-2 gap-3">
-          <article id="google-business-profile" className="p-7 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
+          <article id="google-business-profile" className="p-6 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
             <span className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80"><FaMapMarkedAlt aria-hidden="true" /></span>
             <h2 className="mt-6 text-white" style={h2Style}>Google Business Profile and Google Maps SEO</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -300,7 +302,7 @@ export default function LocalSeoServicesPage() {
               <Check>Posts in English and Malayalam every week</Check>
             </ul>
           </article>
-          <article id="reviews" className="p-7 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
+          <article id="reviews" className="p-6 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
             <span className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80"><FaStar aria-hidden="true" /></span>
             <h2 className="mt-6 text-white" style={h2Style}>Reviews and local listings, done the safe way</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -308,7 +310,8 @@ export default function LocalSeoServicesPage() {
               QR code review card and a WhatsApp review link to send after every visit or delivery, and we reply to
               every review, in English or Malayalam. We never buy or write fake reviews: they break Google&apos;s rules
               and can get your profile suspended. Alongside reviews, we list your business with the same details on
-              the directories Kerala customers and Google both trust.
+              the directories Kerala customers and Google both trust, as part of our{" "}
+              <Link href="/digital-marketing/seo-services/off-page-seo-services" className={LINK}>off-page SEO</Link> work.
             </p>
             <ul className="mt-6 grid gap-3 text-[15px] text-white/80">
               <Check>QR code and WhatsApp review requests</Check>
@@ -320,7 +323,7 @@ export default function LocalSeoServicesPage() {
       </section>
 
       {/* ── WHO NEEDS LOCAL SEO ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -left-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1300px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-16">
@@ -344,14 +347,14 @@ export default function LocalSeoServicesPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <Label>How We Work</Label>
           <Heading className="mb-12 sm:mb-16">How our local SEO works</Heading>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -363,7 +366,7 @@ export default function LocalSeoServicesPage() {
       </section>
 
       {/* ── PACKAGES ── */}
-      <section id="packages" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="packages" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1200px]">
           <Label>Packages</Label>
@@ -408,7 +411,7 @@ export default function LocalSeoServicesPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -435,10 +438,10 @@ export default function LocalSeoServicesPage() {
       </section>
 
       {/* ── KERALA ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[1.1fr_1fr] gap-3">
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Kerala</Label>
             <h2 className="text-white" style={h2Style}>Local SEO across Kerala</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -461,7 +464,7 @@ export default function LocalSeoServicesPage() {
               <PillLink href={organizationSchema.hasMap} external event="directions_click" label="Get directions" location="kerala_block" />
             </div>
           </article>
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Multi-Branch</Label>
             <h2 className="text-white" style={h2Style}>One plan for every branch</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -479,7 +482,7 @@ export default function LocalSeoServicesPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -490,7 +493,7 @@ export default function LocalSeoServicesPage() {
       </section>
 
       {/* ── CLOSING CTA + FORM ── */}
-      <section id="quote" className={`relative py-24 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
+      <section id="quote" className={`relative py-16 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
@@ -507,7 +510,8 @@ export default function LocalSeoServicesPage() {
               <PillLink href={waLink(WA.rank)} external event="whatsapp_click" label="Send your Maps link on WhatsApp" location="closing" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
             <p className="mt-6 text-[14px] text-white/60">
-              Or <Link href="/contact" className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20">contact us</Link> directly.
+              Or <Link href="/contact" className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20">contact us</Link> directly. Need a full-site check too? See our{" "}
+              <Link href="/digital-marketing/seo-services/seo-audit-services" className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20">SEO audit services</Link>.
             </p>
           </div>
           <LocalSeoAuditForm />

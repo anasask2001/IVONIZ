@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -205,43 +205,100 @@ export function PlatformQuiz() {
   );
 }
 
-/* ── Sticky mobile CTA bar (shows after 30% scroll) ───────────── */
-export function StickyMobileCTA({ message = "Hi Ivoniz, I'm comparing a custom website vs WordPress for my business. Can you help me choose?", estimateLabel = "Get Estimate", dark = false }) {
-  const [show, setShow] = useState(false);
+/* ── Sticky mobile CTA bar ─────────────────────────────────────
+   Phones/tablets only (hidden from lg). Behaviour, tuned for real devices:
+   • Slides up after 30% of the page, and slides away again while the page's
+     own form is on screen or any field has focus (it would otherwise cover
+     the submit button, and on Android it rides above the keyboard).
+   • The main button scrolls to the page's own form (#quote / #free-audit)
+     instead of leaving for /contact; pages without a form fall back to /contact.
+   • Publishes its height as --sticky-cta-h so the chat button sits above it,
+     and marks <html data-sticky-cta> so the page reserves room at the bottom
+     and hides the duplicate right-edge quick-contact rail (globals.css).
+   • Pads for the iPhone home indicator (safe-area inset). */
+const FORM_TARGETS = ["quote", "free-audit"];
+const findForm = () => FORM_TARGETS.map((id) => document.getElementById(id)).find(Boolean) || null;
 
+export function StickyMobileCTA({ message = "Hi Ivoniz, I'm comparing a custom website vs WordPress for my business. Can you help me choose?", estimateLabel = "Get Estimate", dark = false }) {
+  const [scrolled, setScrolled] = useState(false);
+  const [formInView, setFormInView] = useState(false);
+  const [typing, setTyping] = useState(false);
+  const barRef = useRef(null);
+  const show = scrolled && !formInView && !typing;
+
+  // page-level flags + find the page's own form
   useEffect(() => {
+    const root = document.documentElement;
+    root.setAttribute("data-sticky-cta", "");
+    const el = findForm();
+
     const onScroll = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setShow(max > 0 && window.scrollY / max > 0.3);
+      const max = root.scrollHeight - window.innerHeight;
+      setScrolled(max > 0 && window.scrollY / max > 0.3);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    let io;
+    if (el && "IntersectionObserver" in window) {
+      io = new IntersectionObserver(([e]) => setFormInView(e.isIntersecting), { rootMargin: "0px 0px -15% 0px" });
+      io.observe(el);
+    }
+
+    const isField = (t) => t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable);
+    const onIn = (e) => isField(e.target) && setTyping(true);
+    const onOut = (e) => isField(e.target) && setTyping(false);
+    document.addEventListener("focusin", onIn);
+    document.addEventListener("focusout", onOut);
+
+    return () => {
+      root.removeAttribute("data-sticky-cta");
+      root.style.removeProperty("--sticky-cta-h");
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("focusin", onIn);
+      document.removeEventListener("focusout", onOut);
+      io && io.disconnect();
+    };
   }, []);
+
+  // keep the chat button above the bar only while the bar is visible
+  useEffect(() => {
+    const root = document.documentElement;
+    const mobile = window.matchMedia("(max-width: 1023px)").matches;
+    if (show && mobile && barRef.current) root.style.setProperty("--sticky-cta-h", `${barRef.current.offsetHeight}px`);
+    else root.style.removeProperty("--sticky-cta-h");
+  }, [show]);
+
+  const mainClass = `h-12 rounded-full text-[14.5px] font-bold flex items-center justify-center active:scale-[0.98] transition-transform ${dark ? "bg-white text-black" : "bg-black text-white"}`;
+  // A real /contact link (works before JS loads); when the page has its own
+  // form, scroll there instead of leaving the page.
+  const onMain = (e) => {
+    const el = findForm();
+    track("generate_lead_click", { cta: "estimate", location: "sticky_mobile", target: el ? el.id : "contact" });
+    if (!el) return;
+    e.preventDefault();
+    el.scrollIntoView({ block: "start" });
+    history.replaceState(null, "", `#${el.id}`);
+  };
 
   return (
     <div
-      className={`lg:hidden fixed inset-x-0 bottom-0 z-40 p-3 backdrop-blur border-t transition-transform ${dark ? "bg-black/90 border-white/10" : "bg-white/95 border-black/10"} duration-300 ${
+      ref={barRef}
+      className={`lg:hidden fixed inset-x-0 bottom-0 z-40 px-3 pt-3 backdrop-blur border-t transition-transform ${dark ? "bg-black/90 border-white/10" : "bg-white/95 border-black/10"} duration-300 ${
         show ? "translate-y-0" : "translate-y-full"
       }`}
+      style={{ paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}
       aria-hidden={!show}
+      inert={!show}
     >
       <div className="grid grid-cols-2 gap-2">
-        <Link
-          href="/contact"
-          tabIndex={show ? 0 : -1}
-          onClick={() => track("generate_lead_click", { cta: "estimate", location: "sticky_mobile" })}
-          className={`h-12 rounded-full text-[14px] font-bold flex items-center justify-center ${dark ? "bg-white text-black" : "bg-black text-white"}`}
-        >
-          {estimateLabel}
-        </Link>
+        <Link href="/contact" onClick={onMain} className={mainClass}>{estimateLabel}</Link>
         <a
           href={waLink(message)}
           target="_blank"
           rel="noopener noreferrer"
-          tabIndex={show ? 0 : -1}
           onClick={() => track("whatsapp_click", { location: "sticky_mobile" })}
-          className="h-12 rounded-full bg-[#25d366] text-white text-[14px] font-bold flex items-center justify-center gap-2"
+          className="h-12 rounded-full bg-[#25d366] text-white text-[14.5px] font-bold flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
         >
           <FaWhatsapp aria-hidden="true" /> WhatsApp
         </a>

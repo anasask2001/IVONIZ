@@ -210,7 +210,7 @@ export default function WebsiteDevelopmentPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
@@ -261,9 +261,9 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="relative mx-auto max-w-[1400px]">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8 sm:mb-14">
             <div>
               <Label>Our Services</Label>
               <Heading>Website development services we offer</Heading>
@@ -277,13 +277,13 @@ export default function WebsiteDevelopmentPage() {
               <Link
                 key={href}
                 href={href}
-                className="group relative border-r border-b border-white/10 p-7 sm:p-9 flex flex-col min-h-[280px] hover:bg-white/[0.03] transition-colors duration-300"
+                className="group relative border-r border-b border-white/10 p-5 sm:p-9 flex flex-col sm:min-h-[280px] hover:bg-white/[0.03] transition-colors duration-300"
               >
                 <div className="flex items-start justify-between">
                   <span className="text-[13px] font-medium text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                   <Icon aria-hidden="true" className="text-[20px] text-white/50 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="mt-auto pt-10 text-[21px] sm:text-[23px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>
+                <h3 className="mt-auto pt-4 sm:pt-10 text-[21px] sm:text-[23px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>
                   {title}
                 </h3>
                 <p className="mt-3 text-[14.5px] text-white/55 leading-relaxed">{text}</p>
@@ -297,7 +297,7 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── WORDPRESS OR CUSTOM ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -left-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1100px] grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-16 items-center">
@@ -332,7 +332,7 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── WHAT EVERY WEBSITE INCLUDES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
@@ -358,7 +358,7 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="relative mx-auto max-w-[1400px]">
           <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end mb-12 sm:mb-16">
             <div>
@@ -370,12 +370,12 @@ export default function WebsiteDevelopmentPage() {
               depending on scope.
             </p>
           </div>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12" aria-label="Six-step website development process from discovery to launch">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 sm:gap-y-12" aria-label="Six-step website development process from discovery to launch">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
                 <span
-                  className="block leading-none mb-5"
-                  style={{ fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em", WebkitTextStroke: "1px rgba(217,217,217,0.45)", WebkitTextFillColor: "transparent", color: "transparent" }}
+                  className="block leading-none mb-3 sm:mb-5"
+                  style={{ fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em", WebkitTextStroke: "1px rgba(217,217,217,0.45)", WebkitTextFillColor: "transparent", color: "transparent" }}
                   aria-hidden="true"
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -389,7 +389,7 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── COST + MID-PAGE CTA ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <div className="relative mx-auto max-w-[1100px] grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-16 items-center">
           <div>
@@ -426,10 +426,10 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── INDUSTRIES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-white text-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-white text-black`}>
         <div className="relative mx-auto max-w-[1400px]">
           <Label dark={false}>Industries</Label>
-          <Heading dark={false} className="mb-10 sm:mb-14">Websites for your industry</Heading>
+          <Heading dark={false} className="mb-8 sm:mb-14">Websites for your industry</Heading>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-black/8">
             {INDUSTRIES.map(({ Icon, title, text }) => (
               <div key={title} className="border-r border-b border-black/8 p-7 sm:p-8">
@@ -443,12 +443,12 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── MARKETS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <PetalSketch className="absolute right-[-60px] bottom-[-40px] w-[360px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
           <Label>Where We Work</Label>
-          <Heading className="mb-10 sm:mb-14">Markets we serve</Heading>
+          <Heading className="mb-8 sm:mb-14">Markets we serve</Heading>
           <div className="grid lg:grid-cols-3 gap-3">
             {MARKETS.map((m) => (
               <article key={m.label} className="p-7 sm:p-8 flex flex-col" style={GLASS}>
@@ -471,9 +471,9 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── PROOF: real projects (same card style as the homepage Selected works) ── */}
-      <section className={`py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black`}>
+      <section className={`py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black`}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8 sm:mb-14">
             <div>
               <Label dark={false}>Our Work</Label>
               <Heading dark={false}>Websites we&apos;ve built, from Kerala to the Gulf</Heading>
@@ -506,7 +506,7 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -534,7 +534,7 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -555,7 +555,7 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* ── CLOSING CTA ── */}
-      <section className={`relative py-24 sm:py-32 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative py-16 sm:py-32 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[900px] text-center">

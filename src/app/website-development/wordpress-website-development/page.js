@@ -198,7 +198,7 @@ export default function WordPressWebsiteDevelopmentPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
@@ -251,9 +251,9 @@ export default function WordPressWebsiteDevelopmentPage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>Our Services</Label>
             <Heading>WordPress website development services</Heading>
             <p className="mt-5 text-white/55 text-[16px] leading-relaxed">
@@ -263,9 +263,9 @@ export default function WordPressWebsiteDevelopmentPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {SERVICES.map((s, i) => (
-              <div key={s.title} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[230px]">
+              <div key={s.title} className="border-r border-b border-white/10 p-5 sm:p-7 flex flex-col sm:min-h-[230px]">
                 <span className="text-[13px] font-medium text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-auto pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{s.title}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{s.title}</h3>
                 <p className="mt-2.5 text-[14px] text-white/55 leading-relaxed">{s.text}</p>
               </div>
             ))}
@@ -274,7 +274,7 @@ export default function WordPressWebsiteDevelopmentPage() {
       </section>
 
       {/* ── WHY WORDPRESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -left-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16">
@@ -301,7 +301,7 @@ export default function WordPressWebsiteDevelopmentPage() {
       </section>
 
       {/* ── HIRE A DEVELOPER ── */}
-      <section id="hire" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="hire" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-16 items-start">
           <div>
@@ -340,7 +340,7 @@ export default function WordPressWebsiteDevelopmentPage() {
       </section>
 
       {/* ── WHAT'S INCLUDED ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>Included</Label>
@@ -361,7 +361,7 @@ export default function WordPressWebsiteDevelopmentPage() {
       </section>
 
       {/* ── COST ── */}
-      <section id="cost" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="cost" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <div className="mx-auto max-w-[1200px]">
           <Label>Pricing</Label>
           <Heading className="max-w-[760px]">WordPress website development cost in India</Heading>
@@ -403,7 +403,7 @@ export default function WordPressWebsiteDevelopmentPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end mb-12 sm:mb-16">
             <div>
@@ -414,10 +414,10 @@ export default function WordPressWebsiteDevelopmentPage() {
               Typical timeline: 2–3 weeks for a starter business site; 3–6 weeks for corporate websites.
             </p>
           </div>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -429,10 +429,10 @@ export default function WordPressWebsiteDevelopmentPage() {
       </section>
 
       {/* ── DUBAI / GCC + KERALA ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-2 gap-3">
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Dubai and GCC</Label>
             <h2 className="text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(26px,2.8vw,38px)", lineHeight: 1.12, letterSpacing: "-0.03em" }}>
               WordPress development company in Dubai and the GCC
@@ -449,7 +449,7 @@ export default function WordPressWebsiteDevelopmentPage() {
             </div>
           </article>
 
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Kerala</Label>
             <h2 className="text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(26px,2.8vw,38px)", lineHeight: 1.12, letterSpacing: "-0.03em" }}>
               WordPress developers in Kerala
@@ -481,7 +481,7 @@ export default function WordPressWebsiteDevelopmentPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -511,7 +511,7 @@ export default function WordPressWebsiteDevelopmentPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`py-14 sm:py-28 ${PAD} bg-black`}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -526,7 +526,7 @@ export default function WordPressWebsiteDevelopmentPage() {
       </section>
 
       {/* ── CLOSING CTA + LEAD FORM ── */}
-      <section id="quote" className={`relative py-24 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
+      <section id="quote" className={`relative py-16 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
         {/* Hash targets used by CTAs to pre-select the form's "need" */}
         <span id="quote-website" className="absolute top-0" aria-hidden="true" />
         <span id="quote-hire" className="absolute top-0" aria-hidden="true" />

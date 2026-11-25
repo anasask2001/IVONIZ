@@ -105,7 +105,7 @@ body {
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 16px;
+  border-radius: 24px;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -115,3 +115,55 @@ body {
   border-color: rgba(255, 255, 255, 0.28);
   box-shadow: 0 8px 48px rgba(255, 255, 255, 0.10), 0 2px 16px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
+
+/* ── Mobile polish (touch devices / phones) ─────────────────────────────
+   Unlayered on purpose: beats Tailwind's layered utilities without !important. */
+
+/* iOS Safari zooms the whole page when a field under 16px gets focus.
+   Every form on the site used 15px, so tapping any field zoomed in. */
+@media (pointer: coarse) {
+  input, select, textarea { font-size: 16px; }
+}
+
+/* Remove the grey tap flash on Android/iOS; links and buttons already have
+   their own pressed/hover states. */
+a, button, summary, [role="button"], [role="radio"] { -webkit-tap-highlight-color: transparent; }
+
+@media (max-width: 1023px) {
+  /* The sticky bottom bar (StickyMobileCTA) is fixed, so reserve its height at
+     the end of the page — otherwise it sits on the footer's last lines. */
+  html[data-sticky-cta] body { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+  /* Pages with the bottom bar already offer Call/WhatsApp there; the right-edge
+     rail would duplicate it and cover paragraph text. */
+  html[data-sticky-cta] .quick-rail { display: none; }
+}
+
+/* Smooth in-page jumps (e.g. bottom bar → form), but not for reduced-motion users. */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Mobile menu open: nothing floats over it */
+html[data-menu-open] .quick-rail,
+html[data-menu-open] .chat-root { display: none; }
+
+/* Mobile menu (Apple-style glass sheet): rows cascade in with a little depth,
+   and SERVICES / each group unfolds downward with the iOS sheet curve. */
+@keyframes menu-row-in {
+  from { opacity: 0; transform: translateY(-12px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes menu-unroll {
+  from { opacity: 0; transform: translateY(-8px) scale(0.98); clip-path: inset(0 0 100% 0 round 16px); }
+  to   { opacity: 1; transform: none; clip-path: inset(0 0 0 0 round 16px); }
+}
+#mobile-menu[data-open] .menu-row {
+  animation: menu-row-in 0.5s cubic-bezier(0.32, 0.72, 0, 1) both;
+  animation-delay: calc(90ms + var(--i, 0) * 45ms);
+}
+#mobile-menu details[open] > div,
+#mobile-menu details[open] > ul {
+  transform-origin: top center;
+  animation: menu-unroll 0.42s cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+

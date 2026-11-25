@@ -124,7 +124,7 @@ export default function AppQuoteForm({ needs, tech, leadType = "mobile_app", pla
                       type="button"
                       aria-pressed={on}
                       onClick={() => toggleFeature(x)}
-                      className={`px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
+                      className={`min-h-11 px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
                         on ? "bg-white text-black border-white" : "border-white/20 text-white/75 hover:border-white/50 hover:text-white"
                       }`}
                     >
@@ -195,7 +195,7 @@ function Choice({ options, value, onChange, name }) {
             role="radio"
             aria-checked={active}
             onClick={() => onChange(o)}
-            className={`px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
+            className={`min-h-11 px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
               active ? "bg-white text-black border-white" : "border-white/20 text-white/75 hover:border-white/50 hover:text-white"
             }`}
           >

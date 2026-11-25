@@ -58,13 +58,13 @@ const WA = {
 };
 
 const SERVICES = [
-  { Icon: FaClipboardCheck, title: "SEO audit", text: "A full review of your website, rankings, competitors and technical issues, with a prioritised fix list." },
+  { Icon: FaClipboardCheck, title: "SEO audit", text: <>A full review of your website, rankings, competitors and technical issues, with a prioritised fix list. See our <Link href="/digital-marketing/seo-services/seo-audit-services" className={LINK}>SEO audit services</Link>.</> },
   { Icon: FaMapMarkedAlt, title: "Local SEO", text: "Google Business Profile optimisation, local citations, reviews strategy and location pages to rank in Google Maps and “near me” searches." },
   { Icon: FaHeading, title: "On-page SEO", text: <>Titles, headings, content, internal links and schema on every key page. See our <Link href="/digital-marketing/seo-services/on-page-seo-services" className={LINK}>on-page SEO services</Link>.</> },
   { Icon: FaTachometerAlt, title: "Technical SEO", text: <>Site speed, Core Web Vitals, mobile issues, indexing, redirects and broken links, fixed by our own developers. See our <Link href="/digital-marketing/seo-services/technical-seo-services" className={LINK}>technical SEO services</Link>.</> },
   { Icon: FaPenNib, title: "Content and keyword strategy", text: "Service pages and blog content built from real search data, in English and Malayalam where it helps." },
-  { Icon: FaLink, title: "Link building and digital PR", text: "Quality links from Indian and Kerala business sites, directories and publications." },
-  { Icon: FaShoppingCart, title: "Ecommerce SEO", text: <>Category, product and schema optimisation for <Link href="/website-development/ecommerce-website-development/woocommerce-website-development" className={LINK}>WooCommerce</Link> and custom stores.</> },
+  { Icon: FaLink, title: "Link building and digital PR", text: <>Quality links from Indian and Kerala business sites, directories and publications. See our <Link href="/digital-marketing/seo-services/off-page-seo-services" className={LINK}>off-page SEO services</Link>.</> },
+  { Icon: FaShoppingCart, title: "Ecommerce SEO", text: <>Category, product and schema optimisation for <Link href="/website-development/ecommerce-website-development/woocommerce-website-development" className={LINK}>WooCommerce</Link> and custom stores. See our <Link href="/digital-marketing/seo-services/ecommerce-seo-services" className={LINK}>ecommerce SEO services</Link>.</> },
   { Icon: FaChartLine, title: "SEO reporting", text: "Monthly report on rankings, traffic, calls and leads, in plain language." },
 ];
 
@@ -171,7 +171,7 @@ export default function SeoServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
@@ -198,14 +198,14 @@ export default function SeoServicesPage() {
                 <span className="text-[14px] text-white/75">Free SEO audit · monthly packages · reports on leads, not just rankings</span>
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+            <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href="#quote" solid label="Get a Free SEO Audit" location="hero" event="audit_click" />
               <PillLink href={waLink(WA.talk)} external event="whatsapp_click" label="Talk to an SEO Expert" location="hero" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
           </div>
 
           {/* Proof strip — verifiable items only (add verified ranking results / directory badges when available) */}
-          <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
+          <ul className="mt-10 sm:mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
             <li className="flex items-center gap-2">
               <FaStar aria-hidden="true" className="text-white/55" />
               <a href={organizationSchema.hasMap} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-white/20 hover:text-white">
@@ -219,9 +219,9 @@ export default function SeoServicesPage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className={`relative py-20 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
+      <section id="services" className={`relative py-14 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>Our Services</Label>
             <Heading>Our SEO services</Heading>
             <p className="mt-5 text-white/60 text-[16px] leading-relaxed">
@@ -231,11 +231,11 @@ export default function SeoServicesPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {SERVICES.map(({ Icon, title, text }) => (
-              <div key={title} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[230px]">
+              <div key={title} className="border-r border-b border-white/10 p-5 sm:p-7 flex flex-col sm:min-h-[230px]">
                 <span className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/75">
                   <Icon aria-hidden="true" className="text-[15px]" />
                 </span>
-                <h3 className="mt-auto pt-7 text-[18.5px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-7 text-[18.5px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
                 <p className="mt-2.5 text-[14px] text-white/60 leading-relaxed">{text}</p>
               </div>
             ))}
@@ -244,10 +244,10 @@ export default function SeoServicesPage() {
       </section>
 
       {/* ── AI SEO + LOCAL SEO ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-2 gap-3">
-          <article id="ai-seo" className="p-7 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
+          <article id="ai-seo" className="p-6 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
             <span className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80"><FaRobot aria-hidden="true" /></span>
             <h2 className="mt-6 text-white" style={h2Style}>AI SEO: be found in Google AI Overviews and ChatGPT</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -262,7 +262,7 @@ export default function SeoServicesPage() {
               ))}
             </ul>
           </article>
-          <article id="local-seo" className="p-7 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
+          <article id="local-seo" className="p-6 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
             <span className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80"><FaMapMarkedAlt aria-hidden="true" /></span>
             <h2 className="mt-6 text-white" style={h2Style}>Local SEO for Calicut and Kerala businesses</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -281,7 +281,7 @@ export default function SeoServicesPage() {
       </section>
 
       {/* ── WHAT THE FREE AUDIT COVERS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black`}>
         <div className="mx-auto max-w-[1300px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-16">
           <div>
             <Label dark={false}>Free SEO Audit</Label>
@@ -304,14 +304,14 @@ export default function SeoServicesPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <Label>How We Work</Label>
           <Heading className="mb-12 sm:mb-16">How our SEO process works</Heading>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -323,7 +323,7 @@ export default function SeoServicesPage() {
       </section>
 
       {/* ── PACKAGES ── */}
-      <section id="packages" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="packages" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1200px]">
           <Label>Packages</Label>
@@ -387,7 +387,7 @@ export default function SeoServicesPage() {
       </section>
 
       {/* ── INDUSTRIES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -left-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1300px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-16">
@@ -411,7 +411,7 @@ export default function SeoServicesPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -439,10 +439,10 @@ export default function SeoServicesPage() {
       </section>
 
       {/* ── KERALA ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[1.1fr_1fr] gap-3">
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Kerala</Label>
             <h2 className="text-white" style={h2Style}>SEO services across Kerala</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -467,7 +467,7 @@ export default function SeoServicesPage() {
               <PillLink href={organizationSchema.hasMap} external event="directions_click" label="Get directions" location="kerala_block" />
             </div>
           </article>
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Built Right</Label>
             <h2 className="text-white" style={h2Style}>SEO starts with a well-built website</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -485,7 +485,7 @@ export default function SeoServicesPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -496,7 +496,7 @@ export default function SeoServicesPage() {
       </section>
 
       {/* ── CLOSING CTA + FORM ── */}
-      <section id="quote" className={`relative py-24 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
+      <section id="quote" className={`relative py-16 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">

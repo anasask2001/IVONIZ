@@ -152,8 +152,9 @@ const schema = {
       "@id": `${PAGE_URL}#breadcrumb`,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://ivoniz.com/" },
-        { "@type": "ListItem", position: 2, name: "SEO Services", item: "https://ivoniz.com/digital-marketing/seo-services" },
-        { "@type": "ListItem", position: 3, name: "Technical SEO Services", item: PAGE_URL },
+        { "@type": "ListItem", position: 2, name: "Digital Marketing", item: "https://ivoniz.com/digital-marketing" },
+        { "@type": "ListItem", position: 3, name: "SEO Services", item: "https://ivoniz.com/digital-marketing/seo-services" },
+        { "@type": "ListItem", position: 4, name: "Technical SEO Services", item: PAGE_URL },
       ],
     },
     {
@@ -179,13 +180,14 @@ export default function TechnicalSeoServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
           <Breadcrumbs
             dark
             items={[
+              { label: "Digital Marketing", href: "/digital-marketing" },
               { label: "SEO Services", href: "/digital-marketing/seo-services" },
               { label: "Technical SEO Services", href: "/digital-marketing/seo-services/technical-seo-services" },
             ]}
@@ -206,13 +208,13 @@ export default function TechnicalSeoServicesPage() {
                 <span className="text-[14px] text-white/75">Technical SEO audit · audit + fix packages · results you can see in PageSpeed and Search Console</span>
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+            <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href="#quote" solid label="Get a Technical SEO Audit" location="hero" event="audit_click" />
               <PillLink href={waLink(WA.speed)} external event="whatsapp_click" label="Free 5-Minute Speed Check" location="hero" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
           </div>
 
-          <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
+          <ul className="mt-10 sm:mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
             <li className="flex items-center gap-2"><FaTools aria-hidden="true" className="text-white/55" /> Audit and fixes by the same team</li>
             <li className="flex items-center gap-2">
               <FaTachometerAlt aria-hidden="true" className="text-white/55" />
@@ -226,9 +228,9 @@ export default function TechnicalSeoServicesPage() {
       </section>
 
       {/* ── AUDIT COVERS ── */}
-      <section id="audit" className={`relative py-20 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
+      <section id="audit" className={`relative py-14 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>Technical SEO Audit</Label>
             <Heading>What our technical SEO audit covers</Heading>
             <p className="mt-5 text-white/60 text-[16px] leading-relaxed">
@@ -238,11 +240,11 @@ export default function TechnicalSeoServicesPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-white/10">
             {AUDIT.map(({ Icon, title, text }) => (
-              <div key={title} className="border-r border-b border-white/10 p-6 flex flex-col min-h-[220px]">
+              <div key={title} className="border-r border-b border-white/10 p-5 sm:p-6 flex flex-col sm:min-h-[220px]">
                 <span className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/75">
                   <Icon aria-hidden="true" className="text-[15px]" />
                 </span>
-                <h3 className="mt-auto pt-6 text-[17px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-6 text-[17px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
                 <p className="mt-2 text-[13.5px] text-white/60 leading-relaxed">{text}</p>
               </div>
             ))}
@@ -275,7 +277,7 @@ export default function TechnicalSeoServicesPage() {
       </section>
 
       {/* ── WE FIX ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -left-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1300px] grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-center">
@@ -307,10 +309,10 @@ export default function TechnicalSeoServicesPage() {
       </section>
 
       {/* ── SPEED + JS SEO ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-2 gap-3">
-          <article id="speed" className="p-7 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
+          <article id="speed" className="p-6 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
             <span className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80"><FaTachometerAlt aria-hidden="true" /></span>
             <h2 className="mt-6 text-white" style={h2Style}>Website speed optimisation services</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -331,7 +333,7 @@ export default function TechnicalSeoServicesPage() {
               data from Google Search Console.
             </p>
           </article>
-          <article id="javascript-seo" className="p-7 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
+          <article id="javascript-seo" className="p-6 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
             <span className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80"><FaReact aria-hidden="true" /></span>
             <h2 className="mt-6 text-white" style={h2Style}>Technical SEO for modern JavaScript websites</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -352,9 +354,9 @@ export default function TechnicalSeoServicesPage() {
       </section>
 
       {/* ── MIGRATION + WHITE-LABEL ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-2 gap-3">
-          <article id="migration" className="p-7 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
+          <article id="migration" className="p-6 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
             <span className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80"><FaRoute aria-hidden="true" /></span>
             <h2 className="mt-6 text-white" style={h2Style}>Site migration and redesign SEO</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -369,7 +371,7 @@ export default function TechnicalSeoServicesPage() {
               <Check>Search Console checks for the weeks after launch</Check>
             </ul>
           </article>
-          <article id="white-label" className="p-7 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
+          <article id="white-label" className="p-6 sm:p-10 flex flex-col scroll-mt-24" style={GLASS}>
             <span className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80"><FaHandshake aria-hidden="true" /></span>
             <h2 className="mt-6 text-white" style={h2Style}>White-label technical SEO for agencies</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -390,7 +392,7 @@ export default function TechnicalSeoServicesPage() {
       </section>
 
       {/* ── PACKAGES ── */}
-      <section id="packages" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="packages" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px]">
           <Label>Packages</Label>
@@ -430,14 +432,14 @@ export default function TechnicalSeoServicesPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <Label>How We Work</Label>
           <Heading className="mb-12 sm:mb-16">Our technical SEO process</Heading>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -449,7 +451,7 @@ export default function TechnicalSeoServicesPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black`}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -479,7 +481,7 @@ export default function TechnicalSeoServicesPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -490,7 +492,7 @@ export default function TechnicalSeoServicesPage() {
       </section>
 
       {/* ── CLOSING CTA + FORM ── */}
-      <section id="quote" className={`relative py-24 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
+      <section id="quote" className={`relative py-16 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
@@ -507,7 +509,8 @@ export default function TechnicalSeoServicesPage() {
               <PillLink href={waLink(WA.audit)} external event="whatsapp_click" label="Book a Technical SEO Audit" location="closing" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
             <p className="mt-6 text-[14px] text-white/60">
-              Or <Link href="/contact" className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20">contact us</Link> directly.
+              Or <Link href="/contact" className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20">contact us</Link> directly. Want the complete picture beyond technical issues? See our{" "}
+              <Link href="/digital-marketing/seo-services/seo-audit-services" className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20">SEO audit services</Link>.
             </p>
           </div>
           <TechSeoAuditForm />

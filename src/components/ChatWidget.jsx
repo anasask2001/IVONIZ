@@ -485,8 +485,9 @@ export default function ChatWidget() {
 
   return (
     <div
-      className="fixed right-5 z-50 flex flex-col items-end gap-3"
-      style={{ bottom: `calc(1.25rem + ${keyboardInset}px)` }}
+      className="chat-root fixed right-4 sm:right-5 z-50 flex flex-col items-end gap-3 transition-[bottom] duration-300"
+      /* --sticky-cta-h: set by StickyMobileCTA while the mobile bottom bar is showing */
+      style={{ bottom: `calc(1.25rem + ${keyboardInset}px + var(--sticky-cta-h, 0px))` }}
     >
       {open && (
         <div

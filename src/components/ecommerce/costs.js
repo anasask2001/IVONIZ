@@ -189,3 +189,37 @@ export const ON_PAGE_PACKAGES = [
   { id: "advanced", label: "Advanced", pages: "30+ pages", includes: "Growth + schema, content writing and monthly refinements", price: null },
 ];
 export const ON_PAGE_PER_PAGE = null;
+
+/* Off-page SEO / link building (/digital-marketing/seo-services/off-page-seo-services).
+   Monthly prices NOT fixed yet → "Price on request". Set both INR and AED.
+   OFF_PAGE_MIN_TERM: minimum contract in months (brief: "[X] months") — null hides the line. */
+export const OFF_PAGE_PACKAGES = [
+  { id: "starter", label: "Starter", work: "Competitor backlink audit, citations, 4–5 quality links", best: "Local businesses in Kerala", inr: null, aed: null },
+  { id: "growth", label: "Growth", work: "Starter + guest articles, 8–10 quality links, brand mentions", best: "Growing businesses in India and the UAE", inr: null, aed: null },
+  { id: "authority", label: "Authority", work: "Growth + digital PR, 15+ quality links, toxic link clean-up", best: "Competitive industries and GCC markets", inr: null, aed: null },
+];
+export const OFF_PAGE_MIN_TERM = null;
+
+/* Ecommerce SEO (/digital-marketing/seo-services/ecommerce-seo-services).
+   Monthly prices by store size NOT fixed yet → "Price on request". Set INR and AED.
+   ECOM_SEO_AUDIT_PRICE: one-time ecommerce SEO audit (null = "available on request"). */
+export const ECOM_SEO_PACKAGES = [
+  { id: "starter", label: "Starter", size: "Up to 100 products", includes: "Audit, keyword map, top 10 categories optimised, product schema", inr: null, aed: null },
+  { id: "growth", label: "Growth", size: "Up to 1,000 products", includes: "Starter + product page optimisation, technical fixes, buying guides, link building", inr: null, aed: null },
+  { id: "scale", label: "Scale", size: "1,000+ products", includes: "Growth + large-catalogue technical SEO, content at scale, digital PR", inr: null, aed: null },
+];
+export const ECOM_SEO_AUDIT_PRICE = null;
+
+/* SEO audits (/digital-marketing/seo-services/seo-audit-services) — one-time,
+   fixed prices NOT set yet → "Price on request". Set INR and AED per tier.
+   Benchmarks (brief): Kerala technical audit ₹10,000–₹30,000 (Turquoic);
+   43% of businesses pay $101–$750 (WebFX); Dubai monthly SEO from AED 4,500.
+   AUDIT_FEE_CREDIT: true only once Ivoniz agrees to credit the audit fee
+   against fix work — shows the line on the page. */
+export const SEO_AUDIT_TIERS = [
+  { id: "mini", label: "Free mini-audit", size: "Any", includes: "Quick check of your homepage, one service page and top issues", free: true },
+  { id: "standard", label: "Standard audit", size: "Up to 50 pages", includes: "Full audit, action plan, walkthrough call", inr: null, aed: null },
+  { id: "advanced", label: "Advanced audit", size: "Up to 500 pages", includes: "Standard + backlink audit, competitor deep-dive, content gaps", inr: null, aed: null },
+  { id: "large", label: "Ecommerce / large site audit", size: "500+ pages", includes: "Advanced + catalogue, filter and crawl-budget review", inr: null, aed: null },
+];
+export const AUDIT_FEE_CREDIT = false;

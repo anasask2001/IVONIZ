@@ -88,7 +88,7 @@ export default function PlatformDecisionTool() {
                     role="radio"
                     aria-checked={active}
                     onClick={() => setA((s) => ({ ...s, [q.id]: o.id }))}
-                    className={`px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
+                    className={`min-h-11 px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
                       active ? "bg-white text-black border-white" : "border-white/20 text-white/75 hover:border-white/50 hover:text-white"
                     }`}
                   >
@@ -124,7 +124,7 @@ export default function PlatformDecisionTool() {
                 role="radio"
                 aria-checked={market === m}
                 onClick={() => setMarket(m)}
-                className={`px-4 py-2 rounded-full text-[13px] border transition-colors ${market === m ? "bg-white text-black border-white" : "border-white/20 text-white/75 hover:text-white"}`}
+                className={`min-h-11 px-4 py-2 rounded-full text-[13px] border transition-colors ${market === m ? "bg-white text-black border-white" : "border-white/20 text-white/75 hover:text-white"}`}
               >
                 {m}
               </button>

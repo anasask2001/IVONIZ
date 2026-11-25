@@ -207,7 +207,7 @@ export default function MobileAppDevelopmentPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
@@ -222,14 +222,14 @@ export default function MobileAppDevelopmentPage() {
               and the GCC. From your first idea to Play Store and App Store launch, one team handles strategy, UI/UX,
               development, backend and support.
             </p>
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+            <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href="#estimate" solid label="Get a Free App Development Estimate" location="hero" event="estimate_click" />
               <PillLink href={waLink(WA.idea)} external event="whatsapp_click" label="Discuss Your App Idea" location="hero" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
           </div>
 
           {/* Trust strip — verifiable promises only (no unconfirmed app counts) */}
-          <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
+          <ul className="mt-10 sm:mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
             <li className="flex items-center gap-2"><FaMapMarkerAlt aria-hidden="true" className="text-white/55" /> Office at HiLITE Business Park, Kozhikode</li>
             <li className="flex items-center gap-2"><FaCheck aria-hidden="true" className="text-white/55" /> See your app as a clickable prototype before development</li>
             <li className="flex items-center gap-2"><FaCheck aria-hidden="true" className="text-white/55" /> You own the source code, store accounts and data</li>
@@ -238,9 +238,9 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className={`relative py-20 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
+      <section id="services" className={`relative py-14 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>Our Services</Label>
             <Heading>Our mobile app development services</Heading>
             <p className="mt-5 text-white/55 text-[16px] leading-relaxed">
@@ -250,11 +250,11 @@ export default function MobileAppDevelopmentPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {SERVICES.map(({ Icon, title, text }) => (
-              <div key={title} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[240px]">
+              <div key={title} className="border-r border-b border-white/10 p-5 sm:p-7 flex flex-col sm:min-h-[240px]">
                 <span className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/75">
                   <Icon aria-hidden="true" className="text-[15px]" />
                 </span>
-                <h3 className="mt-auto pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
                 <p className="mt-2.5 text-[14px] text-white/55 leading-relaxed">{text}</p>
               </div>
             ))}
@@ -263,13 +263,13 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* ── APPS WE BUILD (ecommerce featured: highest CPC cluster) ── */}
-      <section id="apps" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="apps" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px]">
           <Label>Apps We Build</Label>
-          <Heading className="mb-10 sm:mb-14">Apps we build</Heading>
+          <Heading className="mb-8 sm:mb-14">Apps we build</Heading>
 
-          <article className="mb-3 p-7 sm:p-10 grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-14 items-center bg-white text-black rounded-2xl">
+          <article className="mb-3 p-6 sm:p-10 grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-14 items-center bg-white text-black rounded-2xl">
             <div>
               <span className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center"><FaShoppingBag aria-hidden="true" /></span>
               <h3 className="mt-6 text-black" style={h2Style}>Ecommerce and shopping apps</h3>
@@ -308,7 +308,7 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* ── TECHNOLOGIES ── */}
-      <section id="technologies" className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black scroll-mt-20`}>
+      <section id="technologies" className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black scroll-mt-20`}>
         <div className="mx-auto max-w-[1100px]">
           <Label dark={false}>Technology</Label>
           <Heading dark={false}>Technologies we use</Heading>
@@ -365,7 +365,7 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* ── COST + ESTIMATOR ── */}
-      <section id="cost" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="cost" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1200px]">
           <Label>Pricing</Label>
@@ -421,7 +421,7 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end mb-12 sm:mb-16">
             <div>
@@ -432,10 +432,10 @@ export default function MobileAppDevelopmentPage() {
               Launch an MVP first, then grow it in phases. You see a clickable prototype before development starts.
             </p>
           </div>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -444,7 +444,7 @@ export default function MobileAppDevelopmentPage() {
             ))}
           </ol>
 
-          <div className="mt-14 p-7 sm:p-10 grid lg:grid-cols-[320px_1fr] gap-6 lg:gap-12" style={GLASS}>
+          <div className="mt-14 p-6 sm:p-10 grid lg:grid-cols-[320px_1fr] gap-6 lg:gap-12" style={GLASS}>
             <h3 className="text-white" style={h2Style}>Why we recommend starting with an MVP</h3>
             <div className="space-y-4 text-[15.5px] text-white/65 leading-relaxed">
               <p>
@@ -464,10 +464,10 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* ── UAE / GCC + KERALA ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-2 gap-3">
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>UAE and GCC</Label>
             <h2 className="text-white" style={h2Style}>Mobile app development company in the UAE and GCC</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65 flex-1">
@@ -483,7 +483,7 @@ export default function MobileAppDevelopmentPage() {
             </div>
           </article>
 
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Kerala</Label>
             <h2 className="text-white" style={h2Style}>App development company in Kerala</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -510,7 +510,7 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -540,7 +540,7 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`py-14 sm:py-28 ${PAD} bg-black`}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -551,7 +551,7 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* ── CLOSING CTA + FORM ── */}
-      <section id="quote" className={`relative py-24 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
+      <section id="quote" className={`relative py-16 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">

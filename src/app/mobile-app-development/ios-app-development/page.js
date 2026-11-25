@@ -206,7 +206,7 @@ export default function IosAppDevelopmentPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
@@ -257,9 +257,9 @@ export default function IosAppDevelopmentPage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className={`relative py-20 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
+      <section id="services" className={`relative py-14 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>Our Services</Label>
             <Heading>Our native iOS app development services</Heading>
             <p className="mt-5 text-white/60 text-[16px] leading-relaxed">
@@ -269,11 +269,11 @@ export default function IosAppDevelopmentPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {SERVICES.map(({ Icon, title, text }) => (
-              <div key={title} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[240px]">
+              <div key={title} className="border-r border-b border-white/10 p-5 sm:p-7 flex flex-col sm:min-h-[240px]">
                 <span className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/75">
                   <Icon aria-hidden="true" className="text-[15px]" />
                 </span>
-                <h3 className="mt-auto pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
                 <p className="mt-2.5 text-[14px] text-white/60 leading-relaxed">{text}</p>
               </div>
             ))}
@@ -289,7 +289,7 @@ export default function IosAppDevelopmentPage() {
       </section>
 
       {/* ── WHY NATIVE ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -left-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16">
@@ -318,7 +318,7 @@ export default function IosAppDevelopmentPage() {
 
       {/* ── SWIFT / SWIFTUI TECH (brief: technology H2) ──
           TODO before launch: confirm this matches Ivoniz's real iOS setup. */}
-      <section id="technology" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="technology" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
@@ -349,7 +349,7 @@ export default function IosAppDevelopmentPage() {
       </section>
 
       {/* ── HIRE iOS DEVELOPERS ── */}
-      <section id="hire" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="hire" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-16 items-start">
           <div>
@@ -388,7 +388,7 @@ export default function IosAppDevelopmentPage() {
       </section>
 
       {/* ── APPS WE BUILD + APP STORE LAUNCH ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
             <Label>Apps We Build</Label>
@@ -422,7 +422,7 @@ export default function IosAppDevelopmentPage() {
       </section>
 
       {/* ── COST ── */}
-      <section id="cost" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="cost" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1200px]">
           <Label>Pricing</Label>
@@ -461,7 +461,7 @@ export default function IosAppDevelopmentPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end mb-12 sm:mb-16">
             <div>
@@ -472,10 +472,10 @@ export default function IosAppDevelopmentPage() {
               Every sprint ends with a TestFlight build, so you try the app on your own iPhone long before launch.
             </p>
           </div>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -487,13 +487,13 @@ export default function IosAppDevelopmentPage() {
       </section>
 
       {/* ── UAE / GCC + KERALA ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px]">
           <Label>Where We Work</Label>
-          <Heading className="max-w-[900px] mb-10 sm:mb-14">iOS app development for the UAE, GCC and Kerala</Heading>
+          <Heading className="max-w-[900px] mb-8 sm:mb-14">iOS app development for the UAE, GCC and Kerala</Heading>
           <div className="grid lg:grid-cols-2 gap-3">
-            <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+            <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
               <h3 className="text-white" style={h2Style}>Dubai, UAE and GCC</h3>
               <p className="mt-5 text-[15.5px] leading-relaxed text-white/65 flex-1">
                 We build bilingual English–Arabic iPhone apps with right-to-left layouts, Apple Pay and GCC payment
@@ -506,7 +506,7 @@ export default function IosAppDevelopmentPage() {
                 <PillLink href={waLink(WA.gcc)} external solid event="whatsapp_click" label="Talk to us in Gulf time" location="gcc_block" icon={<FaWhatsapp aria-hidden="true" />} />
               </div>
             </article>
-            <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+            <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
               <h3 className="text-white" style={h2Style}>Kerala</h3>
               <p className="mt-5 text-[15.5px] leading-relaxed text-white/65">
                 Our team works from HiLITE Business Park, Kozhikode (Calicut), and supports businesses across Kerala,
@@ -531,7 +531,7 @@ export default function IosAppDevelopmentPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -561,7 +561,7 @@ export default function IosAppDevelopmentPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`py-14 sm:py-28 ${PAD} bg-black`}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -576,7 +576,7 @@ export default function IosAppDevelopmentPage() {
       </section>
 
       {/* ── CLOSING CTA + FORM ── */}
-      <section id="quote" className={`relative py-24 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
+      <section id="quote" className={`relative py-16 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
         {NEEDS.map((n) => <span key={n.id} id={`quote-${n.id}`} className="absolute top-0" aria-hidden="true" />)}
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />

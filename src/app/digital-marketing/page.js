@@ -60,7 +60,7 @@ const WA = {
 };
 
 const SERVICES = [
-  { id: "seo", Icon: FaSearch, title: "Search engine optimisation (SEO)", text: <>Rank on Google for searches your customers make: local SEO, technical SEO, <Link href="/digital-marketing/seo-services/on-page-seo-services" className={LINK}>on-page optimisation</Link>, content and links. See our <Link href="/digital-marketing/seo-services" className={LINK}>SEO company in Calicut</Link> page.</> },
+  { id: "seo", Icon: FaSearch, title: "Search engine optimisation (SEO)", text: <>Rank on Google for searches your customers make: local SEO, technical SEO, <Link href="/digital-marketing/seo-services/on-page-seo-services" className={LINK}>on-page optimisation</Link>, content and <Link href="/digital-marketing/seo-services/off-page-seo-services" className={LINK}>link building</Link>. See our <Link href="/digital-marketing/seo-services" className={LINK}>SEO company in Calicut</Link> page, or start with a <Link href="/digital-marketing/seo-services/seo-audit-services" className={LINK}>free SEO audit</Link>.</> },
   { id: "google-business", Icon: FaMapMarkedAlt, title: "Google Business Profile management", text: <>Show up in Google Maps and “near me” searches, with reviews and posts managed for you. See our <Link href="/digital-marketing/seo-services/local-seo-services" className={LINK}>Google Business Profile management</Link> and local SEO services.</> },
   { id: "google-ads", Icon: FaGoogle, title: "Google Ads (PPC)", text: "Search, Performance Max and YouTube ads tracked to calls, WhatsApp messages and form leads." },
   { id: "social-media", Icon: FaInstagram, title: "Social media marketing", text: "Instagram, Facebook and LinkedIn content, reels and community management." },
@@ -169,7 +169,7 @@ export default function DigitalMarketingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
@@ -184,14 +184,14 @@ export default function DigitalMarketingPage() {
               websites, and we report on leads, not likes. We work with businesses across Kerala and India, from local
               shops and clinics to schools, real estate and ecommerce brands.
             </p>
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+            <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href="#quote" solid label="Get a Free Marketing Audit" location="hero" event="audit_click" />
               <PillLink href={waLink(WA.talk)} external event="whatsapp_click" label="Talk to Our Team" location="hero" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
           </div>
 
           {/* Proof strip — verifiable items only until client results are confirmed */}
-          <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
+          <ul className="mt-10 sm:mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
             <li className="flex items-center gap-2">
               <FaStar aria-hidden="true" className="text-white/55" />
               <a href={organizationSchema.hasMap} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-white/20 hover:text-white">
@@ -205,9 +205,9 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className={`relative py-20 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
+      <section id="services" className={`relative py-14 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>Our Services</Label>
             <Heading>Digital marketing services</Heading>
             <p className="mt-5 text-white/60 text-[16px] leading-relaxed">
@@ -218,11 +218,11 @@ export default function DigitalMarketingPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {SERVICES.map(({ id, Icon, title, text }) => (
-              <div key={title} id={id} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[230px] scroll-mt-24">
+              <div key={title} id={id} className="border-r border-b border-white/10 p-5 sm:p-7 flex flex-col sm:min-h-[230px] scroll-mt-24">
                 <span className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/75">
                   <Icon aria-hidden="true" className="text-[15px]" />
                 </span>
-                <h3 className="mt-auto pt-7 text-[18.5px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-7 text-[18.5px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
                 <p className="mt-2.5 text-[14px] text-white/60 leading-relaxed">{text}</p>
               </div>
             ))}
@@ -231,7 +231,7 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── LEADS NOT LIKES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1300px] grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
           <div>
@@ -260,14 +260,14 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <Label>How We Work</Label>
           <Heading className="mb-12 sm:mb-16">How we turn marketing into leads</Heading>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -279,7 +279,7 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── INDUSTRIES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -left-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1300px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-16">
@@ -303,7 +303,7 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── HOW TO CHOOSE AN AGENCY ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>Before You Hire</Label>
@@ -332,7 +332,7 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── PACKAGES ── */}
-      <section id="packages" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="packages" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1200px]">
           <Label>Packages</Label>
@@ -371,7 +371,7 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -398,10 +398,10 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── KERALA ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[1.1fr_1fr] gap-3">
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Kerala</Label>
             <h2 className="text-white" style={h2Style}>Digital marketing agency in Calicut, serving all of Kerala</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -431,7 +431,7 @@ export default function DigitalMarketingPage() {
               <PillLink href={organizationSchema.hasMap} external event="directions_click" label="Get directions" location="kerala_block" />
             </div>
           </article>
-          <article className="p-7 sm:p-10 flex flex-col" style={GLASS}>
+          <article className="p-6 sm:p-10 flex flex-col" style={GLASS}>
             <Label>Starting Small?</Label>
             <h2 className="text-white" style={h2Style}>A website that converts, then the marketing</h2>
             <p className="mt-6 text-[15.5px] leading-relaxed text-white/65">
@@ -449,7 +449,7 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -460,7 +460,7 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── CLOSING CTA + FORM ── */}
-      <section id="quote" className={`relative py-24 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
+      <section id="quote" className={`relative py-16 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">

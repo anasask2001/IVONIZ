@@ -112,7 +112,7 @@ export default function ClientsPage() {
             <span className="text-[10px] text-white" style={{ lineHeight: 1 }} aria-hidden="true">▶</span>
             <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/60">Our Clients · Client Review</span>
           </h1>
-          <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end mb-10 sm:mb-14">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end mb-8 sm:mb-14">
             <Heading><span id="featured-heading">{FEATURED.short}, {FEATURED.location}</span></Heading>
             <ul className="flex flex-wrap gap-2">
               {FEATURED.work.map((w) => (
@@ -171,7 +171,7 @@ export default function ClientsPage() {
       </section>
 
       {/* ── CLIENT WALL ── */}
-      <section className={`relative py-16 sm:py-24 ${PAD} bg-black`} aria-labelledby="clients-heading">
+      <section className={`relative py-12 sm:py-24 ${PAD} bg-black`} aria-labelledby="clients-heading">
         <div className="mx-auto max-w-[1400px]">
           <Label>Client Websites</Label>
           <div className="mb-10 sm:mb-12">
@@ -182,7 +182,7 @@ export default function ClientsPage() {
       </section>
 
       {/* ── INDUSTRIES ── */}
-      <section className={`py-16 sm:py-24 ${PAD} text-black`} style={{ background: "#f8f8f8" }} aria-labelledby="industries-heading">
+      <section className={`py-12 sm:py-24 ${PAD} text-black`} style={{ background: "#f8f8f8" }} aria-labelledby="industries-heading">
         <div className="mx-auto max-w-[1400px]">
           <Label dark={false}>Industries</Label>
           <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-20">
@@ -208,7 +208,7 @@ export default function ClientsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-16 items-end">
           <div>

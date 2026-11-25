@@ -87,7 +87,7 @@ export default function DemoCatalogue() {
                 role="radio"
                 aria-checked={cat === c}
                 onClick={() => { setCat(c); track("demo_catalogue_filter", { category: c }); }}
-                className={`px-4 py-2 rounded-full text-[13px] border transition-colors ${cat === c ? "bg-black text-white border-black" : "border-black/15 text-black/70 hover:border-black/40"}`}
+                className={`min-h-11 px-4 py-2 rounded-full text-[13px] border transition-colors ${cat === c ? "bg-black text-white border-black" : "border-black/15 text-black/70 hover:border-black/40"}`}
               >
                 {c}
               </button>

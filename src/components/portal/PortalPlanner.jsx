@@ -36,7 +36,7 @@ function Pills({ options, value, onChange, multi = false, name }) {
           role={multi ? "checkbox" : "radio"}
           aria-checked={isOn(o)}
           onClick={() => click(o)}
-          className={`px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
+          className={`min-h-11 px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
             isOn(o) ? "bg-white text-black border-white" : "border-white/20 text-white/75 hover:border-white/50 hover:text-white"
           }`}
         >

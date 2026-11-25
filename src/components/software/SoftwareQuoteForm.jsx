@@ -136,7 +136,7 @@ function Chips({ options, isOn, onPick, name, radio = false }) {
             type="button"
             {...(radio ? { role: "radio", "aria-checked": on } : { "aria-pressed": on })}
             onClick={() => onPick(o)}
-            className={`px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
+            className={`min-h-11 px-4 py-2.5 rounded-full text-[13.5px] border transition-colors duration-200 ${
               on ? "bg-white text-black border-white" : "border-white/20 text-white/75 hover:border-white/50 hover:text-white"
             }`}
           >

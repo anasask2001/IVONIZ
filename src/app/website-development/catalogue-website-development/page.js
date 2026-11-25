@@ -242,7 +242,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
               distributors, showrooms and exporters in Kerala, the UAE, Saudi Arabia, Qatar and beyond, as part of our{" "}
               <Link href="/website-development" className={LINK_DARK}>website development services</Link>.
             </p>
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+            <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href="/contact" solid label="Request a Catalogue Website Quote" location="hero" />
               <PillLink href={waLink(SEND_CATALOGUE_MSG)} external event="whatsapp_click" label="Send Your Catalogue on WhatsApp" location="hero" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
@@ -267,7 +267,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── WHAT IS + LIVE DEMO ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <div className="relative mx-auto max-w-[1300px]">
           <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 mb-12 sm:mb-16">
@@ -294,7 +294,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── WHY NOT A PDF ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
@@ -319,10 +319,10 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <Label>Features</Label>
-          <Heading className="max-w-[820px] mb-10 sm:mb-14">Features of an Ivoniz product catalogue website</Heading>
+          <Heading className="max-w-[820px] mb-8 sm:mb-14">Features of an Ivoniz product catalogue website</Heading>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {FEATURES.map(({ Icon, t }) => (
               <li key={t} className="flex items-center gap-4 px-5 py-5" style={GLASS}>
@@ -337,10 +337,10 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── WHO NEEDS IT ── */}
-      <section className={`py-20 sm:py-28 ${PAD} bg-white text-black`}>
+      <section className={`py-14 sm:py-28 ${PAD} bg-white text-black`}>
         <div className="mx-auto max-w-[1400px]">
           <Label dark={false}>Who It&apos;s For</Label>
-          <Heading dark={false} className="mb-10 sm:mb-14">Who needs a product catalogue website?</Heading>
+          <Heading dark={false} className="mb-8 sm:mb-14">Who needs a product catalogue website?</Heading>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-black/8">
             {WHO.map(({ Icon, t, d }) => (
               <div key={t} className="border-r border-b border-black/8 p-7">
@@ -358,7 +358,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── CATALOGUE VS ECOMMERCE ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -right-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1100px]">
@@ -396,7 +396,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── COST ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1200px]">
           <Label>Pricing</Label>
@@ -423,7 +423,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end mb-12 sm:mb-16">
             <div>
@@ -435,10 +435,10 @@ export default function CatalogueWebsiteDevelopmentPage() {
               Built on <Link href="/website-development/wordpress-website-development" className={LINK_DARK}>WordPress</Link> or a custom stack.
             </p>
           </div>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -450,12 +450,12 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── MARKETS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <PetalSketch className="absolute right-[-60px] bottom-[-40px] w-[360px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
           <Label>Where We Work</Label>
-          <Heading className="max-w-[860px] mb-10 sm:mb-14">Catalogue websites for Kerala and international businesses</Heading>
+          <Heading className="max-w-[860px] mb-8 sm:mb-14">Catalogue websites for Kerala and international businesses</Heading>
           <div className="grid lg:grid-cols-3 gap-3">
             {MARKETS.map((m) => (
               <article key={m.label} className="p-7 sm:p-8 flex flex-col" style={GLASS}>
@@ -471,7 +471,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -502,7 +502,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`py-14 sm:py-28 ${PAD} bg-black`}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -513,7 +513,7 @@ export default function CatalogueWebsiteDevelopmentPage() {
       </section>
 
       {/* ── CLOSING CTA ── */}
-      <section className={`relative py-24 sm:py-32 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative py-16 sm:py-32 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[920px] text-center">

@@ -33,7 +33,7 @@ export function Label({ children, dark = true }) {
   return (
     <div className="flex items-center gap-2.5 mb-5">
       <span className={`text-[10px] ${dark ? "text-white" : "text-black"}`} style={{ lineHeight: 1 }} aria-hidden="true">▶</span>
-      <span className={`text-[11px] font-bold tracking-[0.22em] uppercase ${dark ? "text-white/60" : "text-black/60"}`}>{children}</span>
+      <span className={`text-[12px] sm:text-[11px] font-bold tracking-[0.2em] sm:tracking-[0.22em] uppercase ${dark ? "text-white/60" : "text-black/60"}`}>{children}</span>
     </div>
   );
 }
@@ -99,12 +99,12 @@ export function FaqList({ items }) {
   return (
     <div className="border-t border-white/10">
       {items.map((f) => (
-        <details key={f.q} className="group border-b border-white/10 py-6">
+        <details key={f.q} className="group border-b border-white/10 py-5 sm:py-6">
           <summary className="flex items-start justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <h3 className="text-[16.5px] sm:text-[18px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{f.q}</h3>
-            <span className="shrink-0 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 text-[18px] leading-none transition-transform duration-300 group-open:rotate-45" aria-hidden="true">+</span>
+            <span className="shrink-0 w-9 h-9 sm:w-8 sm:h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 text-[18px] leading-none transition-transform duration-300 group-open:rotate-45" aria-hidden="true">+</span>
           </summary>
-          <p className="mt-3 text-[15px] leading-[1.75] text-white/60 pr-12">{f.a}</p>
+          <p className="mt-3 text-[15px] leading-[1.75] text-white/60 sm:pr-12">{f.a}</p>
         </details>
       ))}
     </div>

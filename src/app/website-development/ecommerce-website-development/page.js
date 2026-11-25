@@ -96,7 +96,7 @@ const PROCESS = [
   { title: "UX and design", text: "Home, category, product, cart and checkout designs for approval." },
   { title: "Development and integrations", text: "Store build, payments, shipping, ERP and tracking." },
   { title: "Product upload and testing", text: "Catalogue import, test orders, speed and device checks." },
-  { title: "Launch and growth support", text: <>Go live, team training, maintenance and <Link href="/digital-marketing/seo-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">ecommerce SEO</Link>.</> },
+  { title: "Launch and growth support", text: <>Go live, team training, maintenance and <Link href="/digital-marketing/seo-services/ecommerce-seo-services" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">ecommerce SEO services</Link>.</> },
 ];
 
 const BUSINESSES = [
@@ -220,7 +220,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
@@ -281,9 +281,9 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>Our Services</Label>
             <Heading>Ecommerce website development services</Heading>
             <p className="mt-5 text-white/55 text-[16px] leading-relaxed">
@@ -293,9 +293,9 @@ export default function EcommerceWebsiteDevelopmentPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {SERVICES.map((s, i) => (
-              <div key={s.title} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[230px]">
+              <div key={s.title} className="border-r border-b border-white/10 p-5 sm:p-7 flex flex-col sm:min-h-[230px]">
                 <span className="text-[13px] font-medium text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-auto pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{s.title}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{s.title}</h3>
                 <p className="mt-2.5 text-[14px] text-white/55 leading-relaxed">{s.text}</p>
               </div>
             ))}
@@ -304,7 +304,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── PLATFORMS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <div className="relative mx-auto max-w-[1200px]">
           <Label dark={false}>Platforms</Label>
@@ -350,7 +350,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
@@ -372,10 +372,10 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── PAYMENTS & SHIPPING ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <Label>Payments and Shipping</Label>
-          <Heading className="max-w-[820px] mb-10 sm:mb-14">Payment gateways and shipping we integrate</Heading>
+          <Heading className="max-w-[820px] mb-8 sm:mb-14">Payment gateways and shipping we integrate</Heading>
           <div className="grid lg:grid-cols-3 gap-3" role="list" aria-label="Payment gateways for ecommerce in India and the UAE">
             {PAYMENTS.map((p) => (
               <div key={p.region} role="listitem" className="p-7" style={GLASS}>
@@ -396,7 +396,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── COST + ESTIMATOR ── */}
-      <section id="cost" className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section id="cost" className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <PetalSketch className="absolute -left-16 top-10 w-[300px] hidden lg:block" />
         <div className="relative mx-auto max-w-[1200px]">
@@ -441,7 +441,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end mb-12 sm:mb-16">
             <div>
@@ -452,10 +452,10 @@ export default function EcommerceWebsiteDevelopmentPage() {
               Typical timelines: 3–6 weeks for a WooCommerce store; 8–20 weeks for custom platforms and marketplaces.
             </p>
           </div>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -467,10 +467,10 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── BUSINESS TYPES ── */}
-      <section className={`py-20 sm:py-28 ${PAD} bg-white text-black`}>
+      <section className={`py-14 sm:py-28 ${PAD} bg-white text-black`}>
         <div className="mx-auto max-w-[1400px]">
           <Label dark={false}>Who We Build For</Label>
-          <Heading dark={false} className="mb-10 sm:mb-14">Ecommerce for every type of business</Heading>
+          <Heading dark={false} className="mb-8 sm:mb-14">Ecommerce for every type of business</Heading>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-black/8">
             {BUSINESSES.map(({ Icon, t }) => (
               <div key={t} className="border-r border-b border-black/8 p-7 sm:p-8">
@@ -483,12 +483,12 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── MARKETS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <PetalSketch className="absolute right-[-60px] bottom-[-40px] w-[360px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
           <Label>Where We Work</Label>
-          <Heading className="max-w-[860px] mb-10 sm:mb-14">Ecommerce development for Kerala and international markets</Heading>
+          <Heading className="max-w-[860px] mb-8 sm:mb-14">Ecommerce development for Kerala and international markets</Heading>
           <div className="grid lg:grid-cols-3 gap-3">
             {MARKETS.map((m) => (
               <article key={m.label} className="p-7 sm:p-8 flex flex-col" style={GLASS}>
@@ -504,9 +504,9 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── STORES WE'VE BUILT ── */}
-      <section className={`py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black`}>
+      <section className={`py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black`}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8 sm:mb-14">
             <div>
               <Label dark={false}>Our Work</Label>
               <Heading dark={false}>Retail and ecommerce sites we&apos;ve built</Heading>
@@ -538,7 +538,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black`}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -565,7 +565,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -576,7 +576,7 @@ export default function EcommerceWebsiteDevelopmentPage() {
       </section>
 
       {/* ── CLOSING CTA ── */}
-      <section className={`relative py-24 sm:py-32 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative py-16 sm:py-32 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[900px] text-center">

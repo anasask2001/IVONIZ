@@ -74,7 +74,7 @@ const INCLUDED = [
 
 const COMPARE = [
   ["On-page SEO", "Content, titles, headings, internal links, images, schema", "On each page of your website", null],
-  ["Off-page SEO", "Backlinks, mentions, reviews", "Outside your website", { href: "/digital-marketing/seo-services", label: "SEO services" }],
+  ["Off-page SEO", "Backlinks, mentions, reviews", "Outside your website", { href: "/digital-marketing/seo-services/off-page-seo-services", label: "Off-page SEO" }],
   ["Technical SEO", "Crawling, indexing, speed, Core Web Vitals", "Across your whole website", { href: "/digital-marketing/seo-services/technical-seo-services", label: "Technical SEO" }],
 ];
 
@@ -97,7 +97,7 @@ const PROCESS = [
 const WHO = [
   ["Websites with visitors but few enquiries", "Pages that rank or get traffic but don't convert."],
   ["New websites", "Every page set up correctly from the start."],
-  ["Ecommerce stores", "Weak product and category pages that need better titles, content and schema."],
+  ["Ecommerce stores", <>Weak product and category pages that need better titles, content and schema. See <Link key="ec" href="/digital-marketing/seo-services/ecommerce-seo-services" className="text-black underline underline-offset-4 decoration-black/25 hover:decoration-black">ecommerce SEO</Link>.</>],
   ["Many service pages, few rankings", "Pages that overlap, compete with each other and rank for nothing."],
   ["Kerala, India and the GCC", "Businesses across India and in the UAE, Qatar and Saudi Arabia."],
 ];
@@ -151,8 +151,9 @@ const schema = {
       "@id": `${PAGE_URL}#breadcrumb`,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://ivoniz.com/" },
-        { "@type": "ListItem", position: 2, name: "SEO Services", item: "https://ivoniz.com/digital-marketing/seo-services" },
-        { "@type": "ListItem", position: 3, name: "On-Page SEO Services", item: PAGE_URL },
+        { "@type": "ListItem", position: 2, name: "Digital Marketing", item: "https://ivoniz.com/digital-marketing" },
+        { "@type": "ListItem", position: 3, name: "SEO Services", item: "https://ivoniz.com/digital-marketing/seo-services" },
+        { "@type": "ListItem", position: 4, name: "On-Page SEO Services", item: PAGE_URL },
       ],
     },
     {
@@ -172,13 +173,14 @@ export default function OnPageSeoServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
           <Breadcrumbs
             dark
             items={[
+              { label: "Digital Marketing", href: "/digital-marketing" },
               { label: "SEO Services", href: "/digital-marketing/seo-services" },
               { label: "On-Page SEO Services", href: "/digital-marketing/seo-services/on-page-seo-services" },
             ]}
@@ -198,13 +200,13 @@ export default function OnPageSeoServicesPage() {
                 <span className="text-[14px] text-white/75">Free on-page check of 3 pages · content written and published by our team</span>
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+            <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href="#quote" solid label="Get a Free On-Page Check" location="hero" event="audit_click" />
               <PillLink href={waLink(WA.check)} external event="whatsapp_click" label="Send My Website on WhatsApp" location="hero" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
           </div>
 
-          <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
+          <ul className="mt-10 sm:mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[13.5px] text-white/60">
             <li className="flex items-center gap-2"><FaPenNib aria-hidden="true" className="text-white/55" /> Content written for your approval</li>
             <li className="flex items-center gap-2"><FaTools aria-hidden="true" className="text-white/55" /> Changes published by our developers</li>
             <li className="flex items-center gap-2"><FaMapMarkerAlt aria-hidden="true" className="text-white/55" /> Team at HiLITE Business Park, Kozhikode</li>
@@ -213,7 +215,7 @@ export default function OnPageSeoServicesPage() {
       </section>
 
       {/* ── WHY IT MATTERS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black`}>
         <div className="mx-auto max-w-[1300px] grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-start">
           <div>
             <Label dark={false}>The Basics</Label>
@@ -245,9 +247,9 @@ export default function OnPageSeoServicesPage() {
       </section>
 
       {/* ── WHAT'S INCLUDED ── */}
-      <section id="included" className={`relative py-20 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
+      <section id="included" className={`relative py-14 sm:py-28 ${PAD} scroll-mt-20`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>What&apos;s Included</Label>
             <Heading>What&apos;s included in our on-page SEO services</Heading>
             <p className="mt-5 text-white/60 text-[16px] leading-relaxed">
@@ -256,11 +258,11 @@ export default function OnPageSeoServicesPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-white/10">
             {INCLUDED.map(({ Icon, title, text }) => (
-              <div key={title} className="border-r border-b border-white/10 p-6 flex flex-col min-h-[210px]">
+              <div key={title} className="border-r border-b border-white/10 p-5 sm:p-6 flex flex-col sm:min-h-[210px]">
                 <span className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/75">
                   <Icon aria-hidden="true" className="text-[15px]" />
                 </span>
-                <h3 className="mt-auto pt-6 text-[17px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-6 text-[17px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{title}</h3>
                 <p className="mt-2 text-[13.5px] text-white/60 leading-relaxed">{text}</p>
               </div>
             ))}
@@ -269,7 +271,7 @@ export default function OnPageSeoServicesPage() {
       </section>
 
       {/* ── EXAMPLE REWRITE ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1200px]">
           <Label>Example</Label>
@@ -297,7 +299,7 @@ export default function OnPageSeoServicesPage() {
       </section>
 
       {/* ── ON-PAGE vs OFF-PAGE vs TECHNICAL ── */}
-      <section id="compare" className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black scroll-mt-20`}>
+      <section id="compare" className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black scroll-mt-20`}>
         <div className="mx-auto max-w-[1200px]">
           <Label dark={false}>Compare</Label>
           <Heading dark={false}>On-page vs off-page vs technical SEO</Heading>
@@ -334,14 +336,14 @@ export default function OnPageSeoServicesPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <Label>How We Work</Label>
           <Heading className="mb-12 sm:mb-16">Our on-page SEO process</Heading>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -358,7 +360,7 @@ export default function OnPageSeoServicesPage() {
       </section>
 
       {/* ── WHO IT'S FOR ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -left-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1300px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-16">
@@ -381,7 +383,7 @@ export default function OnPageSeoServicesPage() {
       </section>
 
       {/* ── PACKAGES ── */}
-      <section id="packages" className={`relative py-20 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
+      <section id="packages" className={`relative py-14 sm:py-28 ${PAD} bg-black scroll-mt-20`}>
         <Grid />
         <div className="relative mx-auto max-w-[1200px]">
           <Label>Packages</Label>
@@ -424,7 +426,7 @@ export default function OnPageSeoServicesPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -448,7 +450,7 @@ export default function OnPageSeoServicesPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`py-14 sm:py-28 ${PAD} bg-black`}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -459,7 +461,7 @@ export default function OnPageSeoServicesPage() {
       </section>
 
       {/* ── CLOSING CTA + FORM ── */}
-      <section id="quote" className={`relative py-24 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
+      <section id="quote" className={`relative py-16 sm:py-32 ${PAD} overflow-hidden scroll-mt-16`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
@@ -476,7 +478,8 @@ export default function OnPageSeoServicesPage() {
               <PillLink href={waLink(WA.check)} external event="whatsapp_click" label="WhatsApp us" location="closing" icon={<FaWhatsapp aria-hidden="true" />} />
             </div>
             <p className="mt-6 text-[14px] text-white/60">
-              Or <Link href="/contact" className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20">contact us</Link> directly.
+              Or <Link href="/contact" className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20">contact us</Link> directly. Need a full-site check first? See our{" "}
+              <Link href="/digital-marketing/seo-services/seo-audit-services" className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20">SEO audit services</Link>.
             </p>
           </div>
           <OnPageCheckForm />

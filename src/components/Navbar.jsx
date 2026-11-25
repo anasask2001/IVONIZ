@@ -60,8 +60,10 @@ export default function Navbar() {
   const closeBtnRef = useRef(null);
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    /* globals.css hides the quick-contact rail and chat button while the menu is open */
+    document.documentElement.toggleAttribute("data-menu-open", open);
     if (open) setTimeout(() => closeBtnRef.current?.focus(), 0);
-    return () => { document.body.style.overflow = ""; };
+    return () => { document.body.style.overflow = ""; document.documentElement.removeAttribute("data-menu-open"); };
   }, [open]);
   useEffect(() => {
     const fn = (e) => {
@@ -123,6 +125,9 @@ export default function Navbar() {
         { label: "Local SEO", href: "/digital-marketing/seo-services/local-seo-services" },
         { label: "Technical SEO", href: "/digital-marketing/seo-services/technical-seo-services" },
         { label: "On-Page SEO", href: "/digital-marketing/seo-services/on-page-seo-services" },
+        { label: "Off-Page SEO", href: "/digital-marketing/seo-services/off-page-seo-services" },
+        { label: "Ecommerce SEO", href: "/digital-marketing/seo-services/ecommerce-seo-services" },
+        { label: "SEO Audit", href: "/digital-marketing/seo-services/seo-audit-services" },
         { label: "SMM", href: "/digital-marketing#social-media" },
         { label: "SEM", href: "/digital-marketing#google-ads" },
       ],
@@ -177,7 +182,7 @@ export default function Navbar() {
 
             {searchOpen ? (
               <div className="flex items-center gap-3 sm:gap-4 w-full">
-                <Link href="/" className="inline-flex items-center gap-2 shrink-0 select-none">
+                <Link href="/" className="inline-flex items-center gap-2 shrink-0 select-none min-h-11">
                   <Image
                     src="/icons/ivoniz-logo1.png"
                     alt=""
@@ -215,7 +220,7 @@ export default function Navbar() {
               <>
 
             {/* ── LOGO ── */}
-            <Link href="/" className="inline-flex items-center gap-2 shrink-0 select-none">
+            <Link href="/" className="inline-flex items-center gap-2 shrink-0 select-none min-h-11">
               <Image
                 src="/icons/ivoniz-logo1.png"
                 alt=""
@@ -376,16 +381,16 @@ export default function Navbar() {
               {/* Hamburger */}
               <button
                 type="button"
-                onClick={() => setOpen(true)}
-                aria-label="Open menu"
+                onClick={() => setOpen((v) => !v)}
+                aria-label={open ? "Close menu" : "Open menu"}
+                aria-expanded={open}
+                aria-controls="mobile-menu"
                 className={[
-                  "lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full transition-all duration-200",
-                  dark
-                    ? "border border-white/18 text-white hover:bg-white/10 hover:border-white/30"
-                    : "border border-black/12 text-black hover:bg-black/5",
+                  "lg:hidden -mr-2.5 inline-flex h-11 w-11 items-center justify-center transition-opacity duration-200 active:opacity-60",
+                  dark ? "text-white hover:opacity-75" : "text-black hover:opacity-70",
                 ].join(" ")}
               >
-                <HamburgerIcon className="h-2.75 w-4.25" />
+                <MenuToggleIcon open={open} />
               </button>
             </div>
 
@@ -465,124 +470,113 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ── OVERLAY ── */}
-      <div
-        className={[
-          "fixed inset-0 z-50 bg-black/50 backdrop-blur-xs transition-opacity duration-300 lg:hidden",
-          open ? "opacity-100" : "pointer-events-none opacity-0",
-        ].join(" ")}
-        onClick={() => setOpen(false)}
-        aria-hidden="true"
-      />
-
       {/* ════════════════════════════════════
-          MOBILE DRAWER
+          MOBILE MENU — frosted-glass sheet (Apple style)
+          • Glass: translucent black + backdrop blur, fills the screen under the header
+          • 3D entrance: the sheet tilts forward into place in perspective, rows cascade in
+          • Large sentence-case items; current page sits in a soft glass pill
+          • SERVICES opens iOS-style grouped cards; each group lists its pages with › chevrons
       ════════════════════════════════════ */}
-      <aside
-        className={[
-          "fixed right-0 top-0 z-60 h-full w-[85%] max-w-90 lg:hidden overflow-hidden",
-          "transition-transform duration-300 ease-out",
-          open ? "translate-x-0" : "translate-x-full",
-        ].join(" ")}
-        style={{ background: "#080808" }}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Navigation"
+      <nav
+        id="mobile-menu"
+        ref={closeBtnRef}
+        tabIndex={-1}
+        data-open={open ? "" : undefined}
+        aria-label="Mobile"
         inert={!open}
+        className={[
+          "fixed inset-x-0 top-[68px] z-40 lg:hidden outline-none",
+          "h-[calc(100dvh-68px)] overflow-y-auto overscroll-contain",
+          "origin-top transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.32,0.72,0,1)]",
+          open
+            ? "opacity-100 [transform:perspective(1400px)_rotateX(0deg)_translateY(0)_scale(1)]"
+            : "pointer-events-none opacity-0 [transform:perspective(1400px)_rotateX(-9deg)_translateY(-18px)_scale(0.97)]",
+        ].join(" ")}
+        style={{
+          background: "rgba(12,12,14,0.88)",
+          backdropFilter: "blur(30px) saturate(160%)",
+          WebkitBackdropFilter: "blur(30px) saturate(160%)",
+          borderTop: "1px solid rgba(255,255,255,0.08)",
+        }}
       >
-        {/* Watermark */}
-        <div className="absolute inset-0 flex items-end justify-end pointer-events-none select-none overflow-hidden">
-          <span
-            className="font-black text-white leading-none tracking-[-0.04em]"
-            style={{ fontSize: 130, opacity: 0.025, paddingRight: 10, paddingBottom: 20 }}
-          >
-            IVONIZ
-          </span>
-        </div>
-
-        <div className="relative flex h-full flex-col z-10">
-          {/* Header */}
-          <div className="flex items-center justify-between px-6 pt-6 pb-5 border-b border-white/[0.07]">
-            <Link href="/" onClick={() => setOpen(false)} className="flex items-center group"
-              style={{ width: 110, height: 30 }}>
-              <Image
-                src="/icons/ivoniz-logo0.png"
-                alt="Ivoniz"
-                width={110}
-                height={30}
-                className="w-full h-full object-contain object-left"
-              />
-            </Link>
-            <button
-              ref={closeBtnRef}
-              type="button"
-              onClick={() => setOpen(false)}
-              aria-label="Close menu"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/50 hover:text-white hover:border-white/25 transition-colors"
-            >
-              <CloseIcon className="h-3.5 w-3.5" />
-            </button>
-          </div>
-
-          {/* Links */}
-          <div className="flex-1 overflow-y-auto px-4 py-5">
-            <ul className="space-y-0.75">
-              {nav.map((item) => {
-                const active = isActive(item.href);
-                return (
-                  <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      onClick={() => setOpen(false)}
-                      className={[
-                        "flex items-center justify-between w-full px-4 py-3.5 rounded-xl transition-all duration-150 group/ml",
-                        active ? "bg-white" : "hover:bg-white/5",
-                      ].join(" ")}
-                    >
-                      <span className={[
-                        "text-[13px] font-bold tracking-widest uppercase",
-                        active ? "text-black" : "text-white/60 group-hover/ml:text-white transition-colors",
-                      ].join(" ")}>
-                        {item.label}
-                      </span>
-                      <FiArrowUpRight aria-hidden="true" className={active ? "text-black/55 text-[13px]" : "text-white/55 text-[13px]"} />
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          {/* Footer */}
-          <div className="px-4 py-6 border-t border-white/[0.07]">
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="flex items-center justify-center gap-2 w-full h-11.5 bg-white text-black text-[13px] font-bold tracking-[0.05em] uppercase rounded-full mb-4"
-            >
-              Get in Touch
-            </Link>
-            <div className="flex items-center gap-4 text-[11.5px] text-white/55">
-              <a href="tel:+919645760023" className="hover:text-white/50 transition-colors">+91 96457 60023</a>
-              <span className="w-px h-3 bg-white/10 inline-block" />
-              <a href="mailto:info@ivoniz.com" className="hover:text-white/50 transition-colors">info@ivoniz.com</a>
-            </div>
-          </div>
-        </div>
-      </aside>
+        <ul className="px-3 pt-4 pb-12 space-y-1">
+          {MOBILE_ORDER.map((label) => nav.find((n) => n.label === label)).filter(Boolean).map((item, idx) => {
+            const active = isActive(item.href);
+            const row = "flex items-center justify-between w-full min-h-[56px] px-4 rounded-2xl text-[22px] font-semibold tracking-[-0.02em] transition-[background-color,color,transform] duration-200 active:scale-[0.985]";
+            if (item.mega) {
+              return (
+                <li key={item.label} className="menu-row" style={{ "--i": idx }}>
+                  <details className="group/svc">
+                    <summary className={`${row} cursor-pointer list-none [&::-webkit-details-marker]:hidden text-white/80 hover:text-white active:bg-white/[0.06] group-open/svc:text-white`}>
+                      {item.label}
+                      <ChevronDown className="h-5 w-5 text-white/45 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-open/svc:rotate-180" />
+                    </summary>
+                    <div className="px-1 pt-1 pb-2 space-y-2">
+                      {servicesCols.map((col) => (
+                        <details
+                          key={col.title}
+                          className="group/col rounded-2xl overflow-hidden border border-white/[0.07] shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_10px_30px_-12px_rgba(0,0,0,0.6)]"
+                          style={{ background: "rgba(255,255,255,0.05)" }}
+                        >
+                          <summary className="flex items-center justify-between min-h-[52px] px-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden text-[16.5px] font-medium text-white/90 active:bg-white/[0.05]">
+                            {col.title}
+                            <ChevronDown className="h-4 w-4 text-white/40 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-open/col:rotate-180" />
+                          </summary>
+                          <ul className="border-t border-white/[0.07] divide-y divide-white/[0.06]">
+                            {col.href && (
+                              <li>
+                                <Link href={col.href} onClick={() => setOpen(false)}
+                                  className={`flex items-center justify-between min-h-[48px] px-4 text-[15.5px] font-medium active:bg-white/[0.05] ${isActive(col.href) ? "text-white" : "text-white/85"}`}>
+                                  All {col.title} services
+                                  <ChevronRight className="h-3.5 w-3.5 text-white/30" />
+                                </Link>
+                              </li>
+                            )}
+                            {col.links.map((l) => (
+                              <li key={l.label}>
+                                <Link href={l.href} onClick={() => setOpen(false)}
+                                  aria-current={isActive(l.href) ? "page" : undefined}
+                                  className={`flex items-center justify-between min-h-[48px] px-4 text-[15.5px] active:bg-white/[0.05] ${isActive(l.href) ? "text-white" : "text-white/65 hover:text-white"}`}>
+                                  <span className="flex items-center gap-2.5">
+                                    {isActive(l.href) && <span className="w-1.5 h-1.5 rounded-full bg-white" aria-hidden="true" />}
+                                    {l.label}
+                                  </span>
+                                  <ChevronRight className="h-3.5 w-3.5 text-white/30" />
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </details>
+                      ))}
+                    </div>
+                  </details>
+                </li>
+              );
+            }
+            return (
+              <li key={item.label} className="menu-row" style={{ "--i": idx }}>
+                <Link
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={`${row} ${active ? "text-white bg-white/[0.09] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]" : "text-white/80 hover:text-white active:bg-white/[0.06]"}`}
+                >
+                  {item.label === "About" ? "About Us" : item.label}
+                  {active && <span className="w-1.5 h-1.5 rounded-full bg-white" aria-hidden="true" />}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </>
   );
 }
 
-/* ── Icons ──────────────────────────────────────── */
-function HamburgerIcon({ className }) {
-  return (
-    <svg viewBox="0 0 20 14" fill="none" className={className} aria-hidden="true">
-      <path d="M1 1h18M1 7h11M1 13h18" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-    </svg>
-  );
-}
+/* Phone menu order (desktop header keeps its own order) */
+const MOBILE_ORDER = ["Home", "About", "Services", "Works", "Clients", "Contact"];
 
+/* ── Icons ──────────────────────────────────────── */
 function CallIcon({ className }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
@@ -632,6 +626,25 @@ function HeadsetIcon({ className }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+
+/* Apple-style two-line menu icon: lines glide together and rotate into an ✕ */
+function MenuToggleIcon({ open }) {
+  const line = "absolute left-0 right-0 h-[1.6px] rounded-full bg-current transition-[top,transform] duration-[420ms] ease-[cubic-bezier(0.32,0.72,0,1)]";
+  return (
+    <span className="relative block w-[19px] h-[13px]" aria-hidden="true">
+      <span className={`${line} ${open ? "top-[5.7px] rotate-45" : "top-[2px]"}`} />
+      <span className={`${line} ${open ? "top-[5.7px] -rotate-45" : "top-[9.4px]"}`} />
+    </span>
+  );
+}
+
+function ChevronRight({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

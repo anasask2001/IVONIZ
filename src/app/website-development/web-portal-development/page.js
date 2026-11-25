@@ -208,7 +208,7 @@ export default function WebPortalDevelopmentPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* ── HERO + ROLE DEMO ── */}
-      <section className={`relative pt-32 sm:pt-40 pb-16 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative pt-28 sm:pt-40 pb-12 sm:pb-24 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-10 top-24 w-[340px] sm:w-[440px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
@@ -230,7 +230,7 @@ export default function WebPortalDevelopmentPage() {
               connected to the systems you already use. Part of our{" "}
               <Link href="/website-development" className={LINK_DARK}>website development services</Link>.
             </p>
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+            <div className="order-first lg:order-none flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href={waLink(CALL_MSG)} external solid event="whatsapp_click" label="Book a Discovery Call" location="hero" icon={<FaWhatsapp aria-hidden="true" />} />
               <PillLink href="/contact" label="Discuss Your Portal Project" location="hero" />
             </div>
@@ -259,20 +259,20 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── PORTAL TYPES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
-          <div className="max-w-[820px] mb-10 sm:mb-14">
+          <div className="max-w-[820px] mb-8 sm:mb-14">
             <Label>Portal Types</Label>
             <Heading>Types of web portals we develop</Heading>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {TYPES.map(({ Icon, t, d }, i) => (
-              <div key={t} className="border-r border-b border-white/10 p-7 flex flex-col min-h-[230px]">
+              <div key={t} className="border-r border-b border-white/10 p-5 sm:p-7 flex flex-col sm:min-h-[230px]">
                 <div className="flex items-start justify-between">
                   <span className="text-[13px] font-medium text-white/55 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                   <Icon aria-hidden="true" className="text-[18px] text-white/55" />
                 </div>
-                <h3 className="mt-auto pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{t}</h3>
+                <h3 className="mt-auto pt-4 sm:pt-8 text-[19px] text-white leading-snug" style={{ fontFamily: OPEN_SANS, fontWeight: 400, letterSpacing: "-0.02em" }}>{t}</h3>
                 <p className="mt-2.5 text-[14px] text-white/55 leading-relaxed">{d}</p>
               </div>
             ))}
@@ -285,7 +285,7 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
@@ -310,7 +310,7 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── INTEGRATIONS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-[#f8f8f8] text-black overflow-hidden`}>
         <Grid dark={false} />
         <PetalSketch dark={false} className="absolute -left-16 -bottom-16 w-[320px] hidden md:block" />
         <div className="relative mx-auto max-w-[1200px]">
@@ -335,7 +335,7 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── SECURITY + TECHNOLOGY ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <div className="relative mx-auto max-w-[1400px] grid lg:grid-cols-2 gap-12 lg:gap-20">
           <div>
@@ -372,7 +372,7 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── COST ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1200px]">
           <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end">
             <div>
@@ -407,7 +407,7 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── PORTAL PLANNER (qualifying lead tool) ── */}
-      <section id="plan" className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden scroll-mt-20`}>
+      <section id="plan" className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden scroll-mt-20`}>
         <Grid />
         <PetalSketch className="absolute -right-12 top-10 w-[300px] hidden lg:block" />
         <div className="relative mx-auto max-w-[1100px]">
@@ -422,7 +422,7 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px]">
           <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-end mb-12 sm:mb-16">
             <div>
@@ -433,10 +433,10 @@ export default function WebPortalDevelopmentPage() {
               Typical timeline: 8–12 weeks for a first phase; larger portals are delivered in phases over 3–6 months.
             </p>
           </div>
-          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 sm:gap-y-12">
             {PROCESS.map((s, i) => (
               <li key={s.title} className="border-t border-white/12 pt-6">
-                <span className="block leading-none mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(44px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
+                <span className="block leading-none mb-3 sm:mb-5" style={{ ...OUTLINE, WebkitTextStroke: "1px rgba(217,217,217,0.45)", fontFamily: OPEN_SANS, fontWeight: 300, fontSize: "clamp(36px,4vw,64px)", letterSpacing: "-0.03em" }} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[19px] text-white" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{s.title}</h3>
@@ -448,12 +448,12 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── MARKETS ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD} bg-black overflow-hidden`}>
+      <section className={`relative py-14 sm:py-28 ${PAD} bg-black overflow-hidden`}>
         <Grid />
         <PetalSketch className="absolute right-[-60px] bottom-[-40px] w-[360px] hidden md:block" />
         <div className="relative mx-auto max-w-[1400px]">
           <Label>Where We Work</Label>
-          <Heading className="max-w-[860px] mb-10 sm:mb-14">Web portal development for Kerala and international organisations</Heading>
+          <Heading className="max-w-[860px] mb-8 sm:mb-14">Web portal development for Kerala and international organisations</Heading>
           <div className="grid lg:grid-cols-3 gap-3">
             {MARKETS.map((m) => (
               <article key={m.label} className="p-7 sm:p-8 flex flex-col" style={GLASS}>
@@ -469,7 +469,7 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── WHY IVONIZ ── */}
-      <section className={`relative py-20 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
+      <section className={`relative py-14 sm:py-28 ${PAD}`} style={{ background: "#0a0a0a" }}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
           <div>
             <Label>Why Ivoniz</Label>
@@ -499,7 +499,7 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={`py-20 sm:py-28 ${PAD} bg-black`}>
+      <section className={`py-14 sm:py-28 ${PAD} bg-black`}>
         <div className="mx-auto max-w-[1400px] grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-20">
           <div>
             <Label>FAQ</Label>
@@ -518,7 +518,7 @@ export default function WebPortalDevelopmentPage() {
       </section>
 
       {/* ── CLOSING CTA ── */}
-      <section className={`relative py-24 sm:py-32 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
+      <section className={`relative py-16 sm:py-32 ${PAD} overflow-hidden`} style={{ background: "#060606" }}>
         <Grid />
         <PetalSketch className="absolute -right-12 -bottom-16 w-[300px] hidden md:block" />
         <div className="relative mx-auto max-w-[900px] text-center">
