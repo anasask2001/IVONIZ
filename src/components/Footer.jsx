@@ -80,6 +80,7 @@ const COMPANY = [
   { label: "About Us", href: "/about" },
   { label: "Works",    href: "/works" },
   { label: "Clients",  href: "/clients" },
+  { label: "Blog",     href: "/blog" },
   { label: "Contact",  href: "/contact" },
 ];
 

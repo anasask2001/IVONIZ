@@ -16,6 +16,7 @@ export default function Navbar() {
       { label: "Services",  href: "/#our-services", mega: "services" },
       { label: "Works",     href: "/works" },
       { label: "Clients",   href: "/clients" },
+      { label: "Blog",      href: "/blog" },
       { label: "About",     href: "/about" },
       { label: "Contact",   href: "/contact" },
     ],
@@ -271,7 +272,7 @@ export default function Navbar() {
                         aria-expanded={isMega ? activeMega === item.mega : undefined}
                         aria-haspopup={isMega ? "true" : undefined}
                         className={[
-                          "relative flex items-center gap-1.5 px-4 py-6 text-[11.5px] font-semibold tracking-[0.12em] uppercase transition-colors duration-200",
+                          "relative flex items-center gap-1.5 px-3 xl:px-4 py-6 text-[11.5px] font-semibold tracking-[0.12em] uppercase transition-colors duration-200",
                           active ? "text-white" : "text-white/65 hover:text-white",
                         ].join(" ")}
                       >
@@ -287,7 +288,7 @@ export default function Navbar() {
                         {/* Active indicator */}
                         {active && (
                           <span
-                            className="absolute bottom-0 left-4 right-4 h-0.5 rounded-full"
+                            className="absolute bottom-0 left-3 right-3 xl:left-4 xl:right-4 h-0.5 rounded-full"
                             style={{
                               background: "rgba(255,255,255,0.85)",
                               boxShadow: "0 0 8px rgba(255,255,255,0.4)",
@@ -578,7 +579,7 @@ export default function Navbar() {
 }
 
 /* Phone menu order (desktop header keeps its own order) */
-const MOBILE_ORDER = ["Home", "About", "Services", "Works", "Clients", "Contact"];
+const MOBILE_ORDER = ["Home", "About", "Services", "Works", "Clients", "Blog", "Contact"];
 
 /* ── Icons ──────────────────────────────────────── */
 function CallIcon({ className }) {
