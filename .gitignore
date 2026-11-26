@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /.next-build/
+
+# reCAPTCHA secret: never commit (lives outside public_html on the server)
+recaptcha-secret.php

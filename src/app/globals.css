@@ -200,3 +200,19 @@ html[data-menu-open] .chat-root { display: none; }
   .lg-cta:hover { background: rgba(255, 255, 255, 0.16); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.35); }
   .lg-cta-primary:hover { background: #fff; box-shadow: inset 0 1px 0 #fff, 0 0 0 1px #fff; }
 }
+
+/* ── Timed lead pop-up (components/LeadPopup.jsx) ───────────────── */
+@keyframes lead-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes lead-pop { from { opacity: 0; transform: translateY(16px) scale(0.97); } to { opacity: 1; transform: none; } }
+@keyframes lead-sheet { from { transform: translateY(100%); } to { transform: none; } }
+.lead-fade { animation: lead-fade 0.3s ease both; }
+.lead-pop { animation: lead-pop 0.5s cubic-bezier(0.32, 0.72, 0, 1) both; }
+@media (max-width: 639px) { .lead-pop { animation-name: lead-sheet; } }
+@media (prefers-reduced-motion: reduce) { .lead-fade, .lead-pop { animation: none; } }
+html[data-popup-open] .quick-rail,
+html[data-popup-open] .chat-root { display: none; }
+
+/* reCAPTCHA v3: hide the floating badge (it collides with the chat button).
+   Allowed by Google when the notice text is shown with the form, which the
+   contact page does. */
+.grecaptcha-badge { visibility: hidden !important; }

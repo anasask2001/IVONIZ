@@ -278,35 +278,37 @@ export default function Home() {
       <ShowcaseSections />
 
       {/* ── STATS ────────────────────────────────────────────────── */}
-      <section className="bg-black pb-20 sm:pb-28">
-        <div className="mx-auto max-w-350 px-4 sm:px-6 lg:px-10 xl:px-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      {/* Apple "by the numbers" band: light, no boxes, thin numbers, hairline dividers.
+          Numbers come from lib/clients.js (real, clickable work). */}
+      <section className="bg-[#f5f5f7] text-[#1d1d1f] px-5 sm:px-6 lg:px-10 xl:px-16 py-20 sm:py-28">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-14">
+            <h2 className="m-0" style={{ ...DISPLAY, fontSize: "clamp(30px, calc(1.6vw + 20px), 48px)" }}>
+              Real work, <span style={OUT_DARK}>live online.</span>
+            </h2>
+            <Link href="/works" className="text-[17px] text-[#1d1d1f] hover:underline underline-offset-4 shrink-0">
+              See all projects <span aria-hidden="true">›</span>
+            </Link>
+          </div>
+          <dl className="m-0 grid grid-cols-2 lg:grid-cols-4 border-t border-black/10">
             {[
               { value: CLIENT_STATS.total,     label: "Live client websites" },
               { value: CLIENT_STATS.kerala,    label: "Clients in Kerala" },
               { value: CLIENT_STATS.gcc,       label: "Clients in the GCC" },
               { value: CLIENT_STATS.countries, label: "Countries" },
             ].map(({ value, label }, i) => (
-              <Reveal key={label} y={40} scale={0.94} delay={i * 0.12}>
-              <div className="stat-card flex flex-col items-center justify-center text-center gap-3 py-10 sm:py-14 px-4 cursor-default h-full">
-                <span
-                  className="text-white leading-none"
-                  style={{
-                    fontFamily: "var(--font-open-sans), 'Open Sans', sans-serif",
-                    fontSize  : "clamp(40px, calc(3.2vw + 24px), 76px)",
-                    fontWeight: 600,
-                    letterSpacing: "-0.04em",
-                  }}
+              <Reveal key={label} y={24} delay={i * 0.08}>
+                <div
+                  className={`flex flex-col pt-8 pb-8 lg:pb-2 ${i % 2 ? "pl-6 border-l border-black/10" : "pr-6"} ${i > 1 ? "border-t border-black/10 lg:border-t-0" : ""} ${i === 2 ? "lg:pl-8 lg:border-l" : ""} ${i > 0 ? "lg:pl-8" : ""}`}
                 >
-                  {value}
-                </span>
-                <span className="text-[13px] sm:text-[14px] text-white/60 font-normal leading-snug max-w-32">
-                  {label}
-                </span>
-              </div>
+                  <dd className="m-0 order-first leading-none tabular-nums" style={{ ...DISPLAY, fontSize: "clamp(56px, calc(4vw + 32px), 104px)" }}>
+                    {value}
+                  </dd>
+                  <dt className="mt-4 text-[15px] sm:text-[16px] text-black/55">{label}</dt>
+                </div>
               </Reveal>
             ))}
-          </div>
+          </dl>
         </div>
       </section>
 
@@ -432,6 +434,27 @@ export default function Home() {
               A website, an app, software or marketing. Answer a few questions and send them on WhatsApp or email.
               We reply with questions, then a fixed written quote.
             </p>
+            {/* Direct contact, so the column beside the form isn't empty */}
+            <ul className="mt-10 max-w-[440px] border-t border-white/10">
+              {[
+                ["Visit", "HiLITE Business Park, Kozhikode", organizationSchema.hasMap, true],
+                ["Call", "+91 96457 60023", "tel:+919645760023", false],
+                ["Email", "info@ivoniz.com", "mailto:info@ivoniz.com", false],
+                ["WhatsApp", "Message us", waLink("Hi Ivoniz, I'd like to discuss a project."), true],
+              ].map(([k, v, href, external]) => (
+                <li key={k} className="border-b border-white/10">
+                  <a
+                    href={href}
+                    {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="group flex items-center justify-between gap-6 py-4"
+                  >
+                    <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/45 w-24 shrink-0">{k}</span>
+                    <span className="flex-1 text-[15px] text-white/85 group-hover:text-white">{v}</span>
+                    <span aria-hidden="true" className="text-white/40 group-hover:text-white group-hover:translate-x-0.5 transition-transform">›</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
           <ProjectQuoteForm
             idPrefix="home"

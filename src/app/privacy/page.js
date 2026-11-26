@@ -82,6 +82,11 @@ const sections = [
             <strong>Google Maps</strong>, embedded to show our office location; Google may set cookies when the
             map loads.
           </li>
+          <li>
+            <strong>Google reCAPTCHA</strong>, which checks that contact-form enquiries come from a person and not a
+            spam bot. When you send the form, Google receives information about your device and how you used the
+            page, under its own privacy policy.
+          </li>
         </ul>
         <p>
           These services set cookies or similar identifiers and process the data under their own policies:{" "}

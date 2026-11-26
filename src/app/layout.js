@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import RightQuickActions from "@/components/RightQuickActions";
 import ChatWidgetLoader from "@/components/ChatWidgetLoader";
+import LeadPopup from "@/components/LeadPopup";
 import AnalyticsRouteTracker from "@/components/AnalyticsRouteTracker";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 
@@ -167,6 +168,7 @@ export default function RootLayout({ children }) {
         {children}
         <RightQuickActions/>
         <ChatWidgetLoader/>
+        <LeadPopup/>
       </body>
     </html>
   );

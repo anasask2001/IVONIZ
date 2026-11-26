@@ -47,12 +47,48 @@ if (!empty($_POST['website'])) reply(200, ['ok' => true]);
 $started = (int)($_POST['t'] ?? 0);
 if ($started > 0 && (microtime(true) * 1000 - $started) < 3000) reply(200, ['ok' => true]);
 
+// reCAPTCHA v3. On only when the secret file exists OUTSIDE public_html, e.g.
+// /home/<user>/domains/ivoniz.com/recaptcha-secret.php containing:
+//   <?php return 'YOUR_SECRET_KEY';
+// (the site key goes in src/lib/recaptcha.js). Low scores and failed checks are
+// rejected; the page then offers its WhatsApp / email fallback.
+$secretFile = dirname(__DIR__) . '/recaptcha-secret.php';
+if (is_file($secretFile)) {
+    $secret = trim((string)(include $secretFile));
+    if ($secret !== '') {
+        $token = (string)($_POST['recaptcha'] ?? '');
+        if ($token === '') reply(403, ['ok' => false, 'error' => 'captcha']);
+        $payload = http_build_query(['secret' => $secret, 'response' => $token, 'remoteip' => $_SERVER['REMOTE_ADDR'] ?? '']);
+        $raw = false;
+        if (function_exists('curl_init')) {
+            $ch = curl_init('https://www.google.com/recaptcha/api/siteverify');
+            curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_POSTFIELDS => $payload, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 8]);
+            $raw = curl_exec($ch);
+            curl_close($ch);
+        } else {
+            $raw = @file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, stream_context_create(['http' => [
+                'method' => 'POST', 'header' => "Content-Type: application/x-www-form-urlencoded\r\n", 'content' => $payload, 'timeout' => 8,
+            ]]));
+        }
+        $v = $raw ? json_decode($raw, true) : null;
+        $ok = is_array($v)
+            && !empty($v['success'])
+            && ($v['action'] ?? '') === 'contact'
+            && (float)($v['score'] ?? 0) >= 0.5
+            && in_array(strtolower((string)($v['hostname'] ?? '')), HOSTS, true);
+        if (!$ok) reply(403, ['ok' => false, 'error' => 'captcha']);
+    }
+}
+
 $name    = clean_line((string)($_POST['name'] ?? ''), 100);
 $phone   = clean_line((string)($_POST['phone'] ?? ''), 25);
 $email   = clean_line((string)($_POST['email'] ?? ''), 150);
 $service = clean_line((string)($_POST['service'] ?? ''), 100);
 $message = mb_substr(trim((string)($_POST['message'] ?? '')), 0, 3000);
 $page    = clean_line((string)($_POST['page'] ?? ''), 200);
+$location = clean_line((string)($_POST['location'] ?? ''), 100);
+// Which form sent it: "contact" (contact page) or "popup" (timed lead popup).
+$source  = ($_POST['source'] ?? '') === 'popup' ? 'popup' : 'contact';
 
 if (mb_strlen($name) < 2) reply(422, ['ok' => false, 'error' => 'name']);
 if (!preg_match('/^\+?[0-9 ()\-]{6,25}$/', $phone)) reply(422, ['ok' => false, 'error' => 'phone']);
@@ -71,10 +107,11 @@ $hits[] = $now;
 @file_put_contents($file, json_encode(array_values($hits)), LOCK_EX);
 
 $subject = 'New website enquiry from ' . $name . ($service ? " ({$service})" : '');
-$body = "New enquiry from the ivoniz.com contact form\n\n"
+$body = "New enquiry from the ivoniz.com " . ($source === 'popup' ? 'pop-up form' : 'contact form') . "\n\n"
       . "Name:    {$name}\n"
       . "Phone:   {$phone}\n"
       . "Email:   {$email}\n"
+      . ($location !== '' ? "Location: {$location}\n" : '')
       . "Service: " . ($service ?: 'Not specified') . "\n"
       . "Page:    " . ($page ?: '/contact') . "\n\n"
       . "Message:\n" . ($message !== '' ? $message : '(none)') . "\n\n"

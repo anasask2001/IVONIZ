@@ -6,6 +6,7 @@ import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { track, waLink } from "@/components/comparison/Interactive";
+import { getRecaptchaToken, recaptchaEnabled } from "@/lib/recaptcha";
 
 // Brochure is being revised — the button stays, but the download is off until the new PDF is in place.
 const BROCHURE_AVAILABLE = false;
@@ -49,10 +50,11 @@ export default function ContactPageClient() {
     if (!form.name || !form.phone || !form.email || status === "sending") return;
     setStatus("sending");
     try {
+      const recaptcha = await getRecaptchaToken("contact");
       const res = await fetch("/contact-mail.php", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ ...form, website: honeypot, t: String(shownAt.current), page: window.location.pathname }),
+        body: new URLSearchParams({ ...form, website: honeypot, t: String(shownAt.current), page: window.location.pathname, recaptcha }),
       });
       const data = await res.json();
       if (!res.ok || !data.ok) throw new Error(data.error || "send failed");
@@ -296,6 +298,15 @@ export default function ContactPageClient() {
               >
                 {status === "sending" ? "Sending…" : <>Send Enquiry <FaArrowRight aria-hidden="true" className="text-[13px]" /></>}
               </button>
+            )}
+
+            {/* Required notice when the floating reCAPTCHA badge is hidden (see globals.css) */}
+            {recaptchaEnabled() && (
+              <p className="mt-4 text-[12px] leading-relaxed text-white/45">
+                Protected by reCAPTCHA. Google&apos;s{" "}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">Privacy Policy</a> and{" "}
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">Terms of Service</a> apply.
+              </p>
             )}
 
             {status === "failed" && (
