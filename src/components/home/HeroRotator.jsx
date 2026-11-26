@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
    (slide out left, slide in from the right) done with CSS, so the homepage
    hero no longer needs framer-motion. The first word is in the static HTML. */
 const WORDS = ["Apps", "Websites", "AI Tools", "Software"];
-const STYLE = { fontSize: "clamp(76px, 11.5vw, 175px)", lineHeight: 0.87, letterSpacing: "-0.025em", color: "#D9D9D9" };
+const STYLE = { fontSize: "clamp(68px, min(11.5vw, 17svh), 175px)", lineHeight: 0.87, letterSpacing: "-0.025em", color: "#D9D9D9" };
 
 export default function HeroRotator() {
   // Running count, so every word after the very first render animates in

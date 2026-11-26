@@ -263,7 +263,7 @@ export default function Footer({ hideLocation = false }) {
           <div className="flex gap-6 text-[13px] text-black/60">
             <Link href="/privacy" className="py-3 -my-3 hover:text-black transition-colors">Privacy Policy</Link>
             <Link href="/terms"   className="py-3 -my-3 hover:text-black transition-colors">Terms of Service</Link>
-            <Link href="/site-map" className="py-3 -my-3 hover:text-black transition-colors">Site Map</Link>
+            <Link href="/sitemap" className="py-3 -my-3 hover:text-black transition-colors">Site Map</Link>
           </div>
         </div>
 

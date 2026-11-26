@@ -1,9 +1,10 @@
 import { execSync } from "node:child_process";
 import { CLIENTS } from "@/lib/clients";
 
-export const dynamic = "force-static";
+/* Single source for /sitemap.xml (src/app/sitemap.xml/route.js).
+   Add a page here when you add it to the site. */
 
-const BASE_URL = "https://ivoniz.com";
+export const BASE_URL = "https://ivoniz.com";
 
 /* lastmod = date of the last git commit that touched the page's source file,
    so Google only sees a new date when the page really changed. Falls back to
@@ -67,7 +68,7 @@ const routes = [
   { path: "/website-development/custom-website-vs-wordpress", priority: 0.85, changeFrequency: "monthly" },
   { path: "/website-development/website-development-cost-in-kerala", priority: 0.8, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
-  { path: "/site-map", priority: 0.3, changeFrequency: "monthly" },
+  { path: "/sitemap", priority: 0.3, changeFrequency: "monthly" },
   { path: "/terms", priority: 0.2, changeFrequency: "yearly" },
 ];
 
@@ -80,7 +81,7 @@ const projectRoutes = CLIENTS.map((c) => ({
   images: [`${BASE_URL}${c.image}`],
 }));
 
-export default function sitemap() {
+export function sitemapEntries() {
   return [...routes, ...projectRoutes].map((route) => ({
     url: `${BASE_URL}${route.path}`,
     lastModified: lastModified(route.file || `src/app${route.path}/page.js`),

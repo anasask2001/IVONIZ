@@ -1,3 +1,6 @@
+# ── Content types: sitemap.xml is styled for browsers by sitemap.css ──
+AddType application/xml .xml
+
 # ── HTTPS + canonical host enforcement ──
 # Canonical domain is the non-www form (matches every <link rel="canonical">
 # and JSON-LD url on the site). Force HTTPS first, then collapse www to
@@ -37,6 +40,8 @@
   # Also older variants Google still lists (Search Console, Nov 2026): …-in-calicut, …-company-in-kozhikode
   RewriteRule ^(?:digital-marketing/)?best-digital-marketing-(?:company-)?in-(?:calicut|kochi|kozhikode)(?:\.html)?/?$ /digital-marketing [R=301,L]
   RewriteRule ^founder(?:\.html)?/?$ /about/founder [R=301,L]
+  # Human site map moved from /site-map to /sitemap (27 Nov 2026); /sitemap.xml is untouched
+  RewriteRule ^site-map(?:\.html)?/?$ /sitemap [R=301,L]
 
   # ── Old WordPress-site URLs Google still reports as 404 (Search Console, 26 Nov 2026).
   # Those with a real equivalent today get a 301 …

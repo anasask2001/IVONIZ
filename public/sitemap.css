@@ -1,0 +1,89 @@
+/* Browser view for /sitemap.xml (linked by an xml-stylesheet line).
+   Search engines ignore this file. CSS can style XML but cannot make its
+   text clickable, so the header points people to /sitemap, the page with links. */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+@namespace image url("http://www.google.com/schemas/sitemap-image/1.1");
+
+urlset {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 12px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px 72px;
+  background: #000;
+  color: #fff;
+  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+@media (min-width: 640px) { urlset { padding: 0 40px 80px; } }
+
+/* Header: big title, then the explanation (both span the full width). */
+urlset::before {
+  order: -2;
+  grid-column: 1 / -1;
+  content: "XML Sitemap";
+  padding: 56px 0 0;
+  font-weight: 300;
+  font-size: clamp(40px, 7vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: #d9d9d9;
+}
+urlset::after {
+  order: -1;
+  grid-column: 1 / -1;
+  content: "Ivoniz LLP · This file lists every page on ivoniz.com for Google and other search engines.\A Looking for something? Visit ivoniz.com/sitemap for the same pages as clickable links.";
+  white-space: pre-line;
+  margin: 4px 0 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* One card per page */
+url {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.2s, background 0.2s;
+}
+url:hover { border-color: rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.06); }
+
+loc {
+  display: block;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #fff;
+  overflow-wrap: anywhere;
+}
+lastmod {
+  display: inline-block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+lastmod::before { content: "Updated "; }
+
+changefreq,
+priority,
+image|image { display: none; }
+
+/* Phones: an XML file cannot carry a viewport meta tag, so mobile browsers
+   lay it out at desktop width (~980px) and shrink it. Touch screens get
+   larger type and one column so it stays readable after that shrink. */
+@media (pointer: coarse) and (max-device-width: 820px) {
+  urlset { grid-template-columns: 1fr; gap: 24px; padding: 0 40px 120px; }
+  urlset::before { font-size: 120px; padding-top: 100px; }
+  urlset::after { font-size: 36px; margin-bottom: 40px; padding-bottom: 40px; }
+  url { padding: 36px 40px; border-radius: 32px; gap: 12px; }
+  loc { font-size: 36px; }
+  lastmod { font-size: 28px; }
+}

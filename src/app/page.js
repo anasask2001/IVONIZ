@@ -172,9 +172,10 @@ export default function Home() {
           background: "linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.5) 62%, rgba(0,0,0,0.95) 100%)",
         }} />
 
-        {/* Bottom fade → pure black so hero melts into About with no hard edge */}
+        {/* Bottom fade → pure black so hero melts into About with no hard edge.
+            Below the content layer (3) so it fades the video, not the buttons. */}
         <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{
-          zIndex: 4,
+          zIndex: 2,
           height: "200px",
           background: "linear-gradient(to bottom, transparent 0%, #000 100%)",
         }} />
@@ -190,7 +191,7 @@ export default function Home() {
 
         {/* Content — anchored to bottom */}
         <div
-          className="relative flex flex-col justify-end px-6 sm:px-10 lg:px-14 xl:px-20 pb-44 sm:pb-12 lg:pb-16 min-h-dvh"
+          className="relative flex flex-col justify-end px-6 sm:px-10 lg:px-14 xl:px-20 pt-24 sm:pt-28 pb-24 sm:pb-12 lg:pb-14 min-h-dvh"
           style={{ zIndex: 3 }}
         >
           {/* Text block — the page's single H1.
@@ -203,7 +204,7 @@ export default function Home() {
           <p className="m-0">
             <span
               className="font-light select-none block"
-              style={{ fontSize: "clamp(76px, 11.5vw, 175px)", lineHeight: 0.87, letterSpacing: "-0.025em", color: "#D9D9D9" }}
+              style={{ fontSize: "clamp(68px, min(11.5vw, 17svh), 175px)", lineHeight: 0.87, letterSpacing: "-0.025em", color: "#D9D9D9" }}
             >
               We
             </span>
@@ -211,7 +212,7 @@ export default function Home() {
             <span
               className="font-light select-none block"
               style={{
-                fontSize: "clamp(76px, 11.5vw, 175px)",
+                fontSize: "clamp(68px, min(11.5vw, 17svh), 175px)",
                 lineHeight: 0.87,
                 letterSpacing: "-0.025em",
                 WebkitTextStroke: "1.5px rgba(217,217,217,0.38)",
@@ -225,22 +226,21 @@ export default function Home() {
             <HeroRotator />
           </p>
 
-          <div className="mt-8 lg:mt-10 mb-8 lg:mb-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-            <h1 className="m-0 max-w-[560px] text-[16px] sm:text-[18px] leading-relaxed font-normal text-white/75">
+          <div className="mt-7 lg:mt-9 flex flex-col gap-7 max-w-[620px]">
+            <h1 className="m-0 text-[16px] sm:text-[18px] leading-relaxed font-normal text-white/75">
               Web design, app development and digital marketing company in Kozhikode (Calicut), Kerala, working
               with businesses across Kerala and the Gulf.
             </h1>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <Link href="#quote" className="inline-flex items-center justify-center gap-2 h-[50px] px-7 rounded-full bg-white text-black text-[15px] font-semibold hover:bg-white/90 transition-colors">
-                Get a Project Quote <FiArrowUpRight aria-hidden="true" className="text-[16px]" />
-              </Link>
+            {/* Simple glass pills: white primary, clear secondary */}
+            <div className="flex flex-wrap gap-3">
+              <Link href="#quote" className="lg-cta lg-cta-primary">Get a quote</Link>
               <a
                 href={waLink("Hi Ivoniz, I'd like to discuss a project.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 h-[50px] px-7 rounded-full border border-white/30 text-white text-[15px] font-medium hover:bg-white hover:text-black transition-colors"
+                className="lg-cta"
               >
-                Chat on WhatsApp
+                WhatsApp us
               </a>
             </div>
           </div>
