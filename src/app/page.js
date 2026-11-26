@@ -8,6 +8,7 @@ import TextReveal from "@/components/home/TextReveal";
 import { FiArrowUpRight } from "react-icons/fi";
 import Footer from "@/components/Footer";
 import LazyVideo from "@/components/LazyVideo";
+import HeroVideo from "@/components/home/HeroVideo";
 import { webPageSchema, ORG_ID, organizationSchema } from "@/lib/schema";
 import { clientBySlug, CLIENTS as CLIENT_LIST, CLIENT_STATS } from "@/lib/clients";
 import { waLink } from "@/components/site/SiteUI";
@@ -154,17 +155,14 @@ export default function Home() {
         className="relative overflow-hidden min-h-dvh"
         style={{ background: "#060606" }}
       >
-        {/* Background video — preload="metadata" instead of "auto" so this
-            ~800KB file doesn't compete with critical CSS/JS/fonts for
-            bandwidth on a slow connection; the dark section background
-            above covers the gap until it's ready to play. */}
-        <video
-          autoPlay muted loop playsInline preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
+        {/* Background video (~830KB): loads after the page, when the browser is
+            idle, and fades in once playing; the dark section background shows
+            until then. See components/home/HeroVideo.jsx. */}
+        <HeroVideo
+          src="/video/herosection/ivoniz_compressed.mp4"
+          className="absolute inset-0 w-full h-full object-cover opacity-0 data-playing:opacity-100"
           style={{ zIndex: 0 }}
-        >
-          <source src="/video/herosection/ivoniz_compressed.mp4" type="video/mp4" />
-        </video>
+        />
 
         {/* Cinematic bottom-heavy overlay */}
         <div className="absolute inset-0" style={{

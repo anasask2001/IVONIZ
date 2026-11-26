@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import useLazyGsap from "./home/useLazyGsap";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import LazyVideo from "./LazyVideo";
@@ -46,9 +45,9 @@ export default function ShowcaseSections() {
     charRef.current[si][ci] = el;
   };
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
+  /* Built only when the section is near (see useLazyGsap): keeps ~2 s of
+     ScrollTrigger layout work and the gsap bundle out of the page load. */
+  useLazyGsap(panelRef, (gsap) => {
     const panel = panelRef.current;
     if (!panel) return;
 

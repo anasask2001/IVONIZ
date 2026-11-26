@@ -5,6 +5,7 @@ import {
   FaChalkboardTeacher, FaLifeRing, FaCheck, FaMapMarkerAlt, FaPhoneAlt,
 } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID, organizationSchema } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
@@ -552,6 +553,8 @@ export default function WordPressWebsiteDevelopmentPage() {
           <WordPressQuoteForm />
         </div>
       </section>
+
+      <RelatedReading slugs={["website-maintenance-cost","website-redesign-without-losing-rankings"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Get a Quote" message={WA.quote} />

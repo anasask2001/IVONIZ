@@ -4,6 +4,7 @@ import {
   FaCheck, FaTools, FaRoute, FaHandshake, FaMapMarkerAlt,
 } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID, organizationSchema } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
@@ -516,6 +517,8 @@ export default function TechnicalSeoServicesPage() {
           <TechSeoAuditForm />
         </div>
       </section>
+
+      <RelatedReading slugs={["why-website-not-showing-on-google","website-redesign-without-losing-rankings"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Free Speed Check" message={WA.speed} />

@@ -1,5 +1,6 @@
 import { execSync } from "node:child_process";
 import { CLIENTS } from "@/lib/clients";
+import { POSTS } from "@/lib/blog";
 
 /* Single source for /sitemap.xml (src/app/sitemap.xml/route.js).
    Add a page here when you add it to the site. */
@@ -67,6 +68,13 @@ const routes = [
   { path: "/website-development/web-portal-development", priority: 0.85, changeFrequency: "monthly" },
   { path: "/website-development/custom-website-vs-wordpress", priority: 0.85, changeFrequency: "monthly" },
   { path: "/website-development/website-development-cost-in-kerala", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/website-development/website-development-company-dubai", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/website-development/ecommerce-website-development/ecommerce-website-development-dubai", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/website-development/ecommerce-website-development/shopify-store-development-uae", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/website-development/arabic-website-development", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/website-development/hospital-website-development", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/website-development/website-development-company-in-malappuram", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/blog", priority: 0.6, changeFrequency: "weekly", file: "src/lib/blog.js" },
   { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
   { path: "/sitemap", priority: 0.3, changeFrequency: "monthly" },
   { path: "/terms", priority: 0.2, changeFrequency: "yearly" },
@@ -81,8 +89,11 @@ const projectRoutes = CLIENTS.map((c) => ({
   images: [`${BASE_URL}${c.image}`],
 }));
 
+/* One entry per blog post (/blog/<slug>). */
+const postRoutes = POSTS.map((p) => ({ path: `/blog/${p.slug}`, priority: 0.7, changeFrequency: "monthly" }));
+
 export function sitemapEntries() {
-  return [...routes, ...projectRoutes].map((route) => ({
+  return [...routes, ...postRoutes, ...projectRoutes].map((route) => ({
     url: `${BASE_URL}${route.path}`,
     lastModified: lastModified(route.file || `src/app${route.path}/page.js`),
     changeFrequency: route.changeFrequency,

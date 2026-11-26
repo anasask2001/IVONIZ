@@ -5,6 +5,7 @@ import {
   FaCheck, FaMapMarkerAlt, FaPhoneAlt, FaStar,
 } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID, organizationSchema } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
@@ -485,6 +486,8 @@ export default function DigitalMarketingPage() {
           <MarketingAuditForm />
         </div>
       </section>
+
+      <RelatedReading slugs={["seo-vs-google-ads","how-to-track-website-leads"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Free Audit" message={WA.audit} />

@@ -4,6 +4,7 @@ import {
   FaCheck, FaMapMarkerAlt, FaPhoneAlt, FaBan,
 } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID, organizationSchema } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
@@ -517,6 +518,8 @@ export default function LocalSeoServicesPage() {
           <LocalSeoAuditForm />
         </div>
       </section>
+
+      <RelatedReading slugs={["local-seo-kerala-guide","google-business-profile-not-showing"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Free Local Audit" message={WA.audit} />

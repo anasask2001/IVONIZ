@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -8,6 +9,7 @@ import { CLIENT_STATS } from "@/lib/clients";
 import Footer from "@/components/Footer";
 import AboutHero from "@/components/AboutHero";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import useLazyBackground from "@/components/home/useLazyBackground";
 
 /* Purely decorative background animation — no content, safe to skip
    prerendering entirely and load only client-side. */
@@ -59,6 +61,11 @@ const WHY = [
 const PROMISE = ["You bring the idea.", "We design it.", "We build it.", "We market it."];
 
 export default function AboutPageClient() {
+  /* Large animated backgrounds load only when scrolled near (useLazyBackground). */
+  const graphicRef = useRef(null);
+  const promiseRef = useRef(null);
+  useLazyBackground(graphicRef, "/about-assets/graphic.webp");
+  useLazyBackground(promiseRef, "/about-assets/delirium lab.webp");
   return (
     <main id="main-content" className="bg-white text-black">
 
@@ -219,11 +226,11 @@ export default function AboutPageClient() {
 
             {/* opposite side — graphic gif background */}
             <motion.div
+              ref={graphicRef}
               {...fadeUp(0.1)}
               className="hidden lg:block rounded-2xl overflow-hidden"
               style={{
                 minHeight: "100%",
-                backgroundImage: "url('/about-assets/graphic.webp')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -309,9 +316,9 @@ export default function AboutPageClient() {
 
       {/* ── OUR PROMISE ── */}
       <section
+        ref={promiseRef}
         className="relative py-14 sm:py-16 px-4 sm:px-6 lg:px-10 xl:px-16 bg-black text-white overflow-hidden"
         style={{
-          backgroundImage: "url('/about-assets/delirium lab.webp')",
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

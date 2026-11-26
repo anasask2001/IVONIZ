@@ -5,6 +5,7 @@ import {
   FaCheck, FaMapMarkerAlt,
 } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID, organizationSchema } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
@@ -518,6 +519,8 @@ export default function CrmSoftwareDevelopmentPage() {
           <CrmQuoteForm />
         </div>
       </section>
+
+      <RelatedReading slugs={["ai-automation-small-business","whatsapp-business-uae"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Free CRM Demo" message={WA.demo} />

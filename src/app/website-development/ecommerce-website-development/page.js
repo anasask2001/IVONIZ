@@ -6,6 +6,7 @@ import {
   FaChartBar, FaSearch, FaChartLine, FaLock, FaStore, FaWarehouse, FaTshirt, FaCouch, FaPrescriptionBottleAlt, FaGlobeAsia,
 } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
@@ -25,7 +26,7 @@ import { STORE_TYPES } from "@/components/ecommerce/costs";
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/website-development/ecommerce-website-development";
-const TITLE = "E-commerce Website Development in Kerala & UAE | Ivoniz LLP";
+const TITLE = "E-commerce Website Development Company in Kerala | Ivoniz LLP";
 const DESCRIPTION =
   "Shopify, WooCommerce and custom online stores for Kerala, UAE and GCC businesses, with local payments, Arabic and mobile checkout. See a live store we built.";
 
@@ -35,7 +36,7 @@ export const metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     siteName: "Ivoniz LLP",
-    title: "Ecommerce Website Development Company | Kerala, UAE, GCC",
+    title: "Ecommerce Website Development Company in Kerala",
     description: DESCRIPTION,
     url: PAGE_URL,
     type: "website",
@@ -43,7 +44,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ecommerce Website Development Company | Kerala, UAE, GCC",
+    title: "Ecommerce Website Development Company in Kerala",
     description: DESCRIPTION,
     images: ["/ivoniz-og-image.webp"],
   },
@@ -54,7 +55,7 @@ export const metadata = {
 const SERVICES = [
   { title: "New online store development", text: <>From product catalogue to checkout, built to load fast on mobile. Want a shopping app too? See <Link href="/mobile-app-development#apps" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">ecommerce app development</Link>.</> },
   { title: "Custom ecommerce development", text: "Built on React / Next.js and Node.js for unique features, high traffic and complex logic." },
-  { title: "Shopify store setup", text: "Theme, products, collections, payments and shipping on Shopify, the platform behind the Gaming Qatar store shown above. Good when you want to launch fast and avoid managing hosting." },
+  { title: "Shopify store setup", text: <>Theme, products, collections, payments and shipping on Shopify, the platform behind the Gaming Qatar store shown above. Good when you want to launch fast and avoid managing hosting. For UAE stores, see <Link href="/website-development/ecommerce-website-development/shopify-store-development-uae" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">Shopify store development</Link>.</> },
   { title: "WooCommerce development", text: <>Affordable, easy-to-manage stores on WordPress. See our <Link href="/website-development/ecommerce-website-development/woocommerce-website-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">WooCommerce development services</Link>.</> },
   { title: "B2B and wholesale portals", text: <>Dealer logins, tiered pricing, bulk ordering, credit limits and quotation requests, built with our <Link href="/website-development/web-portal-development" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">web portal development</Link> team.</> },
   { title: "Multi-vendor marketplaces", text: "Vendor onboarding, commissions, payouts and separate dashboards." },
@@ -119,7 +120,16 @@ const MARKETS = [
   },
   {
     label: "UAE, Saudi Arabia, Qatar and Oman",
-    text: "We build bilingual English–Arabic stores with RTL layouts, AED / SAR / QAR pricing, VAT invoices, local gateways and buy-now-pay-later options. For Saudi Arabia we plan for ZATCA e-invoicing requirements.",
+    text: (
+      <>
+        We build bilingual English–Arabic stores with RTL layouts, AED / SAR / QAR pricing, VAT invoices, local gateways
+        and buy-now-pay-later options. For Saudi Arabia we plan for ZATCA e-invoicing requirements. Selling in the UAE?
+        See{" "}
+        <Link href="/website-development/ecommerce-website-development/ecommerce-website-development-dubai" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">
+          ecommerce for Dubai stores
+        </Link>.
+      </>
+    ),
     cta: "Start my store in the GCC",
     message: "Hi Ivoniz, I want to start an online store in the UAE / GCC.",
     location: "markets_gcc",
@@ -187,7 +197,7 @@ const schema = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: "E-commerce Website Development in Kerala & UAE",
+      name: "E-commerce Website Development Company in Kerala",
       description: DESCRIPTION,
       inLanguage: "en",
       isPartOf: { "@id": WEBSITE_ID },
@@ -626,6 +636,8 @@ export default function EcommerceWebsiteDevelopmentPage() {
           </p>
         </div>
       </section>
+
+      <RelatedReading slugs={["ecommerce-website-no-sales","product-page-checklist","cart-abandonment-reasons"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Start My Store" message="Hi Ivoniz, I want to start an online store. Can we discuss it?" />

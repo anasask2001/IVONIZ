@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import useRevealChildren from "./home/useRevealChildren";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -20,33 +19,11 @@ import { domainOf } from "@/lib/clients";
  */
 export default function SelectedWorks({ works }) {
   const sectionRef = useRef(null);
-  const cardRefs = useRef([]);
 
   const items = works.slice(0, 4);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
-      cardRefs.current.forEach((card, i) => {
-        if (!card) return;
-        gsap.fromTo(
-          card,
-          { y: 28, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: "power3.out",
-            delay: (i % 2) * 0.1,
-            scrollTrigger: { trigger: card, start: "top 92%", once: true },
-          }
-        );
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [works]);
+  /* CSS fade-in per card (no GSAP): see useRevealChildren */
+  useRevealChildren(sectionRef, [works]);
 
   return (
     <div
@@ -63,8 +40,8 @@ export default function SelectedWorks({ works }) {
         <Link
           key={work.url}
           href={`/works/${work.slug}`}
-          ref={(el) => (cardRefs.current[i] = el)}
-          className="group block shrink-0 w-[78%] sm:w-auto snap-start"
+          className="reveal group block shrink-0 w-[78%] sm:w-auto snap-start"
+          style={{ "--ry": "28px", "--rd": `${(i % 4) * 0.08}s` }}
         >
           {/* screenshot in a minimal browser frame */}
           <div className="rounded-xl overflow-hidden bg-white border border-black/[0.08] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_32px_-18px_rgba(0,0,0,0.18)] transition-[box-shadow,transform] duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_2px_4px_rgba(0,0,0,0.04),0_28px_56px_-24px_rgba(0,0,0,0.3)]">

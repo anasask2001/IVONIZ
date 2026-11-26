@@ -7,6 +7,7 @@ import {
   FaHospital, FaGraduationCap, FaRocket, FaShoppingBag, FaBuilding, FaWarehouse,
 } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
@@ -34,7 +35,7 @@ const GCC_COUNT = CLIENTS.filter((c) => c.region === "gcc").length;
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/website-development";
-const TITLE = "Website Development Company in Kerala, UAE & GCC | Ivoniz LLP";
+const TITLE = "Website Development Company in Kerala, India | Ivoniz LLP";
 const DESCRIPTION =
   "Custom, WordPress and ecommerce website development for businesses in Kerala, the UAE and the GCC. Fast, SEO-ready sites built to bring enquiries. Get a quote.";
 
@@ -117,7 +118,16 @@ const MARKETS = [
   },
   {
     label: "UAE, Saudi Arabia, Qatar and Oman",
-    text: "We have no office in the Gulf. We work with GCC clients remotely from Kozhikode, by video call and WhatsApp scheduled in Gulf time. We build English and Arabic (RTL) websites and can connect local gateways such as PayTabs, Telr, Tap and Mada.",
+    text: (
+      <>
+        We have no office in the Gulf. We work with GCC clients remotely from Kozhikode, by video call and WhatsApp
+        scheduled in Gulf time. We build English and Arabic (RTL) websites and can connect local gateways such as PayTabs,
+        Telr, Tap and Mada. In the UAE? See{" "}
+        <Link href="/website-development/website-development-company-dubai" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">
+          websites for Dubai businesses
+        </Link>.
+      </>
+    ),
     cta: "Chat in Gulf time",
     message: "Hi Ivoniz, I need a website for my business in the UAE / GCC.",
     location: "markets_gcc",
@@ -182,7 +192,7 @@ const schema = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: "Website Development Company in Kerala, UAE & GCC",
+      name: "Website Development Company in Kerala, India",
       description: DESCRIPTION,
       inLanguage: "en",
       isPartOf: { "@id": WEBSITE_ID },
@@ -614,6 +624,8 @@ export default function WebsiteDevelopmentPage() {
           </div>
         </div>
       </section>
+
+      <RelatedReading slugs={["why-website-not-generating-leads","what-a-business-website-should-include","signs-you-need-a-new-website"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Get a Quote" message="Hi Ivoniz, I need a website for my business. Can we discuss my project?" />

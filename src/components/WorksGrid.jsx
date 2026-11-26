@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useRevealChildren from "./home/useRevealChildren";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const FILTERS = [
@@ -20,7 +19,6 @@ const FILTERS = [
  */
 export default function WorksGrid({ works }) {
   const sectionRef = useRef(null);
-  const cardRefs   = useRef([]);
   const [activeFilter, setActiveFilter] = useState(null);
 
   const filteredWorks = useMemo(
@@ -28,35 +26,9 @@ export default function WorksGrid({ works }) {
     [works, activeFilter]
   );
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
-      cardRefs.current.forEach((card, i) => {
-        if (!card) return;
-        gsap.fromTo(card,
-          { opacity: 0, y: 28 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power3.out",
-            delay: (i % 3) * 0.08,
-            scrollTrigger: { trigger: card, start: "top 92%", once: true },
-          }
-        );
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [filteredWorks]);
-
-  const handleEnter = (i) => () => {
-    gsap.to(cardRefs.current[i], { y: -6, duration: 0.35, ease: "power2.out" });
-  };
-  const handleLeave = (i) => () => {
-    gsap.to(cardRefs.current[i], { y: 0, duration: 0.35, ease: "power2.out" });
-  };
+  /* CSS fade-in (no GSAP). The first row is shown straight away so the
+     visible cards paint without waiting for JavaScript. */
+  useRevealChildren(sectionRef, [filteredWorks]);
 
   return (
     <div>
@@ -87,9 +59,8 @@ export default function WorksGrid({ works }) {
         <Link
           key={work.title}
           href={`/works/${work.slug}`}
-          ref={(el) => (cardRefs.current[i] = el)}
-          className="group block rounded-2xl overflow-hidden"
-          style={{ boxShadow: "0 2px 24px rgba(0,0,0,0.08)" }}
+          className={`${i >= 3 ? "reveal " : ""}group block rounded-2xl overflow-hidden hover:-translate-y-1.5 transition-transform duration-300`}
+          style={{ boxShadow: "0 2px 24px rgba(0,0,0,0.08)", "--ry": "28px", "--rd": `${(i % 3) * 0.08}s` }}
         >
           <div
             className="relative flex flex-col justify-end p-5 overflow-hidden"

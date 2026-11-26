@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 import { CLIENTS } from "@/lib/clients";
+import { POSTS } from "@/lib/blog";
 
 /* ════════════════════════════════════════════════════════════════
    /sitemap — human-readable map of every page (search engines use
@@ -46,6 +47,12 @@ const SECTIONS = [
       ["Catalogue Website Development", `${W}/catalogue-website-development`],
       ["Web Portal Development", `${W}/web-portal-development`],
       ["Website Development in Calicut", `${W}/best-website-development-company-in-calicut`],
+      ["Websites for Dubai Businesses", `${W}/website-development-company-dubai`],
+      ["Ecommerce for Dubai Stores", `${W}/ecommerce-website-development/ecommerce-website-development-dubai`],
+      ["Shopify Stores for the UAE", `${W}/ecommerce-website-development/shopify-store-development-uae`],
+      ["Arabic & Bilingual Websites", `${W}/arabic-website-development`],
+      ["Hospital & Clinic Websites", `${W}/hospital-website-development`],
+      ["Websites in Malappuram", `${W}/website-development-company-in-malappuram`],
     ],
   },
   {
@@ -100,6 +107,7 @@ const SECTIONS = [
       ["Custom Website vs WordPress", `${W}/custom-website-vs-wordpress`],
     ],
   },
+  { title: "Blog", href: "/blog", links: POSTS.map((p) => [p.title, `/blog/${p.slug}`]) },
   { title: "Works", href: "/works", links: CLIENTS.map((c) => [c.title, `/works/${c.slug}`]) },
   { title: "About Us", href: "/about", links: [["Founder", "/about/founder"]] },
   { title: "Clients", href: "/clients", links: [] },

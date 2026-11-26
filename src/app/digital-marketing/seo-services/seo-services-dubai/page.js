@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 import { CLIENTS, domainOf } from "@/lib/clients";
@@ -152,7 +153,8 @@ export default function SeoDubaiPage() {
             <Label>What&apos;s Included</Label>
             <Heading>SEO work for UAE businesses</Heading>
             <p className="mt-5 text-white/55 text-[16px] leading-relaxed">
-              The same services we offer in Kerala, adapted for UAE searches. Each links to the full detail.
+              The same services we offer in Kerala, adapted for UAE searches. Each links to the full detail. Need the
+              website built first? See <Link href="/website-development/website-development-company-dubai" className={LINK}>websites for Dubai businesses</Link>.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/10">
@@ -275,6 +277,8 @@ export default function SeoDubaiPage() {
           <FaqList items={FAQS} />
         </div>
       </section>
+
+      <RelatedReading slugs={["how-long-does-seo-take","trustworthy-website-uae"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Free SEO Audit" message="Hi Ivoniz, I'd like SEO for my business in Dubai / UAE." />

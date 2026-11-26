@@ -4,6 +4,7 @@ import {
   FaRobot, FaCheck, FaMapMarkerAlt, FaPhoneAlt, FaStar,
 } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID, organizationSchema } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
@@ -519,6 +520,8 @@ export default function SeoServicesPage() {
           <SeoAuditForm />
         </div>
       </section>
+
+      <RelatedReading slugs={["how-long-does-seo-take","seo-vs-google-ads","why-website-not-showing-on-google"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Free SEO Audit" message={WA.audit} />

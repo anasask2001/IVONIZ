@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { preload } from "react-dom";
-import gsap from "gsap";
 
 /*
  * CINEMATIC HERO
@@ -10,6 +9,8 @@ import gsap from "gsap";
  * • Video: slow continuous Ken Burns zoom (breathing, 18s yoyo)
  * • Teal/orange color-grade vignette (classic film grading)
  * • Title: word-by-word clip-path reveal, like title cards
+ * All three are CSS animations (about-* in globals.css), not GSAP: they start
+ * at first paint instead of waiting for an animation library to download.
  */
 
 const TITLE_WORDS = ["Design.", "Build.", "Market."];
@@ -23,11 +24,6 @@ export default function AboutHero() {
   preload(HERO_STILL, { as: "image", fetchPriority: "high" });
   const sectionRef = useRef(null);
   const videoRef    = useRef(null);
-  const topBarRef   = useRef(null);
-  const bottomBarRef= useRef(null);
-  const wordRefs    = useRef([]);
-  const labelRef    = useRef(null);
-  const subRef      = useRef(null);
 
   /* swap in the animated background after load, when idle */
   useEffect(() => {
@@ -44,42 +40,6 @@ export default function AboutHero() {
     return () => { cancelled = true; window.removeEventListener("load", start); };
   }, []);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      /* ── opening sequence ── */
-      const tl = gsap.timeline({ delay: 0.15 });
-
-      tl.fromTo([topBarRef.current, bottomBarRef.current],
-        { height: "14vh" },
-        { height: "6vh", duration: 1.3, ease: "power3.inOut" }
-      );
-
-
-      wordRefs.current.forEach((el, i) => {
-        if (!el) return;
-        tl.fromTo(el,
-          { clipPath: "inset(0 0 100% 0)", y: 24 },
-          { clipPath: "inset(0 0 0% 0)", y: 0, duration: 0.85, ease: "power4.out" },
-          0.7 + i * 0.22
-        );
-      });
-
-
-      /* ── slow Ken Burns breathing zoom — runs forever ── */
-      gsap.to(videoRef.current, {
-        scale: 1.16,
-        duration: 18,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-      });
-
-      /* (No scroll-tied letterbox widening: it grew a solid black band at the
-         bottom while the hero scrolled out, which read as an empty screen.) */
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section
@@ -90,7 +50,7 @@ export default function AboutHero() {
       <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 0 }}>
         <div
           ref={videoRef}
-          className="w-full h-full"
+          className="about-kenburns w-full h-full"
           style={{
             backgroundImage: `url('${HERO_STILL}')`,
             backgroundSize: "cover",
@@ -125,8 +85,8 @@ export default function AboutHero() {
       />
 
       {/* Letterbox bars */}
-      <div ref={topBarRef}    className="absolute top-0 left-0 right-0 bg-black" style={{ zIndex: 3, height: "14vh" }} />
-      <div ref={bottomBarRef} className="absolute bottom-0 left-0 right-0 bg-black" style={{ zIndex: 3, height: "14vh" }} />
+      <div className="about-bar absolute top-0 left-0 right-0 bg-black" style={{ zIndex: 3 }} />
+      <div className="about-bar absolute bottom-0 left-0 right-0 bg-black" style={{ zIndex: 3 }} />
 
       {/* Content */}
       <div
@@ -134,7 +94,6 @@ export default function AboutHero() {
         style={{ zIndex: 2 }}
       >
         <p
-          ref={labelRef}
           className="hero-rise text-[11px] font-semibold tracking-[0.3em] uppercase text-white/60 mb-6"
         >
           About Ivoniz
@@ -147,8 +106,8 @@ export default function AboutHero() {
           {TITLE_WORDS.map((w, i) => (
             <span
               key={w}
-              ref={(el) => (wordRefs.current[i] = el)}
-              style={{ display: "inline-block" }}
+              className="about-word"
+              style={{ display: "inline-block", animationDelay: `${0.7 + i * 0.22}s` }}
             >
               {w}
             </span>
@@ -157,7 +116,7 @@ export default function AboutHero() {
 
         {/* CSS-only entrance (transform, never hidden): this paragraph is the LCP
             element, and the old GSAP opacity fade held it back until hydration. */}
-        <div ref={subRef} className="hero-rise" style={{ animationDelay: "0.9s" }}>
+        <div className="hero-rise" style={{ animationDelay: "0.9s" }}>
           <p className="text-white/55 text-[16px] sm:text-[18px] leading-relaxed max-w-xl">
             At Ivoniz, we believe great businesses need more than just a website. They need a complete
             digital ecosystem that attracts customers, builds trust, and drives growth.

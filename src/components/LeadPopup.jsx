@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { FiX, FiChevronDown, FiCheck } from "react-icons/fi";
+import { FiX, FiChevronDown, FiCheck, FiMail } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { track, waLink } from "@/components/comparison/Interactive";
 import Flag from "@/components/Flags";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 /*
  * Timed lead pop-up (sitewide, mounted in app/layout.js).
@@ -13,16 +14,18 @@ import Flag from "@/components/Flags";
  *   page changes via sessionStorage, so it doesn't restart on every page).
  * - Never on contact / legal / sitemap pages; waits while the visitor is typing
  *   in another form or has the menu open.
- * - Closed: not shown again for 7 days. Sent: not shown again for 180 days.
+ * - Closed: not shown again during this visit (comes back next visit).
+ *   Sent: not shown again for 180 days.
  * - Desktop: image panel (public/modal-image) + form. Phones: a bottom sheet
  *   with the form only.
- * - "Send on WhatsApp" opens WhatsApp with the details typed out.
+ * - Send on WhatsApp (opens WhatsApp with the details typed out) or Send by
+ *   email (posts to /contact-mail.php; falls back to the email app).
  * - Test: add ?lead_popup to any URL to open it immediately.
  * GA4: lead_popup_shown, lead_popup_close, generate_lead { lead_type: "popup_form", channel: "whatsapp" }.
  */
 
 const DELAY_MS = 30000;
-const SNOOZE_DAYS = 7;
+const CLOSED_THIS_VISIT = "ivz_lead_popup_closed";
 const DONE_DAYS = 180;
 const KEY = "ivz_lead_popup";
 const T0 = "ivz_t0";
@@ -107,7 +110,9 @@ function CountryPicker({ value, onChange }) {
 export default function LeadPopup() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [sent, setSent] = useState(null); // null | "whatsapp" | "email" | "mailto"
+  const [sending, setSending] = useState(false);
+  const openedAt = useRef(0);
   const [error, setError] = useState("");
   const [f, setF] = useState({ name: "", email: "", iso: "IN", phone: "", location: "", message: "" });
   const panel = useRef(null);
@@ -116,10 +121,12 @@ export default function LeadPopup() {
   useEffect(() => {
     if (open || SKIP.some((r) => r.test(pathname || ""))) return;
     const force = typeof window !== "undefined" && new URLSearchParams(window.location.search).has("lead_popup");
-    if (!force && Number(store.get(KEY) || 0) > Date.now()) return;
+    if (!force && (Number(store.get(KEY) || 0) > Date.now() || store.get(CLOSED_THIS_VISIT, sessionStorage))) return;
 
     let t0 = Number(store.get(T0, sessionStorage) || 0);
-    if (!t0) { t0 = Date.now(); store.set(T0, String(t0), sessionStorage); }
+    // Count from when the first page started loading, not from when the
+    // JavaScript finished, so slow loads don't push the pop-up later.
+    if (!t0) { t0 = Math.round(performance.timeOrigin || Date.now()); store.set(T0, String(t0), sessionStorage); }
     const wait = force ? 600 : Math.max(0, DELAY_MS - (Date.now() - t0));
 
     let timer;
@@ -127,6 +134,7 @@ export default function LeadPopup() {
       const a = document.activeElement;
       const busy = (a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) || document.documentElement.hasAttribute("data-menu-open");
       if (busy) { timer = setTimeout(tryOpen, 5000); return; }
+      openedAt.current = Date.now();
       setOpen(true);
       track("lead_popup_shown");
     };
@@ -172,22 +180,23 @@ export default function LeadPopup() {
 
   function close(how = "button") {
     setOpen(false);
-    if (!sent) store.set(KEY, String(Date.now() + SNOOZE_DAYS * DAY));
+    if (!sent) store.set(CLOSED_THIS_VISIT, "1", sessionStorage);
     track("lead_popup_close", { how, sent });
   }
 
   const set = (k) => (e) => setF((s) => ({ ...s, [k]: e.target.value }));
   const country = COUNTRIES.find((c) => c.iso === f.iso) || COUNTRIES[0];
 
-  function submit(e) {
-    e.preventDefault();
+  function validate() {
     const digits = f.phone.replace(/\D/g, "");
-    if (f.name.trim().length < 2) return setError("Please add your name.");
-    if (!/^\S+@\S+\.\S+$/.test(f.email.trim())) return setError("Please add a valid email address.");
-    if (digits.length < 7 || digits.length > 14) return setError("Please add a valid phone number.");
-    if (!f.message.trim()) return setError("Please tell us a little about your project.");
-    setError("");
-    const text = [
+    if (f.name.trim().length < 2) return "Please add your name.";
+    if (!/^\S+@\S+\.\S+$/.test(f.email.trim())) return "Please add a valid email address.";
+    if (digits.length < 7 || digits.length > 14) return "Please add a valid phone number.";
+    if (!f.message.trim()) return "Please tell us a little about your project.";
+    return "";
+  }
+
+  const details = () => [
       "Hi Ivoniz, I'd like to start a project.",
       "",
       `Name: ${f.name.trim()}`,
@@ -197,10 +206,47 @@ export default function LeadPopup() {
       "",
       `Message: ${f.message.trim()}`,
     ].filter((l) => l !== null).join("\n");
-    track("generate_lead", { lead_type: "popup_form", channel: "whatsapp", location: "lead_popup", country: country.iso });
-    window.open(waLink(text), "_blank", "noopener,noreferrer");
+
+  function done(channel) {
+    track("generate_lead", { lead_type: "popup_form", channel, location: "lead_popup", country: country.iso });
     store.set(KEY, String(Date.now() + DONE_DAYS * DAY));
-    setSent(true);
+    setSent(channel);
+  }
+
+  function sendWhatsApp(e) {
+    e.preventDefault();
+    const msg = validate();
+    setError(msg);
+    if (msg) return;
+    window.open(waLink(details()), "_blank", "noopener,noreferrer");
+    done("whatsapp");
+  }
+
+  async function sendEmail() {
+    const msg = validate();
+    setError(msg);
+    if (msg || sending) return;
+    setSending(true);
+    try {
+      const recaptcha = await getRecaptchaToken("contact");
+      const res = await fetch("/contact-mail.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          name: f.name.trim(), email: f.email.trim(), phone: `${country.dial} ${f.phone.trim()}`, location: f.location.trim(),
+          message: f.message.trim(), source: "popup", t: String(openedAt.current), page: window.location.pathname, recaptcha,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || "send failed");
+      done("email");
+    } catch {
+      // The server couldn't send: open the visitor's email app with everything filled in.
+      window.location.href = `mailto:info@ivoniz.com?subject=${encodeURIComponent(`New Enquiry from ${f.name.trim()}`)}&body=${encodeURIComponent(details())}`;
+      done("mailto");
+    } finally {
+      setSending(false);
+    }
   }
 
   if (!open) return null;
@@ -244,14 +290,16 @@ export default function LeadPopup() {
           {sent ? (
             <div className="py-10 sm:py-16 pr-8" role="status">
               <h2 id="lead-popup-title" className="m-0 text-[28px] sm:text-[32px] font-semibold tracking-[-0.025em] leading-tight">
-                Almost done, {f.name.trim().split(" ")[0]}.
+                {sent === "email" ? "Thank you" : "Almost done"}, {f.name.trim().split(" ")[0]}.
               </h2>
               <p className="mt-3 text-[16px] text-black/60 leading-relaxed">
-                WhatsApp has opened with your message ready. Just press <strong className="text-[#1d1d1f] font-semibold">Send</strong> there and we&apos;ll reply, usually within one working day.
+                {sent === "email" && <>Your enquiry has been sent to our team. We&apos;ll reply, usually within one working day.</>}
+                {sent === "whatsapp" && <>WhatsApp has opened with your message ready. Just press <strong className="text-[#1d1d1f] font-semibold">Send</strong> there and we&apos;ll reply, usually within one working day.</>}
+                {sent === "mailto" && <>Your email app has opened with your message ready. Just press <strong className="text-[#1d1d1f] font-semibold">Send</strong> there and we&apos;ll reply, usually within one working day.</>}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <button type="button" onClick={() => close("done")} className="h-12 px-7 rounded-full bg-[#1d1d1f] text-white text-[15px] font-medium hover:bg-black">Close</button>
-                <button type="button" onClick={() => setSent(false)} className="h-12 px-6 rounded-full border border-black/15 text-[15px] font-medium hover:bg-black/5">Edit details</button>
+                <button type="button" onClick={() => setSent(null)} className="h-12 px-6 rounded-full border border-black/15 text-[15px] font-medium hover:bg-black/5">Edit details</button>
               </div>
             </div>
           ) : (
@@ -260,10 +308,10 @@ export default function LeadPopup() {
                 Ready to start your next project?
               </h2>
               <p className="mt-1.5 text-[14.5px] text-black/55 leading-relaxed">
-                Tell us a little about it and send it straight to our team on WhatsApp.
+                Tell us a little about it and send it to our team on WhatsApp or by email.
               </p>
 
-              <form onSubmit={submit} noValidate className="mt-5 grid gap-3.5">
+              <form onSubmit={sendWhatsApp} noValidate className="mt-5 grid gap-3.5">
                 <div className="grid sm:grid-cols-2 gap-3.5">
                   <div>
                     <label htmlFor="lp-name" className={LABEL}>Name *</label>
@@ -298,15 +346,25 @@ export default function LeadPopup() {
 
                 {error && <p role="alert" className="m-0 text-[14px] text-[#c4161c]">{error}</p>}
 
-                <button
-                  type="submit"
-                  className="mt-1 h-12 w-full rounded-full bg-[#1d1d1f] text-white text-[16px] font-medium hover:bg-black active:scale-[0.99] transition inline-flex items-center justify-center gap-2.5"
-                >
-                  <FaWhatsapp aria-hidden="true" className="text-[19px]" /> Send on WhatsApp
-                </button>
+                <div className="mt-1 grid sm:grid-cols-2 gap-3">
+                  <button
+                    type="submit"
+                    className="h-12 w-full rounded-full bg-[#1d1d1f] text-white text-[15.5px] font-medium hover:bg-black active:scale-[0.99] transition inline-flex items-center justify-center gap-2.5"
+                  >
+                    <FaWhatsapp aria-hidden="true" className="text-[19px]" /> Send on WhatsApp
+                  </button>
+                  <button
+                    type="button"
+                    onClick={sendEmail}
+                    disabled={sending}
+                    className="h-12 w-full rounded-full border border-black/15 text-[#1d1d1f] text-[15.5px] font-medium hover:bg-black/5 active:scale-[0.99] transition inline-flex items-center justify-center gap-2.5 disabled:opacity-60"
+                  >
+                    <FiMail aria-hidden="true" className="text-[18px]" /> {sending ? "Sending…" : "Send by email"}
+                  </button>
+                </div>
 
                 <p className="m-0 text-center text-[12.5px] text-black/45">
-                  Opens WhatsApp with your details filled in. Nothing is sent until you press Send.
+                  WhatsApp opens with your details filled in. Email goes straight to our team.
                 </p>
               </form>
             </>

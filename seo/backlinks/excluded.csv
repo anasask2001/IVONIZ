@@ -1,0 +1,19 @@
+﻿Website,URL,Reason excluded
+CSS Design Awards,https://www.cssdesignawards.com/,Submissions appear to carry an entry fee (free-only rule)
+One Page Love,https://onepagelove.com/submit,Evidence of a paid submission product
+Awwwards,https://www.awwwards.com/,Paid submissions
+2GIS UAE,https://2gis.ae/,"Needs a physical UAE address; Ivoniz has none, so a listing would be fake"
+Dubai Chamber membership,https://www.dubaichamber.com/,Requires a Dubai trade licence
+Malabar Chamber of Commerce,https://www.malabarchamber.org/,"Paid membership (Rs 3,000 entrance + Rs 1,260/yr + GST, from its membership page). Excluded under the free-only rule, but a real local body: worth joining on its own merits."
+Calicut Chamber of Commerce & Industry,https://www.calicutchamber.com/,Membership-based; its members directory doesn't show member website links
+keralaitparks.org,https://www.keralaitparks.org/,Domain now redirects to an unrelated .id site (expired or hijacked). Spam risk.
+Cyberpark Kerala company directory,https://cyberparkkerala.org/,"Lists park tenants only; Ivoniz is at HiLITE Business Park, not Cyberpark"
+NASSCOM / FICCI / ISA,https://www.nasscom.in/,Paid memberships
+Meetup.com (own group),https://www.meetup.com/,Organising a group needs a paid subscription; attending is free but gives no link
+Huddle Global (exhibit),https://huddleglobal.co.in/,"Passes Rs 7,000-9,000; exhibit slots are paid/selected. 2026 edition already held (12-14 Nov)."
+IBPC Dubai (Indian Business & Professional Council),https://www.ibpcdubai.com/,"Paid annual membership. Excluded under the free-only rule, though it is a genuine, highly relevant network for an Indian company serving UAE businesses."
+Zawya press releases,https://www.zawya.com/en/press-release,"Press releases there usually come through paid wire distribution; editorial news coverage is fine, paid distribution is not."
+"Paid 'guest posts' on Entrepreneur ME, Khaleej Times etc. (freelance marketplaces)",https://www.peopleperhour.com/,Paid link placements: prohibited.
+UAE map/local listings (Google/Apple/Bing UAE pins),-,Need a real UAE address; creating one would be a fake listing.
+Self-promotional 'Top 10 agencies' blog lists (e.g. aamax.co),https://aamax.co/,Written by a competitor ranking itself first; inclusion is usually paid or reciprocal
+getlatka.com / leadstal.com,https://getlatka.com/,Data-scrape company pages; no genuine audience for Ivoniz

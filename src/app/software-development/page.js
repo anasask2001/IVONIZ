@@ -5,6 +5,7 @@ import {
   FaCheck, FaMapMarkerAlt, FaPhoneAlt,
 } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID, organizationSchema } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
@@ -536,6 +537,8 @@ export default function SoftwareDevelopmentPage() {
           <SoftwareQuoteForm />
         </div>
       </section>
+
+      <RelatedReading slugs={["ai-automation-small-business","ai-chatbot-for-business-website"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Free Requirement Call" message={WA.talk} />

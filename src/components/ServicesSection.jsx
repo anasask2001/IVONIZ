@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import useLazyGsap from "./home/useLazyGsap";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -35,8 +34,8 @@ export default function ServicesSection({ services }) {
     itemRefs.current[ci][ii] = el;
   };
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  /* Built only when the section is near (see useLazyGsap). */
+  useLazyGsap(panelRef, (gsap, ScrollTrigger) => {
     const N = services.length;
     const panel = panelRef.current;
     if (!panel) return;

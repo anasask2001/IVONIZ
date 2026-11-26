@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 import { CLIENTS, domainOf } from "@/lib/clients";
@@ -470,6 +471,8 @@ export default function CalicutWebsiteDevelopmentPage() {
           </p>
         </div>
       </section>
+
+      <RelatedReading slugs={["local-seo-kerala-guide","cheap-vs-professional-website"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Get a Quote" message="Hi Ivoniz, I'm in Calicut and need a website for my business." />

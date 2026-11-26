@@ -6,6 +6,7 @@ import {
   FaChartLine, FaShareAlt, FaCheck, FaPhoneAlt,
 } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID, organizationSchema } from "@/lib/schema";
 import { CLIENTS, domainOf } from "@/lib/clients";
@@ -527,6 +528,8 @@ export default function StaticWebsiteDevelopmentPage() {
           <StaticQuoteForm />
         </div>
       </section>
+
+      <RelatedReading slugs={["do-you-need-a-website-if-you-have-instagram","cheap-vs-professional-website"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Get a Quote" message="Hi Ivoniz, I need a 5-page static website for my business." />

@@ -47,7 +47,7 @@ AddType application/xml .xml
   # Those with a real equivalent today get a 301 …
   RewriteRule ^terms-and-conditions/?$ /terms [R=301,L]
   RewriteRule ^software-development-company-calicut/?$ /software-development [R=301,L]
-  RewriteRule ^web-designing-company-in-malappuram/?$ /website-development [R=301,L]
+  RewriteRule ^web-designing-company-in-malappuram/?$ /website-development/website-development-company-in-malappuram [R=301,L]
   RewriteRule ^(?:services|services-detail|solutions)/?$ / [R=301,L]
   # … and leftover WordPress/spam URLs (old casino spam, wp-json, sample post,
   # author/category archives) answer 410 Gone, so Google drops them for good.

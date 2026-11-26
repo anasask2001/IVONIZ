@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import RelatedReading from "@/components/blog/RelatedReading";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WEBSITE_ID, ORG_ID } from "@/lib/schema";
 import { PillLink, StickyMobileCTA } from "@/components/comparison/Interactive";
@@ -296,12 +297,14 @@ export default function WebsiteCostKeralaPage() {
             <Label>FAQ</Label>
             <Heading>Website cost questions</Heading>
             <p className="mt-6 text-[15px] text-white/60 leading-relaxed">
-              In Calicut? See <Link href="/website-development/best-website-development-company-in-calicut" className={LINK}>website development in Calicut</Link>.
+              In Calicut? See <Link href="/website-development/best-website-development-company-in-calicut" className={LINK}>website development in Calicut</Link>. In the UAE? See the <Link href="/blog/website-development-cost-dubai-uae" className={LINK}>Dubai website cost guide</Link>.
             </p>
           </div>
           <FaqList items={FAQS} />
         </div>
       </section>
+
+      <RelatedReading slugs={["cheap-vs-professional-website","website-maintenance-cost","who-owns-your-website-domain-hosting"]} />
 
       <Footer />
       <StickyMobileCTA dark estimateLabel="Get a Price" message="Hi Ivoniz, I read your website cost guide and want a price for my website." />
