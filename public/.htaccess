@@ -38,6 +38,17 @@
   RewriteRule ^(?:digital-marketing/)?best-digital-marketing-(?:company-)?in-(?:calicut|kochi|kozhikode)(?:\.html)?/?$ /digital-marketing [R=301,L]
   RewriteRule ^founder(?:\.html)?/?$ /about/founder [R=301,L]
 
+  # ── Old WordPress-site URLs Google still reports as 404 (Search Console, 26 Nov 2026).
+  # Those with a real equivalent today get a 301 …
+  RewriteRule ^terms-and-conditions/?$ /terms [R=301,L]
+  RewriteRule ^software-development-company-calicut/?$ /software-development [R=301,L]
+  RewriteRule ^web-designing-company-in-malappuram/?$ /website-development [R=301,L]
+  RewriteRule ^(?:services|services-detail|solutions)/?$ / [R=301,L]
+  # … and leftover WordPress/spam URLs (old casino spam, wp-json, sample post,
+  # author/category archives) answer 410 Gone, so Google drops them for good.
+  RewriteRule ^(?:casino|vavada-casino-2|hello-world)/?$ - [G,L]
+  RewriteRule ^(?:wp-json|wp-admin|wp-content|wp-includes|author|category)(?:/.*)?$ - [G,L]
+
   # ── Clean-URL routing for the static export ──
   # Next.js writes each page as a sibling "<route>.html" file (e.g.
   # about.html), but it ALSO creates a same-named "<route>/" directory
