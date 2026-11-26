@@ -139,7 +139,7 @@ const schema = {
       name: "WordPress Website Development",
       serviceType: "WordPress website development",
       provider: { "@id": ORG_ID },
-      about: { "@type": "SoftwareApplication", name: "WordPress", applicationCategory: "Content management system" },
+      about: { "@type": "Thing", name: "WordPress", sameAs: "https://en.wikipedia.org/wiki/WordPress" },
       areaServed: [
         { "@type": "Country", name: "India" },
         { "@type": "State", name: "Kerala" },

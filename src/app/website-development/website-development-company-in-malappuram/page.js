@@ -75,6 +75,7 @@ const page = {
     ],
     footer: (
       <>
+        Running a hospital or clinic? See <Link href="/website-development/hospital-website-development" className={LINK_DARK}>hospital and clinic websites</Link>.
         In Kozhikode itself? See <Link href="/website-development/best-website-development-company-in-calicut" className={LINK_DARK}>website development in Calicut</Link>.
       </>
     ),

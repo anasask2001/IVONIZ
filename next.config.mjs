@@ -12,9 +12,13 @@ const nextConfig = {
   },
   reactCompiler: true,
   experimental: {
-    // Inline the (13 KB gzipped) stylesheet into each page instead of a
-    // render-blocking <link> request (PageSpeed "render-blocking requests").
-    inlineCss: true,
+    // OFF since 27 Nov 2026. When true, Next.js put the whole stylesheet into
+    // every page TWICE (a <style> tag plus a copy in the RSC payload): ~226 KB
+    // of each page's HTML. Off = one cached CSS file. Measured on the local
+    // build (Lighthouse mobile): HTML transfer -45% per page, first paint
+    // unchanged within noise. Trade-off: PageSpeed lists the CSS file under
+    // "render-blocking requests" again. Set back to true to revert.
+    inlineCss: false,
   },
   turbopack: {
     root: import.meta.dirname,

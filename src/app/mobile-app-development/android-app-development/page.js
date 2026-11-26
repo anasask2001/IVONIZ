@@ -158,7 +158,7 @@ const schema = {
       name: "Android App Development",
       serviceType: "Android app development",
       provider: { "@id": ORG_ID },
-      about: { "@type": "SoftwareApplication", name: "Android", operatingSystem: "Android" },
+      about: { "@type": "Thing", name: "Android", sameAs: "https://en.wikipedia.org/wiki/Android_(operating_system)" },
       areaServed: [
         { "@type": "Country", name: "India" },
         { "@type": "State", name: "Kerala" },

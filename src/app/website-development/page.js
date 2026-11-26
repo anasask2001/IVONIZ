@@ -92,7 +92,7 @@ const PROCESS = [
 
 const INDUSTRIES = [
   { Icon: FaWarehouse, title: "Retail and wholesale", text: "Catalogues, online ordering, dealer portals" },
-  { Icon: FaHospital, title: "Hospitals and clinics", text: "Doctor profiles, appointment booking, patient enquiry forms" },
+  { Icon: FaHospital, title: "Hospitals and clinics", text: "Doctor profiles, appointment booking, patient enquiry forms", href: "/website-development/hospital-website-development" },
   { Icon: FaGraduationCap, title: "Schools and colleges", text: "Admissions, course pages, notices, parent portals" },
   { Icon: FaRocket, title: "Startups", text: "MVPs, landing pages, SaaS products" },
   { Icon: FaShoppingBag, title: "Ecommerce brands", text: "Fast stores built to convert" },
@@ -449,13 +449,21 @@ export default function WebsiteDevelopmentPage() {
           <Label dark={false}>Industries</Label>
           <Heading dark={false} className="mb-8 sm:mb-14">Websites for your industry</Heading>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-black/8">
-            {INDUSTRIES.map(({ Icon, title, text }) => (
-              <div key={title} className="border-r border-b border-black/8 p-7 sm:p-8">
-                <Icon aria-hidden="true" className="text-[20px] text-black/55" />
-                <h3 className="mt-6 text-[19px] text-black" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{title}</h3>
-                <p className="mt-1.5 text-[14.5px] text-black/55 leading-relaxed">{text}</p>
-              </div>
-            ))}
+            {INDUSTRIES.map(({ Icon, title, text, href }) => {
+              const inner = (
+                <>
+                  <Icon aria-hidden="true" className="text-[20px] text-black/55" />
+                  <h3 className="mt-6 text-[19px] text-black" style={{ fontFamily: OPEN_SANS, fontWeight: 400 }}>{title}</h3>
+                  <p className="mt-1.5 text-[14.5px] text-black/55 leading-relaxed">{text}</p>
+                  {href && <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] text-black/60 group-hover:text-black">Details <FiArrowUpRight aria-hidden="true" /></span>}
+                </>
+              );
+              return href ? (
+                <Link key={title} href={href} className="group border-r border-b border-black/8 p-7 sm:p-8 block hover:bg-black/[0.02] transition-colors">{inner}</Link>
+              ) : (
+                <div key={title} className="border-r border-b border-black/8 p-7 sm:p-8">{inner}</div>
+              );
+            })}
           </div>
         </div>
       </section>

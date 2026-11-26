@@ -76,7 +76,7 @@ const schema = {
       publisher: { "@id": ORG_ID },
       about: [
         { "@type": "Thing", name: "Custom website development" },
-        { "@type": "SoftwareApplication", name: "WordPress", applicationCategory: "Content management system" },
+        { "@type": "Thing", name: "WordPress", sameAs: "https://en.wikipedia.org/wiki/WordPress" },
       ],
       breadcrumb: { "@id": `${PAGE_URL}#breadcrumb` },
       dateModified: UPDATED_ISO,

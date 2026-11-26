@@ -145,7 +145,7 @@ const schema = {
       name: "iOS App Development",
       serviceType: "iOS app development",
       provider: { "@id": ORG_ID },
-      about: { "@type": "SoftwareApplication", name: "iOS", operatingSystem: "iOS" },
+      about: { "@type": "Thing", name: "iOS", sameAs: "https://en.wikipedia.org/wiki/IOS" },
       areaServed: [
         { "@type": "Country", name: "India" },
         { "@type": "State", name: "Kerala" },

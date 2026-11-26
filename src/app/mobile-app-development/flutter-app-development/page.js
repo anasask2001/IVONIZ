@@ -154,7 +154,7 @@ const schema = {
       name: "Flutter App Development",
       serviceType: "Flutter app development",
       provider: { "@id": ORG_ID },
-      about: { "@type": "SoftwareApplication", name: "Flutter", applicationCategory: "DeveloperApplication" },
+      about: { "@type": "Thing", name: "Flutter", sameAs: "https://en.wikipedia.org/wiki/Flutter_(software)" },
       areaServed: [
         { "@type": "Country", name: "India" },
         { "@type": "State", name: "Kerala" },

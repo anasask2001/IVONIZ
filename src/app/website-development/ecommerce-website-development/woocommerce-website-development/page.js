@@ -156,7 +156,7 @@ const schema = {
       name: "WooCommerce Development Services",
       serviceType: "WooCommerce development",
       provider: { "@id": ORG_ID },
-      about: { "@type": "SoftwareApplication", name: "WooCommerce", applicationCategory: "Ecommerce platform" },
+      about: { "@type": "Thing", name: "WooCommerce", sameAs: "https://en.wikipedia.org/wiki/WooCommerce" },
       areaServed: [
         { "@type": "State", name: "Kerala" },
         { "@type": "Country", name: "India" },

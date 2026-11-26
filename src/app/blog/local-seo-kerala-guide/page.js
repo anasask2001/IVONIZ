@@ -148,6 +148,7 @@ export default function Page() {
       </p>
       <p>
         Based in Malappuram? See our <Link href="/website-development/website-development-company-in-malappuram">Malappuram page</Link>.
+        Running a clinic or hospital? See <Link href="/website-development/hospital-website-development">hospital and clinic websites</Link>.
       </p>
     </ArticleLayout>
   );
