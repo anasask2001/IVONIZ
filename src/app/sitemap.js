@@ -40,6 +40,7 @@ const routes = [
   { path: "/digital-marketing/seo-services/off-page-seo-services", priority: 0.9, changeFrequency: "weekly" },
   { path: "/digital-marketing/seo-services/ecommerce-seo-services", priority: 0.9, changeFrequency: "weekly" },
   { path: "/digital-marketing/seo-services/seo-audit-services", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/digital-marketing/seo-services/seo-services-dubai", priority: 0.85, changeFrequency: "monthly" },
   { path: "/digital-marketing/social-media-marketing", priority: 0.95, changeFrequency: "weekly" },
   { path: "/digital-marketing/social-media-marketing/instagram-marketing-services", priority: 0.9, changeFrequency: "weekly" },
   { path: "/digital-marketing/social-media-marketing/social-media-management", priority: 0.9, changeFrequency: "weekly" },
@@ -56,6 +57,7 @@ const routes = [
   { path: "/mobile-app-development/ios-app-development", priority: 0.85, changeFrequency: "monthly" },
   { path: "/mobile-app-development/android-app-development", priority: 0.9, changeFrequency: "monthly" },
   { path: "/mobile-app-development/native-app-development", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/mobile-app-development/app-development-cost-in-kerala", priority: 0.8, changeFrequency: "monthly" },
   { path: "/software-development", priority: 0.9, changeFrequency: "monthly" },
   { path: "/software-development/erp-software-development", priority: 0.85, changeFrequency: "monthly" },
   { path: "/software-development/crm-software-development", priority: 0.85, changeFrequency: "monthly" },
@@ -63,7 +65,9 @@ const routes = [
   { path: "/website-development/catalogue-website-development", priority: 0.8, changeFrequency: "monthly" },
   { path: "/website-development/web-portal-development", priority: 0.85, changeFrequency: "monthly" },
   { path: "/website-development/custom-website-vs-wordpress", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/website-development/website-development-cost-in-kerala", priority: 0.8, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
+  { path: "/site-map", priority: 0.3, changeFrequency: "monthly" },
   { path: "/terms", priority: 0.2, changeFrequency: "yearly" },
 ];
 

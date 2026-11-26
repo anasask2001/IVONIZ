@@ -11,6 +11,7 @@ import LazyVideo from "@/components/LazyVideo";
 import { webPageSchema, ORG_ID, organizationSchema } from "@/lib/schema";
 import { clientBySlug, CLIENTS as CLIENT_LIST, CLIENT_STATS } from "@/lib/clients";
 import { waLink } from "@/components/site/SiteUI";
+import ProjectQuoteForm from "@/components/site/ProjectQuoteForm";
 
 /* Code-split below-the-fold sections — still statically prerendered
    (no ssr:false) so content stays in the static HTML for SEO/no-JS,
@@ -197,7 +198,9 @@ export default function Home() {
               in the static HTML with no entrance fade: as the LCP candidate,
               gating their paint on framer-motion hydration was adding ~3.7s
               of render delay on mobile (measured via PageSpeed Insights). */}
-          <h1 className="mb-8 lg:mb-10 m-0">
+          {/* Big rotating statement — visual only. The SEO H1 is the short line
+              below it (what we do + where), with the hero's two CTAs. */}
+          <p className="m-0">
             <span
               className="font-light select-none block"
               style={{ fontSize: "clamp(76px, 11.5vw, 175px)", lineHeight: 0.87, letterSpacing: "-0.025em", color: "#D9D9D9" }}
@@ -220,7 +223,27 @@ export default function Home() {
             </span>
 
             <HeroRotator />
-          </h1>
+          </p>
+
+          <div className="mt-8 lg:mt-10 mb-8 lg:mb-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <h1 className="m-0 max-w-[560px] text-[16px] sm:text-[18px] leading-relaxed font-normal text-white/75">
+              Web design, app development and digital marketing company in Kozhikode (Calicut), Kerala, working
+              with businesses across Kerala and the Gulf.
+            </h1>
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <Link href="#quote" className="inline-flex items-center justify-center gap-2 h-[50px] px-7 rounded-full bg-white text-black text-[15px] font-semibold hover:bg-white/90 transition-colors">
+                Get a Project Quote <FiArrowUpRight aria-hidden="true" className="text-[16px]" />
+              </Link>
+              <a
+                href={waLink("Hi Ivoniz, I'd like to discuss a project.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 h-[50px] px-7 rounded-full border border-white/30 text-white text-[15px] font-medium hover:bg-white hover:text-black transition-colors"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
 
         </div>
       </section>
@@ -236,7 +259,7 @@ export default function Home() {
             dark
             center
             large
-            primary="Ivoniz is a leading mobile app and web development company. We build scalable mobile apps and web applications for startups and enterprises,"
+            primary="Ivoniz is a web, app and digital marketing company in Kozhikode, Kerala. We build websites, mobile apps and software for businesses in Kerala and the Gulf,"
             secondary=" and add intelligent AI where it creates real value. Our goal is simple: help businesses grow through technology."
           />
           <Reveal className="mt-10 sm:mt-12 flex justify-center" delay={0.2}>
@@ -393,6 +416,41 @@ export default function Home() {
           </div>
         </section>
       )}
+
+      {/* ── QUOTE FORM — one short form for every service ── */}
+      <section id="quote" className="relative bg-black px-5 sm:px-6 lg:px-10 xl:px-16 py-20 sm:py-28 scroll-mt-20">
+        <div className="mx-auto max-w-[1200px] grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <div className="flex items-center gap-2.5 mb-6">
+              <span className="text-[10px] text-white" style={{ lineHeight: 1 }} aria-hidden="true">▶</span>
+              <span className="text-[12px] sm:text-[11px] font-bold tracking-[0.22em] uppercase text-white/60">Get a Quote</span>
+            </div>
+            <h2 style={{ ...DISPLAY, color: "#EDEDED", fontSize: "clamp(30px, calc(1.6vw + 20px), 48px)" }}>
+              Tell us what you <span style={OUT_LIGHT}>need</span>
+            </h2>
+            <p className="mt-6 text-white/60 text-[16px] leading-relaxed max-w-[440px]">
+              A website, an app, software or marketing. Answer a few questions and send them on WhatsApp or email.
+              We reply with questions, then a fixed written quote.
+            </p>
+          </div>
+          <ProjectQuoteForm
+            idPrefix="home"
+            subject="project"
+            leadType="project_quote"
+            location="home_quote_form"
+            messageHint="Tell us about your business and what you need built or marketed."
+            types={[
+              { id: "website", label: "Website" },
+              { id: "store", label: "Online store" },
+              { id: "app", label: "Mobile app" },
+              { id: "software", label: "Software (ERP, CRM, billing)" },
+              { id: "marketing", label: "Digital marketing / SEO" },
+              { id: "unsure", label: "Not sure yet" },
+            ]}
+            places={["Kerala", "Elsewhere in India", "UAE", "Saudi Arabia", "Qatar", "Other GCC", "Other"]}
+          />
+        </div>
+      </section>
 
       {/* ── CTA — centred, Apple-style ── */}
       <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40 px-5 sm:px-6 lg:px-10 xl:px-16">

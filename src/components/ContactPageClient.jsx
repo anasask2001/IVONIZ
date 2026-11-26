@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { track } from "@/components/comparison/Interactive";
+import { track, waLink } from "@/components/comparison/Interactive";
 
 // Brochure is being revised — the button stays, but the download is off until the new PDF is in place.
 const BROCHURE_AVAILABLE = false;
@@ -31,21 +31,36 @@ const rise = (delay = 0) => ({ animationDelay: `${0.1 + delay}s` });
 
 export default function ContactPageClient() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", service: "", message: "" });
-  const [sent, setSent] = useState(false);
+  /* idle → sending → sent | failed. The enquiry is emailed by /contact-mail.php
+     (Hostinger PHP). If that fails, the visitor gets a pre-filled WhatsApp
+     message and an email link, so the enquiry is never lost. */
+  const [status, setStatus] = useState("idle");
+  const [honeypot, setHoneypot] = useState("");
+  const shownAt = useRef(0);
+  useEffect(() => { shownAt.current = Date.now(); }, []);
 
   const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!form.name || !form.phone || !form.email) return;
-    track("generate_lead", { lead_type: "contact_form", channel: "email", service: form.service || "not_specified", location: "contact_page_form" });
+  const summary = () =>
+    `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nService: ${form.service || "Not specified"}\n\nMessage:\n${form.message || "—"}`;
 
-    const subject = encodeURIComponent(`New Enquiry from ${form.name}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nService: ${form.service || "Not specified"}\n\nMessage:\n${form.message || "—"}`
-    );
-    window.location.href = `mailto:info@ivoniz.com?subject=${subject}&body=${body}`;
-    setSent(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!form.name || !form.phone || !form.email || status === "sending") return;
+    setStatus("sending");
+    try {
+      const res = await fetch("/contact-mail.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ ...form, website: honeypot, t: String(shownAt.current), page: window.location.pathname }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || "send failed");
+      track("generate_lead", { lead_type: "contact_form", channel: "form", service: form.service || "not_specified", location: "contact_page_form" });
+      setStatus("sent");
+    } catch {
+      setStatus("failed");
+    }
   };
 
   return (
@@ -262,17 +277,40 @@ export default function ContactPageClient() {
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-13 sm:h-12 px-7 bg-white text-black text-[14px] font-bold rounded-full hover:bg-white/90 active:scale-[0.98] transition-all"
-            >
-              Send Enquiry <FaArrowRight aria-hidden="true" className="text-[13px]" />
-            </button>
+            {/* honeypot: hidden from people, filled in by spam bots */}
+            <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+              <label htmlFor="contact-website">Website</label>
+              <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+            </div>
 
-            {sent && (
-              <p className="text-white/60 text-[13px] mt-4">
-                Opening your email client to send this enquiry to info@ivoniz.com…
-              </p>
+            {status === "sent" ? (
+              <div role="status" className="rounded-xl border border-white/15 bg-white/4 p-5">
+                <p className="text-white text-[15px] font-semibold">Thank you, {form.name.split(" ")[0]}. Your enquiry has been sent.</p>
+                <p className="text-white/60 text-[13.5px] mt-1.5">We&apos;ll reply by phone, WhatsApp or email, usually within one working day.</p>
+              </div>
+            ) : (
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-13 sm:h-12 px-7 bg-white text-black text-[14px] font-bold rounded-full hover:bg-white/90 active:scale-[0.98] transition-all disabled:opacity-60"
+              >
+                {status === "sending" ? "Sending…" : <>Send Enquiry <FaArrowRight aria-hidden="true" className="text-[13px]" /></>}
+              </button>
+            )}
+
+            {status === "failed" && (
+              <div role="alert" className="mt-4 rounded-xl border border-white/15 bg-white/4 p-5">
+                <p className="text-white text-[14px] font-semibold">Sorry, the form couldn&apos;t send just now.</p>
+                <p className="text-white/60 text-[13.5px] mt-1">Your details are ready to send another way, so nothing is lost:</p>
+                <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                  <a href={waLink(`Hi Ivoniz, I have an enquiry.\n\n${summary()}`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full bg-white text-black text-[14px] font-semibold">
+                    <FaWhatsapp aria-hidden="true" /> Send on WhatsApp
+                  </a>
+                  <a href={`mailto:info@ivoniz.com?subject=${encodeURIComponent(`New Enquiry from ${form.name}`)}&body=${encodeURIComponent(summary())}`} className="inline-flex items-center justify-center h-11 px-5 rounded-full border border-white/25 text-white text-[14px] font-semibold">
+                    Send by email
+                  </a>
+                </div>
+              </div>
             )}
           </form>
 

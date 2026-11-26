@@ -448,7 +448,7 @@ export default function EcommerceSeoServicesPage() {
               We provide ecommerce SEO services in Dubai for online stores in Abu Dhabi, Sharjah, Saudi Arabia, Qatar and
               the wider GCC. We set up AED and local pricing in product schema, optimise for UAE and GCC search terms, and
               build links from regional sites, including Shopify SEO services for Dubai stores. You get clear monthly
-              reporting and pricing in AED, delivered by our team in Calicut. We work with Gulf clients remotely from our office in Kozhikode, with calls in Gulf time; we have no office in the UAE.
+              reporting and pricing in AED, delivered by our team in Calicut. We work with Gulf clients remotely from our office in Kozhikode, with calls in Gulf time; we have no office in the UAE. For SEO focused on the UAE, see <Link href="/digital-marketing/seo-services/seo-services-dubai" className="underline underline-offset-4">SEO services for Dubai businesses</Link>.
             </p>
             <ul className="mt-6 grid gap-3 text-[15px] text-white/80 flex-1">
               <Check>AED and local pricing in product schema</Check>

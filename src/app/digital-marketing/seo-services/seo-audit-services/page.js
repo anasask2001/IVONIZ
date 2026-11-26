@@ -392,7 +392,7 @@ export default function SeoAuditServicesPage() {
               includes UAE search terms, local listings, multi-country targeting and, where needed, a{" "}
               <Link href={`${SEO}/technical-seo-services`} className={LINK}>technical SEO audit</Link> for large or
               multilingual sites. You get an affordable, fixed-price audit in AED, with no retainer required, delivered by
-              our team in Calicut. We work with Gulf clients remotely from our office in Kozhikode, with calls in Gulf time; we have no office in the UAE.
+              our team in Calicut. We work with Gulf clients remotely from our office in Kozhikode, with calls in Gulf time; we have no office in the UAE. For SEO focused on the UAE, see <Link href="/digital-marketing/seo-services/seo-services-dubai" className="underline underline-offset-4">SEO services for Dubai businesses</Link>.
             </p>
             <ul className="mt-6 grid gap-3 text-[15px] text-white/80 flex-1">
               <Check>UAE and GCC search terms and listings</Check>

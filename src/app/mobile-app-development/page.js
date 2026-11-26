@@ -398,7 +398,7 @@ export default function MobileAppDevelopmentPage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-4 text-[13px] text-white/55">Indicative ranges. For UAE and GCC projects we quote in AED.</p>
+          <p className="mt-4 text-[13px] text-white/55">Indicative ranges. For UAE and GCC projects we quote in AED. Full breakdown, including running costs: <Link href="/mobile-app-development/app-development-cost-in-kerala" className="text-white/80 underline underline-offset-4 decoration-white/30 hover:text-white">app development cost in Kerala</Link>.</p>
 
           <div className="mt-12 grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-14 items-start">
             <div>

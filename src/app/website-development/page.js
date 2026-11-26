@@ -408,6 +408,9 @@ export default function WebsiteDevelopmentPage() {
             <Link href="/website-development/custom-website-vs-wordpress#cost" className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-medium text-black underline underline-offset-4 decoration-black/25 hover:decoration-black">
               See the full cost comparison in custom website vs WordPress <FiArrowUpRight aria-hidden="true" />
             </Link>
+            <Link href="/website-development/website-development-cost-in-kerala" className="mt-3 flex items-center gap-1.5 text-[15px] font-medium text-black underline underline-offset-4 decoration-black/25 hover:decoration-black">
+              Read our website development cost guide for Kerala <FiArrowUpRight aria-hidden="true" />
+            </Link>
           </div>
           <div className="rounded-2xl bg-black text-white p-7 sm:p-9 relative overflow-hidden">
             <PetalSketch className="absolute -right-10 -top-10 w-[180px]" />
