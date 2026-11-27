@@ -25,16 +25,16 @@ import { WP_DUBAI_RANGE, CATALOGUE_PACKAGES, STORE_TYPES, PORTAL_PACKAGES } from
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/website-development/website-development-company-dubai";
-const TITLE = "Website Development & Web Design for Dubai Businesses | Ivoniz LLP";
+const TITLE = "Web Design Company for Dubai & UAE Businesses | Ivoniz LLP";
 const DESCRIPTION =
-  "Website development and web design for Dubai and UAE businesses: English and Arabic sites, online stores and portals, built by our team in Kerala, quoted in AED.";
+  "Web design and website development for Dubai and UAE businesses: English and Arabic sites, online stores and SEO built in. Team in Kerala, quoted in AED.";
 
 export const metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
-  openGraph: { siteName: "Ivoniz LLP", title: "Website Development & Web Design for Dubai Businesses", description: DESCRIPTION, url: PAGE_URL, type: "website", images: [{ url: "/ivoniz-og-image.webp", width: 1734, height: 907, alt: "Website development for Dubai and UAE businesses by Ivoniz" }] },
-  twitter: { card: "summary_large_image", title: "Website Development & Web Design for Dubai Businesses", description: DESCRIPTION, images: ["/ivoniz-og-image.webp"] },
+  openGraph: { siteName: "Ivoniz LLP", title: "Web Design Company for Dubai & UAE Businesses", description: DESCRIPTION, url: PAGE_URL, type: "website", images: [{ url: "/ivoniz-og-image.webp", width: 1734, height: 907, alt: "Website development for Dubai and UAE businesses by Ivoniz" }] },
+  twitter: { card: "summary_large_image", title: "Web Design Company for Dubai & UAE Businesses", description: DESCRIPTION, images: ["/ivoniz-og-image.webp"] },
   robots: { index: true, follow: true },
 };
 
@@ -71,6 +71,8 @@ const FAQS = [
   { q: "Have you built websites for UAE businesses?", a: "Yes. This page lists the websites we've built for businesses in the UAE, Saudi Arabia and Qatar, with links to each live site so you can judge the work yourself." },
   { q: "Can you build an Arabic website?", a: "Yes, we build English and Arabic websites with right-to-left layouts, Arabic fonts and the language tags Google uses. The Arabic text itself should be written or checked by a native speaker, either your team or a translator you choose." },
   { q: "How long does a website take?", a: "A business website usually takes a few weeks from approved content; a bilingual site or an online store takes longer. We give you a timeline in the written scope, and the biggest factor is how quickly content and approvals come in." },
+  { q: "Are you the best web design company in Dubai?", a: "We won't claim that; 'best' depends on what you need, and we don't have a Dubai office. What we can show is live work for UAE, Saudi and Qatar businesses, a written scope and fixed AED quote, and every account in your name. Our guide on choosing a web design company in Dubai lists the checks to run on any agency, including us." },
+  { q: "Is SEO included in your web design?", a: "The SEO basics are built into every site: page titles and descriptions, fast mobile pages, clean URLs, a sitemap, Search Console setup and redirects from your old site. Ongoing SEO to rank for competitive Dubai searches is a separate monthly service." },
   { q: "Who owns the website when it's finished?", a: "You do. The domain, hosting, admin logins and code are in your company's name, and we hand everything over at launch." },
 ];
 
@@ -80,7 +82,7 @@ const schema = {
     {
       "@type": "Service",
       "@id": `${PAGE_URL}#service`,
-      name: "Website Development and Web Design for Dubai and UAE Businesses",
+      name: "Web Design and Website Development for Dubai and UAE Businesses",
       serviceType: "Website development",
       provider: { "@id": ORG_ID },
       areaServed: [
@@ -92,7 +94,7 @@ const schema = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: "Website Development & Web Design for Dubai Businesses",
+      name: "Web Design Company for Dubai & UAE Businesses",
       description: DESCRIPTION,
       inLanguage: "en",
       isPartOf: { "@id": WEBSITE_ID },
@@ -124,7 +126,7 @@ export default function WebsiteDubaiPage() {
         <div className="relative mx-auto max-w-[1400px]">
           <Breadcrumbs dark items={[{ label: "Website Development", href: W }, { label: "Websites for Dubai Businesses", href: `${W}/website-development-company-dubai` }]} />
           <div className="mt-8"><Label>Dubai · UAE · Remote team in Kerala</Label></div>
-          <HeroTitle outline="for Dubai Businesses">Website Development and Web Design</HeroTitle>
+          <HeroTitle outline="for Dubai & UAE Businesses">Web Design and Website Development</HeroTitle>
           <div className="mt-10 grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end">
             <p className="text-white/60 text-[16px] sm:text-[18px] leading-relaxed max-w-[720px]">
               We design and build websites, online stores and portals for UAE businesses, in English and Arabic. Our team
