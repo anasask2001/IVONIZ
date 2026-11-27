@@ -41,6 +41,7 @@ export default function Page() {
       related={[
         { label: "Technical SEO services", href: "/digital-marketing/seo-services/technical-seo-services", note: "Redirect plans and migration checks done by our developers." },
         { label: "7 signs your business needs a new website", href: "/blog/signs-you-need-a-new-website", note: "Decide whether a redesign is needed at all." },
+        { label: "Website redesign services", href: "/website-development/website-redesign", note: "Redesigns with every old URL mapped and redirected." },
       ]}
       sources={[
         ["Google Search Central: Site moves with URL changes", "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes"],

@@ -44,7 +44,7 @@ const GCC = CLIENTS.filter((c) => c.region === "gcc");
 const INCLUDED = [
   { t: "Technical SEO", d: "Speed, mobile usability, indexing, redirects and site errors, fixed by our own developers rather than handed to you as a list.", href: `${SEO}/technical-seo-services` },
   { t: "On-page SEO", d: "Titles, headings, content, internal links and schema on the pages that should bring enquiries.", href: `${SEO}/on-page-seo-services` },
-  { t: "Local SEO and Google Business Profile", d: "Your profile, categories, photos and reviews for your real UAE address, so you show in Google Maps and “near me” searches.", href: `${SEO}/local-seo-services` },
+  { t: "Local SEO and Google Business Profile", d: "Your profile, categories, photos and reviews for your real UAE address, so you show in Google Maps and “near me” searches.", href: `${SEO}/local-seo-dubai` },
   { t: "Ecommerce SEO", d: "Category and product pages for Shopify, WooCommerce and custom stores selling in the UAE.", href: `${SEO}/ecommerce-seo-services` },
   { t: "Links and mentions", d: "White-hat links from relevant UAE and industry sites, directories and digital PR. No paid link networks.", href: `${SEO}/off-page-seo-services` },
   { t: "An audit before anything else", d: "A manual review of your site with a prioritised fix list, so you know what matters before you commit to a package.", href: `${SEO}/seo-audit-services` },

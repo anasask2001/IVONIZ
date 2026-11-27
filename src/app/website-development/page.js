@@ -96,7 +96,7 @@ const INDUSTRIES = [
   { Icon: FaGraduationCap, title: "Schools and colleges", text: "Admissions, course pages, notices, parent portals" },
   { Icon: FaRocket, title: "Startups", text: "MVPs, landing pages, SaaS products" },
   { Icon: FaShoppingBag, title: "Ecommerce brands", text: "Fast stores built to convert" },
-  { Icon: FaBuilding, title: "Real estate, travel and services", text: "Listings, enquiries and bookings" },
+  { Icon: FaBuilding, title: "Real estate, travel and services", text: "Listings, enquiries and bookings", href: "/website-development/real-estate-website-development" },
 ];
 
 const MARKETS = [
@@ -125,6 +125,12 @@ const MARKETS = [
         Telr, Tap and Mada. In the UAE? See{" "}
         <Link href="/website-development/website-development-company-dubai" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">
           websites for Dubai businesses
+        </Link>{" "}or{" "}
+        <Link href="/website-development/web-development-company-abu-dhabi" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">
+          Abu Dhabi businesses
+        </Link>. In Qatar? See{" "}
+        <Link href="/website-development/website-development-company-qatar" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">
+          websites for Qatar businesses
         </Link>.
       </>
     ),

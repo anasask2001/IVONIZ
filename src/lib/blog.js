@@ -19,6 +19,19 @@ export const AUTHOR = {
 
 export const POSTS = [
   {
+    slug: "web-design-trends-2026",
+    title: "Web Design Trends 2026: What Actually Helps a Business Website",
+    seoTitle: "Web Design Trends 2026 for Business Websites",
+    description:
+      "Web design trends for 2026, judged for business websites in Kerala and the Gulf: which trends help bring enquiries, which need care, and which to skip.",
+    excerpt: "Which 2026 trends help a business website bring enquiries, which need care, and which are just fashion.",
+    published: "2026-11-27",
+    updated: "2026-11-27",
+    minutes: 7,
+    market: "All markets",
+    topic: "Design",
+  },
+  {
     slug: "ai-chatbot-for-business-website",
     title: "AI Chatbots on Business Websites: What They Handle and Where They Fail",
     seoTitle: "AI Chatbots for Business Websites: Worth It?",
@@ -371,7 +384,7 @@ export const POSTS = [
     title: "Ecommerce Website Cost in the UAE: Build + Running Costs",
     seoTitle: "Ecommerce Website Cost in the UAE (2026)",
     description:
-      "What an online store really costs in the UAE: typical AED build ranges, monthly fees, payment and delivery charges per order, VAT, and a first-year budget worksheet.",
+      "Ecommerce website price in Dubai and the UAE: typical AED build ranges, monthly fees, payment and delivery charges per order, VAT, and a first-year budget worksheet.",
     excerpt: "Build cost is only the start. Monthly fees, per-order charges and VAT, with a worksheet to fill in.",
     published: "2026-11-26",
     updated: "2026-11-26",
@@ -384,7 +397,7 @@ export const POSTS = [
     title: "Website Development Cost in Dubai & the UAE (2026 Guide)",
     seoTitle: "Website Development Cost in Dubai & UAE (2026)",
     description:
-      "What a website costs in Dubai and the UAE in 2026: typical AED ranges for business sites, online stores and portals, what changes the price, and the running costs.",
+      "Website design price in Dubai and website development cost in the UAE for 2026: typical AED ranges for business sites, stores and portals, and the running costs.",
     excerpt: "Typical AED ranges by website type, what pushes a quote up, and the yearly costs most quotes leave out.",
     published: "2026-11-26",
     updated: "2026-11-26",

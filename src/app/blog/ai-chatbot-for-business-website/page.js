@@ -38,6 +38,7 @@ export default function Page() {
       related={[
         { label: "Custom software development", href: "/software-development", note: "Chatbots and automation connected to your systems." },
         { label: "AI and automation for small businesses", href: "/blog/ai-automation-small-business", note: "Where AI saves time, beyond chat." },
+        { label: "AI chatbots and WhatsApp automation", href: "/software-development/ai-chatbot-whatsapp-automation", note: "Website and WhatsApp bots we build." },
       ]}
       cta={{
         label: "Chatbots",

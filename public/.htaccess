@@ -37,6 +37,8 @@ AddType application/xml .xml
   RewriteRule ^technical-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/technical-seo-services [R=301,L]
   RewriteRule ^on-page-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/on-page-seo-services [R=301,L]
   # Added 27 Nov 2026 (Search Console check): remaining old top-level service URLs
+  RewriteRule ^web-development-company-dubai(?:\.html)?/?$ /website-development/website-development-company-dubai [R=301,L]
+  RewriteRule ^web-development-company-abu-dhabi(?:\.html)?/?$ /website-development/web-development-company-abu-dhabi [R=301,L]
   RewriteRule ^off-page-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/off-page-seo-services [R=301,L]
   RewriteRule ^ecommerce-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/ecommerce-seo-services [R=301,L]
   RewriteRule ^seo-audit-services(?:\.html)?/?$ /digital-marketing/seo-services/seo-audit-services [R=301,L]

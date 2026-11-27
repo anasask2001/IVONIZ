@@ -118,6 +118,7 @@ const [STARTER, CORPORATE] = WP_PACKAGES;
 const FAQS = [
   { q: "How much does WordPress website development cost in India?", a: `A starter WordPress business website typically costs ${STARTER.inr}, and a corporate site with custom design costs ${CORPORATE.inr} or more, depending on pages and features.` },
   { q: "How much does a WordPress website cost in Dubai?", a: `A bilingual WordPress business website in Dubai typically costs ${WP_DUBAI_RANGE}, depending on pages, Arabic content and integrations.` },
+  { q: "Do you do WordPress website design in Dubai?", a: "Yes, for Dubai and UAE businesses, remotely from our team in Kozhikode, Kerala. We design and build bilingual English and Arabic WordPress sites with calls in Gulf time and a fixed quote in AED." },
   { q: "Can I hire a dedicated WordPress developer?", a: "Yes. You can hire an Ivoniz WordPress developer for a fixed project, a monthly retainer, or as a dedicated developer for ongoing work." },
   { q: "How long does it take to build a WordPress website?", a: "A starter business website takes 2 to 3 weeks, and larger corporate sites take 3 to 6 weeks." },
   { q: "Will I be able to update the website myself?", a: "Yes. You can edit text, images, pages and blog posts from the WordPress dashboard, and we train your team at launch." },

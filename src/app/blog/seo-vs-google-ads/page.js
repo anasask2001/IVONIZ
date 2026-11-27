@@ -40,6 +40,7 @@ export default function Page() {
       related={[
         { label: "SEO services", href: "/digital-marketing/seo-services", note: "Technical, on-page, local and ecommerce SEO." },
         { label: "Digital marketing", href: "/digital-marketing", note: "Ads, SEO and social media from one team." },
+        { label: "Google Ads management", href: "/digital-marketing/google-ads-management", note: "Campaigns tracked to calls, WhatsApp and forms." },
       ]}
       cta={{
         label: "Where to Spend",

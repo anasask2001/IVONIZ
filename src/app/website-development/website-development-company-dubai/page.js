@@ -25,16 +25,16 @@ import { WP_DUBAI_RANGE, CATALOGUE_PACKAGES, STORE_TYPES, PORTAL_PACKAGES } from
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/website-development/website-development-company-dubai";
-const TITLE = "Web Design Company for Dubai & UAE Businesses | Ivoniz LLP";
+const TITLE = "Web Design & Web Development Agency for Dubai | Ivoniz LLP";
 const DESCRIPTION =
-  "Web design and website development for Dubai and UAE businesses: English and Arabic sites, online stores and SEO built in. Team in Kerala, quoted in AED.";
+  "Web design and development agency for Dubai and UAE businesses: English and Arabic sites, online stores and SEO built in. Team in Kerala, quoted in AED.";
 
 export const metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
-  openGraph: { siteName: "Ivoniz LLP", title: "Web Design Company for Dubai & UAE Businesses", description: DESCRIPTION, url: PAGE_URL, type: "website", images: [{ url: "/ivoniz-og-image.webp", width: 1734, height: 907, alt: "Website development for Dubai and UAE businesses by Ivoniz" }] },
-  twitter: { card: "summary_large_image", title: "Web Design Company for Dubai & UAE Businesses", description: DESCRIPTION, images: ["/ivoniz-og-image.webp"] },
+  openGraph: { siteName: "Ivoniz LLP", title: "Web Design & Web Development Agency for Dubai & UAE Businesses", description: DESCRIPTION, url: PAGE_URL, type: "website", images: [{ url: "/ivoniz-og-image.webp", width: 1734, height: 907, alt: "Website development for Dubai and UAE businesses by Ivoniz" }] },
+  twitter: { card: "summary_large_image", title: "Web Design & Web Development Agency for Dubai & UAE Businesses", description: DESCRIPTION, images: ["/ivoniz-og-image.webp"] },
   robots: { index: true, follow: true },
 };
 
@@ -55,7 +55,7 @@ const UAE_NOTES = [
   ["English and Arabic, done properly", "An Arabic version needs a right-to-left layout, Arabic fonts, language tags so Google shows the right version, and text written or checked by a native speaker. We build and test the technical side; the Arabic copy comes from your team or a translator you trust."],
   ["WhatsApp first", "Many UAE customers would rather message than fill in a form. We put WhatsApp and click-to-call where people decide, and set up tracking in Google Analytics, so you can see which pages bring enquiries."],
   ["Payments and VAT", "Stores and booking sites connect a gateway that works for UAE businesses, show prices in AED, and add 5% VAT to invoices. We check which options are available for your company before choosing a platform."],
-  ["Fast on mobile, everywhere", "Most visitors arrive on a phone. We build light pages, compress images and test on real mobile connections, because a slow site loses enquiries before it loads."],
+  ["Responsive web design, fast on every phone", "Most visitors arrive on a phone. As a responsive web design company for Dubai businesses, we build light pages that adapt to every screen, compress images and test on real mobile connections, because a slow site loses enquiries before it loads."],
 ];
 
 const PROCESS = [
@@ -65,14 +65,26 @@ const PROCESS = [
   ["Launch in your name", "Domain, hosting and admin logins in your company's name, with redirects from your old site and Google set up."],
 ];
 
+const CHOOSE = [
+  ["Can I see live sites you built?", "Links to launched sites that load fast on your phone", "Only mock-ups or design gallery shots"],
+  ["Who will actually build my site?", "The team you're speaking to, named", "Vague answers, or work passed to freelancers"],
+  ["What technology will you use, and why?", "A choice explained against your needs", "The same theme or page builder for every client"],
+  ["Who owns the code and accounts?", "You, in writing, with logins at launch", "The agency keeps the domain, hosting or admin access"],
+  ["What's included in the price?", "An itemised quote, VAT stated", "One lump sum, with 'extras' later"],
+  ["What happens after launch?", "Defined support and a maintenance option", "\"Just call us if something breaks\""],
+];
+
 const FAQS = [
+  { q: "What does a web development agency do?", a: "A web development agency plans, designs, builds and maintains websites and web applications. A full-service agency covers UI/UX design, front-end and back-end development, ecommerce, integrations, SEO setup at launch and ongoing support, so you deal with one team rather than several." },
   { q: "Do you have an office in Dubai?", a: "No. Our team is in Kozhikode, Kerala, India. We work with UAE businesses remotely: video calls and WhatsApp in Gulf time, and a private link where you review the site as it's built." },
-  { q: "How much does a website cost for a Dubai business?", a: `It depends on the type. As a guide, a bilingual English and Arabic business website on WordPress typically costs ${WP_DUBAI_RANGE}, and an online store starts around ${low(STORE_TYPES[0].aed)}. These are typical market ranges; we send a fixed quote in AED once we know your pages and features.` },
+  { q: "How much does a website development company in Dubai charge?", a: `It depends on the type. As a guide, a bilingual English and Arabic business website on WordPress typically costs ${WP_DUBAI_RANGE}, and an online store starts around ${low(STORE_TYPES[0].aed)}. These are typical market ranges; we send a fixed quote in AED once we know your pages and features.` },
   { q: "Have you built websites for UAE businesses?", a: "Yes. This page lists the websites we've built for businesses in the UAE, Saudi Arabia and Qatar, with links to each live site so you can judge the work yourself." },
   { q: "Can you build an Arabic website?", a: "Yes, we build English and Arabic websites with right-to-left layouts, Arabic fonts and the language tags Google uses. The Arabic text itself should be written or checked by a native speaker, either your team or a translator you choose." },
   { q: "How long does a website take?", a: "A business website usually takes a few weeks from approved content; a bilingual site or an online store takes longer. We give you a timeline in the written scope, and the biggest factor is how quickly content and approvals come in." },
-  { q: "Are you the best web design company in Dubai?", a: "We won't claim that; 'best' depends on what you need, and we don't have a Dubai office. What we can show is live work for UAE, Saudi and Qatar businesses, a written scope and fixed AED quote, and every account in your name. Our guide on choosing a web design company in Dubai lists the checks to run on any agency, including us." },
+  { q: "Are you the best web development company in Dubai?", a: "We won't claim that; 'best' depends on what you need, and we don't have a Dubai office. Most 'top 10 web design companies in Dubai' lists are written by agencies that appear on them, so they're a starting point at best. Judge us the way you'd judge any agency: live work, who builds it, the technology, ownership, an itemised AED quote and support after launch." },
   { q: "Is SEO included in your web design?", a: "The SEO basics are built into every site: page titles and descriptions, fast mobile pages, clean URLs, a sitemap, Search Console setup and redirects from your old site. Ongoing SEO to rank for competitive Dubai searches is a separate monthly service." },
+  { q: "Are you a web development company in the UAE?", a: "We're a web development company in Kozhikode, Kerala, India, working for UAE businesses. We don't have a UAE office; projects run remotely in Gulf time, with live UAE, Saudi and Qatar client sites on this page as proof." },
+  { q: "Do you build real estate websites in Dubai?", a: "Yes: brokerage sites with listing search, off-plan project microsites and commercial property sites. See our real estate website development page for details." },
   { q: "Who owns the website when it's finished?", a: "You do. The domain, hosting, admin logins and code are in your company's name, and we hand everything over at launch." },
 ];
 
@@ -94,7 +106,7 @@ const schema = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: "Web Design Company for Dubai & UAE Businesses",
+      name: "Web Design & Web Development Agency for Dubai & UAE Businesses",
       description: DESCRIPTION,
       inLanguage: "en",
       isPartOf: { "@id": WEBSITE_ID },
@@ -126,12 +138,12 @@ export default function WebsiteDubaiPage() {
         <div className="relative mx-auto max-w-[1400px]">
           <Breadcrumbs dark items={[{ label: "Website Development", href: W }, { label: "Websites for Dubai Businesses", href: `${W}/website-development-company-dubai` }]} />
           <div className="mt-8"><Label>Dubai · UAE · Remote team in Kerala</Label></div>
-          <HeroTitle outline="for Dubai & UAE Businesses">Web Design and Website Development</HeroTitle>
+          <HeroTitle outline="for Dubai & UAE Businesses">Web Design and Web Development Agency</HeroTitle>
           <div className="mt-10 grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end">
             <p className="text-white/60 text-[16px] sm:text-[18px] leading-relaxed max-w-[720px]">
-              We design and build websites, online stores and portals for UAE businesses, in English and Arabic. Our team
-              is in Kozhikode, Kerala, and we don&apos;t have an office in Dubai: projects run on video calls and WhatsApp
-              in Gulf time, with a fixed quote in AED.
+              We&apos;re a web development agency that designs and builds websites, online stores and web apps for UAE
+              businesses, in English and Arabic. Our team is in Kozhikode, Kerala, and we don&apos;t have an office in
+              Dubai: projects run on video calls and WhatsApp in Gulf time, with a fixed quote in AED.
             </p>
             <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
               <PillLink href="#quote" solid label="Get a Quote in AED" location="hero" />
@@ -146,7 +158,7 @@ export default function WebsiteDubaiPage() {
         <div className="mx-auto max-w-[1400px]">
           <div className="max-w-[820px] mb-8 sm:mb-12">
             <Label>What We Build</Label>
-            <Heading>Websites for UAE companies</Heading>
+            <Heading>Website development services in Dubai and the UAE</Heading>
             <p className="mt-5 text-white/55 text-[16px] leading-relaxed">
               Prices are typical UAE market ranges, as a guide. Each links to the full detail.
             </p>
@@ -181,6 +193,8 @@ export default function WebsiteDubaiPage() {
             ))}
           </div>
           <p className="mt-10 text-[15.5px] text-black/60 leading-relaxed max-w-[760px]">
+            Based in Abu Dhabi? See{" "}
+            <Link href="/website-development/web-development-company-abu-dhabi" className="text-black font-medium underline underline-offset-4 decoration-black/25 hover:decoration-black">web development for Abu Dhabi businesses</Link>.{" "}
             Need English and Arabic? See{" "}
             <Link href="/website-development/arabic-website-development" className="text-black font-medium underline underline-offset-4 decoration-black/25 hover:decoration-black">Arabic &amp; bilingual website development</Link>.{" "}
             Want people to find it on Google too? See{" "}
@@ -214,6 +228,44 @@ export default function WebsiteDubaiPage() {
           </div>
           <p className="mt-10 text-[15px] text-black/60">
             Case studies for each project: <Link href="/works" className="text-black font-medium underline underline-offset-4 decoration-black/25 hover:decoration-black">see all our work</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* ── HOW TO CHOOSE (merged from the 'web development agency' brief, 27 Nov 2026) ── */}
+      <section className={`relative py-14 sm:py-24 ${PAD} bg-[#f8f8f8] text-black`}>
+        <div className="mx-auto max-w-[1100px]">
+          <Label dark={false}>Choosing an Agency</Label>
+          <Heading dark={false}>How to choose the best web development company in Dubai</Heading>
+          <p className="mt-5 text-[16px] text-black/60 leading-relaxed max-w-[760px]">
+            Search &ldquo;top 10 web design companies in Dubai&rdquo; and you&apos;ll find dozens of lists, most written by
+            agencies on them. A better way to find the best website development company for your business: ask every
+            agency on your shortlist the same six questions, including us.
+          </p>
+          <div className="mt-8 overflow-x-auto rounded-2xl border border-black/10 bg-white">
+            <table className="w-full min-w-[620px] text-left">
+              <caption className="sr-only">Questions to ask a web development agency in Dubai</caption>
+              <thead>
+                <tr className="bg-black/[0.03]">
+                  {["Question to ask", "A good answer", "A warning sign"].map((c) => (
+                    <th key={c} scope="col" className="px-5 py-3.5 text-[11px] font-bold tracking-[0.18em] uppercase text-black/55">{c}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {CHOOSE.map(([q, good, bad]) => (
+                  <tr key={q} className="border-t border-black/8 align-top">
+                    <th scope="row" className="px-5 py-4 font-medium text-[15px] text-black">{q}</th>
+                    <td className="px-5 py-4 text-[15px] text-black/65">{good}</td>
+                    <td className="px-5 py-4 text-[15px] text-black/50">{bad}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-6 text-[15px] text-black/60 leading-relaxed">
+            The agency that answers all six clearly is usually the right partner, whatever its place on a list. More detail:{" "}
+            <Link href="/blog/how-to-choose-web-design-company-dubai" className="text-black font-medium underline underline-offset-4 decoration-black/25 hover:decoration-black">12 checks before you sign</Link>.
           </p>
         </div>
       </section>

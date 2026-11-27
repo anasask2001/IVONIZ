@@ -26,7 +26,7 @@ import { PORTAL_PACKAGES, PORTAL_FIRST_PHASE } from "@/components/ecommerce/cost
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/website-development/web-portal-development";
-const TITLE = "Web Portal Development Company in Kerala & UAE | Ivoniz LLP";
+const TITLE = "Web Portal Development Company in Kerala | Ivoniz LLP";
 const DESCRIPTION =
   "Custom web portal development for customers, dealers, vendors, staff and students. Secure, role-based portals for Kerala, UAE and GCC businesses. Get a quote.";
 
@@ -112,6 +112,7 @@ const MARKETS = [
   {
     label: "UAE, Saudi Arabia, Qatar and Oman",
     text: "We deliver bilingual English–Arabic portals with RTL interfaces, in-region hosting options, and integration with local identity and payment systems where your project needs them. Workshops and demos run in Gulf time.",
+    link: { href: "/website-development/web-application-development-dubai", label: "Web application development for Dubai" },
     cta: "Book a call in Gulf time",
     message: "Hi Ivoniz, we're planning a web portal for our company in the UAE / GCC. Can we book a discovery call?",
     location: "markets_gcc",
@@ -173,7 +174,7 @@ const schema = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: "Web Portal Development Company in Kerala & UAE",
+      name: "Web Portal Development Company in Kerala",
       description: DESCRIPTION,
       inLanguage: "en",
       isPartOf: { "@id": WEBSITE_ID },
@@ -457,7 +458,7 @@ export default function WebPortalDevelopmentPage() {
             {MARKETS.map((m) => (
               <article key={m.label} className="p-7 sm:p-8 flex flex-col" style={GLASS}>
                 <p className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/60">{m.label}</p>
-                <p className="mt-5 text-[15px] leading-relaxed text-white/70 flex-1">{m.text}</p>
+                <p className="mt-5 text-[15px] leading-relaxed text-white/70 flex-1">{m.text}{m.link && <> See <Link href={m.link.href} className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white">{m.link.label.toLowerCase()}</Link>.</>}</p>
                 <div className="mt-7">
                   <PillLink href={waLink(m.message)} external event="whatsapp_click" label={m.cta} location={m.location} icon={<FaWhatsapp aria-hidden="true" />} />
                 </div>

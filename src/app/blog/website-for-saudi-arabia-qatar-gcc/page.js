@@ -43,6 +43,7 @@ export default function Page() {
       related={[
         { label: "Arabic & bilingual website development", href: "/website-development/arabic-website-development", note: "English + Arabic sites for GCC markets." },
         { label: "Arabic + English websites: a practical guide", href: "/blog/arabic-english-bilingual-website-guide", note: "The technical side, step by step." },
+        { label: "Website development for Qatar", href: "/website-development/website-development-company-qatar", note: "Company websites and stores for Doha and Qatar." },
       ]}
       sources={[["ZATCA: E-Invoicing", "https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx"]]}
       cta={{

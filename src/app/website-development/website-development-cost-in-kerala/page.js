@@ -241,7 +241,8 @@ export default function WebsiteCostKeralaPage() {
             <Heading>Costs that come every year</Heading>
             <p className="mt-6 text-[16px] text-white/60 leading-relaxed">
               The build is a one-time cost, but a website also has running costs. Ask whether a quote includes them, and
-              make sure the domain and hosting are registered in your business&apos;s name.
+              make sure the domain and hosting are registered in your business&apos;s name. Need someone to look after it? See{" "}
+              <Link href="/website-development/website-maintenance-services" className={LINK}>website maintenance services</Link>.
             </p>
           </div>
           <ul className="grid gap-3 self-start">

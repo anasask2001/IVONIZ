@@ -40,6 +40,7 @@ export default function Page() {
       related={[
         { label: "Website development", href: "/website-development", note: "New websites for businesses in Kerala and the Gulf." },
         { label: "Website development cost in Kerala", href: "/website-development/website-development-cost-in-kerala", note: "What a new site typically costs." },
+        { label: "Website redesign services", href: "/website-development/website-redesign", note: "Redesign without losing your Google rankings." },
       ]}
       cta={{
         label: "Honest Opinion",

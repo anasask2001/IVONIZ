@@ -40,6 +40,7 @@ export default function Page() {
       related={[
         { label: "CRM software development", href: "/software-development/crm-software-development", note: "Leads, follow-ups and WhatsApp in one place." },
         { label: "Custom software development", href: "/software-development", note: "Business tools built around how you work." },
+        { label: "AI chatbots and WhatsApp automation", href: "/software-development/ai-chatbot-whatsapp-automation", note: "Answer FAQs and qualify leads automatically." },
       ]}
       cta={{
         label: "Automation",

@@ -43,7 +43,7 @@ export default function Page() {
       toc={TOC}
       faqs={FAQS}
       related={[
-        { label: "WordPress website development", href: "/website-development/wordpress-website-development", note: "Including monthly care plans." },
+        { label: "Website maintenance services", href: "/website-development/website-maintenance-services", note: "Monthly care for WordPress, WooCommerce and custom sites." },
         { label: "WooCommerce development", href: "/website-development/ecommerce-website-development/woocommerce-website-development", note: "Store builds and maintenance." },
       ]}
       cta={{
@@ -51,7 +51,7 @@ export default function Page() {
         title: "Need someone to look after your website?",
         text: "Tell us what your site runs on and how often it changes. We'll suggest what level of maintenance it actually needs, with a written list of what's included.",
         button: "Ask about maintenance",
-        href: "/website-development/wordpress-website-development#quote",
+        href: "/website-development/website-maintenance-services#quote",
         message: "Hi Ivoniz, I need maintenance for my website. It runs on: ",
       }}
     >

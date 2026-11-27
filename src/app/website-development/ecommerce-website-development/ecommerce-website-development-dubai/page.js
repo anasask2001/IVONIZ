@@ -26,7 +26,7 @@ import { STORE_TYPES, WOO_PACKAGES } from "@/components/ecommerce/costs";
    ════════════════════════════════════════════════════════════════ */
 
 const PAGE_URL = "https://ivoniz.com/website-development/ecommerce-website-development/ecommerce-website-development-dubai";
-const TITLE = "Ecommerce Website Development for Dubai & UAE Stores | Ivoniz LLP";
+const TITLE = "Ecommerce Website Development for Dubai & UAE | Ivoniz LLP";
 const DESCRIPTION =
   "Ecommerce website development for Dubai and UAE businesses: Shopify, WooCommerce or custom stores with AED pricing, VAT invoices, local payments and Arabic.";
 
@@ -91,6 +91,8 @@ const FAQS = [
   { q: "Which payment gateway should a UAE online store use?", a: "It depends on your trade licence, your products and the fees you're offered. Common options for UAE stores include Telr, Network International, PayTabs, Checkout.com, Stripe, and Tabby or Tamara for pay-later. Each provider approves merchants itself, so apply early." },
   { q: "Have you built an online store in the Gulf?", a: `Yes. We built ${STORE?.title}, a Shopify store in Qatar for gaming consoles, accessories and digital vouchers. The live store is linked on this page.` },
   { q: "Can the store be in English and Arabic?", a: "Yes. We build bilingual stores with right-to-left layouts and Arabic product content. Translation should be done or checked by a native Arabic speaker." },
+  { q: "How do I choose among ecommerce website development companies in Dubai?", a: "Ask each one for a live store they built, which platforms they work on and why they'd recommend one for you, how they handle UAE payment gateways, VAT and Arabic, who owns the store accounts, and what support costs after launch. Compare written scopes, not just prices." },
+  { q: "Are you an ecommerce development company in Dubai?", a: "We're an ecommerce development company in Kozhikode, Kerala, building online stores for UAE businesses remotely. We have no Dubai office; calls and WhatsApp run in Gulf time." },
   { q: "Who owns the store?", a: "You do. The platform account, domain, hosting and payment gateway account are in your company's name." },
 ];
 

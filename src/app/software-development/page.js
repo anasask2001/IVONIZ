@@ -66,7 +66,7 @@ const SERVICES = [
   { id: "custom", Icon: FaCogs, title: "Custom business software", text: "Booking, job-card, dealer, field-service and approval systems.", quote: "custom" },
   { Icon: FaThLarge, title: "Web portals and dashboards", text: <>Customer, vendor, dealer and staff portals. See <Link href="/website-development/web-portal-development" className={LINK}>web portal development</Link>.</> },
   { Icon: FaMobileAlt, title: "Mobile apps for your software", text: <>Android and iOS apps on the same backend. See <Link href="/mobile-app-development" className={LINK}>mobile app development</Link>.</> },
-  { Icon: FaPlug, title: "Integrations", text: "Tally, Zoho, payment gateways, WhatsApp Business API, SMS and e-invoicing." },
+  { Icon: FaPlug, title: "Integrations", text: <>Tally, Zoho, payment gateways, WhatsApp Business API, SMS and e-invoicing. Plus <Link href="/software-development/ai-chatbot-whatsapp-automation" className={LINK}>AI chatbots and WhatsApp automation</Link>.</> },
   { Icon: FaTools, title: "Software maintenance and upgrades", text: "Support, new features and modernisation of old systems." },
 ];
 

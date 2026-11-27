@@ -71,7 +71,7 @@ const SERVICES_COLS = [
   {
     title: "UI / UX",
     links: [
-      { label: "UI/UX Design", href: "/#our-services" },
+      { label: "UI/UX Design", href: "/ui-ux-design" },
     ],
   },
 ];
