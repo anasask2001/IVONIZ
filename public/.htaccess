@@ -36,6 +36,15 @@ AddType application/xml .xml
   RewriteRule ^local-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/local-seo-services [R=301,L]
   RewriteRule ^technical-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/technical-seo-services [R=301,L]
   RewriteRule ^on-page-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/on-page-seo-services [R=301,L]
+  # Added 27 Nov 2026 (Search Console check): remaining old top-level service URLs
+  RewriteRule ^off-page-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/off-page-seo-services [R=301,L]
+  RewriteRule ^ecommerce-seo-services(?:\.html)?/?$ /digital-marketing/seo-services/ecommerce-seo-services [R=301,L]
+  RewriteRule ^seo-audit-services(?:\.html)?/?$ /digital-marketing/seo-services/seo-audit-services [R=301,L]
+  RewriteRule ^social-media-marketing(?:\.html)?/?$ /digital-marketing/social-media-marketing [R=301,L]
+  RewriteRule ^instagram-marketing-services(?:\.html)?/?$ /digital-marketing/social-media-marketing/instagram-marketing-services [R=301,L]
+  RewriteRule ^social-media-management(?:\.html)?/?$ /digital-marketing/social-media-marketing/social-media-management [R=301,L]
+  RewriteRule ^social-media-advertising(?:\.html)?/?$ /digital-marketing/social-media-marketing/social-media-advertising [R=301,L]
+  RewriteRule ^social-media-content-creation(?:\.html)?/?$ /digital-marketing/social-media-marketing/social-media-content-creation [R=301,L]
   # "Best digital marketing company" pages consolidated into the hub (26 Nov 2026)
   # Also older variants Google still lists (Search Console, Nov 2026): …-in-calicut, …-company-in-kozhikode
   RewriteRule ^(?:digital-marketing/)?best-digital-marketing-(?:company-)?in-(?:calicut|kochi|kozhikode)(?:\.html)?/?$ /digital-marketing [R=301,L]
@@ -51,7 +60,7 @@ AddType application/xml .xml
   RewriteRule ^(?:services|services-detail|solutions)/?$ / [R=301,L]
   # … and leftover WordPress/spam URLs (old casino spam, wp-json, sample post,
   # author/category archives) answer 410 Gone, so Google drops them for good.
-  RewriteRule ^(?:casino|vavada-casino-2|hello-world)/?$ - [G,L]
+  RewriteRule ^(?:casino|vavada-casino-2|hello-world|careers)/?$ - [G,L]
   RewriteRule ^(?:wp-json|wp-admin|wp-content|wp-includes|author|category)(?:/.*)?$ - [G,L]
 
   # ── Clean-URL routing for the static export ──
